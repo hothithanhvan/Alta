@@ -1,0 +1,1769 @@
+.tikhoncnhn-container {
+    min-height: 100vh;
+  }
+  .tikhoncnhn-tikhoncnhn {
+    width: 100%;
+    height: 810px;
+    display: flex;
+    overflow: hidden;
+    position: relative;
+    max-width: 1440px;
+    box-sizing: border-box;
+    align-items: flex-start;
+    flex-shrink: 0;
+    border-color: transparent;
+    border-radius: 16px;
+    background-color: var(--dl-color-default-bg);
+  }
+  .tikhoncnhn-topbar {
+    top: 0px;
+    left: 200px;
+    width: 1240px;
+    height: 88px;
+    display: flex;
+    overflow: hidden;
+    position: absolute;
+    box-sizing: border-box;
+    align-items: flex-start;
+    flex-shrink: 0;
+    border-color: transparent;
+    margin-right: 0;
+    border-radius: 0px 0px 0px 0px;
+    margin-bottom: 0;
+  }
+  .tikhoncnhn-breadcrumbs {
+    top: 24px;
+    left: 24px;
+    width: 120px;
+    height: 40px;
+    display: flex;
+    position: absolute;
+    box-sizing: border-box;
+    align-items: center;
+    border-color: transparent;
+    margin-right: 0;
+    border-radius: 0px 0px 0px 0px;
+    margin-bottom: 0;
+    justify-content: center;
+  }
+  .tikhoncnhn-button {
+    top: 0px;
+    left: 0px;
+    width: 176px;
+    height: 40px;
+    display: flex;
+    padding: 10px 8px 10px 0;
+    overflow: hidden;
+    position: absolute;
+    box-sizing: border-box;
+    align-items: center;
+    flex-shrink: 0;
+    border-color: transparent;
+    margin-right: 0;
+    border-radius: 8px;
+    margin-bottom: 0;
+    justify-content: center;
+  }
+  .tikhoncnhn-text {
+    color: var(--dl-color-orange-orange400);
+    height: auto;
+    align-self: auto;
+    text-align: left;
+    line-height: 30px;
+    margin-right: 0;
+    margin-bottom: 0;
+  }
+  .tikhoncnhn-frame625226 {
+    top: 24px;
+    left: 1004px;
+    width: 172px;
+    height: 42px;
+    display: flex;
+    position: absolute;
+    box-sizing: border-box;
+    align-items: flex-start;
+    flex-shrink: 0;
+    border-color: transparent;
+    margin-right: 0;
+    border-radius: 0px 0px 0px 0px;
+    margin-bottom: 0;
+  }
+  .tikhoncnhn-unsplash-fyl8s-m-c2j2q {
+    top: 0px;
+    left: 0px;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    overflow: hidden;
+    position: absolute;
+    box-sizing: border-box;
+    align-items: flex-start;
+    flex-shrink: 0;
+    border-color: transparent;
+    margin-right: 0;
+    border-radius: 48px;
+    margin-bottom: 0;
+    background-size: cover;
+    background-image: "{{url('../playground_assets/8d7431cb-3fc6-4cfb-b347-64050f445a8c-05td-200h.undefined');}}";
+  }
+  .tikhoncnhn-group296 {
+    top: 0px;
+    left: 48px;
+    width: 126px;
+    height: 42px;
+    display: flex;
+    padding: 0;
+    position: absolute;
+    align-self: auto;
+    box-sizing: border-box;
+    align-items: flex-start;
+    flex-shrink: 1;
+    border-color: transparent;
+    border-style: none;
+    border-width: 0;
+    margin-right: 0;
+    border-radius: 0px 0px 0px 0px;
+    margin-bottom: 0;
+    flex-direction: row;
+    justify-content: flex-start;
+    background-color: transparent;
+  }
+  .tikhoncnhn-text02 {
+    color: var(--dl-color-gray-gray300);
+    height: auto;
+    position: absolute;
+    align-self: auto;
+    text-align: left;
+    line-height: 18px;
+  }
+  .tikhoncnhn-text04 {
+    top: 18px;
+    color: var(--dl-color-gray-gray400text);
+    height: auto;
+    position: absolute;
+    align-self: auto;
+    text-align: left;
+    line-height: 24px;
+  }
+  .tikhoncnhn-frame271 {
+    top: 28px;
+    left: 948px;
+    width: 32px;
+    height: 32px;
+    display: flex;
+    overflow: hidden;
+    position: absolute;
+    box-sizing: border-box;
+    align-items: flex-start;
+    flex-shrink: 0;
+    border-color: transparent;
+    margin-right: 0;
+    border-radius: 32px;
+    margin-bottom: 0;
+    background-color: var(--dl-color-orange-orange50);
+  }
+  .tikhoncnhn-vuesaxboldnotification {
+    top: 6px;
+    left: 6px;
+    width: 20px;
+    height: 20px;
+    display: flex;
+    position: absolute;
+    box-sizing: border-box;
+    align-items: flex-start;
+    flex-shrink: 0;
+    border-color: transparent;
+    margin-right: 0;
+    border-radius: 0px 0px 0px 0px;
+    margin-bottom: 0;
+  }
+  .tikhoncnhn-vuesaxboldnotification1 {
+    top: 0px;
+    left: 0px;
+    width: 20px;
+    height: 20px;
+    display: flex;
+    padding: 0;
+    position: absolute;
+    align-self: auto;
+    box-sizing: border-box;
+    align-items: flex-start;
+    flex-shrink: 1;
+    border-color: transparent;
+    border-style: none;
+    border-width: 0;
+    margin-right: 0;
+    border-radius: 0px 0px 0px 0px;
+    margin-bottom: 0;
+    flex-direction: row;
+    justify-content: flex-start;
+    background-color: transparent;
+  }
+  .tikhoncnhn-notification {
+    top: 0px;
+    left: 0px;
+    width: 20px;
+    height: 20px;
+    display: flex;
+    padding: 0;
+    position: absolute;
+    align-self: auto;
+    box-sizing: border-box;
+    align-items: flex-start;
+    flex-shrink: 1;
+    border-color: transparent;
+    border-style: none;
+    border-width: 0;
+    border-radius: 0px 0px 0px 0px;
+    flex-direction: row;
+    justify-content: flex-start;
+    background-color: transparent;
+  }
+  .tikhoncnhn-vector {
+    top: 1.6666667461395264px;
+    left: 3.592170238494873px;
+    width: 13px;
+    height: 14px;
+    position: absolute;
+    box-sizing: border-box;
+  }
+  .tikhoncnhn-vector01 {
+    top: 16.66666603088379px;
+    left: 7.65000057220459px;
+    width: 5px;
+    height: 2px;
+    position: absolute;
+    box-sizing: border-box;
+  }
+  .tikhoncnhn-menubar {
+    top: 0px;
+    left: 0px;
+    width: 200px;
+    height: 810px;
+    display: flex;
+    overflow: hidden;
+    position: absolute;
+    box-shadow: 0px 4px 6px 0px rgba(218, 218, 218, 0.5) ;
+    box-sizing: border-box;
+    align-items: flex-start;
+    flex-shrink: 0;
+    border-color: transparent;
+    margin-right: 0;
+    border-radius: 16px 0 0 16px;
+    margin-bottom: 0;
+  }
+  .tikhoncnhn-frame264 {
+    top: 150px;
+    left: 0px;
+    width: 200px;
+    height: 48px;
+    display: flex;
+    position: absolute;
+    box-sizing: border-box;
+    align-items: flex-start;
+    flex-shrink: 0;
+    border-color: transparent;
+    margin-right: 0;
+    border-radius: 0px 0px 0px 0px;
+    margin-bottom: 0;
+  }
+  .tikhoncnhn-frame259 {
+    top: 0px;
+    left: 12px;
+    width: 176px;
+    display: flex;
+    padding: 12px 12px 12px 4px;
+    overflow: hidden;
+    position: absolute;
+    box-sizing: border-box;
+    align-items: center;
+    flex-shrink: 0;
+    border-color: transparent;
+    margin-right: 0;
+    border-radius: 8px;
+    margin-bottom: 0;
+  }
+  .tikhoncnhn-vuesaxlinearelement4 {
+    width: 20px;
+    height: 20px;
+    display: flex;
+    position: relative;
+    box-sizing: border-box;
+    align-items: flex-start;
+    flex-shrink: 0;
+    border-color: transparent;
+    margin-right: 8px;
+    border-radius: 0px 0px 0px 0px;
+    margin-bottom: 0;
+  }
+  .tikhoncnhn-vuesaxlinearelement41 {
+    top: 0px;
+    left: 0px;
+    width: 20px;
+    height: 20px;
+    display: flex;
+    padding: 0;
+    position: absolute;
+    align-self: auto;
+    box-sizing: border-box;
+    align-items: flex-start;
+    flex-shrink: 1;
+    border-color: transparent;
+    border-style: none;
+    border-width: 0;
+    margin-right: 0;
+    border-radius: 0px 0px 0px 0px;
+    margin-bottom: 0;
+    flex-direction: row;
+    justify-content: flex-start;
+    background-color: transparent;
+  }
+  .tikhoncnhn-element4 {
+    top: 0px;
+    left: 0px;
+    width: 20px;
+    height: 20px;
+    display: flex;
+    padding: 0;
+    position: absolute;
+    align-self: auto;
+    box-sizing: border-box;
+    align-items: flex-start;
+    flex-shrink: 1;
+    border-color: transparent;
+    border-style: none;
+    border-width: 0;
+    border-radius: 0px 0px 0px 0px;
+    flex-direction: row;
+    justify-content: flex-start;
+    background-color: transparent;
+  }
+  .tikhoncnhn-vector02 {
+    top: 1.6666667461395264px;
+    left: 11.25px;
+    width: 7px;
+    height: 9px;
+    position: absolute;
+    box-sizing: border-box;
+  }
+  .tikhoncnhn-vector03 {
+    top: 13.333333969116211px;
+    left: 11.25px;
+    width: 7px;
+    height: 5px;
+    position: absolute;
+    box-sizing: border-box;
+  }
+  .tikhoncnhn-vector04 {
+    top: 9.166666984558105px;
+    left: 1.6666667461395264px;
+    width: 7px;
+    height: 9px;
+    position: absolute;
+    box-sizing: border-box;
+  }
+  .tikhoncnhn-vector05 {
+    top: 1.6666667461395264px;
+    left: 1.6666667461395264px;
+    width: 7px;
+    height: 5px;
+    position: absolute;
+    box-sizing: border-box;
+  }
+  .tikhoncnhn-text06 {
+    color: var(--dl-color-gray-gray300);
+    height: auto;
+    align-self: auto;
+    text-align: left;
+    line-height: 24px;
+    margin-right: 0;
+    margin-bottom: 0;
+  }
+  .tikhoncnhn-frame265 {
+    top: 204px;
+    left: 0px;
+    width: 200px;
+    height: 48px;
+    display: flex;
+    position: absolute;
+    box-sizing: border-box;
+    align-items: flex-start;
+    flex-shrink: 0;
+    border-color: transparent;
+    margin-right: 0;
+    border-radius: 0px 0px 0px 0px;
+    margin-bottom: 0;
+  }
+  .tikhoncnhn-frame260 {
+    top: 0px;
+    left: 12px;
+    width: 176px;
+    display: flex;
+    padding: 12px 12px 12px 4px;
+    overflow: hidden;
+    position: absolute;
+    box-sizing: border-box;
+    align-items: center;
+    flex-shrink: 0;
+    border-color: transparent;
+    margin-right: 0;
+    border-radius: 8px;
+    margin-bottom: 0;
+  }
+  .tikhoncnhn-vuesaxlinearmonitor {
+    width: 20px;
+    height: 20px;
+    display: flex;
+    position: relative;
+    box-sizing: border-box;
+    align-items: flex-start;
+    flex-shrink: 0;
+    border-color: transparent;
+    margin-right: 8px;
+    border-radius: 0px 0px 0px 0px;
+    margin-bottom: 0;
+  }
+  .tikhoncnhn-vuesaxlinearmonitor1 {
+    top: 0px;
+    left: 0px;
+    width: 20px;
+    height: 20px;
+    display: flex;
+    padding: 0;
+    position: absolute;
+    align-self: auto;
+    box-sizing: border-box;
+    align-items: flex-start;
+    flex-shrink: 1;
+    border-color: transparent;
+    border-style: none;
+    border-width: 0;
+    margin-right: 0;
+    border-radius: 0px 0px 0px 0px;
+    margin-bottom: 0;
+    flex-direction: row;
+    justify-content: flex-start;
+    background-color: transparent;
+  }
+  .tikhoncnhn-monitor {
+    top: 0px;
+    left: 0px;
+    width: 20px;
+    height: 20px;
+    display: flex;
+    padding: 0;
+    position: absolute;
+    align-self: auto;
+    box-sizing: border-box;
+    align-items: flex-start;
+    flex-shrink: 1;
+    border-color: transparent;
+    border-style: none;
+    border-width: 0;
+    border-radius: 0px 0px 0px 0px;
+    flex-direction: row;
+    justify-content: flex-start;
+    background-color: transparent;
+  }
+  .tikhoncnhn-vector06 {
+    top: 1.6666667461395264px;
+    left: 1.6666667461395264px;
+    width: 17px;
+    height: 13px;
+    position: absolute;
+    box-sizing: border-box;
+  }
+  .tikhoncnhn-vector07 {
+    top: 14.34999942779541px;
+    left: 10px;
+    width: 0px;
+    height: 4px;
+    position: absolute;
+    box-sizing: border-box;
+  }
+  .tikhoncnhn-vector08 {
+    top: 10.833333969116211px;
+    left: 1.6666667461395264px;
+    width: 17px;
+    height: 0px;
+    position: absolute;
+    box-sizing: border-box;
+  }
+  .tikhoncnhn-vector09 {
+    top: 18.33333396911621px;
+    left: 6.25px;
+    width: 7px;
+    height: 0px;
+    position: absolute;
+    box-sizing: border-box;
+  }
+  .tikhoncnhn-text08 {
+    color: var(--dl-color-gray-gray300);
+    height: auto;
+    align-self: auto;
+    text-align: left;
+    line-height: 24px;
+    margin-right: 0;
+    margin-bottom: 0;
+  }
+  .tikhoncnhn-frame266 {
+    top: 258px;
+    left: 0px;
+    width: 200px;
+    height: 48px;
+    display: flex;
+    position: absolute;
+    box-sizing: border-box;
+    align-items: flex-start;
+    flex-shrink: 0;
+    border-color: transparent;
+    margin-right: 0;
+    border-radius: 0px 0px 0px 0px;
+    margin-bottom: 0;
+  }
+  .tikhoncnhn-frame261 {
+    top: 0px;
+    left: 12px;
+    width: 176px;
+    display: flex;
+    padding: 12px 12px 12px 4px;
+    overflow: hidden;
+    position: absolute;
+    box-sizing: border-box;
+    align-items: center;
+    flex-shrink: 0;
+    border-color: transparent;
+    margin-right: 0;
+    border-radius: 8px;
+    margin-bottom: 0;
+  }
+  .tikhoncnhn-frame332 {
+    width: 22px;
+    height: 20px;
+    display: flex;
+    position: relative;
+    box-sizing: border-box;
+    align-items: flex-start;
+    flex-shrink: 0;
+    border-color: transparent;
+    margin-right: 8px;
+    border-radius: 0px 0px 0px 0px;
+    margin-bottom: 0;
+  }
+  .tikhoncnhn-group305 {
+    top: 13.693359375px;
+    left: 3.87176513671875px;
+    width: 6.138374328613281px;
+    height: 1.4171924591064453px;
+    display: flex;
+    padding: 0;
+    position: absolute;
+    align-self: auto;
+    box-sizing: border-box;
+    align-items: flex-start;
+    flex-shrink: 1;
+    border-color: transparent;
+    border-style: none;
+    border-width: 0;
+    margin-right: 0;
+    border-radius: 0px 0px 0px 0px;
+    margin-bottom: 0;
+    flex-direction: row;
+    justify-content: flex-start;
+    background-color: transparent;
+  }
+  .tikhoncnhn-ellipse7 {
+    top: 0.000640869140625px;
+    left: 0px;
+    width: 1px;
+    height: 1px;
+    position: absolute;
+    box-sizing: border-box;
+    border-color: transparent;
+  }
+  .tikhoncnhn-ellipse8 {
+    top: 0px;
+    left: 2.36090087890625px;
+    width: 1px;
+    height: 1px;
+    position: absolute;
+    box-sizing: border-box;
+    border-color: transparent;
+  }
+  .tikhoncnhn-ellipse9 {
+    top: 0px;
+    left: 4.7218017578125px;
+    width: 1px;
+    height: 1px;
+    position: absolute;
+    box-sizing: border-box;
+    border-color: transparent;
+  }
+  .tikhoncnhn-frame {
+    top: 5.189453125px;
+    left: 11.31927490234375px;
+    width: 4px;
+    height: 6px;
+    position: absolute;
+    box-sizing: border-box;
+    margin-right: 0;
+    margin-bottom: 0;
+  }
+  .tikhoncnhn-group304 {
+    top: 1.76171875px;
+    left: 1px;
+    width: 19.999982833862305px;
+    height: 17.477832794189453px;
+    display: flex;
+    padding: 0;
+    position: absolute;
+    align-self: auto;
+    box-sizing: border-box;
+    align-items: flex-start;
+    flex-shrink: 1;
+    border-color: transparent;
+    border-style: none;
+    border-width: 0;
+    margin-right: 0;
+    border-radius: 0px 0px 0px 0px;
+    margin-bottom: 0;
+    flex-direction: row;
+    justify-content: flex-start;
+    background-color: transparent;
+  }
+  .tikhoncnhn-vector10 {
+    top: 0px;
+    left: 3.8389892578125px;
+    width: 16px;
+    height: 13px;
+    position: absolute;
+    box-sizing: border-box;
+  }
+  .tikhoncnhn-vector11 {
+    top: 7.802734375px;
+    left: 0px;
+    width: 12px;
+    height: 10px;
+    position: absolute;
+    box-sizing: border-box;
+  }
+  .tikhoncnhn-text10 {
+    color: var(--dl-color-gray-gray300);
+    height: auto;
+    align-self: auto;
+    text-align: left;
+    line-height: 24px;
+    margin-right: 0;
+    margin-bottom: 0;
+  }
+  .tikhoncnhn-frame267 {
+    top: 312px;
+    left: 0px;
+    width: 200px;
+    height: 48px;
+    display: flex;
+    position: absolute;
+    box-sizing: border-box;
+    align-items: flex-start;
+    flex-shrink: 0;
+    border-color: transparent;
+    margin-right: 0;
+    border-radius: 0px 0px 0px 0px;
+    margin-bottom: 0;
+  }
+  .tikhoncnhn-frame262 {
+    top: 0px;
+    left: 12px;
+    width: 176px;
+    display: flex;
+    padding: 12px 12px 12px 4px;
+    overflow: hidden;
+    position: absolute;
+    box-sizing: border-box;
+    align-items: center;
+    flex-shrink: 0;
+    border-color: transparent;
+    margin-right: 0;
+    border-radius: 8px;
+    margin-bottom: 0;
+  }
+  .tikhoncnhn-icondasboard03 {
+    width: 20px;
+    height: 20px;
+    display: flex;
+    overflow: hidden;
+    position: relative;
+    box-sizing: border-box;
+    align-items: flex-start;
+    flex-shrink: 0;
+    border-color: transparent;
+    margin-right: 8px;
+    border-radius: 0px 0px 0px 0px;
+    margin-bottom: 0;
+  }
+  .tikhoncnhn-filayers {
+    top: 0px;
+    left: 0px;
+    width: 20px;
+    height: 20px;
+    position: absolute;
+    box-sizing: border-box;
+    margin-right: 0;
+    margin-bottom: 0;
+  }
+  .tikhoncnhn-text12 {
+    color: var(--dl-color-gray-gray300);
+    height: auto;
+    align-self: auto;
+    text-align: left;
+    line-height: 24px;
+    margin-right: 0;
+    margin-bottom: 0;
+  }
+  .tikhoncnhn-frame270 {
+    top: 366px;
+    left: 0px;
+    width: 200px;
+    height: 48px;
+    display: flex;
+    position: absolute;
+    box-sizing: border-box;
+    align-items: flex-start;
+    flex-shrink: 0;
+    border-color: transparent;
+    margin-right: 0;
+    border-radius: 0px 0px 0px 0px;
+    margin-bottom: 0;
+  }
+  .tikhoncnhn-frame2621 {
+    top: 0px;
+    left: 12px;
+    width: 176px;
+    display: flex;
+    padding: 12px 12px 12px 4px;
+    overflow: hidden;
+    position: absolute;
+    box-sizing: border-box;
+    align-items: center;
+    flex-shrink: 0;
+    border-color: transparent;
+    margin-right: 0;
+    border-radius: 8px;
+    margin-bottom: 0;
+  }
+  .tikhoncnhn-frame1 {
+    width: 18px;
+    height: 20px;
+    position: relative;
+    box-sizing: border-box;
+    margin-right: 8px;
+    margin-bottom: 0;
+  }
+  .tikhoncnhn-text14 {
+    color: var(--dl-color-gray-gray300);
+    height: auto;
+    align-self: auto;
+    text-align: left;
+    line-height: 24px;
+    margin-right: 0;
+    margin-bottom: 0;
+  }
+  .tikhoncnhn-frame268 {
+    top: 420px;
+    left: 0px;
+    width: 200px;
+    height: 48px;
+    display: flex;
+    position: absolute;
+    box-sizing: border-box;
+    align-items: flex-start;
+    flex-shrink: 0;
+    border-color: transparent;
+    margin-right: 0;
+    border-radius: 0px 0px 0px 0px;
+    margin-bottom: 0;
+  }
+  .tikhoncnhn-frame263 {
+    top: 0px;
+    left: 12px;
+    width: 200px;
+    display: flex;
+    padding: 12px 12px 12px 4px;
+    overflow: hidden;
+    position: absolute;
+    box-sizing: border-box;
+    align-items: center;
+    flex-shrink: 0;
+    border-color: transparent;
+    margin-right: 0;
+    border-radius: 8px;
+    margin-bottom: 0;
+  }
+  .tikhoncnhn-vuesaxoutlinesetting {
+    width: 20px;
+    height: 20px;
+    display: flex;
+    position: relative;
+    box-sizing: border-box;
+    align-items: flex-start;
+    flex-shrink: 0;
+    border-color: transparent;
+    margin-right: 8px;
+    border-radius: 0px 0px 0px 0px;
+    margin-bottom: 0;
+  }
+  .tikhoncnhn-vuesaxoutlinesetting1 {
+    top: 0px;
+    left: 0px;
+    width: 20px;
+    height: 20px;
+    display: flex;
+    padding: 0;
+    position: absolute;
+    align-self: auto;
+    box-sizing: border-box;
+    align-items: flex-start;
+    flex-shrink: 1;
+    border-color: transparent;
+    border-style: none;
+    border-width: 0;
+    margin-right: 0;
+    border-radius: 0px 0px 0px 0px;
+    margin-bottom: 0;
+    flex-direction: row;
+    justify-content: flex-start;
+    background-color: transparent;
+  }
+  .tikhoncnhn-setting {
+    top: 0px;
+    left: 0px;
+    width: 20px;
+    height: 20px;
+    display: flex;
+    padding: 0;
+    position: absolute;
+    align-self: auto;
+    box-sizing: border-box;
+    align-items: flex-start;
+    flex-shrink: 1;
+    border-color: transparent;
+    border-style: none;
+    border-width: 0;
+    border-radius: 0px 0px 0px 0px;
+    flex-direction: row;
+    justify-content: flex-start;
+    background-color: transparent;
+  }
+  .tikhoncnhn-vector12 {
+    top: 1.1354167461395264px;
+    left: 1.8666666746139526px;
+    width: 16px;
+    height: 18px;
+    position: absolute;
+    box-sizing: border-box;
+  }
+  .tikhoncnhn-vector13 {
+    top: 6.875px;
+    left: 6.875px;
+    width: 6px;
+    height: 6px;
+    position: absolute;
+    box-sizing: border-box;
+  }
+  .tikhoncnhn-text16 {
+    color: var(--dl-color-gray-gray300);
+    height: auto;
+    align-self: auto;
+    text-align: left;
+    line-height: 24px;
+    margin-right: 8px;
+    margin-bottom: 0;
+  }
+  .tikhoncnhn-fimorevertical {
+    width: 20px;
+    height: 20px;
+    position: relative;
+    box-sizing: border-box;
+    margin-right: 0;
+    margin-bottom: 0;
+  }
+  .tikhoncnhn-frame269 {
+    top: 732px;
+    left: 0px;
+    width: 200px;
+    height: 46px;
+    display: flex;
+    position: absolute;
+    box-sizing: border-box;
+    align-items: flex-start;
+    flex-shrink: 0;
+    border-color: transparent;
+    margin-right: 0;
+    border-radius: 0px 0px 0px 0px;
+    margin-bottom: 0;
+  }
+  .tikhoncnhn-frame2631 {
+    top: 0px;
+    left: 12px;
+    width: 176px;
+    display: flex;
+    padding: 12px;
+    overflow: hidden;
+    position: absolute;
+    box-sizing: border-box;
+    align-items: center;
+    flex-shrink: 0;
+    border-color: transparent;
+    margin-right: 0;
+    border-radius: 8px;
+    margin-bottom: 0;
+    background-color: var(--dl-color-orange-orange50);
+  }
+  .tikhoncnhn-filogout {
+    width: 20px;
+    height: 20px;
+    position: relative;
+    box-sizing: border-box;
+    margin-right: 12px;
+    margin-bottom: 0;
+  }
+  .tikhoncnhn-text18 {
+    color: var(--dl-color-orange-orange500);
+    height: auto;
+    font-size: 16px;
+    align-self: auto;
+    font-style: SemiBold;
+    text-align: left;
+    font-family: Nunito;
+    font-weight: 600;
+    line-height: 24px;
+    font-stretch: normal;
+    margin-right: 0;
+    margin-bottom: 0;
+    text-decoration: none;
+  }
+  .tikhoncnhn-logoalta {
+    top: 32px;
+    left: 60px;
+    width: 80px;
+    height: 64px;
+    display: flex;
+    overflow: hidden;
+    position: absolute;
+    box-sizing: border-box;
+    align-items: flex-start;
+    flex-shrink: 0;
+    border-color: transparent;
+    margin-right: 0;
+    border-radius: 0px 0px 0px 0px;
+    margin-bottom: 0;
+  }
+  .tikhoncnhn-group {
+    top: 0px;
+    left: 0.22552217543125153px;
+    width: 79.77448272705078px;
+    height: 63.97951126098633px;
+    display: flex;
+    padding: 0;
+    position: absolute;
+    align-self: auto;
+    box-sizing: border-box;
+    align-items: flex-start;
+    flex-shrink: 1;
+    border-color: transparent;
+    border-style: none;
+    border-width: 0;
+    margin-right: 0;
+    border-radius: 0px 0px 0px 0px;
+    margin-bottom: 0;
+    flex-direction: row;
+    justify-content: flex-start;
+    background-color: transparent;
+  }
+  .tikhoncnhn-group1 {
+    top: 50.991119384765625px;
+    left: 35.952613830566406px;
+    width: 41.75118637084961px;
+    height: 12.98847484588623px;
+    display: flex;
+    padding: 0;
+    position: absolute;
+    align-self: auto;
+    box-sizing: border-box;
+    align-items: flex-start;
+    flex-shrink: 1;
+    border-color: transparent;
+    border-style: none;
+    border-width: 0;
+    border-radius: 0px 0px 0px 0px;
+    flex-direction: row;
+    justify-content: flex-start;
+    background-color: transparent;
+  }
+  .tikhoncnhn-vector14 {
+    top: 0px;
+    left: 0px;
+    width: 14px;
+    height: 13px;
+    position: absolute;
+    box-sizing: border-box;
+  }
+  .tikhoncnhn-vector15 {
+    top: 1.5978182554244995px;
+    left: 14.688127517700195px;
+    width: 27px;
+    height: 10px;
+    position: absolute;
+    box-sizing: border-box;
+  }
+  .tikhoncnhn-group2 {
+    top: 0px;
+    left: 0.6151301264762878px;
+    width: 79.15940856933594px;
+    height: 53.14212417602539px;
+    display: flex;
+    padding: 0;
+    position: absolute;
+    align-self: auto;
+    box-sizing: border-box;
+    align-items: flex-start;
+    flex-shrink: 1;
+    border-color: transparent;
+    border-style: none;
+    border-width: 0;
+    border-radius: 0px 0px 0px 0px;
+    flex-direction: row;
+    justify-content: flex-start;
+    background-color: transparent;
+  }
+  .tikhoncnhn-vector16 {
+    top: 0px;
+    left: 0px;
+    width: 79px;
+    height: 53px;
+    position: absolute;
+    box-sizing: border-box;
+  }
+  .tikhoncnhn-vector17 {
+    top: 16.245798110961914px;
+    left: 30.56527328491211px;
+    width: 41px;
+    height: 18px;
+    position: absolute;
+    box-sizing: border-box;
+  }
+  .tikhoncnhn-vector18 {
+    top: 11.3904447555542px;
+    left: 2.923778533935547px;
+    width: 41px;
+    height: 12px;
+    position: absolute;
+    box-sizing: border-box;
+  }
+  .tikhoncnhn-group3 {
+    top: 0px;
+    left: 0.5877713561058044px;
+    width: 79.18675994873047px;
+    height: 53.14212417602539px;
+    display: flex;
+    padding: 0;
+    position: absolute;
+    align-self: auto;
+    box-sizing: border-box;
+    align-items: flex-start;
+    flex-shrink: 1;
+    border-color: transparent;
+    border-style: none;
+    border-width: 0;
+    border-radius: 0px 0px 0px 0px;
+    flex-direction: row;
+    justify-content: flex-start;
+    background-color: transparent;
+  }
+  .tikhoncnhn-vector19 {
+    top: 11.38984489440918px;
+    left: 2.9443700313568115px;
+    width: 41px;
+    height: 11px;
+    position: absolute;
+    box-sizing: border-box;
+  }
+  .tikhoncnhn-vector20 {
+    top: 0px;
+    left: 0px;
+    width: 79px;
+    height: 53px;
+    position: absolute;
+    box-sizing: border-box;
+  }
+  .tikhoncnhn-vector21 {
+    top: 53.36747741699219px;
+    left: 0.00005830316149513237px;
+    width: 35px;
+    height: 7px;
+    position: absolute;
+    box-sizing: border-box;
+  }
+  .tikhoncnhn-vector22 {
+    top: 53.36747741699219px;
+    left: 0.00005830316149513237px;
+    width: 35px;
+    height: 7px;
+    position: absolute;
+    box-sizing: border-box;
+  }
+  .tikhoncnhn-frame625106 {
+    top: 168px;
+    left: 224px;
+    width: 1112px;
+    height: 397px;
+    display: flex;
+    overflow: hidden;
+    position: absolute;
+    box-shadow: 0px 2px 6px 0px rgba(218, 218, 218, 0.5) ;
+    box-sizing: border-box;
+    align-items: flex-start;
+    flex-shrink: 0;
+    border-color: transparent;
+    margin-right: 0;
+    border-radius: 12px;
+    margin-bottom: 0;
+  }
+  .tikhoncnhn-group625151 {
+    top: 40px;
+    left: 24px;
+    width: 248px;
+    height: 303px;
+    display: flex;
+    padding: 0;
+    position: absolute;
+    align-self: auto;
+    box-sizing: border-box;
+    align-items: flex-start;
+    flex-shrink: 1;
+    border-color: transparent;
+    border-style: none;
+    border-width: 0;
+    margin-right: 0;
+    border-radius: 0px 0px 0px 0px;
+    margin-bottom: 0;
+    flex-direction: row;
+    justify-content: flex-start;
+    background-color: transparent;
+  }
+  .tikhoncnhn-group624818 {
+    top: 0px;
+    left: 0px;
+    width: 248px;
+    height: 251px;
+    display: flex;
+    padding: 0;
+    position: absolute;
+    align-self: auto;
+    box-sizing: border-box;
+    align-items: flex-start;
+    flex-shrink: 1;
+    border-color: transparent;
+    border-style: none;
+    border-width: 0;
+    border-radius: 0px 0px 0px 0px;
+    flex-direction: row;
+    justify-content: flex-start;
+    background-color: transparent;
+  }
+  .tikhoncnhn-unsplash-fyl8s-m-c2j2q1 {
+    top: 0px;
+    left: 0px;
+    width: 248px;
+    height: 248px;
+    display: flex;
+    overflow: hidden;
+    position: absolute;
+    box-sizing: border-box;
+    align-items: flex-start;
+    flex-shrink: 0;
+    border-color: transparent;
+    border-radius: 317.9999694824219px;
+    background-size: cover;
+    background-image: url('playground_assets/d1c08659-d43b-4bcb-bc47-4c8dbd1e10ee-u1fa-300h.undefined');
+  }
+  .tikhoncnhn-group624817 {
+    top: 206px;
+    left: 171px;
+    width: 45px;
+    height: 45px;
+    display: flex;
+    padding: 0;
+    position: absolute;
+    align-self: auto;
+    box-sizing: border-box;
+    align-items: flex-start;
+    flex-shrink: 1;
+    border-color: transparent;
+    border-style: none;
+    border-width: 0;
+    border-radius: 0px 0px 0px 0px;
+    flex-direction: row;
+    justify-content: flex-start;
+    background-color: transparent;
+  }
+  .tikhoncnhn-ellipse81 {
+    top: 0px;
+    left: 0px;
+    width: 45px;
+    height: 45px;
+    position: absolute;
+    box-sizing: border-box;
+    border-color: rgba(255, 255, 255, 1);
+    border-style: solid;
+    border-width: 2px;
+  }
+  .tikhoncnhn-camera {
+    top: 8px;
+    left: 8px;
+    width: 30px;
+    height: 30px;
+    position: absolute;
+    box-sizing: border-box;
+  }
+  .tikhoncnhn-text20 {
+    top: 267px;
+    left: 31px;
+    color: var(--dl-color-gray-gray500);
+    height: auto;
+    position: absolute;
+    align-self: auto;
+    text-align: center;
+    line-height: 40px;
+    font-weight: 900;
+    font-size: 20px;
+  }
+  .tikhoncnhn-group625150 {
+    top: 40px;
+    left: 296px;
+    width: 792px;
+    height: 276px;
+    display: flex;
+    padding: 0;
+    position: absolute;
+    align-self: auto;
+    box-sizing: border-box;
+    align-items: flex-start;
+    flex-shrink: 1;
+    border-color: transparent;
+    border-style: none;
+    border-width: 0;
+    margin-right: 0;
+    border-radius: 0px 0px 0px 0px;
+    margin-bottom: 0;
+    flex-direction: row;
+    justify-content: flex-start;
+    background-color: transparent;
+  }
+  .tikhoncnhn-group625146 {
+    top: 100px;
+    left: 408px;
+    width: 384px;
+    height: 76px;
+    display: flex;
+    padding: 0;
+    position: absolute;
+    align-self: auto;
+    box-sizing: border-box;
+    align-items: flex-start;
+    flex-shrink: 1;
+    border-color: transparent;
+    border-style: none;
+    border-width: 0;
+    border-radius: 0px 0px 0px 0px;
+    flex-direction: row;
+    justify-content: flex-start;
+    background-color: transparent;
+  }
+  .tikhoncnhn-group624750 {
+    top: 0px;
+    left: 0px;
+    width: 68px;
+    height: 24px;
+    display: flex;
+    padding: 0;
+    position: absolute;
+    align-self: auto;
+    box-sizing: border-box;
+    align-items: flex-start;
+    flex-shrink: 1;
+    border-color: transparent;
+    border-style: none;
+    border-width: 0;
+    border-radius: 0px 0px 0px 0px;
+    flex-direction: row;
+    justify-content: flex-start;
+    background-color: transparent;
+  }
+  .tikhoncnhn-frame624960 {
+    top: 0px;
+    left: 0px;
+    display: flex;
+    position: absolute;
+    box-sizing: border-box;
+    align-items: flex-start;
+    border-color: transparent;
+    border-radius: 0px 0px 0px 0px;
+  }
+  .tikhoncnhn-text22 {
+    color: var(--dl-color-gray-gray500);
+    height: auto;
+    align-self: auto;
+    text-align: left;
+    line-height: 24px;
+    margin-right: 0;
+    margin-bottom: 0;
+  }
+  .tikhoncnhn-fill {
+    top: 32px;
+    left: 0px;
+    width: 384px;
+    height: 44px;
+    display: flex;
+    padding: 12px 16px;
+    position: absolute;
+    box-sizing: border-box;
+    align-items: center;
+    flex-shrink: 0;
+    border-color: transparent;
+    border-radius: 6px;
+    background-color: var(--dl-color-gray-gray50);
+  }
+  .tikhoncnhn-text24 {
+    color: var(--dl-color-gray-gray400text);
+    height: auto;
+    opacity: 0.50;
+    align-self: auto;
+    text-align: left;
+    line-height: 24px;
+    margin-right: 0;
+    margin-bottom: 0;
+  }
+  .tikhoncnhn-group6251501 {
+    top: 0px;
+    left: 0px;
+    width: 384px;
+    height: 76px;
+    display: flex;
+    padding: 0;
+    position: absolute;
+    align-self: auto;
+    box-sizing: border-box;
+    align-items: flex-start;
+    flex-shrink: 1;
+    border-color: transparent;
+    border-style: none;
+    border-width: 0;
+    border-radius: 0px 0px 0px 0px;
+    flex-direction: row;
+    justify-content: flex-start;
+    background-color: transparent;
+  }
+  .tikhoncnhn-group6247501 {
+    top: 0px;
+    left: 0px;
+    width: 113px;
+    height: 24px;
+    display: flex;
+    padding: 0;
+    position: absolute;
+    align-self: auto;
+    box-sizing: border-box;
+    align-items: flex-start;
+    flex-shrink: 1;
+    border-color: transparent;
+    border-style: none;
+    border-width: 0;
+    border-radius: 0px 0px 0px 0px;
+    flex-direction: row;
+    justify-content: flex-start;
+    background-color: transparent;
+  }
+  .tikhoncnhn-frame6249601 {
+    top: 0px;
+    left: 0px;
+    display: flex;
+    position: absolute;
+    box-sizing: border-box;
+    align-items: flex-start;
+    border-color: transparent;
+    border-radius: 0px 0px 0px 0px;
+  }
+  .tikhoncnhn-text26 {
+    color: var(--dl-color-gray-gray500);
+    height: auto;
+    align-self: auto;
+    text-align: left;
+    line-height: 24px;
+    margin-right: 0;
+    margin-bottom: 0;
+  }
+  .tikhoncnhn-fill1 {
+    top: 32px;
+    left: 0px;
+    width: 384px;
+    height: 44px;
+    display: flex;
+    padding: 12px 16px;
+    position: absolute;
+    box-sizing: border-box;
+    align-items: center;
+    flex-shrink: 0;
+    border-color: transparent;
+    border-radius: 6px;
+    background-color: var(--dl-color-gray-gray50);
+  }
+  .tikhoncnhn-text28 {
+    color: var(--dl-color-gray-gray400text);
+    height: auto;
+    opacity: 0.50;
+    align-self: auto;
+    text-align: left;
+    line-height: 24px;
+    margin-right: 0;
+    margin-bottom: 0;
+  }
+  .tikhoncnhn-group625148 {
+    top: 200px;
+    left: 0px;
+    width: 384px;
+    height: 76px;
+    display: flex;
+    padding: 0;
+    position: absolute;
+    align-self: auto;
+    box-sizing: border-box;
+    align-items: flex-start;
+    flex-shrink: 1;
+    border-color: transparent;
+    border-style: none;
+    border-width: 0;
+    border-radius: 0px 0px 0px 0px;
+    flex-direction: row;
+    justify-content: flex-start;
+    background-color: transparent;
+  }
+  .tikhoncnhn-group6247502 {
+    top: 0px;
+    left: 0px;
+    width: 44px;
+    height: 24px;
+    display: flex;
+    padding: 0;
+    position: absolute;
+    align-self: auto;
+    box-sizing: border-box;
+    align-items: flex-start;
+    flex-shrink: 1;
+    border-color: transparent;
+    border-style: none;
+    border-width: 0;
+    border-radius: 0px 0px 0px 0px;
+    flex-direction: row;
+    justify-content: flex-start;
+    background-color: transparent;
+  }
+  .tikhoncnhn-frame6249602 {
+    top: 0px;
+    left: 0px;
+    display: flex;
+    position: absolute;
+    box-sizing: border-box;
+    align-items: flex-start;
+    border-color: transparent;
+    border-radius: 0px 0px 0px 0px;
+  }
+  .tikhoncnhn-text30 {
+    color: var(--dl-color-gray-gray500);
+    height: auto;
+    align-self: auto;
+    text-align: left;
+    line-height: 24px;
+    margin-right: 0;
+    margin-bottom: 0;
+  }
+  .tikhoncnhn-fill2 {
+    top: 32px;
+    left: 0px;
+    width: 384px;
+    height: 44px;
+    display: flex;
+    padding: 12px 16px;
+    position: absolute;
+    box-sizing: border-box;
+    align-items: center;
+    flex-shrink: 0;
+    border-color: transparent;
+    border-radius: 6px;
+    background-color: var(--dl-color-gray-gray50);
+  }
+  .tikhoncnhn-text32 {
+    color: var(--dl-color-gray-gray400text);
+    height: auto;
+    opacity: 0.50;
+    align-self: auto;
+    text-align: left;
+    line-height: 24px;
+    margin-right: 0;
+    margin-bottom: 0;
+  }
+  .tikhoncnhn-group625152 {
+    top: 200px;
+    left: 408px;
+    width: 384px;
+    height: 76px;
+    display: flex;
+    padding: 0;
+    position: absolute;
+    align-self: auto;
+    box-sizing: border-box;
+    align-items: flex-start;
+    flex-shrink: 1;
+    border-color: transparent;
+    border-style: none;
+    border-width: 0;
+    border-radius: 0px 0px 0px 0px;
+    flex-direction: row;
+    justify-content: flex-start;
+    background-color: transparent;
+  }
+  .tikhoncnhn-group6247503 {
+    top: 0px;
+    left: 0px;
+    width: 52px;
+    height: 24px;
+    display: flex;
+    padding: 0;
+    position: absolute;
+    align-self: auto;
+    box-sizing: border-box;
+    align-items: flex-start;
+    flex-shrink: 1;
+    border-color: transparent;
+    border-style: none;
+    border-width: 0;
+    border-radius: 0px 0px 0px 0px;
+    flex-direction: row;
+    justify-content: flex-start;
+    background-color: transparent;
+  }
+  .tikhoncnhn-frame6249603 {
+    top: 0px;
+    left: 0px;
+    display: flex;
+    position: absolute;
+    box-sizing: border-box;
+    align-items: flex-start;
+    border-color: transparent;
+    border-radius: 0px 0px 0px 0px;
+  }
+  .tikhoncnhn-text34 {
+    color: var(--dl-color-gray-gray500);
+    height: auto;
+    align-self: auto;
+    text-align: left;
+    line-height: 24px;
+    margin-right: 0;
+    margin-bottom: 0;
+  }
+  .tikhoncnhn-fill3 {
+    top: 32px;
+    left: 0px;
+    width: 384px;
+    height: 44px;
+    display: flex;
+    padding: 12px 16px;
+    position: absolute;
+    box-sizing: border-box;
+    align-items: center;
+    flex-shrink: 0;
+    border-color: transparent;
+    border-radius: 6px;
+    background-color: var(--dl-color-gray-gray50);
+  }
+  .tikhoncnhn-text36 {
+    color: var(--dl-color-gray-gray400text);
+    height: auto;
+    opacity: 0.50;
+    align-self: auto;
+    text-align: left;
+    line-height: 24px;
+    margin-right: 0;
+    margin-bottom: 0;
+  }
+  .tikhoncnhn-group625147 {
+    top: 100px;
+    left: 0px;
+    width: 384px;
+    height: 76px;
+    display: flex;
+    padding: 0;
+    position: absolute;
+    align-self: auto;
+    box-sizing: border-box;
+    align-items: flex-start;
+    flex-shrink: 1;
+    border-color: transparent;
+    border-style: none;
+    border-width: 0;
+    border-radius: 0px 0px 0px 0px;
+    flex-direction: row;
+    justify-content: flex-start;
+    background-color: transparent;
+  }
+  .tikhoncnhn-group6247504 {
+    top: 0px;
+    left: 0px;
+    width: 95px;
+    height: 24px;
+    display: flex;
+    padding: 0;
+    position: absolute;
+    align-self: auto;
+    box-sizing: border-box;
+    align-items: flex-start;
+    flex-shrink: 1;
+    border-color: transparent;
+    border-style: none;
+    border-width: 0;
+    border-radius: 0px 0px 0px 0px;
+    flex-direction: row;
+    justify-content: flex-start;
+    background-color: transparent;
+  }
+  .tikhoncnhn-frame6249604 {
+    top: 0px;
+    left: 0px;
+    width: 200px;
+    display: flex;
+    position: absolute;
+    box-sizing: border-box;
+    align-items: flex-start;
+    border-color: transparent;
+    border-radius: 0px 0px 0px 0px;
+    font-weight: 900;
+  }
+  .tikhoncnhn-text38 {
+    color: var(--dl-color-gray-gray500);
+    height: auto;
+    align-self: auto;
+    text-align: left;
+    line-height: 24px;
+    margin-right: 0;
+    margin-bottom: 0;
+  }
+  .tikhoncnhn-fill4 {
+    top: 32px;
+    left: 0px;
+    width: 384px;
+    height: 44px;
+    display: flex;
+    padding: 12px 16px;
+    position: absolute;
+    box-sizing: border-box;
+    align-items: center;
+    flex-shrink: 0;
+    border-color: transparent;
+    border-radius: 6px;
+    background-color: var(--dl-color-gray-gray50);
+  }
+  .tikhoncnhn-text40 {
+    color: var(--dl-color-gray-gray400text);
+    height: auto;
+    opacity: 0.50;
+    align-self: auto;
+    text-align: left;
+    line-height: 24px;
+    margin-right: 0;
+    margin-bottom: 0;
+  }
+  .tikhoncnhn-group6251511 {
+    top: 0px;
+    left: 408px;
+    width: 384px;
+    height: 76px;
+    display: flex;
+    padding: 0;
+    position: absolute;
+    align-self: auto;
+    box-sizing: border-box;
+    align-items: flex-start;
+    flex-shrink: 1;
+    border-color: transparent;
+    border-style: none;
+    border-width: 0;
+    border-radius: 0px 0px 0px 0px;
+    flex-direction: row;
+    justify-content: flex-start;
+    background-color: transparent;
+  }
+  .tikhoncnhn-group6247505 {
+    top: 0px;
+    left: 0px;
+    width: 108px;
+    height: 24px;
+    display: flex;
+    padding: 0;
+    position: absolute;
+    align-self: auto;
+    box-sizing: border-box;
+    align-items: flex-start;
+    flex-shrink: 1;
+    border-color: transparent;
+    border-style: none;
+    border-width: 0;
+    border-radius: 0px 0px 0px 0px;
+    flex-direction: row;
+    justify-content: flex-start;
+    background-color: transparent;
+  }
+  .tikhoncnhn-frame6249605 {
+    top: 0px;
+    left: 0px;
+    display: flex;
+    position: absolute;
+    box-sizing: border-box;
+    align-items: flex-start;
+    border-color: transparent;
+    border-radius: 0px 0px 0px 0px;
+  }
+  .tikhoncnhn-text42 {
+    color: var(--dl-color-gray-gray500);
+    height: auto;
+    align-self: auto;
+    text-align: left;
+    line-height: 24px;
+    margin-right: 0;
+    margin-bottom: 0;
+  }
+  .tikhoncnhn-fill5 {
+    top: 32px;
+    left: 0px;
+    width: 384px;
+    height: 44px;
+    display: flex;
+    padding: 12px 16px;
+    position: absolute;
+    box-sizing: border-box;
+    align-items: center;
+    flex-shrink: 0;
+    border-color: transparent;
+    border-radius: 6px;
+    background-color: var(--dl-color-gray-gray50);
+  }
+  .tikhoncnhn-text44 {
+    color: var(--dl-color-gray-gray400text);
+    height: auto;
+    opacity: 0.50;
+    align-self: auto;
+    text-align: left;
+    line-height: 24px;
+    margin-right: 0;
+    margin-bottom: 0;
+  }
+  

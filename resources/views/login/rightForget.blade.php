@@ -1,0 +1,2 @@
+<img src="{{asset('playground_assets/rectangle4963126-u8w2o-900h.png');}}" alt="Rectangle4963126" class="qunmtkhu-rectangle496" />
+<img src="{{asset('playground_assets/frame3142-2orr.svg');}}" alt="Frame3142" class="qunmtkhu-frame" />
