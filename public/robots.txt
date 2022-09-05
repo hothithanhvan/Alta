@@ -1,2 +1,11 @@
 User-agent: *
 Disallow:
+
+
+php artisan make:controller RoleController --resource --model=Role
+php artisan make:controller DairyController --resource --model=Dairy
+php artisan make:controller AccountController --resource --model=Account
+php artisan make:controller NumberController --resource --model=Number
+php artisan make:controller DashboardController --resource --model=Dashboard
+php artisan make:controller RoleController --resource --model=Role
+php artisan make:controller ReportController --resource --model=Report
