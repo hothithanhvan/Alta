@@ -18,7 +18,7 @@ return new class extends Migration
             $table->text('mathietbi');
             $table->string('tenthietbi');
             $table->string('diachiIP');
-            $table->string('trangthaihoatdong');
+            $table->string('trangthaihoatdong')->default('1');
             $table->string('trangthaiketnoi');
             $table->string('dichvusudung');
             $table->timestamps();

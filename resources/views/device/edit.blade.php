@@ -1,5 +1,6 @@
 @extends('layout.menubar')
 @extends('layout.header')
+
 <body>
 
     <div>
@@ -83,7 +84,7 @@
                                     class="cpnhtthitb-vector03" />
                             </div>
                             <input type="text" name="tenthietbi" value="{{$device->tenthietbi}}"
-                            class="cpnhtthitb-input1" />
+                                class="cpnhtthitb-input1" />
                         </div>
                         <div class="cpnhtthitb-frame624733">
                             <div class="cpnhtthitb-warningtext2">
@@ -93,9 +94,10 @@
                                 <img src="{{asset('playground_assets/vectori334-stg9.svg');}}" alt="VectorI334"
                                     class="cpnhtthitb-vector04" />
                             </div>
-                            <input type="text" name="diachiIP" value="{{$device->diachiIP}}" class="cpnhtthitb-input2" />
+                            <input type="text" name="diachiIP" value="{{$device->diachiIP}}"
+                                class="cpnhtthitb-input2" />
                         </div>
-                        <!-- <div class="cpnhtthitb-frame624734">
+                        <div class="cpnhtthitb-frame624734">
                             <div class="cpnhtthitb-warningtext3">
                                 <span class="cpnhtthitb-text20 1616Semi">
                                     <span>Loại thiết bị:</span>
@@ -123,101 +125,52 @@
                                     class="cpnhtthitb-vector07" />
                             </div>
                             <input type="text" placeholder="CMS" class="cpnhtthitb-input4" />
-                        </div> -->
                         </div>
-                        <div class="cpnhtthitb-frame624750">
-                            <button type="submit" class="cpnhtthitb-button09 cpnhtthitb-text58">
-                                Cập nhật
-                            </button>
-                            <button class="cpnhtthitb-button10 cpnhtthitb-text60">
-                                Hủy bỏ
-                            </button>
+                        <div class="cpnhtthitb-frame6247331">
+                            <div class="cpnhtthitb-warningtext6">
+                                <span class="cpnhtthitb-text28 1616Semi">
+                                    <span>Dịch vụ sử dụng:</span>
+                                </span>
+
+                                @foreach($b as $dvsd)
+                                <?php $i = 0; ?>
+                                @foreach($a as $c)
+                                @if ($c->tendichvu == $dvsd->tendichvu)
+                                <input checked="checked" type="checkbox" name="id{{$dvsd->id}}"
+                                    value="{{$dvsd->tendichvu}}" />
+                                <label for="{{$dvsd->id}}"> {{$c->tendichvu}}</label>
+
+                                <?php $i++; ?>
+                                @endif
+
+                                @endforeach
+                                @if ($i == 0)
+                                <input type="checkbox" name="id{{$dvsd->id}}" value="{{$dvsd->tendichvu}}" />
+                                <label for="{{$dvsd->id}}"> {{$dvsd->tendichvu}}</label>
+                                @endif
+                                @endforeach
+
+                            </div>
+                            <div class="cpnhtthitb-frame624744">
+                                <span class="cpnhtthitb-text42 1414Reg">
+                                    <span>Là trường thông tin bắt buộc</span>
+                                </span>
+                                <img src="{{asset('playground_assets/vector3349-f56a.svg');}}" alt="Vector3349"
+                                    class="cpnhtthitb-vector09" />
+                            </div>
                         </div>
-                    
+                    </div>
+                            <div class="cpnhtthitb-frame624750">
+                                <button type="submit" class="cpnhtthitb-button09 cpnhtthitb-text58">
+                                    Cập nhật
+                                </button>
+                                <button class="cpnhtthitb-button10 cpnhtthitb-text60">
+                                    Hủy bỏ
+                                </button>
+                            </div>
                 </form>
-                <!-- <div class="cpnhtthitb-frame6247331">
-              <div class="cpnhtthitb-warningtext6">
-                <span class="cpnhtthitb-text28 1616Semi">
-                  <span>Dịch vụ sử dụng:</span>
-                </span> -->
-                <!-- <img
-                  src="{{asset('playground_assets/vectori334-r48h.svg');}}"
-                  alt="VectorI334"
-                  class="cpnhtthitb-vector08"
-                />
-              </div>
-              <button class="cpnhtthitb-button03">
-                <span class="cpnhtthitb-text30">
-                  <span>Khám tim mạch</span>
-                </span>
-                <img
-                  src="{{asset('playground_assets/fixi335-l2t.svg');}}"
-                  alt="fixI335"
-                  class="cpnhtthitb-fix"
-                />
-              </button>
-              <button class="cpnhtthitb-button04">
-                <span class="cpnhtthitb-text32">
-                  <span>Khám sản phụ khoa</span>
-                </span>
-                <img
-                  src="{{asset('playground_assets/fixi335-m7u08.svg');}}"
-                  alt="fixI335"
-                  class="cpnhtthitb-fix1"
-                />
-              </button>
-              <button class="cpnhtthitb-button05">
-                <span class="cpnhtthitb-text34">
-                  <span>Khám răng hàm mặt</span>
-                </span>
-                <img
-                  src="{{asset('playground_assets/fixi335-h655.svg');}}"
-                  alt="fixI335"
-                  class="cpnhtthitb-fix2"
-                />
-              </button>
-              <button class="cpnhtthitb-button06">
-                <span class="cpnhtthitb-text36">
-                  <span>Khám tai mũi họng</span>
-                </span>
-                <img
-                  src="{{asset('playground_assets/fixi335-tjed.svg');}}"
-                  alt="fixI335"
-                  class="cpnhtthitb-fix3"
-                />
-              </button>
-              <button class="cpnhtthitb-button07">
-                <span class="cpnhtthitb-text38"><span>Khám hô hấp</span></span>
-                <img
-                  src="{{asset('playground_assets/fixi335-77k9.svg');}}"
-                  alt="fixI335"
-                  class="cpnhtthitb-fix4"
-                />
-              </button>
-              <button class="cpnhtthitb-button08">
-                <span class="cpnhtthitb-text40">
-                  <span>Khám tổng quát</span>
-                </span>
-                <img
-                  src="{{asset('playground_assets/fixi282-fm6s.svg');}}"
-                  alt="fixI282"
-                  class="cpnhtthitb-fix5"
-                />
-              </button>
-            </div> 
-             <div class="cpnhtthitb-frame624744">
-              <span class="cpnhtthitb-text42 1414Reg">
-                <span>Là trường thông tin bắt buộc</span>
-              </span>
-              <img
-                src="{{asset('playground_assets/vector3349-f56a.svg');}}"
-                alt="Vector3349"
-                class="cpnhtthitb-vector09"
-              />
-            </div> -->
             </div>
         </div>
-    </div>
 </body>
 
 </html>

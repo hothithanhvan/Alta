@@ -1,5 +1,6 @@
 @extends('layout.menubar')
 @extends('layout.header')
+@extends('layout.alert')
   <body>
     <div>
       <link href="{{asset('css/taikhoan.css')}}" rel="stylesheet" />
@@ -67,6 +68,8 @@
           <span class="thmtikhon-text10 2424Bold">
             <span>Quản lý tài khoản</span>
           </span>
+          <form action="{{ route('account.store') }}" method="POST">
+            @csrf
           <div class="thmtikhon-frame624726">
             <span class="thmtikhon-text12 2020Bold">
               <span>Thông tin tài khoản</span>
@@ -83,7 +86,7 @@
                 />
               </div>
               <input
-                type="text"
+                type="text" name="hoten"
                 placeholder="Nhập họ tên"
                 class="thmtikhon-input"
               />
@@ -100,7 +103,7 @@
                 />
               </div>
               <input
-                type="text"
+                type="text" name="sdt" 
                 placeholder="Nhập số điện thoại"
                 class="thmtikhon-input1"
               />
@@ -117,7 +120,7 @@
                 />
               </div>
               <input
-                type="text"
+                type="text" name="email"
                 placeholder="Nhập email"
                 class="thmtikhon-input2"
               />
@@ -170,7 +173,7 @@
                 />
               </div>
               <input
-                type="text"
+                type="text" name="tendn"
                 placeholder="Nhập tên đăng nhập"
                 class="thmtikhon-input3"
               />
@@ -204,7 +207,7 @@
                 />
               </div>
               <input
-                type="text"
+                type="text" name="password"
                 placeholder="Nhập lại mật khẩu"
                 class="thmtikhon-input3"
               />
@@ -221,18 +224,15 @@
             </div>
           </div>
           <div class="thmtikhon-frame624737">
-            <button class="thmtikhon-button3">
-              <span class="thmtikhon-text36"><span>Thêm</span></span>
+            <button type="submit" class="thmtikhon-button3 thmtikhon-text36">
+              Thêm
             </button>
             <button class="thmtikhon-button4">
               <span class="thmtikhon-text38"><span>Hủy bỏ</span></span>
             </button>
           </div>
-          
-                    </div>
-                  </div>
-                </div>
-                
+          </div>
+                </form>
             </div>
           </div>
         </div>

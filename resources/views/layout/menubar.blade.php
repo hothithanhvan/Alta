@@ -13,11 +13,11 @@
               </div>
             </div>
           </div>
-          <a href="" class=" qunlthitb-text206 1616Semi">Dashboard</a>
+          <a href="{{url('dashboard')}}" class=" qunlthitb-text206 1616Semi">Dashboard</a>
         </div>
       </div>
       <div class="qunlthitb-frame265">
-        <div class="qunlthitb-frame260">
+        <div class="success qunlthitb-frame260">
           <div class="qunlthitb-vuesaxlinearmonitor">
             <div class="qunlthitb-vuesaxlinearmonitor1">
               <div class="qunlthitb-monitor">
@@ -29,7 +29,7 @@
         </div>
       </div>
       <div class="qunlthitb-frame266">
-        <div class="qunlthitb-frame261">
+        <div class="success qunlthitb-frame261">
           <div class="qunlthitb-frame332">
             <div class="qunlthitb-group305">
               <img src="{{asset('playground_assets/ellipse7i217-edz-200h.png');}}" alt="Ellipse7I217"
@@ -49,7 +49,7 @@
         </div>
       </div>
       <div class="qunlthitb-frame267">
-        <div class="qunlthitb-frame262">
+        <div class="success qunlthitb-frame262">
           <div class="qunlthitb-icondasboard03">
             <img src="{{asset('playground_assets/filayersi217-q0db.svg');}}" alt="filayersI217" class="qunlthitb-filayers" />
           </div>
@@ -57,13 +57,15 @@
         </div>
       </div>
       <div class="qunlthitb-frame270">
-        <div class="qunlthitb-frame2621">
+        <div class="success qunlthitb-frame2621">
           <img src="{{asset('playground_assets/framei217-5a9.svg');}}" alt="FrameI217" class="qunlthitb-frame1" />
           <a href="{{url('report')}}" class="qunlthitb-text206 1616Semi">Báo cáo</a>
         </div>
       </div>
       <div class="qunlthitb-frame268">
+      
         <div class="qunlthitb-frame263">
+        <div class="success qunlthitb-frame2633"></div>
           <div class="qunlthitb-vuesaxoutlinesetting">
             <div class="qunlthitb-vuesaxoutlinesetting1">
               <div class="qunlthitb-setting">
@@ -73,7 +75,8 @@
             </div>
           </div>
           <div class="dropdown">
-  <button onclick="myFunction()" class=" qunlthitb-text206 1616Semi dropbtn">Cài đặt hệ thống</button>
+
+  <button onclick="myFunction()" class="qunlthitb-text206 dropbtn">Cài đặt hệ thống</button>
   <div id="myDropdown" class="dropdown-content">
     <a href="{{url('role')}}">Quản lý vai trò</a>
     <a href="{{url('account')}}">Quản lý tài khoản</a>
@@ -113,7 +116,7 @@ window.onclick = function(event) {
       <div class="qunlthitb-frame269">
         <div class="qunlthitb-frame2631">
           <img src="{{asset('playground_assets/filogouti217-x5et.svg');}}" alt="filogoutI217" class="qunlthitb-filogout" />
-          <span class="qunlthitb-text218"><span>Đăng xuất</span></span>
+          <a href="{{url('/logout')}}" class="qunlthitb-text218" >Đăng xuất</a>
         </div>
       </div>
       <div class="qunlthitb-logoalta">

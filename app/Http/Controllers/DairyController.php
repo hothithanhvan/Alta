@@ -14,7 +14,7 @@ class DairyController extends Controller
      */
     public function index()
     {
-        //
+        return view('dairy.dairyUser');
     }
 
     /**

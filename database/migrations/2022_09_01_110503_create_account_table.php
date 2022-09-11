@@ -15,7 +15,10 @@ return new class extends Migration
     {
         Schema::create('accounts', function (Blueprint $table) {
             $table->id();
-            
+            $table->string('hoten');
+            $table->string('tendn');
+            $table->string('sdt');
+            $table->string('email');
             $table->timestamps();
         });
     }

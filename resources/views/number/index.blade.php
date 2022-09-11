@@ -74,8 +74,9 @@
           <div class="qunlcps-group317">
             <div class="qunlcps-dropdown">
               <select class="qunlcps-text015 1616Reg">
-                <option value="1" >1</option>
-                <option value="2" >2</option>
+              <option value="tatca" >Tất cả</option>
+                <option value="khamranghammat" >Khám răng hàm mặt</option>
+                <option value="khamtaimuihong" >Khám tai mũi họng</option>
               </select>
             </div>
             <span class="qunlcps-text017 1616Semi">
@@ -85,8 +86,10 @@
           <div class="qunlcps-group319">
           <div class="qunlcps-dropdown">
               <select class="qunlcps-text015 1616Reg">
-                <option value="1" >1</option>
-                <option value="2" >2</option>
+                <option value="tatca" >Tất cả</option>
+                <option value="dangcho" >Đang chờ</option>
+                <option value="dasudung" >Đã sử dụng</option>
+                <option value="boqua" >Bỏ qua</option>
               </select>
             </div>
             <span class="qunlcps-text021 1616Semi">
@@ -131,25 +134,31 @@
           <div class="qunlcps-group3191">
           <div class="qunlcps-dropdown">
               <select class="qunlcps-text015 1616Reg">
-                <option value="1" >1</option>
-                <option value="2" >2</option>
+                <option value="tatca" >Tất cả</option>
+                <option value="kioks" >Kiosk</option>
+                <option value="hethong" >Hệ thống</option>
               </select>
             </div>
             <span class="qunlcps-text058 1616Semi"><span>Nguồn cấp</span></span>
           </div>
-          <div class="qunlcps-frame624721">
-            <div class="qunlcps-frame624718">
-              <div class="qunlcps-frame624691">
-                <span class="qunlcps-text060 1616Bold"><span>STT</span></span>
-              </div>
-              <div class="qunlcps-frame624710">
-                <span class="qunlcps-text062 1414Reg">
-                  <span>2010001</span>
-                </span>
+          <table class="qunlcps-frame624721">
+              <tr class="qunlcps-frame624691 qunlcps-text060 1616Bold">
+                <td>STT</td>
+                <td>Tên khách hàng</td>
+                <td>Tên dịch vụ</td>
+                <td>Thời gian cấp</td>
+                <td>Hạn sử dụng</td>
+                <td>Trạng thái</td>
+                <td>Nguồn cấp</td>
+                <td>     </td>
+              </tr>
+              <tr>
+
+              </tr>
               </div>
               
-            </div>
-          </div>
+</table>
+          
         </div>
       </div>
     </div>

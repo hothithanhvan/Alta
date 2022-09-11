@@ -3797,7 +3797,7 @@
     line-height: 24px;
     margin-right: 0;
     margin-bottom: 0;
-    background-color: white;
+    background-color: unset;
   }
   
   .qunlthitb-frame265 {
@@ -4253,7 +4253,22 @@
     border-radius: 8px;
     margin-bottom: 0;
   }
-  
+  .qunlthitb-frame2633 {
+    top: 0px;
+    left: 0px;
+    width: 176px;
+    height: 48px;
+    display: flex;
+    padding: 12px 12px 12px 4px;
+    overflow: hidden;
+    position: absolute;
+    box-sizing: border-box;
+    flex-shrink: 0;
+    border-color: transparent;
+    margin-right: 0;
+    border-radius: 8px;
+    margin-bottom: 0;
+  }
   .qunlthitb-vuesaxoutlinesetting {
     width: 20px;
     height: 20px;
@@ -8431,7 +8446,7 @@
   .cpnhtthitb-button09 {
     top: 0px;
     left: 147px;
-    width: 115px;
+    width: 120px;
     height: 48px;
     display: flex;
     padding: 10px 24px;

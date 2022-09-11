@@ -16,9 +16,9 @@ class ServiceController extends Controller
      */
     public function index()
     {   
-        $services = Service::latest()->paginate(2);
+        $services = Service::latest()->paginate(10);
         if ($key = request()->key) {
-            $services = Service::orderBy('id', 'desc')->where('mathietbi','LIKE','%'.$key."%")->paginate(5);
+            $services = Service::orderBy('id', 'desc')->where('tendichvu','LIKE','%'.$key."%")->paginate(10);
         }
         return view('service.index',compact('services'));
             //  ->with('i', (request()->input('page', 1) - 1) * 5);
@@ -43,8 +43,8 @@ class ServiceController extends Controller
     public function store(Request $request)
     {
         $request->validate([
-            'mathietbi' => 'required',
-            
+            'madichvu' => 'required',
+        'tendichvu' => 'required',
         ]);
       
         Service::create($request->all());
@@ -85,8 +85,8 @@ class ServiceController extends Controller
     public function update(Request $request, Service $service)
     {
         $request->validate([
-            'mathietbi' => 'required',
-            
+            'madichvu' => 'required',
+            'tendichvu' => 'required',
         ]);
       
         $service->update($request->all());

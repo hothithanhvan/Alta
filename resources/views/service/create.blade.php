@@ -65,6 +65,9 @@
           <span class="thmdchv-text10 2424Bold">
             <span>Quản lý dịch vụ</span>
           </span>
+
+          <form action="{{ route('service.store') }}" method="POST">
+            @csrf
           <div class="thmdchv-frame624726">
             <span class="thmdchv-text12 2020Bold">
               <span>Thông tin dịch vụ</span>
@@ -83,7 +86,7 @@
                   class="thmdchv-vector02"
                 />
               </div>
-              <input type="text" placeholder="201" class="thmdchv-input" />
+              <input type="text" name="madichvu" class="thmdchv-input" />
             </div>
             <div class="thmdchv-frame624732">
               <div class="thmdchv-warningtext1">
@@ -98,7 +101,7 @@
               </div>
               <input
                 type="text"
-                placeholder="Khám tim mạch"
+                name="tendichvu"
                 class="thmdchv-input1"
               />
             </div>
@@ -172,15 +175,14 @@
           </div>
           
           <div class="thmdchv-frame624737">
-            <button class="thmdchv-button3">
-              <span class="thmdchv-text48"><span>Thêm dịch vụ</span></span>
-            </button>
+            <button type="submit" class="thmdchv-button3 thmdchv-text48">Thêm dịch vụ</button>
             <button class="thmdchv-button4">
               <span class="thmdchv-text50"><span>Hủy bỏ</span></span>
             </button>
           </div>
         </div>
       </div>
+</form>
     </div>
   </body>
 </html>

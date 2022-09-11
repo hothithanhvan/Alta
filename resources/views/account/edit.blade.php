@@ -67,6 +67,9 @@
           <span class="cpnhttikhon-text10 2424Bold">
             <span>Quản lý tài khoản</span>
           </span>
+          <form action="{{ route('account.update',$account->id) }}" method="POST">
+                    @csrf
+                    @method('PUT')
           <div class="cpnhttikhon-frame624726">
             <span class="cpnhttikhon-text12 2020Bold">
               <span>Thông tin tài khoản</span>
@@ -84,8 +87,8 @@
                 />
               </div>
               <input
-                type="text"
-                placeholder="Nguyen Van A"
+                type="text" name="hoten"
+                value="{{$account->hoten}}"
                 class="cpnhttikhon-input"
               />
             </div>
@@ -101,8 +104,8 @@
                 />
               </div>
               <input
-                type="text"
-                placeholder="0902345678"
+                type="text" name="sdt"
+                value="{{$account->sdt}}"
                 class="cpnhttikhon-input1"
               />
             </div>
@@ -118,12 +121,12 @@
                 />
               </div>
               <input
-                type="text"
-                placeholder="NguyenA154@gmail.com"
+                type="text" name="email"
+                value="{{$account->email}}"
                 class="cpnhttikhon-input2"
               />
             </div>
-            <div class="cpnhttikhon-frame624739">
+            <!-- <div class="cpnhttikhon-frame624739">
               <div class="cpnhttikhon-warningtext3">
                 <span class="cpnhttikhon-text20 1616Semi">
                   <span>Vai trò</span>
@@ -158,7 +161,7 @@
                   <option>2</option>
                 </select>
               </div>
-            </div>
+            </div> -->
             <div class="cpnhttikhon-frame624735">
               <div class="cpnhttikhon-warningtext5">
                 <span class="cpnhttikhon-text28 1616Semi">
@@ -171,12 +174,12 @@
                 />
               </div>
               <input
-                type="text"
-                placeholder="tuyetnguyen123"
+                type="text" name="tendn"
+                value="{{$account->tendn}}"
                 class="cpnhttikhon-input3"
               />
             </div>
-            <div class="cpnhttikhon-frame624745">
+            <!-- <div class="cpnhttikhon-frame624745">
               <div class="cpnhttikhon-warningtext6">
                 <span class="cpnhttikhon-text30 1616Semi">
                   <span>Nhập lại mật khẩu:</span>
@@ -191,11 +194,7 @@
                 <span class="cpnhttikhon-text32 1616Reg">
                   <span>Tuyetnguyen12</span>
                 </span>
-                <img
-                  src="{{asset('playground_assets/ueyei282-mqmq.svg');}}"
-                  alt="ueyeI282"
-                  class="cpnhttikhon-ueye"
-                />
+                
               </div>
             </div>
             <div class="cpnhttikhon-frame624738">
@@ -213,13 +212,9 @@
                 <span class="cpnhttikhon-text36 1616Reg">
                   <span>Tuyetnguyen12</span>
                 </span>
-                <img
-                  src="{{asset('playground_assets/ueyei282-e3mg.svg');}}"
-                  alt="ueyeI282"
-                  class="cpnhttikhon-ueye1"
-                />
+                
               </div>
-            </div>
+            </div> -->
             <div class="cpnhttikhon-frame624744">
               <span class="cpnhttikhon-text38 1414Reg">
                 <span>Là trường thông tin bắt buộc</span>
@@ -232,9 +227,7 @@
             </div>
           </div>
           <div class="cpnhttikhon-frame624737">
-            <button class="cpnhttikhon-button3">
-              <span class="cpnhttikhon-text40"><span>Cập nhật</span></span>
-            </button>
+            <button type="submit" class="cpnhttikhon-button3 cpnhttikhon-text40">Cập nhật</button>
             <button class="cpnhttikhon-button4">
               <span class="cpnhttikhon-text42"><span>Hủy bỏ</span></span>
             </button>

@@ -717,7 +717,6 @@
     top: 192px;
     left: 224px;
     width: 1112px;
-    display: flex;
     overflow: hidden;
     position: absolute;
     box-shadow: 2px 2px 8px 0px rgba(232, 239, 244, 0.800000011920929) ;
@@ -743,7 +742,6 @@
     flex-direction: column;
   }
   .qunlboco-frame624691 {
-    display: flex;
     padding: 0 16px;
     position: relative;
     align-self: stretch;

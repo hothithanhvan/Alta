@@ -82,32 +82,31 @@
                   <td>             </td>
                   <td>             </td>
                 </tr> 
+                @foreach ($services as $service)
                 <tr class="danhschdchv-text019 1414Reg danhschdchv-frame624711">
-                  <td>Mã dịch vụ</td>
-                  <td>Tên dịch vụ</td>
-                  <td>Mô tả</td>
-                  <td>Trạng thái hoạt động</td>
-                  <td>Chi tiết</td>
-                  <td>Cập nhật</td>
+                  <td>{{$service->madichvu}}</td>
+                  <td>{{$service->tendichvu}}</td>
+                  <td></td>
+                  <td></td>
+                  <td>
+                <a href="{{ route('service.show',$service->id) }}">Chi tiết</a>
+            </td>
+            <td>
+            <a href="{{ route('service.edit',$service->id) }}">Cập nhật</a>
+            </td>
                 </tr>
+                @endforeach
               </table>
               <div class="danhschdchv-group318">
             <span class="danhschdchv-text133 1616Semi">
               <span>Từ khoá</span>
             </span>
-              <div class="">
             <form action="" method="get" >
             <input type="text" class="qunlthitb-text220 danhschdchv-input" id="key" 
             name = "key" placeholder ="Nhập từ khóa">
-            <button type="submit">
-            
-            </button>
+            <button type="submit"></button>
+            </form>
             </div>
-            <img
-                src="{{asset('playground_assets/fisearchi284-kqd.svg');}}"
-                alt="fisearchI284"
-                class="danhschdchv-fisearch"
-              />
           </div>
           <div class="danhschdchv-group311">
             <div class="danhschdchv-datepicker">
@@ -142,9 +141,9 @@
             </span>
           </div>
           <div class="danhschdchv-frame105">
-            <div class="danhschdchv-frame1051">
+
              
-           
+            {{ $services->links() }}
             <div class="danhschdchv-frame108">
               <img
                 src="{{asset('playground_assets/fichevrondowni284-sz84.svg');}}"
@@ -157,14 +156,11 @@
             
           <div class="danhschdchv-group319">
             <div class="danhschdchv-dropdown">
-              <span class="danhschdchv-text164 1616Reg">
-                <span>Tất cả</span>
-              </span>
-              <img
-                src="{{asset('playground_assets/fichevrondowni288-ym26.svg');}}"
-                alt="fichevrondownI288"
-                class="danhschdchv-fichevrondown2"
-              />
+              <select class="danhschdchv-text164 1616Reg">
+              <option value="tatca">Tất cả</option>
+          <option value="ngunghd">Ngưng hoạt động</option>
+          <option value="hd">Hoạt động</option>
+              </select>
             </div>
             <span class="danhschdchv-text166 1616Semi">
               <span>Trạng thái hoạt động</span>

@@ -40,15 +40,16 @@ class AccountController extends Controller
      */
     public function store(Request $request)
     {
+        
         $request->validate([
             'tendn' => 'required',
             'hoten' => 'required',
-            'sodt' => 'required'
-            // 'trangthaihoatdong' => 'required',
-            // 'trangthaiketnoi' => 'required',
-            // 'dichvusudung' => 'required',
+            'sdt' => 'required',
+            'email' => 'required',
+            'password' => 'required',
+
         ]);
-      
+
         User::create($request->all());
         return redirect()->route('account.index')
                         ->with('success','account created successfully.');
@@ -62,7 +63,7 @@ class AccountController extends Controller
      */
     public function show(User $account)
     {
-        //
+        return view('login.account',compact('account'));
     }
 
     /**
@@ -88,10 +89,8 @@ class AccountController extends Controller
         $request->validate([
             'tendn' => 'required',
             'hoten' => 'required',
-            'sodt' => 'required'
-            // 'trangthaihoatdong' => 'required',
-            // 'trangthaiketnoi' => 'required',
-            // 'dichvusudung' => 'required',
+            'sdt' => 'required',
+            'email' => 'required',
         ]);
       
         $account->update($request->all());

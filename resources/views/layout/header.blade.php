@@ -125,8 +125,14 @@
       align-items: flex-start;
       padding: 10px;
       border-collapse: collapse;
-      border: 1px solid #ddd;
+      border: 1px solid #ddd !important;
+      border-width: 1px;
     }
+    label {
+    display: inline-block;
+    padding: 1px 5px 1px 1px !important; 
+}
+
   </style>
   <link rel="stylesheet"
     href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap"

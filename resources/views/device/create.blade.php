@@ -102,9 +102,10 @@
                                 <img src="{{asset('playground_assets/vectori334-y6qk.svg');}}" alt="VectorI334"
                                     class="thmthitb-vector05" />
                             </div>
-                            <input type="text" placeholder="Nhập tài khoản"
-                                class="thmthitb-input3 thmthitb-text22 1616Reg" />
-
+                                <select class="thmthitb-input3 thmthitb-text22 1616Reg" >
+                                <option value="1">1</option>
+                                <option value="2">2</option>
+                                </select>
                         </div>
                         <div class="thmthitb-frame624735">
                             <div class="thmthitb-warningtext4">
@@ -134,7 +135,15 @@
                                 <img src="{{asset('playground_assets/vectori334-wl3c.svg');}}" alt="VectorI334"
                                     class="thmthitb-vector08" />
                             </div>
-                            <input type="text" placeholder="Nhập dịch vụ sử dụng" class="thmthitb-input5" />
+                            <div class="thmthitb-input5">
+                            @foreach($services as $dvsd)
+                            <input type="checkbox" name="id{{$dvsd->id}}" value="{{$dvsd->tendichvu}}"
+                            placeholder="Nhập dịch vụ sử dụng"  />
+                            <label for="{{$dvsd->id}}"> {{$dvsd->tendichvu}}</label>
+                            <span></span>
+                            @endforeach
+
+                        </div>
                         </div>
                         <div class="thmthitb-frame624744">
                             <span class="thmthitb-text30 1414Reg">

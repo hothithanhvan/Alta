@@ -27,22 +27,28 @@
             <td class = "qunlthitb-text159">{{ $device->tenthietbi }}</td>
             <td class = "qunlthitb-text159">{{ $device->diachiIP }}</td>
             <td class = "qunlthitb-text159">
-              @if ($device->trangthaihoatdong == 0)
-
+              @if ($device->trangthaihoatdong == 1)
+              <span>Hoạt động</span>
               @else
-
+                <span>Ngưng hoạt động}}</span>
               @endif
             </td>
-            <td class = "qunlthitb-text159">{{ $device->trangthaiketnoi }}</td>
-            <td class = "qunlthitb-text159">{{ $device->dichvusudung }}</td>
+            <td class = "qunlthitb-text159"></td>
+            <td class = "qunlthitb-text159">
+              @foreach($a as $dvsd)
+              @if ($device->mathietbi == $dvsd->mathietbi)
+              {{ $dvsd->tendichvu}}|
+              @endif
+              @endforeach
+            </td>
             <td class = "qunlthitb-text158">
                 <form>
-                <a href="{{ route('device.show',$device->id) }}">Chi tiet</a>
+                <a href="{{ route('device.show',$device->id) }}">Chi tiết</a>
                 </form>
             </td>
             <td class = "qunlthitb-text158">
                 <div>
-            <a href="{{ route('device.edit',$device->id) }}">Cap nhat</a>
+            <a href="{{ route('device.edit',$device->id) }}">Cập nhật</a>
                 </div>
             </td>
           </tr>
@@ -52,29 +58,6 @@
       </div>
     </div>
 
-    <div class="qunlthitb-group319">
-    <span class="qunlthitb-text178 1616Semi">
-        <span>Trạng thái hoạt động</span>
-      </span>
-      <div class="qunlthitb-dropdown">
-          <select class="qunlthitb-text176 1616Reg" name="ketnoi" id="ketnoi">
-          <option value="tatca">Tất cả</option>
-          <option value="ngunghd">Ngưng hoạt động</option>
-          <option value="hd">Hoạt động</option>
-          </select>
-      </div>
-    </div>
-    <div class="qunlthitb-group320">
-    <span class="qunlthitb-text182 1616Semi">
-        <span>Trạng thái kết nối</span>
-      </span>
-      <div class="qunlthitb-dropdown1">
-        <select class="qunlthitb-text176 1616Reg" name="ketnoi" id="ketnoi">
-          <option value="tatca">Tất cả</option>
-          <option value="ketnoi">Kết nối</option>
-          <option value="matkn">Mất kết nối</option>
-          </select>
-      </div>
       
     </div>
     
@@ -93,17 +76,17 @@
           </span>
         </button>
       </div>
-      <div class="qunlthitb-frame625226">
+     <div class="qunlthitb-frame625226"> 
         <div class="qunlthitb-unsplash-fyl8s-m-c2j2q"></div>
         <div class="qunlthitb-group296">
           <span class="qunlthitb-text197 1212Reg">
             <span>Xin chào</span>
           </span>
           <span class="qunlthitb-text199 1616Bold">
-            <span>Lê Quỳnh Ái Vân</span>
+            <span>{{Auth::user()->hoten}}</span>
           </span>
         </div>
-      </div>
+      </div> 
       <div class="qunlthitb-frame271">
         <div class="qunlthitb-vuesaxboldnotification">
           <div class="qunlthitb-vuesaxboldnotification1">
@@ -125,19 +108,43 @@
       </div>
         <a class="qunlthitb-text201" href="{{ route('device.create') }}"> Thêm thiết bị</a>
     </div>
-    <div class="qunlthitb-group318">
-      <div class="qunlthitb-input">
-        <form action="" method="get" >
-        <input type="text" class="qunlthitb-text220" id="key" 
-        name = "key" placeholder ="Nhập từ khóa">
-        <button type="submit">
-         <!-- <img src="{{asset('playground_assets/fisearchi218-d31.svg');}}" alt="fisearchI218" class="qunlthitb-fisearch" /> -->
-        </button>
-        </form>
+
+    </div>   
+    <form action="" method="get" >
+    <div class="qunlthitb-group319">
+    <span class="qunlthitb-text178 1616Semi">
+        <span>Trạng thái hoạt động</span>
+      </span>
+      <div class="qunlthitb-dropdown">
+          <select class="qunlthitb-text176 1616Reg" name="hoatdong" id="hoatdong">
+          <option value="0">Tất cả</option>
+          <option value="1">Hoạt động</option>
+          <option value="2">Ngưng hoạt động</option>
+          </select>
       </div>
-      <span class="qunlthitb-text222 1616Semi"><span>Từ khoá</span></span>
-      
-    </div>        
+    </div>
+    <div class="qunlthitb-group320">
+    <span class="qunlthitb-text182 1616Semi">
+        <span>Trạng thái kết nối</span>
+      </span>
+      <div class="qunlthitb-dropdown1">
+        <select class="qunlthitb-text176 1616Reg" name="ketnoi" id="ketnoi">
+          <option value="0">Tất cả</option>
+          <option value="1">Kết nối</option>
+          <option value="2">Mất kết nối</option>
+          </select>
+      </div>
+    </div>
+    <div class="qunlthitb-group318">
+    <span class="qunlthitb-text222 1616Semi">Từ khoá</span>
+      <div class="qunlthitb-input">   
+    <input type="text" class="qunlthitb-text220" id="key" name = "key" placeholder ="Nhập từ khóa">      
+      <button type="submit">
+         <img src="{{asset('playground_assets/fisearchi218-d31.svg');}}" alt="fisearchI218" class="qunlthitb-fisearch" />
+      </button>
+    </div>
+    </div>
+        </form>
   </div>
   </div>
   <div class="qunlthitb-frame105">

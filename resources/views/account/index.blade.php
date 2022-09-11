@@ -17,8 +17,7 @@
                         </div>
                     </div>
                     <span class="danhschtikhon-text">
-                    <a class="danhschtikhon-text" href="{{ route('account.create') }}"> Thêm tài khoản</a>
-
+                        <a class="danhschtikhon-text" href="{{ route('account.create') }}"> Thêm tài khoản</a>
                 </div>
                 <div class="danhschtikhon-topbar">
                     <div class="danhschtikhon-breadcrumbs">
@@ -36,7 +35,9 @@
                         </button>
                     </div>
                     <div class="danhschtikhon-frame625226">
-                        <div class="danhschtikhon-unsplash-fyl8s-m-c2j2q"></div>
+                        <div class="danhschtikhon-unsplash-fyl8s-m-c2j2q">
+
+                        </div>
                         <div class="danhschtikhon-group296">
                             <span class="danhschtikhon-text009 1212Reg">
                                 <span>Xin chào</span>
@@ -62,60 +63,57 @@
                 <span class="danhschtikhon-text013 2424Bold">
                     <span>Danh sách tài khoản</span>
                 </span>
-
-                        <table class="danhschtikhon-frame624720 danhschtikhon-text015">
-                          <tr class="danhschtikhon-frame624691">
-                            <td>Tên đăng nhập</td>
-                            <td>Họ tên</td>
-                            <td>Số điện thoại</td>
-                            <td>Email</td>
-                            <td>Vai trò</td>
-                            <td>Trạng thái hoạt động</td>
-                            <td>               </td>
-                          </tr>
-                          @foreach($accounts as $account) {
-                          <tr class="danhschtikhon-text017">
-                            <td>{{$account->tendn}}</td>
-                            <td>van</td>
-                            <td>van</td>
-                            <td>van</td>
-                            <td>van</td>
-                            <td>van</td>
-                            <td>
+                <table class="danhschtikhon-frame624720 danhschtikhon-text015">
+                    <tr class="danhschtikhon-frame624691">
+                        <td>Tên đăng nhập</td>
+                        <td>Họ tên</td>
+                        <td>Số điện thoại</td>
+                        <td>Email</td>
+                        <td>Vai trò</td>
+                        <td>Trạng thái hoạt động</td>
+                        <td> </td>
+                    </tr>
+                    @foreach($accounts as $account)
+                    <tr class="danhschtikhon-text017">
+                        <td>{{$account->tendn}}</td>
+                        <td>{{$account->hoten}}</td>
+                        <td>{{$account->sdt}}</td>
+                        <td>{{$account->email}}</td>
+                        <td>{{$account->vaitro}}</td>
+                        <td>van</td>
+                        <td>
                             <a href="{{ route('account.edit',$account->id) }}">Cap nhat</a>
-                            </td>
-
-                          </tr>
-                          @endforeach
-
-                        </table>
-                    
-                        <div class="danhschtikhon-group318">
-                            <div class="danhschtikhon-input">
-                                <span class="danhschtikhon-text153">
-                                    <span>Nhập từ khóa</span>
-                                </span>
+                        </td>
+                    </tr>
+                    @endforeach
+                </table>
+                <div class="danhschtikhon-group318">
+                    <form>
+                        <div class="danhschtikhon-input">
+                            <input type="text" name="key" placeholder="Nhập từ khóa" class="danhschtikhon-text153">
+                            <button type="submit">
                                 <img src="{{asset('playground_assets/fisearchi282-5iy7.svg');}}" alt="fisearchI282"
                                     class="danhschtikhon-fisearch" />
-                            </div>
-                            <span class="danhschtikhon-text155 1616Semi">
-                                <span>Từ khoá</span>
-                            </span>
+                            </button>
                         </div>
+                    </form>
+                    <span class="danhschtikhon-text155 1616Semi">
+                        <span>Từ khoá</span>
+                    </span>
+                </div>
 
-                                <div class="danhschtikhon-group319">
-                                    <div class="danhschtikhon-dropdown">
-                                        <span class="danhschtikhon-text180 1616Reg">
-                                            <span>Tất cả</span>
-                                        </span>
-                                        <img src="{{asset('playground_assets/fichevrondowni282-ueiw.svg');}}"
-                                            alt="fichevrondownI282" class="danhschtikhon-fichevrondown2" />
-                                    </div>
-                                    <span class="danhschtikhon-text182 1616Semi">
-                                        <span>Tên vai trò</span>
-                                    </span>
-                                </div>
-                            </div>
-                        </div>            
-
+                <div class="danhschtikhon-group319">
+                    <select class="danhschtikhon-dropdown danhschtikhon-text180 1616Reg">
+                        <option>1</option>
+                        <option>2</option>
+                    </select>
+                    <span class="danhschtikhon-text182 1616Semi">
+                    <span>Tên vai trò</span>
+                </span>
+                </div>
+                
+            </div>
+        </div>
+    </div>
 </body>
+</html>

@@ -15015,9 +15015,9 @@
   }
   .qunmtkhu-text {
     top: 320px;
-    left: 209px;
+    left: 200px;
     color: var(--dl-color-gray-gray500);
-    width: 170px;
+    width: 300px;
     height: auto;
     position: absolute;
     align-self: auto;
@@ -15082,8 +15082,8 @@
     line-height: 27px;
   }
   .qunmtkhu-button {
-    top: 483px;
-    left: 118px;
+    top: 550px;
+    left: 200px;
     width: 162px;
     height: 40px;
     display: flex;
@@ -15102,15 +15102,7 @@
     margin-bottom: 0;
     justify-content: center;
   }
-  .qunmtkhu-text4 {
-    color: var(--dl-color-orange-orange400);
-    height: auto;
-    align-self: auto;
-    text-align: left;
-    line-height: 24px;
-    margin-right: 0;
-    margin-bottom: 0;
-  }
+
   .qunmtkhu-button1 {
     top: 483px;
     left: 304px;

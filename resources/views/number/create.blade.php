@@ -67,16 +67,16 @@
             <span class="cpsmi-text28 2020Bold">
               <span>Dịch vụ khách hàng lựa chọn</span>
             </span>
-            <div class="cpsmi-dropdown">
-              <span class="cpsmi-text30 1616Reg">
-                <span>Chọn dịch vụ</span>
-              </span>
-              <img
-                src="{{asset('playground_assets/fichevrondowni339-oexw.svg');}}"
-                alt="fichevrondownI339"
-                class="cpsmi-fichevrondown"
-              />
-            </div>
+            
+              <select class="cpsmi-text30 cpsmi-dropdown 1616Reg">
+                
+              <option value="tatca" >Tất cả</option>
+              @foreach($services as $service)
+                <option value="{{ $service->tendichvu}}" >{{ $service->tendichvu }}</option>
+                @endforeach
+              </select>
+            
+            
             <div class="cpsmi-frame624757">
               <div class="cpsmi-frame624750">
                 <button class="cpsmi-button3">

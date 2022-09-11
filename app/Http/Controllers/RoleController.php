@@ -14,7 +14,12 @@ class RoleController extends Controller
      */
     public function index()
     {
-        //
+        $roles = Role::latest()->paginate(2);
+        if ($key = request()->key) {
+            $roles = Role::orderBy('id', 'desc')->where('mathietbi','LIKE','%'.$key."%")->paginate(5);
+        }
+        return view('role.index',compact('roles'))
+                 ->with('i', (request()->input('page', 1) - 1) * 5);
     }
 
     /**
@@ -24,7 +29,7 @@ class RoleController extends Controller
      */
     public function create()
     {
-        //
+        return view('role.create');
     }
 
     /**
@@ -35,7 +40,15 @@ class RoleController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $request->validate([
+            'tenvaitro' => 'required',
+            'mota' => 'required',
+        ]);
+      
+        Role::create($request->all());
+        return redirect()->route('role.index')
+                        ->with('success','device created successfully.');
+                        
     }
 
     /**
@@ -57,7 +70,7 @@ class RoleController extends Controller
      */
     public function edit(Role $role)
     {
-        //
+        return view('role.edit',compact('role'));
     }
 
     /**
@@ -69,7 +82,16 @@ class RoleController extends Controller
      */
     public function update(Request $request, Role $role)
     {
-        //
+        $request->validate([
+            'tenvaitro' => 'required',
+            // 'songuoidung' => 'required',
+            'mota' => 'required',
+        ]);
+      
+        $role->update($request->all());
+      
+        return redirect()->route('role.index')
+                        ->with('success','role updated successfully');
     }
 
     /**

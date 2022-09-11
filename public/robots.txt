@@ -9,3 +9,5 @@ php artisan make:controller NumberController --resource --model=Number
 php artisan make:controller DashboardController --resource --model=Dashboard
 php artisan make:controller RoleController --resource --model=Role
 php artisan make:controller ReportController --resource --model=Report
+
+$2y$10$6Yfxh4vRmJkd3jYtpWMgmeJm6PFVrW5xFGvU2/94G9oub7I/c6CEW

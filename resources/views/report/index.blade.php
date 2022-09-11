@@ -79,20 +79,16 @@
               <span>Chọn thời gian</span>
             </span>
           </div>
-          <div class="qunlboco-frame624720">
-            <div class="qunlboco-frame624718">
-              <div class="qunlboco-frame624691">
-                <span class="qunlboco-text014 1616Bold">
-                  <span>Số thứ tự</span>
-                </span>
-                <div class="qunlboco-vuesaxboldarrowright02">
-                  <div class="qunlboco-vuesaxboldarrowright03">
-                    <div class="qunlboco-arrowright1">
-                    
-                    </div>
-                  </div>
-                </div>
-              </div>
+          <table class="qunlboco-frame624720">
+              <tr class="qunlboco-frame624691 qunlboco-text014 1616Bold">
+                <td>STT</td>
+                <td>Tên dịch vụ</td>
+                <td>Thời gian cấp</td>
+                <td>Tình trạng</td>
+                <td>Nguồn cấp</td>
+                
+</tr>
+</table>
               <div class="qunlboco-frame624710">
                 <span class="qunlboco-text016 1414Reg">
                   <span>2010001</span>

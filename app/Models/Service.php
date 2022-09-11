@@ -8,11 +8,12 @@ use Illuminate\Database\Eloquent\Model;
 class Service extends Model
 {
     use HasFactory;
-    protected $filltable = [
+
+    protected $fillable = [
         'madichvu',
-        'tendichvu',
-        'mota',
-        'trangthaihoatdong',
+        'tendichvu'
+        // 'mota',
+        // 'trangthaihoatdong',
 
     ];
 }

@@ -3956,7 +3956,7 @@
     width: 130px;
     height: 44.15273666381836px;
     display: flex;
-    padding: 8px 16px;
+    padding: 8px 4px;
     overflow: hidden;
     position: absolute;
     box-sizing: border-box;
@@ -4131,7 +4131,7 @@
     width: 130px;
     height: 44.152740478515625px;
     display: flex;
-    padding: 8px 16px;
+    padding: 8px 4px;
     overflow: hidden;
     position: absolute;
     box-sizing: border-box;
@@ -7674,7 +7674,7 @@
     width: 170px;
     height: 44px;
     display: flex;
-    padding: 8px 16px;
+    padding: 8px 8px;
     overflow: hidden;
     position: absolute;
     box-sizing: border-box;
@@ -9126,6 +9126,7 @@
     align-self: auto;
     text-align: left;
     line-height: 24px;
+    width: 100%;
   }
   .danhschdchv-fichevrondown2 {
     width: 24px;

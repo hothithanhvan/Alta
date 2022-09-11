@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Number;
+use App\Models\Service;
 use Illuminate\Http\Request;
 
 class NumberController extends Controller
@@ -14,6 +15,7 @@ class NumberController extends Controller
      */
     public function index()
     {
+        
         $numbers = Number::latest()->paginate(2);
         if ($key = request()->key) {
             $numbers = Number::orderBy('id', 'desc')->where('mathietbi','LIKE','%'.$key."%")->paginate(5);
@@ -29,7 +31,8 @@ class NumberController extends Controller
      */
     public function create()
     {
-        return view('number.create');
+        $services = Service::get();
+        return view('number.create',compact('services'));
     }
 
     /**
