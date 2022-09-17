@@ -1,5 +1,6 @@
 @extends('layout.menubar')
 @extends('layout.header')
+@extends('layout.hello')
 
 <body>
     <div>
@@ -29,17 +30,7 @@
                             </span>
                         </button>
                     </div>
-                    <div class="thmvaitr-frame625226">
-                        <div class="thmvaitr-unsplash-fyl8s-m-c2j2q"></div>
-                        <div class="thmvaitr-group296">
-                            <span class="thmvaitr-text06 1212Reg">
-                                <span>Xin chào</span>
-                            </span>
-                            <span class="thmvaitr-text08 1616Bold">
-                                <span>Lê Quỳnh Ái Vân</span>
-                            </span>
-                        </div>
-                    </div>
+
                     <div class="thmvaitr-frame271">
                         <div class="thmvaitr-vuesaxboldnotification">
                             <div class="thmvaitr-vuesaxboldnotification1">

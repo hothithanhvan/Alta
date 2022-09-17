@@ -15,6 +15,19 @@ return new class extends Migration
     {
         Schema::create('numbers', function (Blueprint $table) {
             $table->id();
+            $table->string('tendichvu');
+            $table->string('thoigiancap');
+            $table->string('hansd');
+            $table->string('stt');
+            $table->string('tenkh');
+            $table->string('nguoncap');
+            $table->string('email');
+            $table->integer('trangthai')->default(0);
+            $table->string('sdt');
+            $table->dateTime('date');
+            $table->string('day');
+            $table->string('month');
+            $table->string('year');
             $table->timestamps();
         });
     }

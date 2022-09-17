@@ -1,5 +1,7 @@
 @extends('layout.menubar')
 @extends('layout.header')
+@extends('layout.hello')
+
 <body>
     <div>
         <link href="{{asset('css/dangnhap.css');}}" rel="stylesheet" />
@@ -14,17 +16,7 @@
                             </span>
                         </button>
                     </div>
-                    <div class="tikhoncnhn-frame625226">
-                        <div class="tikhoncnhn-unsplash-fyl8s-m-c2j2q"></div>
-                        <div class="tikhoncnhn-group296">
-                            <span class="tikhoncnhn-text02 1212Reg">
-                                <span>Xin chào</span>
-                            </span>
-                            <span class="tikhoncnhn-text04 1616Bold">
-                                <span>{{Auth::user()->hoten}}</span>
-                            </span>
-                        </div>
-                    </div>
+
                     <div class="tikhoncnhn-frame271">
                         <div class="tikhoncnhn-vuesaxboldnotification">
                             <div class="tikhoncnhn-vuesaxboldnotification1">
@@ -41,13 +33,16 @@
                 @foreach($users as $user)
                 <div class="tikhoncnhn-frame625106">
                     <div class="tikhoncnhn-group625151">
-                        <div class="tikhoncnhn-group624818">
-                            <div class="tikhoncnhn-unsplash-fyl8s-m-c2j2q1"></div>
+                        <!-- <div class="tikhoncnhn-group624818"> -->
+                            <!-- <div class="tikhoncnhn-unsplash-fyl8s-m-c2j2q1"> -->
+                            <img src="{{asset('playground_assets/sasuke.png');}}" class="tikhoncnhn-group624818"/>
+
+                            <!-- </div> -->
                             <div class="tikhoncnhn-group624817">
                                 <img src="{{asset('playground_assets/ellipse81945-aiv-200h.png');}}" alt=" Ellipse81945" class="tikhoncnhn-ellipse81" />
                                 <img src="{{asset('playground_assets/camera1945-x2c9.svg');}}" alt=" camera1945" class="tikhoncnhn-camera" />
                             </div>
-                        </div>
+                       
                         <span class="tikhoncnhn-text20 2424Bold">
                             <span>{{$user->hoten}}</span>
                         </span>

@@ -1,5 +1,7 @@
 @extends('layout.menubar')
 @extends('layout.header')
+@extends('layout.hello')
+
   <body>
     <div>
       <link href="{{asset('css/dichvu.css');}}" rel="stylesheet" />
@@ -38,15 +40,7 @@
                 <span class="cpnht-text06 2020Bold"><span>Cập nhật</span></span>
               </button>
             </div>
-            <div class="cpnht-frame625226">
-              <div class="cpnht-unsplash-fyl8s-m-c2j2q"></div>
-              <div class="cpnht-group296">
-                <span class="cpnht-text08 1212Reg"><span>Xin chào</span></span>
-                <span class="cpnht-text10 1616Bold">
-                  <span>Lê Quỳnh Ái Vân</span>
-                </span>
-              </div>
-            </div>
+
             <div class="cpnht-frame271">
               <div class="cpnht-vuesaxboldnotification">
                 <div class="cpnht-vuesaxboldnotification1">

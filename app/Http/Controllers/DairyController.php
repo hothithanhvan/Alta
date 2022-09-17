@@ -1,85 +1,41 @@
 <?php
 
+
 namespace App\Http\Controllers;
 
-use App\Models\Dairy;
+
 use Illuminate\Http\Request;
+use App\Helpers\LogActivity;
+use Illuminate\Database\Eloquent\Collection;
 
 class DairyController extends Controller
 {
     /**
-     * Display a listing of the resource.
+     * Create a new controller instance.
+     *
+     * @return void
+     */
+    public function __construct()
+    {
+
+
+    }
+    /**
+     * Show the application dashboard.
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
-    {
-        return view('dairy.dairyUser');
-    }
+
 
     /**
-     * Show the form for creating a new resource.
+     * Show the application dashboard.
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
+    public function logActivity()
     {
-        //
-    }
+        $logs = LogActivity::logActivityLists();
 
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
-    public function store(Request $request)
-    {
-        //
-    }
-
-    /**
-     * Display the specified resource.
-     *
-     * @param  \App\Models\Dairy  $dairy
-     * @return \Illuminate\Http\Response
-     */
-    public function show(Dairy $dairy)
-    {
-        //
-    }
-
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  \App\Models\Dairy  $dairy
-     * @return \Illuminate\Http\Response
-     */
-    public function edit(Dairy $dairy)
-    {
-        //
-    }
-
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\Dairy  $dairy
-     * @return \Illuminate\Http\Response
-     */
-    public function update(Request $request, Dairy $dairy)
-    {
-        //
-    }
-
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  \App\Models\Dairy  $dairy
-     * @return \Illuminate\Http\Response
-     */
-    public function destroy(Dairy $dairy)
-    {
-        //
+        return view('dairy.dairyUser',compact('logs'));
     }
 }

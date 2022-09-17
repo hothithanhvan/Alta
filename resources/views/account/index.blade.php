@@ -1,6 +1,6 @@
 @extends('layout.menubar')
 @extends('layout.header')
-
+@extends('layout.hello')
 <body>
     <div>
         <link href="{{asset('css/taikhoan.css')}}" rel="stylesheet" />
@@ -34,19 +34,7 @@
                             </span>
                         </button>
                     </div>
-                    <div class="danhschtikhon-frame625226">
-                        <div class="danhschtikhon-unsplash-fyl8s-m-c2j2q">
 
-                        </div>
-                        <div class="danhschtikhon-group296">
-                            <span class="danhschtikhon-text009 1212Reg">
-                                <span>Xin chào</span>
-                            </span>
-                            <span class="danhschtikhon-text011 1616Bold">
-                                <span>Lê Quỳnh Ái Vân</span>
-                            </span>
-                        </div>
-                    </div>
                     <div class="danhschtikhon-frame271">
                         <div class="danhschtikhon-vuesaxboldnotification">
                             <div class="danhschtikhon-vuesaxboldnotification1">
@@ -80,7 +68,7 @@
                         <td>{{$account->sdt}}</td>
                         <td>{{$account->email}}</td>
                         <td>{{$account->vaitro}}</td>
-                        <td>van</td>
+                        <td>{{$account->trangthaihoatdong}}</td>
                         <td>
                             <a href="{{ route('account.edit',$account->id) }}">Cap nhat</a>
                         </td>

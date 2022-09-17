@@ -1,5 +1,7 @@
 @extends('layout.menubar')
 @extends('layout.header')
+@extends('layout.hello')
+
       <div class="thngtinchitit-container">
         <div class="thngtinchitit-thngtinchitit">
           <span class="thngtinchitit-text 2424Bold">
@@ -33,17 +35,7 @@
                 </span>
               </button>
             </div>
-            <div class="thngtinchitit-frame625226">
-              <div class="thngtinchitit-unsplash-fyl8s-m-c2j2q"></div>
-              <div class="thngtinchitit-group296">
-                <span class="thngtinchitit-text08 1212Reg">
-                  <span>Xin chào</span>
-                </span>
-                <span class="thngtinchitit-text10 1616Bold">
-                  <span>Lê Quỳnh Ái Vân</span>
-                </span>
-              </div>
-            </div>
+
             <div class="thngtinchitit-frame271">
               <div class="thngtinchitit-vuesaxboldnotification">
                 <div class="thngtinchitit-vuesaxboldnotification1">

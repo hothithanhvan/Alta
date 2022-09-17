@@ -88,6 +88,15 @@
                 <td>Nguồn cấp</td>
                 
 </tr>
+@foreach ($reports as $report)
+<tr>
+<td>{{$report->stt}}</td>
+<td>{{$report->tendichvu}}</td>
+<td>{{$report->thoigiancap}}</td>
+<td>{{$report->trangthai}}</td>
+<td>{{$report->nguoncap}}</td>
+</tr>
+@endforeach
 </table>
               <div class="qunlboco-frame624710">
                 <span class="qunlboco-text016 1414Reg">

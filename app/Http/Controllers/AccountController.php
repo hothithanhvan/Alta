@@ -3,7 +3,9 @@
 namespace App\Http\Controllers;
 
 use App\Models\User;
+use App\Models\Role;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class AccountController extends Controller
 {
@@ -14,7 +16,7 @@ class AccountController extends Controller
      */
     public function index()
     {
-        $accounts = User::latest()->paginate(2);
+        $accounts = User::latest()->paginate(10);
         if ($key = request()->key) {
             $accounts = User::orderBy('id', 'desc')->where('hoten','LIKE','%'.$key."%")->paginate(5);
         }
@@ -29,7 +31,8 @@ class AccountController extends Controller
      */
     public function create()
     {
-        return view('account.create');
+        $role = DB::table('roles')->get();
+        return view('account.create',compact('role'));
     }
 
     /**
@@ -47,9 +50,8 @@ class AccountController extends Controller
             'sdt' => 'required',
             'email' => 'required',
             'password' => 'required',
-
+            'vaitro' => 'required',
         ]);
-
         User::create($request->all());
         return redirect()->route('account.index')
                         ->with('success','account created successfully.');
@@ -74,7 +76,8 @@ class AccountController extends Controller
      */
     public function edit(User $account)
     {
-        return view('account.edit',compact('account'));
+        $role = DB::table('roles')->get();
+        return view('account.edit',compact('role','account'));
     }
 
     /**
@@ -91,8 +94,8 @@ class AccountController extends Controller
             'hoten' => 'required',
             'sdt' => 'required',
             'email' => 'required',
+            'vaitro' => 'required',
         ]);
-      
         $account->update($request->all());
         return redirect()->route('account.index')
                         ->with('success','account updated successfully.');

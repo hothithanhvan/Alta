@@ -1,5 +1,7 @@
 @extends('layout.menubar')
 @extends('layout.header')
+@extends('layout.hello')
+
 <body>
     <div>
         <link href="{{asset('css/thietbi.css');}}" rel="stylesheet" />
@@ -31,17 +33,7 @@
                             </span>
                         </button>
                     </div>
-                    <div class="thmthitb-frame625226">
-                        <div class="thmthitb-unsplash-fyl8s-m-c2j2q"></div>
-                        <div class="thmthitb-group296">
-                            <span class="thmthitb-text08 1212Reg">
-                                <span>Xin chào</span>
-                            </span>
-                            <span class="thmthitb-text10 1616Bold">
-                                <span>Lê Quỳnh Ái Vân</span>
-                            </span>
-                        </div>
-                    </div>
+ 
                     <div class="thmthitb-frame271">
                         <div class="thmthitb-vuesaxboldnotification">
                             <div class="thmthitb-vuesaxboldnotification1">

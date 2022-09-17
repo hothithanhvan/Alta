@@ -1,5 +1,6 @@
 @extends('layout.menubar')
 @extends('layout.header')
+@extends('layout.hello')
   <body>
     <div>
       <link href="{{asset('css/taikhoan.css')}}" rel="stylesheet" />
@@ -34,17 +35,7 @@
                 </span>
               </button>
             </div>
-            <div class="cpnhttikhon-frame625226">
-              <div class="cpnhttikhon-unsplash-fyl8s-m-c2j2q"></div>
-              <div class="cpnhttikhon-group296">
-                <span class="cpnhttikhon-text06 1212Reg">
-                  <span>Xin chào</span>
-                </span>
-                <span class="cpnhttikhon-text08 1616Bold">
-                  <span>Lê Quỳnh Ái Vân</span>
-                </span>
-              </div>
-            </div>
+
             <div class="cpnhttikhon-frame271">
               <div class="cpnhttikhon-vuesaxboldnotification">
                 <div class="cpnhttikhon-vuesaxboldnotification1">
@@ -126,7 +117,7 @@
                 class="cpnhttikhon-input2"
               />
             </div>
-            <!-- <div class="cpnhttikhon-frame624739">
+            <div class="cpnhttikhon-frame624739">
               <div class="cpnhttikhon-warningtext3">
                 <span class="cpnhttikhon-text20 1616Semi">
                   <span>Vai trò</span>
@@ -138,9 +129,14 @@
                 />
               </div>
               <div class="cpnhttikhon-dropdown">
-                <select class=" cpnhttikhon-text22 1616Reg">
-                  <option id="1">1</option>
-                  <option>2</option>
+                <select name="vaitro" class="cpnhttikhon-text22 1616Reg">
+                @foreach($role as $role)
+                @if ($account->vaitro === $role->tenvaitro)
+                <option selected value="{{ $role->tenvaitro }}">{{ $role->tenvaitro}}</option>
+                @else
+                    <option value="{{ $role->tenvaitro }}">{{ $role->tenvaitro}}</option>
+                    @endif
+                    @endforeach
                 </select>
               </div>
             </div>
@@ -161,7 +157,7 @@
                   <option>2</option>
                 </select>
               </div>
-            </div> -->
+            </div>
             <div class="cpnhttikhon-frame624735">
               <div class="cpnhttikhon-warningtext5">
                 <span class="cpnhttikhon-text28 1616Semi">
@@ -179,7 +175,7 @@
                 class="cpnhttikhon-input3"
               />
             </div>
-            <!-- <div class="cpnhttikhon-frame624745">
+            <div class="cpnhttikhon-frame624745">
               <div class="cpnhttikhon-warningtext6">
                 <span class="cpnhttikhon-text30 1616Semi">
                   <span>Nhập lại mật khẩu:</span>
@@ -192,7 +188,7 @@
               </div>
               <div class="cpnhttikhon-input4">
                 <span class="cpnhttikhon-text32 1616Reg">
-                  <span>Tuyetnguyen12</span>
+                  <span></span>
                 </span>
                 
               </div>
@@ -210,11 +206,11 @@
               </div>
               <div class="cpnhttikhon-input5">
                 <span class="cpnhttikhon-text36 1616Reg">
-                  <span>Tuyetnguyen12</span>
+                  <span></span>
                 </span>
                 
               </div>
-            </div> -->
+            </div>
             <div class="cpnhttikhon-frame624744">
               <span class="cpnhttikhon-text38 1414Reg">
                 <span>Là trường thông tin bắt buộc</span>

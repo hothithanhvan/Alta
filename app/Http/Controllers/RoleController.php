@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Role;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class RoleController extends Controller
 {
@@ -14,11 +15,13 @@ class RoleController extends Controller
      */
     public function index()
     {
+        $users = DB::table('users')->get();
+
         $roles = Role::latest()->paginate(2);
         if ($key = request()->key) {
             $roles = Role::orderBy('id', 'desc')->where('mathietbi','LIKE','%'.$key."%")->paginate(5);
         }
-        return view('role.index',compact('roles'))
+        return view('role.index',compact('roles','users'))
                  ->with('i', (request()->input('page', 1) - 1) * 5);
     }
 

@@ -17,6 +17,13 @@ return new class extends Migration
             $table->id();
             $table->string('madichvu');
             $table->string('tendichvu');
+            $table->string('mota');
+            $table->string('trangthaihoatdong')->default('1');
+            $table->integer('batdau');
+            $table->integer('kethuc');
+            $table->integer('prefix');
+            $table->integer('surfix');
+            $table->boolean('reset');
             $table->timestamps();
         });
     }

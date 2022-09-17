@@ -1,5 +1,7 @@
 @extends('layout.menubar')
 @extends('layout.header')
+@extends('layout.hello')
+
   <body>
     <div>
       <link href="{{asset('css/dichvu.css');}}" rel="stylesheet" />
@@ -32,17 +34,7 @@
                 </span>
               </button>
             </div>
-            <div class="thmdchv-frame625226">
-              <div class="thmdchv-unsplash-fyl8s-m-c2j2q"></div>
-              <div class="thmdchv-group296">
-                <span class="thmdchv-text06 1212Reg">
-                  <span>Xin chào</span>
-                </span>
-                <span class="thmdchv-text08 1616Bold">
-                  <span>Lê Quỳnh Ái Vân</span>
-                </span>
-              </div>
-            </div>
+
             <div class="thmdchv-frame271">
               <div class="thmdchv-vuesaxboldnotification">
                 <div class="thmdchv-vuesaxboldnotification1">

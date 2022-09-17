@@ -1,5 +1,6 @@
 @extends('layout.menubar')
 @extends('layout.header')
+@extends('layout.hello')
 
 <body>
 
@@ -33,17 +34,7 @@
                             </span>
                         </button>
                     </div>
-                    <div class="cpnhtthitb-frame625226">
-                        <div class="cpnhtthitb-unsplash-fyl8s-m-c2j2q"></div>
-                        <div class="cpnhtthitb-group296">
-                            <span class="cpnhtthitb-text08 1212Reg">
-                                <span>Xin chào</span>
-                            </span>
-                            <span class="cpnhtthitb-text10 1616Bold">
-                                <span>Lê Quỳnh Ái Vân</span>
-                            </span>
-                        </div>
-                    </div>
+
                     <div class="cpnhtthitb-frame271">
                         <div class="cpnhtthitb-vuesaxboldnotification">
                             <div class="cpnhtthitb-vuesaxboldnotification1">
@@ -139,10 +130,8 @@
                                 <input checked="checked" type="checkbox" name="id{{$dvsd->id}}"
                                     value="{{$dvsd->tendichvu}}" />
                                 <label for="{{$dvsd->id}}"> {{$c->tendichvu}}</label>
-
                                 <?php $i++; ?>
                                 @endif
-
                                 @endforeach
                                 @if ($i == 0)
                                 <input type="checkbox" name="id{{$dvsd->id}}" value="{{$dvsd->tendichvu}}" />

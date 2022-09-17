@@ -1,5 +1,7 @@
 @extends('layout.menubar')
 @extends('layout.header')
+@extends('layout.hello')
+
 <body>
   <div>
     <link href="{{asset('css/dichvu.css');}}" rel="stylesheet" />
@@ -26,17 +28,7 @@
               </span>
             </button>
           </div>
-          <div class="chitit-frame625226">
-            <div class="chitit-unsplash-fyl8s-m-c2j2q"></div>
-            <div class="chitit-group296">
-              <span class="chitit-text006 1212Reg">
-                <span>Xin chào</span>
-              </span>
-              <span class="chitit-text008 1616Bold">
-                <span>Lê Quỳnh Ái Vân</span>
-              </span>
-            </div>
-          </div>
+
           <div class="chitit-frame271">
             <div class="chitit-vuesaxboldnotification">
               <div class="chitit-vuesaxboldnotification1">

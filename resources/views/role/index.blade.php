@@ -1,5 +1,7 @@
 @extends('layout.menubar')
 @extends('layout.header')
+@extends('layout.hello')
+
   <body>
     <div>
       <link href="{{asset('css/vaitro.css')}}" rel="stylesheet" />
@@ -24,17 +26,7 @@
                 </span>
               </button>
             </div>
-            <div class="qunlvaitr-frame625226">
-              <div class="qunlvaitr-unsplash-fyl8s-m-c2j2q"></div>
-              <div class="qunlvaitr-group296">
-                <span class="qunlvaitr-text04 1212Reg">
-                  <span>Xin chào</span>
-                </span>
-                <span class="qunlvaitr-text06 1616Bold">
-                  <span>Lê Quỳnh Ái Vân</span>
-                </span>
-              </div>
-            </div>
+
             <div class="qunlvaitr-frame271">
               <div class="qunlvaitr-vuesaxboldnotification">
                 <div class="qunlvaitr-vuesaxboldnotification1">
@@ -66,10 +58,16 @@
                 </span> -->
 </tr>
 @foreach($roles as $role)
+<?php $i=0; ?>
 <tr>
- 
 <td>{{$role->tenvaitro}}</td>
-<td>{{$role->songuoidung}}</td>
+@foreach($users as $user)
+  @if($user->vaitro === $role->tenvaitro)
+    <?php $i++; 
+    ?>
+    @endif
+@endforeach
+<td>{{$i}}</td>
 <td>{{$role->mota}}</td>
 <td>
 <a href="{{ route('role.edit',$role->id) }}">Cập nhật</a>

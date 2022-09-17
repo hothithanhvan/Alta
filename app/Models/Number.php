@@ -18,6 +18,7 @@ class Number extends Model
         'nguoncap',
         'sdt',
         'email',
+        'date'
 
     ];
 }

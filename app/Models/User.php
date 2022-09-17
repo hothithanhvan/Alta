@@ -21,7 +21,7 @@ class User extends Authenticatable
         'tendn',
         'email',
         'password',
-        'sodt',
+        'sdt',
         'vaitro',
         'tinhtrang',
         'hoten',

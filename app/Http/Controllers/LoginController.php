@@ -6,12 +6,13 @@ use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Password;
 use Illuminate\Support\Str;
 use App\Http\Controllers\Controller;
-use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Session;
 use Illuminate\Support\Facades\DB;
 use App\Models\User;
-
+use App\Helpers\LogActivity;
+use Illuminate\Http\Request;
+use Illuminate\Support\Carbon;
 
 class LoginController extends Controller
 {
@@ -19,7 +20,7 @@ class LoginController extends Controller
     {
         return view('login.login');
     }
-
+    
     public function store(Request $request)
     {
          
@@ -31,12 +32,12 @@ class LoginController extends Controller
                 'tendn' => $request->input('tendn'),
                 'password' => $request->input('password'),
             ] )) {
+
                 $id = Auth::id();
-                $name = Auth::user()->hoten;
             $users = DB::select('select * from users where id = :id', ['id' => $id]);
+            LogActivity::addToLog('Đăng nhập',now(), Auth::user()->hoten);
             return view('login.account',compact('users'));
-        }
-        
+        } 
         Session::flash('error', 'Email hoặc Password không đúng');
         return redirect()->back();
     }
@@ -74,4 +75,5 @@ class LoginController extends Controller
     }
     return redirect('/');
 }
+
 }

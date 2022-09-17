@@ -4,6 +4,10 @@ namespace App\Http\Controllers;
 
 use App\Models\Dashboard;
 use Illuminate\Http\Request;
+use App\Models\Device;
+use App\Models\Service;
+use App\Models\Number;
+use Illuminate\Support\Facades\DB;
 
 class DashboardController extends Controller
 {
@@ -14,7 +18,45 @@ class DashboardController extends Controller
      */
     public function index()
     {
-        return view('dashboard.dashboardDay');
+        if (Dashboard::get()->first() == null){
+        DB::table('dashboards')->insert([
+            'device_on' => DB::table('devices')->where('trangthaihoatdong', 1)->count(),
+            'device_off' => DB::table('devices')->where('trangthaihoatdong', 0)->count(),
+        ]);
+        DB::table('dashboards')->insert([
+            'service_on' => DB::table('services')->where('trangthaihoatdong', 1)->count(),
+            'service_off' => DB::table('services')->where('trangthaihoatdong', 0)->count(),
+        ]);
+        DB::table('dashboards')->insert([
+            'number_wait' => DB::table('numbers')->where('trangthai', 0)
+            ->where('date',now()->toDateString())->count(),
+            'number_used' => DB::table('numbers')->where('trangthai', 1)
+            ->where('date',now()->toDateString())->count(),
+            'number_pass' => DB::table('numbers')->where('trangthai', 2)
+            ->where('date',now()->toDateString())->count(),
+        ]);
+    }
+    else{
+    DB::table('dashboards')->update([
+        'device_on' => DB::table('devices')->where('trangthaihoatdong', 1)->count(),
+        'device_off' => DB::table('devices')->where('trangthaihoatdong', 0)->count(),
+    ]);
+    DB::table('dashboards')->update([
+        'service_on' => DB::table('services')->where('trangthaihoatdong', 1)->count(),
+        'service_off' => DB::table('services')->where('trangthaihoatdong', 0)->count(),
+    ]);
+    DB::table('dashboards')->update([
+        'number_wait' => DB::table('numbers')->where('trangthai', 0)
+        ->where('date',now()->toDateString())->count(),
+        'number_used' => DB::table('numbers')->where('trangthai', 1)
+        ->where('date',now()->toDateString())->count(),
+        'number_pass' => DB::table('numbers')->where('trangthai', 2)
+        ->where('date',now()->toDateString())->count(),
+    ]);
+}
+
+        $dashboard = Dashboard::get()->first();
+        return view('dashboard.dashboardDay',compact('dashboard'));
     }
 
     /**

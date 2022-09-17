@@ -1,5 +1,8 @@
 @extends('layout.menubar')
 @extends('layout.header')
+@extends('layout.alert')
+@extends('layout.hello')
+
   <body>
     <div>
       <link href="{{asset('css/capso.css');}}" rel="stylesheet" />
@@ -32,15 +35,6 @@
                 </span>
               </button>
             </div>
-            <div class="cpsmi-frame625226">
-              <div class="cpsmi-unsplash-fyl8s-m-c2j2q"></div>
-              <div class="cpsmi-group296">
-                <span class="cpsmi-text06 1212Reg"><span>Xin chào</span></span>
-                <span class="cpsmi-text08 1616Bold">
-                  <span>Lê Quỳnh Ái Vân</span>
-                </span>
-              </div>
-            </div>
             <div class="cpsmi-frame271">
               <div class="cpsmi-vuesaxboldnotification">
                 <div class="cpsmi-vuesaxboldnotification1">
@@ -67,26 +61,22 @@
             <span class="cpsmi-text28 2020Bold">
               <span>Dịch vụ khách hàng lựa chọn</span>
             </span>
-            
-              <select class="cpsmi-text30 cpsmi-dropdown 1616Reg">
-                
-              <option value="tatca" >Tất cả</option>
-              @foreach($services as $service)
-                <option value="{{ $service->tendichvu}}" >{{ $service->tendichvu }}</option>
+            <form action="{{ route('number.store') }}" method="post" >
+              @csrf
+              <select name="tendichvu" class="cpsmi-text30 cpsmi-dropdown 1616Reg">
+                  @foreach($services as $service)
+                <option  value="{{ $service->tendichvu}}" >{{ $service->tendichvu }}</option>
                 @endforeach
               </select>
-            
-            
             <div class="cpsmi-frame624757">
               <div class="cpsmi-frame624750">
-                <button class="cpsmi-button3">
-                  <span class="cpsmi-text32"><span>In số</span></span>
-                </button>
+                <button type="submit" class="cpsmi-button3 cpsmi-text32">In số</button>
                 <button class="cpsmi-button4">
                   <span class="cpsmi-text34"><span>Hủy bỏ</span></span>
                 </button>
               </div>
             </div>
+            </form>
           </div>
         </div>
       </div>

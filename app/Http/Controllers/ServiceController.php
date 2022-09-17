@@ -6,6 +6,9 @@ use App\Http\Controllers\Controller;
 use App\Models\Service;
 use Illuminate\Http\Request;
 //use Illuminate\Support\Facades\DB;
+use App\Helpers\LogActivity;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Carbon;
 
 class ServiceController extends Controller
 {
@@ -20,8 +23,8 @@ class ServiceController extends Controller
         if ($key = request()->key) {
             $services = Service::orderBy('id', 'desc')->where('tendichvu','LIKE','%'.$key."%")->paginate(10);
         }
-        return view('service.index',compact('services'));
-            //  ->with('i', (request()->input('page', 1) - 1) * 5);
+        return view('service.index',compact('services'))
+             ->with('i', (request()->input('page', 1) - 1) * 5);
     }
   
     /**
@@ -48,6 +51,9 @@ class ServiceController extends Controller
         ]);
       
         Service::create($request->all());
+
+        LogActivity::addToLog('Thêm dịch vụ',now(), Auth::user()->hoten);
+        //$logs = LogActivity::logActivityLists();
         return redirect()->route('service.index')
                         ->with('success','service created successfully.');
                         

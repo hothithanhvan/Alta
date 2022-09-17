@@ -1,11 +1,16 @@
 @extends('layout.menubar')
 @extends('layout.header')
+@extends('layout.hello')
+<!DOCTYPE html>
   <body>
     <div>
       <link href="{{asset('css/capso.css');}}" rel="stylesheet" />
-
+      <script  href="{{asset('js/jqueryDateFormat.js');}}"></script>
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.js"></script> 
       <div class="qunlcps-container">
         <div class="qunlcps-qunlcps">
+     
           <div class="qunlcps-component1">
             <div class="qunlcps-vuesaxboldaddsquare">
               <div class="qunlcps-vuesaxboldaddsquare1">
@@ -38,17 +43,7 @@
                 </span>
               </button>
             </div>
-            <div class="qunlcps-frame625226">
-              <div class="qunlcps-unsplash-fyl8s-m-c2j2q"></div>
-              <div class="qunlcps-group296">
-                <span class="qunlcps-text009 1212Reg">
-                  <span>Xin chào</span>
-                </span>
-                <span class="qunlcps-text011 1616Bold">
-                  <span>Lê Quỳnh Ái Vân</span>
-                </span>
-              </div>
-            </div>
+           
             <div class="qunlcps-frame271">
               <div class="qunlcps-vuesaxboldnotification">
                 <div class="qunlcps-vuesaxboldnotification1">
@@ -104,16 +99,16 @@
             <span class="qunlcps-text025 1616Semi"><span>Từ khoá</span></span>
           </div>
           <div class="qunlcps-group311">
-            <div class="qunlcps-datepicker">
+            <div class="qunlcps-datepicker" name="datepicker" id="datepicker">
               <div class="qunlcps-datepicker1">
-
-                  <input type="date" data-date-inline-picker="true" class="qunlcps-text027 1616Reg" />
-
+                  <input name="from_date" id="from_date" 
+                  type="date" value="" class="qunlcps-text027 1616Reg" />
               </div>
               <div class="qunlcps-datepicker2">
-               
-                  <input type="date" data-date-inline-picker="true" class="qunlcps-text027 1616Reg" />
+                  <input name="to_date" id="to_date" 
+                  type="date" value="" class="qunlcps-text027 1616Reg" />
               </div>
+              <!-- data-date-inline-picker="true" -->
               <div class="qunlcps-vuesaxboldarrowright">
                 <div class="qunlcps-vuesaxboldarrowright1">
                   <div class="qunlcps-arrowright">
@@ -141,7 +136,7 @@
             </div>
             <span class="qunlcps-text058 1616Semi"><span>Nguồn cấp</span></span>
           </div>
-          <table class="qunlcps-frame624721">
+          <table class="qunlcps-frame624721" id="table">
               <tr class="qunlcps-frame624691 qunlcps-text060 1616Bold">
                 <td>STT</td>
                 <td>Tên khách hàng</td>
@@ -151,14 +146,99 @@
                 <td>Trạng thái</td>
                 <td>Nguồn cấp</td>
                 <td>     </td>
+                <td>     </td>
               </tr>
-              <tr>
-
+              @foreach($numbers as $number)
+              <tr class="alldata">
+                <td>{{$number->stt}}</td>
+                <td>{{$number->tenkh}}</td>
+                <td>{{$number->tendichvu}}</td>
+                <td>{{$number->thoigiancap}}</td>
+                <td>{{$number->hansd}}</td>
+                <td>
+                @if ($number->trangthai == 0)
+              <span>Đang chờ</span>
+              @elseif ($number->trangthai == 1)
+                <span>Đã sử dụng</span>
+                @else
+                <span>Bỏ qua</span>
+              @endif
+                </td>
+                <td>{{$number->nguoncap}}</td>
+                <td>
+                <a href="{{ route('number.show',$number->id) }}">Chi tiết</a>
+                </td>
+                <td>
+                <a href="{{ route('number.edit',$number->id) }}">Cập nhật</a>
+                </td>
               </tr>
+              @endforeach
               </div>
-              
+             <tbody class="searchdata" id="Content"></tbody> 
 </table>
+<script type="text/javascript">
+ $('#datepicker').on('change', function()
+    {
+        $value1 = $('#from_date').val();
+        $value2 = $('#to_date').val();
+        if (($value1) && ($value2))
+        {
+          $('.alldata').hide();
+          $('.searchdata').show();
+        }
+        else if (!($value1) || !($value2))
+        {
+          $('.alldata').show();
+          $('.searchdata').hide();
+        }
+
+        $.ajax({
+          type: 'get',
+          url : '/number/date/from_date/to_date',
+          data: {'from_date':$value1,'to_date':$value2},
           
+          success:function(data)
+          {
+            console.log(data);
+            $('#Content').html(data);
+          },
+          
+    });
+  })
+
+  // function convertdate(date) {
+  //   let day = date.getDate();
+  //   let month = date.getMonth()+1;
+  //   let year = date.getFullYear();
+  //   const all = [day,month,year];
+    
+  //   return all;
+  // }
+
+  //   $(document).ready(function(){
+  //     jQuery('#datepicker').on('change',function(){
+  //       // var date1 = new Date($('#from_date').val());
+  //       // var date2 = new Date($('#to_date').val());
+
+  //       var date1 = convertdate(new Date($('#from_date').val()));
+  //       var date2 = convertdate(new Date($('#to_date').val()));
+           
+  //                 jQuery.ajax({
+  //                    url : 'number/date',
+  //                    type : "GET",
+  //                   //  dataType : "json",
+  //                   data:{'from_date_d':date1[0],'from_date_m':date1[1],'from_date_y':date1[2], 
+  //                     'to_date_d':date2[0],'to_date_m':date2[1],'to_date_y':date2[2]},
+
+  //                 success:function(data)
+  //                    {
+  //                       console.log(data);
+  //                       $('#Content').html(data);
+  //                    }
+  //           });
+  //   });
+  // })
+  </script>
         </div>
       </div>
     </div>

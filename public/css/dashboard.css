@@ -1597,10 +1597,9 @@
     background-color: var(--dl-color-default-white);
   }
   .dashboardtheongy-frame625210 {
-    top: 11px;
     left: 16px;
-    width: 60px;
-    height: 60px;
+    width: 80px;
+    height: 80px;
     display: flex;
     position: absolute;
     box-sizing: border-box;
@@ -1611,57 +1610,15 @@
     border-radius: 0px 0px 0px 0px;
     margin-bottom: 0;
   }
-  .dashboardtheongy-ellipse11 {
-    top: 0px;
-    left: 0px;
-    width: 60px;
-    height: 60px;
-    position: absolute;
-    box-sizing: border-box;
-    border-color: transparent;
-    margin-right: 0;
-    margin-bottom: 0;
-  }
-  .dashboardtheongy-ellipse13 {
-    top: 5px;
-    left: 5px;
-    width: 50px;
-    height: 50px;
-    position: absolute;
-    box-sizing: border-box;
-    border-color: transparent;
-    margin-right: 0;
-    margin-bottom: 0;
-  }
-  .dashboardtheongy-ellipse14 {
-    top: 5px;
-    left: 5px;
-    width: 50px;
-    height: 50px;
-    position: absolute;
-    box-sizing: border-box;
-    border-color: transparent;
-    margin-right: 0;
-    margin-bottom: 0;
-  }
-  .dashboardtheongy-ellipse12 {
-    top: 0px;
-    left: 0px;
-    width: 60px;
-    height: 60px;
-    position: absolute;
-    box-sizing: border-box;
-    border-color: transparent;
-    margin-right: 0;
-    margin-bottom: 0;
-  }
+
+
   .dashboardtheongy-text081 {
-    top: 18px;
-    left: 15px;
+    top: 33px;
+    left: 17px;
     color: var(--dl-color-gray-gray400text);
     height: auto;
     position: absolute;
-    font-size: 14px;
+    font-size: 10px;
     align-self: auto;
     font-style: Bold;
     text-align: left;
@@ -3239,7 +3196,7 @@
     margin-bottom: 0;
   }
   .dashboardtheongy-frame625120 {
-    top: 40px;
+    top: 10px;
     left: 27px;
     width: 100%;
     display: flex;

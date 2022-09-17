@@ -1,174 +1,159 @@
 @extends('layout.menubar')
 @extends('layout.header')
+@section('title', 'Dịch vụ')
+@extends('layout.hello')
+
+<title>
+	<?php echo 'Dịch vụ' ?>
+</title>
 
 <body>
+	<div>
+		<link href="{{asset('css/dichvu.css');}}" rel="stylesheet" />
 
-    <div>
-        <link href="{{asset('css/thietbi.css')}}" rel="stylesheet" />
+		<div class="danhschdchv-container">
+			<div class="danhschdchv-danhschdchv">
+				<div class="danhschdchv-component2">
+					<div class="danhschdchv-vuesaxboldaddsquare">
+						<div class="danhschdchv-vuesaxboldaddsquare1">
+							<div class="danhschdchv-addsquare">
+								<img src="{{asset('playground_assets/vectori281-58je.svg');}}" alt="VectorI281"
+									class="danhschdchv-vector" />
+							</div>
+						</div>
+					</div>
+					<a class="danhschdchv-text" href="{{ route('service.create') }}">Thêm dịch vụ</a>
+				</div>
+				<div class="danhschdchv-topbar">
+					<div class="danhschdchv-breadcrumbs">
+						<button class="danhschdchv-button">
+							<span class="danhschdchv-text005 2020Bold">
+								<span>Dịch vụ</span>
+							</span>
+						</button>
+						<img src="{{asset('playground_assets/uanglerighti283-mbzb.svg');}}" alt="uanglerightI283"
+							class="danhschdchv-uangleright" />
+						<button class="danhschdchv-button1">
+							<span class="danhschdchv-text007 2020Bold">
+								<span>Danh sách dịch vụ</span>
+							</span>
+						</button>
+					</div>
+					<div class="danhschdchv-group318">
+						<span class="danhschdchv-text133 1616Semi">
+							<span>Từ khoá</span>
+						</span>
+						<form action="" method="get">
+							<input type="text" class="qunlthitb-text220 danhschdchv-input" id="key" name="key"
+								placeholder="Nhập từ khóa">
+							<button type="submit"></button>
+						</form>
+					</div>
+				</div>
+				<div class="danhschdchv-group311">
+					<div class="danhschdchv-datepicker">
+						<div class="danhschdchv-datepicker1">
 
-        <div class="cpnhtthitb-container">
-            <div class="cpnhtthitb-cpnhtthitb">
-                <span class="cpnhtthitb-text 2424Bold">
-                    <span>Quản lý thiết bị</span>
-                </span>
-                <div class="cpnhtthitb-topbar">
-                    <div class="cpnhtthitb-breadcrumbs">
-                        <button class="cpnhtthitb-button">
-                            <span class="cpnhtthitb-text02 2020Bold">
-                                <span>Thiết bị</span>
-                            </span>
-                        </button>
-                        <img src="{{asset('playground_assets/uanglerighti334-sjl.svg');}}" alt="uanglerightI334"
-                            class="cpnhtthitb-uangleright" />
-                        <button class="cpnhtthitb-button01">
-                            <span class="cpnhtthitb-text04 2020Bold">
-                                <span>Danh sách thiết bị</span>
-                            </span>
-                        </button>
-                        <img src="{{asset('playground_assets/uanglerighti334-z4uk.svg');}}" alt="uanglerightI334"
-                            class="cpnhtthitb-uangleright1" />
-                        <button class="cpnhtthitb-button02">
-                            <span class="cpnhtthitb-text06 2020Bold">
-                                <span>Cập nhật thiết bị</span>
-                            </span>
-                        </button>
-                    </div>
-                    <div class="cpnhtthitb-frame625226">
-                        <div class="cpnhtthitb-unsplash-fyl8s-m-c2j2q"></div>
-                        <div class="cpnhtthitb-group296">
-                            <span class="cpnhtthitb-text08 1212Reg">
-                                <span>Xin chào</span>
-                            </span>
-                            <span class="cpnhtthitb-text10 1616Bold">
-                                <span>Lê Quỳnh Ái Vân</span>
-                            </span>
-                        </div>
-                    </div>
-                    <div class="cpnhtthitb-frame271">
-                        <div class="cpnhtthitb-vuesaxboldnotification">
-                            <div class="cpnhtthitb-vuesaxboldnotification1">
-                                <div class="cpnhtthitb-notification">
-                                    <img src="{{asset('playground_assets/vectori334-2v4f.svg');}}" alt="VectorI334"
-                                        class="cpnhtthitb-vector" />
-                                    <img src="{{asset('playground_assets/vectori334-ahz.svg');}}" alt="VectorI334"
-                                        class="cpnhtthitb-vector01" />
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <form action="{{ route('device.update',$device->id) }}" method="POST">
-                    @csrf
-                    @method('PUT')
-                    <div class="cpnhtthitb-frame624726">
-                        <span class="cpnhtthitb-text12 2020Bold">
-                            <span>Thông tin thiết bị</span>
-                        </span>
-                        <div class="cpnhtthitb-frame624731">
-                            <div class="cpnhtthitb-warningtext">
-                                <span class="cpnhtthitb-text14 1616Semi">
-                                    <span>Mã thiết bị:</span>
-                                </span>
-                                <img src="{{asset('playground_assets/vectori334-448c.svg');}}" alt="VectorI334"
-                                    class="cpnhtthitb-vector02" />
-                            </div>
-                            <input type="text" name="mathietbi" value="{{$device->mathietbi}}"
-                                class="cpnhtthitb-input" />
-                        </div>
-                        <div class="cpnhtthitb-frame624732">
-                            <div class="cpnhtthitb-warningtext1">
-                                <span class="cpnhtthitb-text16 1616Semi">
-                                    <span>Tên thiết bị:</span>
-                                </span>
-                                <img src="{{asset('playground_assets/vectori334-ghbp.svg');}}" alt="VectorI334"
-                                    class="cpnhtthitb-vector03" />
-                            </div>
-                            <input type="text" name="tenthietbi" value="{{$device->tenthietbi}}"
-                                class="cpnhtthitb-input1" />
-                        </div>
-                        <div class="cpnhtthitb-frame624733">
-                            <div class="cpnhtthitb-warningtext2">
-                                <span class="cpnhtthitb-text18 1616Semi">
-                                    <span>Địa chỉ IP:</span>
-                                </span>
-                                <img src="{{asset('playground_assets/vectori334-stg9.svg');}}" alt="VectorI334"
-                                    class="cpnhtthitb-vector04" />
-                            </div>
-                            <input type="text" name="diachiIP" value="{{$device->diachiIP}}"
-                                class="cpnhtthitb-input2" />
-                        </div>
-                        <div class="cpnhtthitb-frame624734">
-                            <div class="cpnhtthitb-warningtext3">
-                                <span class="cpnhtthitb-text20 1616Semi">
-                                    <span>Loại thiết bị:</span>
-                                </span>
-                                <img src="{{asset('playground_assets/vectori334-bil.svg');}}" alt="VectorI334"
-                                    class="cpnhtthitb-vector05" />
-                            </div>
-                        </div>
-                        <div class="cpnhtthitb-frame624735">
-                            <div class="cpnhtthitb-warningtext4">
-                                <span class="cpnhtthitb-text24 1616Semi">
-                                    <span>Tên đăng nhập:</span>
-                                </span>
-                                <img src="{{asset('playground_assets/vectori334-ex7d.svg');}}" alt="VectorI334"
-                                    class="cpnhtthitb-vector06" />
-                            </div>
-                            <input type="text" placeholder="" class="cpnhtthitb-input3" />
-                        </div>
-                        <div class="cpnhtthitb-frame624736">
-                            <div class="cpnhtthitb-warningtext5">
-                                <span class="cpnhtthitb-text26 1616Semi">
-                                    <span>Mật khẩu:</span>
-                                </span>
-                                <img src="{{asset('playground_assets/vectori334-12dm.svg');}}" alt="VectorI334"
-                                    class="cpnhtthitb-vector07" />
-                            </div>
-                            <input type="text" placeholder="CMS" class="cpnhtthitb-input4" />
-                        </div>
-                        <div class="cpnhtthitb-frame6247331">
-                            <div class="cpnhtthitb-warningtext6">
-                                <span class="cpnhtthitb-text28 1616Semi">
-                                    <span>Dịch vụ sử dụng:</span>
-                                </span>
+							<div class="danhschdchv-frame136">
+								<input type="date" data-date-inline-picker="true" class="danhschdchv-text137 1616Reg" />
+							</div>
+						</div>
+						<div class="danhschdchv-datepicker2">
 
-                                @foreach($b as $dvsd)
-                                <?php $i = 0; ?>
-                                @foreach($a as $c)
-                                @if ($c->tendichvu == $dvsd->tendichvu)
-                                <input checked="checked" type="checkbox" name="id{{$dvsd->id}}"
-                                    value="{{$dvsd->tendichvu}}" />
-                                <label for="{{$dvsd->id}}"> {{$c->tendichvu}}</label>
+							<div class="danhschdchv-frame1361">
+								<input type="date" data-date-inline-picker="true" class="danhschdchv-text137 1616Reg" />
 
-                                <?php $i++; ?>
-                                @endif
+							</div>
+						</div>
+						<div class="danhschdchv-frame271">
+							<div class="danhschdchv-vuesaxboldnotification">
+								<div class="danhschdchv-vuesaxboldnotification1">
+									<div class="danhschdchv-notification">
+										<img src="{{asset('playground_assets/vectori283-a7so.svg');}}" alt="VectorI283"
+											class="danhschdchv-vector01" />
+										<img src="{{asset('playground_assets/vectori283-5mg.svg');}}" alt="VectorI283"
+											class="danhschdchv-vector02" />
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<span class="danhschdchv-text013 2424Bold">
+						<span>Quản lý dịch vụ</span>
+					</span>
+					<table class="danhschdchv-frame624720 ">
+						<tr class=" danhschdchv-frame624691 danhschdchv-text015 1616Bold ">
+							<td>Mã dịch vụ</td>
+							<td>Tên dịch vụ</td>
+							<td>Mô tả</td>
+							<td>Trạng thái hoạt động</td>
+							<td> </td>
+							<td> </td>
+						</tr>
+						@foreach ($services as $service)
+						<tr class="danhschdchv-text019 1414Reg danhschdchv-frame624711">
+							<td>{{$service->madichvu}}</td>
+							<td>{{$service->tendichvu}}</td>
+							<td></td>
+							<td>
+								@if ($service->trangthaihoatdong == 1)
+								<span>Hoạt động</span>
+								@else
+								<span>Ngưng hoạt động</span>
+								@endif
+							</td>
+							<td>
+								<a href="{{ route('service.show',$service->id) }}">Chi tiết</a>
+							</td>
+							<td>
+								<a href="{{ route('service.edit',$service->id) }}">Cập nhật</a>
+							</td>
+						</tr>
+						@endforeach
+					</table>
+				</div>
 
-                                @endforeach
-                                @if ($i == 0)
-                                <input type="checkbox" name="id{{$dvsd->id}}" value="{{$dvsd->tendichvu}}" />
-                                <label for="{{$dvsd->id}}"> {{$dvsd->tendichvu}}</label>
-                                @endif
-                                @endforeach
 
-                            </div>
-                            <div class="cpnhtthitb-frame624744">
-                                <span class="cpnhtthitb-text42 1414Reg">
-                                    <span>Là trường thông tin bắt buộc</span>
-                                </span>
-                                <img src="{{asset('playground_assets/vector3349-f56a.svg');}}" alt="Vector3349"
-                                    class="cpnhtthitb-vector09" />
-                            </div>
-                            <div class="cpnhtthitb-frame624750">
-                                <button type="submit" class="cpnhtthitb-button09 cpnhtthitb-text58">
-                                    Cập nhật
-                                </button>
-                                <button class="cpnhtthitb-button10 cpnhtthitb-text60">
-                                    Hủy bỏ
-                                </button>
-                            </div>
-                </form>
-            </div>
-        </div>
+				<div class="danhschdchv-vuesaxboldarrowright">
+					<div class="danhschdchv-vuesaxboldarrowright1">
+						<div class="danhschdchv-arrowright">
+							<img src="{{asset('playground_assets/vectori284-2lnq.svg');}}" alt="VectorI284"
+								class="danhschdchv-vector23" />
+						</div>
+					</div>
+				</div>
+			</div>
+			<span class="danhschdchv-text139 1616Semi">
+				<span>Chọn thời gian</span>
+			</span>
+		</div>
+		<div class="danhschdchv-frame105">
+
+
+			{{ $services->links() }}
+			<div class="danhschdchv-frame108">
+				<img src="{{asset('playground_assets/fichevrondowni284-sz84.svg');}}" alt="fichevrondownI284"
+					class="danhschdchv-fichevrondown1" />
+			</div>
+		</div>
+	</div>
+
+	<div class="danhschdchv-group319">
+		<div class="danhschdchv-dropdown">
+			<select class="danhschdchv-text164 1616Reg">
+				<option value="tatca">Tất cả</option>
+				<option value="ngunghd">Ngưng hoạt động</option>
+				<option value="hd">Hoạt động</option>
+			</select>
+		</div>
+		<span class="danhschdchv-text166 1616Semi">
+			<span>Trạng thái hoạt động</span>
+		</span>
+	</div>
+
+	</div>
+	</div>
+	</div>
 </body>
 
 </html>

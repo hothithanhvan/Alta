@@ -21,33 +21,33 @@ class DeviceController extends Controller
     {   
         $devices = Device::latest()->paginate(5);
         $a = DB::table('dvsd')->get();
-         if ($all = request()->all()) {
-            if (request()->hoatdong == '0')
-            {
-                if (request()->ketnoi == '0')
-                {
-                    $devices = Device::orderBy('id', 'desc')->where('mathietbi','LIKE','%'.request()->key."%")->paginate(5);
-                }
-                else 
-                {
-                $devices = Device::orderBy('id', 'desc')->where('mathietbi','LIKE','%'.request()->key."%")
-                ->where('trangthaiketnoi', request()->ketnoi)
-                ->paginate(5);
-                }
-            }
-            else if (request()->ketnoi == 0)
-            {
-                $devices = Device::orderBy('id', 'desc')->where('mathietbi','LIKE','%'.request()->key."%")
-                ->where('trangthaihoatdong', request()->hoatdong)
-                ->paginate(5);
-            }
-            else {
-            $devices = Device::orderBy('id', 'desc')->where('mathietbi','LIKE','%'.request()->key."%")
-            ->where('trangthaihoatdong', request()->hoatdong)
-            ->where('trangthaiketnoi', request()->ketnoi)
-            ->paginate(5);
-            }
-        }
+        //  if ($all = request()->all()) {
+        //     if (request()->hoatdong == '0')
+        //     {
+        //         if (request()->ketnoi == '0')
+        //         {
+        //             $devices = Device::orderBy('id', 'desc')->where('mathietbi','LIKE','%'.request()->key."%")->paginate(5);
+        //         }
+        //         else 
+        //         {
+        //         $devices = Device::orderBy('id', 'desc')->where('mathietbi','LIKE','%'.request()->key."%")
+        //         ->where('trangthaiketnoi', request()->ketnoi)
+        //         ->paginate(5);
+        //         }
+        //     }
+        //     else if (request()->ketnoi == 0)
+        //     {
+        //         $devices = Device::orderBy('id', 'desc')->where('mathietbi','LIKE','%'.request()->key."%")
+        //         ->where('trangthaihoatdong', request()->hoatdong)
+        //         ->paginate(5);
+        //     }
+        //     else {
+        //     $devices = Device::orderBy('id', 'desc')->where('mathietbi','LIKE','%'.request()->key."%")
+        //     ->where('trangthaihoatdong', request()->hoatdong)
+        //     ->where('trangthaiketnoi', request()->ketnoi)
+        //     ->paginate(5);
+        //     }
+        // }
         return view('device.index',compact('devices','a'))
                  ->with('i', (request()->input('page', 1) - 1) * 5);
     }
@@ -57,6 +57,70 @@ class DeviceController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+    public function search(Request $request)
+    {
+       
+        $output = "";
+        dd($request);
+        $device = Device::where('tenthietbi','LIKE','%'.$request->search.'%')
+        ->get();
+        foreach ($device as $device)
+        {
+            if ($device->trangthaihoatdong == 1)
+            {
+                $device->trangthaihoatdong = "Hoạt động";
+            }
+            else
+            {
+                $device->trangthaihoatdong = "Ngưng hoạt động";
+            }
+            $output.=
+            '<tr>'.
+            '<td>'.$device->mathietbi.'</td>'.
+            '<td>'.$device->tenthietbi.'</td>'.
+            '<td>'.$device->diachiIP.'</td>'.
+            '<td>'.$device->trangthaihoatdong.'</td>'.
+            '<td>'.$device->trangthaiketnoi.'</td>'.
+            '<td>'.$device->dichvusudung.'</td>'.
+            '<td>'.'<a href="device/'.$device->id.'">'.'Chi tiết</a>'.'</td>'.
+            '<td>'.'<a href="device/'.$device->id.'/edit">'.'Cập nhật</a>'.'</td>'.
+
+            '</tr>' ;
+        }
+        return response($output);
+    }
+    public function dropdown(Request $request)
+    {
+        dd($request);
+        $output = "";
+        $device = Device::where('trangthaihoatdong',$request->hoatdong)->get();
+        foreach ($device as $device)
+        {
+            if ($device->trangthaihoatdong == 1)
+            {
+                $device->trangthaihoatdong = "Hoạt động";
+            }
+            else
+            {
+                $device->trangthaihoatdong = "Ngưng hoạt động";
+            }
+            $output.=
+            '<tr>
+            <td>'.$device->mathietbi.'</td>
+            <td>'.$device->tenthietbi.'</td>
+            <td>'.$device->diachiIP.'</td>
+            <td>'.$device->trangthaihoatdong.'</td>
+            <td>'.$device->trangthaiketnoi.'</td>
+            <td>'.$device->dichvusudung.'</td>
+            <td>'.'<a href="device/'.$device->id.'">'.'Chi tiết</a>'.'</td>
+            <td>'.'<a href="device/'.$device->id.'/edit">'.'Cập nhật</a>'.'</td>
+
+            </tr>' ;
+        }
+        return response($output);
+    }
+
+    
     public function create()
     {
         $services = Service::get();
@@ -80,11 +144,14 @@ class DeviceController extends Controller
         ]);
         for ($i = 1; $i <= $b; $i++) {
         $x = "id".$i."";
-        DB::table('dvsd')->insert([
-            'mathietbi' => $request->mathietbi,
-            'tendichvu' => $request->$x,
-        ]);
-    }
+            if (!empty($request->$x))
+            {
+            DB::table('dvsd')->insert([
+                'mathietbi' => $request->mathietbi,
+                'tendichvu' => $request->$x,
+            ]);
+            }
+}
         Device::create($request->all());
         return redirect()->route('device.index')
                         ->with('success','device created successfully.');
@@ -129,16 +196,26 @@ class DeviceController extends Controller
             'mathietbi' => 'required',
             'tenthietbi' => 'required',
             'diachiIP' => 'required',
-            // 'trangthaihoatdong' => 'required',
-            // 'trangthaiketnoi' => 'required',
-            // 'dichvusudung' => 'required',
         ]);
-      
+        $a = Service::get();
+        $b = count($a);
+        DB::table('dvsd')->where('mathietbi',$request->mathietbi)->delete();
+        for ($i = 1; $i <= $b; $i++) {
+            $x = "id".$i."";
+            if (!empty($request->$x))
+            {
+            DB::table('dvsd')->where('mathietbi',$request->mathietbi)->insert([
+                'mathietbi' => $request->mathietbi,
+                'tendichvu' => $request->$x,
+            ]);
+        }
+    }
         $device->update($request->all());
       
         return redirect()->route('device.index')
                         ->with('success','device updated successfully');
     }
+
     /**
      * Remove the specified resource from storage.
      *

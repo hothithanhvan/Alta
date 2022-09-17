@@ -11,6 +11,7 @@ use App\Http\Controllers\DairyController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\RoleController;
 use App\Http\Controllers\DashboardController;
+use App\Http\Controllers\HomeController;
 
 
 /*
@@ -27,6 +28,7 @@ use App\Http\Controllers\DashboardController;
 Route::get('/',[LoginController::class,'index'])->name('login');
 Route::post('/login', [LoginController::class,'store' ]);
 Route::get('/logout', [LoginController::class,'logout']);
+// Route::get('/user',)
 Route::get('/forgetPassword', [LoginController::class,'forgetPassword']);
 Route::post('/forgetPassword', [LoginController::class,'enterMail'])->name('enterMail');
 Route::post('/getnewPass',[LoginController::class,'getnewPass'])->name('getnewPass');
@@ -35,7 +37,7 @@ Route::middleware(['auth'])->group(function () {
     
 
     Route::resource('device', DeviceController::class);
-
+    
     Route::resource('service', ServiceController::class);
 
     Route::resource('number', NumberController::class);
@@ -44,12 +46,14 @@ Route::middleware(['auth'])->group(function () {
 
     Route::resource('role', RoleController::class);
 
-    Route::resource('dairy ',DairyController::class);
+    Route::get('dairy', [DairyController::class,'logActivity']);
 
     Route::resource('report', ReportController::class);
 
     Route::resource('dashboard', DashboardController::class);
 
 });
-
+Route::get('/search', [DeviceController::class, 'search'])->name('search');
+Route::get('/device/dropdown/{hoatdong}',[DeviceController::class,'dropdown']);
+Route::get('/number/date/{from_date}/{to_date}',[NumberController::class,'date']);
 

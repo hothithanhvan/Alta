@@ -11,9 +11,14 @@ class Service extends Model
 
     protected $fillable = [
         'madichvu',
-        'tendichvu'
-        // 'mota',
-        // 'trangthaihoatdong',
+        'tendichvu',
+        'mota',
+        'trangthaihoatdong',
+        'batdau',
+        'ketthuc',
+        'prefix',
+        'surfix',
+        'reset',
 
     ];
 }

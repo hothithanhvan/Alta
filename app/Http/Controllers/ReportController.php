@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Report;
+use App\Models\Number;
 use Illuminate\Http\Request;
 
 class ReportController extends Controller
@@ -14,7 +14,8 @@ class ReportController extends Controller
      */
     public function index()
     {
-        $reports = Report::latest()->paginate(2);
+        $reports = Number::latest()->paginate(10);
+        
         return view('report.index',compact('reports'))
                  ->with('i', (request()->input('page', 1) - 1) * 5);
     }

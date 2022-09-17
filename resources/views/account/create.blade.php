@@ -1,6 +1,7 @@
 @extends('layout.menubar')
 @extends('layout.header')
 @extends('layout.alert')
+@extends('layout.hello')
   <body>
     <div>
       <link href="{{asset('css/taikhoan.css')}}" rel="stylesheet" />
@@ -35,17 +36,7 @@
                 </span>
               </button>
             </div>
-            <div class="thmtikhon-frame625226">
-              <div class="thmtikhon-unsplash-fyl8s-m-c2j2q"></div>
-              <div class="thmtikhon-group296">
-                <span class="thmtikhon-text06 1212Reg">
-                  <span>Xin chào</span>
-                </span>
-                <span class="thmtikhon-text08 1616Bold">
-                  <span>Lê Quỳnh Ái Vân</span>
-                </span>
-              </div>
-            </div>
+
             <div>
               <div class="thmtikhon-vuesaxboldnotification">
                 <div class="thmtikhon-vuesaxboldnotification1">
@@ -137,10 +128,14 @@
                 />
               </div>
               <div class="thmtikhon-dropdown">
-                  <select class="thmtikhon-text22 1616Semi">
-                    <option>1</option>
-                    <option>2</option>
+              
+                  <select class="thmtikhon-text22 1616Semi" name="vaitro" id="vaitro" >
+                  @foreach($role as $role)
+                    <option 
+                    value="{{ $role->tenvaitro }}">{{ $role->tenvaitro}}</option>
+                    @endforeach
                   </select>
+                  
               </div>
             </div>
             <div class="thmtikhon-frame624734">

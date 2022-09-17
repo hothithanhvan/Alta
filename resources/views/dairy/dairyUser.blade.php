@@ -6,6 +6,7 @@
 
       <div class="nhtkngidng-container">
         <div class="nhtkngidng-nhtkngidng">
+
           <div class="nhtkngidng-topbar">
             <div class="nhtkngidng-breadcrumbs">
               <button class="nhtkngidng-button">
@@ -86,12 +87,21 @@
                 <td>Thời gian tác động</td>
                 <td>IP thực hiện</td>
                 <td>Thao tác thực hiện</td>
+              </tr>
+              @if($logs->count())
+			@foreach($logs as $key => $log)
+              <tr>
+                <td>{{ $log->username }}</td>
+                <td>{{ $log->method }}</td>
+                <td>{{ $log->ip }}</td>
+                <td>{{ $log->subject }}</td>
+              </tr>
+              @endforeach
+              @endif
+   
+          </table>
+          
               </div>
-              <!-- <div class="nhtkngidng-frame624710">
-                <span class="nhtkngidng-text016 1414Reg">
-                  <span>tuyetnguyen@12</span>
-                </span>
-              </div> -->
               
           <div class="nhtkngidng-group318">
             <div class="nhtkngidng-input">
@@ -105,9 +115,11 @@
             <span class="nhtkngidng-text127 1616Semi">
               <span>Từ khoá</span>
             </span>
-          </div>
+          </div>  
+          <div class="nhtkngidng-frame105">{{ $logs->links() }} </div>     
         </div>
       </div>
     </div>
+    
   </body>
 </html>
