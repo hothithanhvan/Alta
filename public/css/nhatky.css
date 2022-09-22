@@ -132,7 +132,6 @@
     border-radius: 48px;
     margin-bottom: 0;
     background-size: cover;
-    background-image: url("public/playground_assets/cfb02b79-1079-40e2-a1af-d7d6d522f3c4-jchk-200h.undefined");
   }
   .nhtkngidng-group296 {
     top: 0px;
@@ -3136,6 +3135,8 @@
   .nhtkngidng-fisearch {
     width: 20px;
     height: 20px;
+    top: 40px;
+    left: 200px;
     position: relative;
     box-sizing: border-box;
   }

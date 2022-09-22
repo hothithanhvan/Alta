@@ -108,15 +108,15 @@
                 <span class="cpnht-text22 1616Semi"><span>Mô tả:</span></span>
               </div>
               <input
-                type="text"
+                type="text" value="{{$service->mota}}" name="mota"
                 placeholder="Mô tả dịch vụ"
                 class="cpnht-input2"
               />
             </div>
             <div class="cpnht-group337">
               <div class="cpnht-group333">
-                <input type="text" placeholder="0001" class="cpnht-input3" />
-                <input type="text" placeholder="9999" class="cpnht-input4" />
+                <input type="text" name="batdau" value="{{$service->batdau}}" class="cpnht-input3" />
+                <input type="text" name="kethuc" value="{{$service->kethuc}}" placeholder="9999" class="cpnht-input4" />
                 <span class="cpnht-text24 1616Semi"><span>đến</span></span>
               </div>
               <div class="cpnht-group334">
@@ -129,7 +129,7 @@
               </div>
             </div>
             <div class="cpnht-group338">
-              <input type="text" placeholder="0001" class="cpnht-input5" />
+              <input type="text" name="prefix" value="{{$service->prefix}}" class="cpnht-input5" />
               <div class="cpnht-group335">
                 <div class="cpnht-warningtext4">
                   <span class="cpnht-text28 1616Semi">
@@ -140,7 +140,7 @@
               </div>
             </div>
             <div class="cpnht-group339">
-              <input type="text" placeholder="0001" class="cpnht-input6" />
+              <input type="text" name="surfix" value="{{$service->surfix}}" class="cpnht-input6" />
               <div class="cpnht-group336">
                 <div class="cpnht-warningtext5">
                   <span class="cpnht-text30 1616Semi">

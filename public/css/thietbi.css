@@ -1,7 +1,7 @@
 .qunlthitb-container {
     min-height: 100vh;
   }
-  
+
   .success:hover {
     background-color: var(--dl-color-orange-orange500);
     color: white !important;
@@ -4667,6 +4667,8 @@
   .qunlthitb-fisearch {
     width: 20px;
     height: 20px;
+    top: 40px;
+    left: 260px;
     position: relative;
     box-sizing: border-box;
   }
@@ -8620,15 +8622,17 @@
     border-radius: 8px;
     margin-bottom: 0;
     justify-content: center;
+    background-color: rgb(247, 234, 213);
   }
   .thngtinchitit-text04 {
-    color: var(--dl-color-grayblue-gray4placeholder);
+    color: var(--dl-color-orange-orange500) !important;
     height: auto;
     align-self: auto;
     text-align: left;
     line-height: 30px;
     margin-right: 0;
     margin-bottom: 0;
+
   }
   .thngtinchitit-uangleright1 {
     width: 20px;

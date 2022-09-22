@@ -19,9 +19,6 @@ class NumberController extends Controller
     {
         
         $numbers = Number::latest()->paginate(10);
-        if ($key = request()->key) {
-            $numbers = Number::orderBy('id', 'desc')->where('mathietbi','LIKE','%'.$key."%")->paginate(5);
-        }
         return view('number.index',compact('numbers'))
                  ->with('i', (request()->input('page', 1) - 1) * 5);
     }
@@ -34,7 +31,8 @@ class NumberController extends Controller
     public function create()
     {
         $services = Service::get();
-        return view('number.create',compact('services'));
+        $a = DB::table('numbers')->latest('date')->first();
+        return view('number.create',compact('services','a'));
     }
 
     /**
@@ -45,21 +43,20 @@ class NumberController extends Controller
      */
     public function store(Request $request)
     {
-        $request->validate([
-            'tendichvu' => 'required',
-        ]);
+
+        // $request->validate([
+        //     'tendichvu' => 'required',
+        // ]);
+        
         $dt = Carbon::create(now()->year, now()->month, now()->day, 17, 30, 00);
         DB::table('numbers')->insert([
-            'tendichvu' => $request->tendichvu,
+            'tendichvu' => $request->option,
             'thoigiancap' => now(),
             'hansd' => $dt,
-            'date' => now()->toDateString(),
-            'day' => now()->day,
-            'month' => now()->month,
-            'year' => now()->year,
+            'date' => now(),
         ]);
-        return redirect()->route('number.index')
-                        ->with('success','number created successfully.');
+        $a = Number::latest('date');
+        return redirect()->route('number.create');
     }
 
     /**
@@ -68,6 +65,7 @@ class NumberController extends Controller
      * @param  \App\Models\Number  $number
      * @return \Illuminate\Http\Response
      */
+
     public function show(Number $number)
     {
         return view('number.show',compact('number'));

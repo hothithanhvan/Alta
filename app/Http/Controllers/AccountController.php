@@ -6,6 +6,7 @@ use App\Models\User;
 use App\Models\Role;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Hash;
 
 class AccountController extends Controller
 {
@@ -16,11 +17,12 @@ class AccountController extends Controller
      */
     public function index()
     {
+        $role = DB::table('roles')->get();
         $accounts = User::latest()->paginate(10);
         if ($key = request()->key) {
             $accounts = User::orderBy('id', 'desc')->where('hoten','LIKE','%'.$key."%")->paginate(5);
         }
-        return view('account.index',compact('accounts'))
+        return view('account.index',compact('accounts','role'))
                  ->with('i', (request()->input('page', 1) - 1) * 5);
     }
 
@@ -53,6 +55,8 @@ class AccountController extends Controller
             'vaitro' => 'required',
         ]);
         User::create($request->all());
+        $password = Hash::make($request->password);
+        DB::table('users')->where('tendn',$request->tendn)->update(['password'=> $password]);
         return redirect()->route('account.index')
                         ->with('success','account created successfully.');
     }

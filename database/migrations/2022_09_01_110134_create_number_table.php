@@ -25,9 +25,6 @@ return new class extends Migration
             $table->integer('trangthai')->default(0);
             $table->string('sdt');
             $table->dateTime('date');
-            $table->string('day');
-            $table->string('month');
-            $table->string('year');
             $table->timestamps();
         });
     }

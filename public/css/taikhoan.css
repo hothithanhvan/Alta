@@ -4306,6 +4306,8 @@
   .danhschtikhon-fisearch {
     width: 20px;
     height: 20px;
+    top: 40px;
+    left: 260px;
     position: relative;
     box-sizing: border-box;
   }

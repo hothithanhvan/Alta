@@ -5,10 +5,11 @@ namespace App\Http\Controllers;
 use App\Http\Controllers\Controller;
 use App\Models\Service;
 use Illuminate\Http\Request;
-//use Illuminate\Support\Facades\DB;
 use App\Helpers\LogActivity;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Carbon;
+use Illuminate\Support\Facades\DB;
+use App\Models\Number;
 
 class ServiceController extends Controller
 {
@@ -48,12 +49,15 @@ class ServiceController extends Controller
         $request->validate([
             'madichvu' => 'required',
         'tendichvu' => 'required',
+        'mota' => 'required',
+        'batdau' => 'required',
+        'kethuc' => 'required',
+        'prefix' => 'required',
+        'surfix' => 'required',
         ]);
-      
         Service::create($request->all());
 
-        LogActivity::addToLog('Thêm dịch vụ',now(), Auth::user()->hoten);
-        //$logs = LogActivity::logActivityLists();
+        LogActivity::addToLog('Thêm dịch vụ',now(), Auth::user()->tendn);
         return redirect()->route('service.index')
                         ->with('success','service created successfully.');
                         
@@ -67,7 +71,8 @@ class ServiceController extends Controller
      */
     public function show(Service $service)
     {
-        return view('service.show',compact('service'));
+        $number = Number::get();
+        return view('service.show',compact('service','number'));
     }
   
     /**
@@ -93,6 +98,11 @@ class ServiceController extends Controller
         $request->validate([
             'madichvu' => 'required',
             'tendichvu' => 'required',
+            'mota' => 'required',
+        'batdau' => 'required',
+        'kethuc' => 'required',
+        'prefix' => 'required',
+        'surfix' => 'required',
         ]);
       
         $service->update($request->all());
@@ -113,6 +123,58 @@ class ServiceController extends Controller
         return redirect()->route('service.index')
                         ->with('success','service deleted successfully');
     }
+    public function dropdown(Request $request)
+    {
+        $output = "";
+        if( $request->hoatdong == 0 )
+        {
+            if ($request->from_date == null && $request->to_date == null){
+            $service = Service::where('tendichvu','LIKE','%'.$request->search.'%')->get();
+            }
+            else if ($request->from_date !== null && $request->to_date !== null){
+            $service = Service::whereBetween('created_at', [$request->from_date, $request->to_date])
+            ->where('tendichvu','LIKE','%'.$request->search.'%')
+            ->get();
+            }   
+        }
+        else if ( $request->from_date == null || $request->to_date == null)
+        {
+            $service = Service::where('tendichvu','LIKE','%'.$request->search.'%')
+            ->where('trangthaihoatdong',$request->hoatdong)->get();
+        }
+        else
+        {
+            $service = Service::where('trangthaihoatdong',$request->hoatdong)
+            ->where('tendichvu','LIKE','%'.$request->search.'%')
+            ->whereBetween('created_at', [$request->from_date, $request->to_date])
+            ->get();
+        }
+        
+        foreach ($service as $service)
+        {
+            
+            if ($service->trangthaihoatdong == 1)
+            {
+                $service->trangthaihoatdong = "Hoạt động";
+            }
+            else 
+            {
+                $service->trangthaihoatdong = "Ngưng hoạt động";
+            }
+            $output.=
+            '<tr>
+            <td>'.$service->madichvu.'</td>
+            <td>'.$service->tendichvu.'</td>
+            <td>'.$service->mota.'</td>
+            <td>'.$service->trangthaihoatdong.'</td>
+            <td>'.'<a href="service/'.$service->id.'">'.'Chi tiết</a>'.'</td>
+            <td>'.'<a href="service/'.$service->id.'/edit">'.'Cập nhật</a>'.'</td>
+
+            </tr>' ;
+        }
+        return response($output);
+    }
+    
     
 }
 

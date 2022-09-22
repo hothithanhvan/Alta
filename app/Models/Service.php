@@ -15,7 +15,7 @@ class Service extends Model
         'mota',
         'trangthaihoatdong',
         'batdau',
-        'ketthuc',
+        'kethuc',
         'prefix',
         'surfix',
         'reset',

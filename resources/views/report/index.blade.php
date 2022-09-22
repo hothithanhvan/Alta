@@ -1,5 +1,7 @@
 @extends('layout.menubar')
 @extends('layout.header')
+@extends('layout.hello')
+<!DOCTYPE html>
   <body>
     <div>
       <link href="{{asset('css/baocao.css')}}" rel="stylesheet" />
@@ -22,17 +24,7 @@
                 </span>
               </button>
             </div>
-            <div class="qunlboco-frame625226">
-              <div class="qunlboco-unsplash-fyl8s-m-c2j2q"></div>
-              <div class="qunlboco-group296">
-                <span class="qunlboco-text004 1212Reg">
-                  <span>Xin chào</span>
-                </span>
-                <span class="qunlboco-text006 1616Bold">
-                  <span>Lê Quỳnh Ái Vân</span>
-                </span>
-              </div>
-            </div>
+
             <div class="qunlboco-frame271">
               <div class="qunlboco-vuesaxboldnotification">
                 <div class="qunlboco-vuesaxboldnotification1">
@@ -81,11 +73,46 @@
           </div>
           <table class="qunlboco-frame624720">
               <tr class="qunlboco-frame624691 qunlboco-text014 1616Bold">
-                <td>STT</td>
-                <td>Tên dịch vụ</td>
-                <td>Thời gian cấp</td>
-                <td>Tình trạng</td>
-                <td>Nguồn cấp</td>
+                <td>
+                  <select >
+                  <option selected="selected" disabled="disabled" value="0">STT</option>
+                    @foreach ($reports as $report)
+                    <option value="{{$report->stt}}">{{$report->stt}}</option>
+                    @endforeach
+                  </select>
+                </td>
+                <td>
+                <select >
+                <option selected="selected" disabled="disabled" value="0">Tên dịch vụ</option>
+                    @foreach ($reports as $report)
+                    <option value="{{$report->tendichvu}}">{{$report->tendichvu}}</option>
+                    @endforeach
+                  </select>
+                </td>
+                <td>
+                <select >
+                <option selected="selected" disabled="disabled" value="0">Thời gian cấp</option>
+                    @foreach ($reports as $report)
+                    <option value="{{$report->thoigiancap}}">{{$report->thoigiancap}}</option>
+                    @endforeach
+                  </select>
+                </td>
+                <td>
+                <select >
+                <option selected="selected" disabled="disabled">Tình trạng</option>
+                    <option value="0">Đang chờ</option>
+                    <option value="1">Đã sử dụng</option>
+                    <option value="2">Bỏ qua</option>
+                  </select>
+                </td>
+                <td>
+                <select >
+                <option selected="selected" disabled="disabled" value="0">Nguồn cấp</option>
+                    @foreach ($reports as $report)
+                    <option value="{{$report->nguoncap}}">{{$report->nguoncap}}</option>
+                    @endforeach
+                  </select>
+                </td>
                 
 </tr>
 @foreach ($reports as $report)
@@ -93,7 +120,16 @@
 <td>{{$report->stt}}</td>
 <td>{{$report->tendichvu}}</td>
 <td>{{$report->thoigiancap}}</td>
-<td>{{$report->trangthai}}</td>
+<td>
+  @if ($report->trangthai == 0) 
+  Đang chờ
+  @elseif ($report->trangthai == 1)
+  Đã sử dụng
+  @else
+  Bỏ qua
+  @endif
+
+</td>
 <td>{{$report->nguoncap}}</td>
 </tr>
 @endforeach

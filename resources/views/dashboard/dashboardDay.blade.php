@@ -26,7 +26,7 @@
 			  <?php
 			  if ($dashboard->device_off + $dashboard->device_on !== 0){
 			  $t = 0 ? 0 : ($dashboard->device_on *100 / ($dashboard->device_off + $dashboard->device_on));
-			  echo $t."%";
+			  echo round($t)."%";
 			  }
 			  else{ echo "0%"; }
 			  ?>
@@ -112,7 +112,7 @@
 			  }
 			  else{
 			  $e = 0 ? 0 : ($dashboard->service_on *100 / ($dashboard->service_off + $dashboard->service_on));
-			  echo $e."%";
+			  echo round($e)."%";
 			}
 			  ?>
 						</span>

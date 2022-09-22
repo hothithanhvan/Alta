@@ -4,8 +4,7 @@
 <!DOCTYPE html>
   <body>
     <div>
-      <link href="{{asset('css/capso.css');}}" rel="stylesheet" />
-      <script  href="{{asset('js/jqueryDateFormat.js');}}"></script>
+    <link href="{{asset('css/capso.css');}}" rel="stylesheet" />
       <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.js"></script> 
       <div class="qunlcps-container">
@@ -206,41 +205,11 @@
     });
   })
 
-  // function convertdate(date) {
-  //   let day = date.getDate();
-  //   let month = date.getMonth()+1;
-  //   let year = date.getFullYear();
-  //   const all = [day,month,year];
-    
-  //   return all;
-  // }
 
-  //   $(document).ready(function(){
-  //     jQuery('#datepicker').on('change',function(){
-  //       // var date1 = new Date($('#from_date').val());
-  //       // var date2 = new Date($('#to_date').val());
-
-  //       var date1 = convertdate(new Date($('#from_date').val()));
-  //       var date2 = convertdate(new Date($('#to_date').val()));
-           
-  //                 jQuery.ajax({
-  //                    url : 'number/date',
-  //                    type : "GET",
-  //                   //  dataType : "json",
-  //                   data:{'from_date_d':date1[0],'from_date_m':date1[1],'from_date_y':date1[2], 
-  //                     'to_date_d':date2[0],'to_date_m':date2[1],'to_date_y':date2[2]},
-
-  //                 success:function(data)
-  //                    {
-  //                       console.log(data);
-  //                       $('#Content').html(data);
-  //                    }
-  //           });
-  //   });
-  // })
   </script>
         </div>
       </div>
+
     </div>
   </body>
 </html>

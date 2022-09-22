@@ -21,11 +21,11 @@ class DashboardController extends Controller
         if (Dashboard::get()->first() == null){
         DB::table('dashboards')->insert([
             'device_on' => DB::table('devices')->where('trangthaihoatdong', 1)->count(),
-            'device_off' => DB::table('devices')->where('trangthaihoatdong', 0)->count(),
+            'device_off' => DB::table('devices')->where('trangthaihoatdong', 2)->count(),
         ]);
         DB::table('dashboards')->insert([
             'service_on' => DB::table('services')->where('trangthaihoatdong', 1)->count(),
-            'service_off' => DB::table('services')->where('trangthaihoatdong', 0)->count(),
+            'service_off' => DB::table('services')->where('trangthaihoatdong', 2)->count(),
         ]);
         DB::table('dashboards')->insert([
             'number_wait' => DB::table('numbers')->where('trangthai', 0)
@@ -39,11 +39,11 @@ class DashboardController extends Controller
     else{
     DB::table('dashboards')->update([
         'device_on' => DB::table('devices')->where('trangthaihoatdong', 1)->count(),
-        'device_off' => DB::table('devices')->where('trangthaihoatdong', 0)->count(),
+        'device_off' => DB::table('devices')->where('trangthaihoatdong', 2)->count(),
     ]);
     DB::table('dashboards')->update([
         'service_on' => DB::table('services')->where('trangthaihoatdong', 1)->count(),
-        'service_off' => DB::table('services')->where('trangthaihoatdong', 0)->count(),
+        'service_off' => DB::table('services')->where('trangthaihoatdong', 2)->count(),
     ]);
     DB::table('dashboards')->update([
         'number_wait' => DB::table('numbers')->where('trangthai', 0)

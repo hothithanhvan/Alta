@@ -102,16 +102,16 @@
                 <span class="thmdchv-text20 1616Semi"><span>Mô tả:</span></span>
               </div>
               <input
-                type="text"
+                type="text" name="mota" 
                 placeholder="Mô tả dịch vụ"
                 class="thmdchv-input2"
               />
             </div>
             <div class="thmdchv-group337">
               <div class="thmdchv-group333">
-                <input type="text" placeholder="0001" class="thmdchv-input3" />
-                <input type="text" placeholder="9999" class="thmdchv-input4" />
-                <span class="thmdchv-text22 1616Semi"><span>đến</span></span>
+                <input type="text" name="batdau"  class="thmdchv-input3" />
+                <input type="text" name="kethuc"  class="thmdchv-input4" />
+                <span class="thmdchv-text22 1616Semi">đến</span>
               </div>
               <div class="thmdchv-group334">
                 <div class="thmdchv-warningtext3">
@@ -123,7 +123,7 @@
               </div>
             </div>
             <div class="thmdchv-group338">
-              <input type="text" placeholder="0001" class="thmdchv-input5" />
+              <input type="text" name="prefix" class="thmdchv-input5" />
               <div class="thmdchv-group335">
                 <div class="thmdchv-warningtext4">
                   <span class="thmdchv-text26 1616Semi">
@@ -134,7 +134,7 @@
               </div>
             </div>
             <div class="thmdchv-group339">
-              <input type="text" placeholder="0001" class="thmdchv-input6" />
+              <input type="text" name="surfix" class="thmdchv-input6" />
               <div class="thmdchv-group336">
                 <div class="thmdchv-warningtext5">
                   <span class="thmdchv-text28 1616Semi">

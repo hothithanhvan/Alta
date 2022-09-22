@@ -2,84 +2,158 @@
 @extends('layout.header')
 @extends('layout.alert')
 @extends('layout.hello')
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet"
+	integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js"
+	integrity="sha384-u1OknCvxWvY5kfmNBILK2hRnQC3Pr17a+RTT6rIHI7NnikvbZlHgTPOOmMi466C8"
+	crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"
+	integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3"
+	crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.min.js"
+	integrity="sha384-7VPbUDkoPSGFnVtYi0QogXtr74QeVeeIs99Qfg5YCF+TidwNdjvaKZX19NZ/e6oz"
+	crossorigin="anonymous"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.js"></script>
+<body>
+	<div>
+		<link href="{{asset('css/capso.css');}}" rel="stylesheet" />
 
-  <body>
-    <div>
-      <link href="{{asset('css/capso.css');}}" rel="stylesheet" />
+		<div class="cpsmi-container">
+			<div class="cpsmi-cpsmi">
+				<div class="cpsmi-topbar">
+					<div class="cpsmi-breadcrumbs">
+						<button class="cpsmi-button">
+							<span class="cpsmi-text 2020Bold"><span>Cấp số</span></span>
+						</button>
+						<img src="{{asset('playground_assets/uanglerighti339-7j9q.svg');}}" alt="uanglerightI339"
+							class="cpsmi-uangleright" />
+						<button class="cpsmi-button1">
+							<span class="cpsmi-text02 2020Bold">
+								<span>Danh sách cấp số</span>
+							</span>
+						</button>
+						<img src="{{asset('playground_assets/uanglerighti339-svs4.svg');}}" alt="uanglerightI339"
+							class="cpsmi-uangleright1" />
+						<button class="cpsmi-button2">
+							<span class="cpsmi-text04 2020Bold">
+								<span>Cấp số mới</span>
+							</span>
+						</button>
+					</div>
+					<div class="cpsmi-frame271">
+						<div class="cpsmi-vuesaxboldnotification">
+							<div class="cpsmi-vuesaxboldnotification1">
+								<div class="cpsmi-notification">
+									<img src="{{asset('playground_assets/vectori339-xzie.svg');}}" alt="VectorI339"
+										class="cpsmi-vector" />
+									<img src="{{asset('playground_assets/vectori339-nd5f.svg');}}" alt="VectorI339"
+										class="cpsmi-vector01" />
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<span class="cpsmi-text10 2424Bold"><span>Quản lý cấp số</span></span>
 
-      <div class="cpsmi-container">
-        <div class="cpsmi-cpsmi">
-          <div class="cpsmi-topbar">
-            <div class="cpsmi-breadcrumbs">
-              <button class="cpsmi-button">
-                <span class="cpsmi-text 2020Bold"><span>Cấp số</span></span>
-              </button>
-              <img
-                src="{{asset('playground_assets/uanglerighti339-7j9q.svg');}}"
-                alt="uanglerightI339"
-                class="cpsmi-uangleright"
-              />
-              <button class="cpsmi-button1">
-                <span class="cpsmi-text02 2020Bold">
-                  <span>Danh sách cấp số</span>
-                </span>
-              </button>
-              <img
-                src="{{asset('playground_assets/uanglerighti339-svs4.svg');}}"
-                alt="uanglerightI339"
-                class="cpsmi-uangleright1"
-              />
-              <button class="cpsmi-button2">
-                <span class="cpsmi-text04 2020Bold">
-                  <span>Cấp số mới</span>
-                </span>
-              </button>
-            </div>
-            <div class="cpsmi-frame271">
-              <div class="cpsmi-vuesaxboldnotification">
-                <div class="cpsmi-vuesaxboldnotification1">
-                  <div class="cpsmi-notification">
-                    <img
-                      src="{{asset('playground_assets/vectori339-xzie.svg');}}"
-                      alt="VectorI339"
-                      class="cpsmi-vector"
-                    />
-                    <img
-                      src="{{asset('playground_assets/vectori339-nd5f.svg');}}"
-                      alt="VectorI339"
-                      class="cpsmi-vector01"
-                    />
-                  </div>
+				<div class="cpsmi-frame624726">
+					<span class="cpsmi-text26 3232Bold"><span>CẤP SỐ MỚI</span></span>
+					<span class="cpsmi-text28 2020Bold">
+						<span>Dịch vụ khách hàng lựa chọn</span>
+					</span>
+					<form action="{{ route('number.store') }}" method="post">
+              @csrf
+              <select id="select" name="tendichvu" class="cpsmi-text30 cpsmi-dropdown 1616Reg">
+                @foreach($services as $service)
+                <option id="option" value="{{ $service->tendichvu}}">{{ $service->tendichvu }}</option>
+                
+				@endforeach
+        </select>
+              
+        
+              <div class="cpsmi-frame624757">
+                <div class="cpsmi-frame624750">
+                  <button onclick="getValue()" type="button" data-bs-toggle="modal" data-bs-target="#exampleModal"
+                    class="cpsmi-button3 cpsmi-text32">In số</button>
+                  
+                    <button class="cpsmi-button4">
+                    <span class="cpsmi-text34"><span>Hủy bỏ</span></span>
+                  </button>
+
+</form>
+
                 </div>
               </div>
+              <script>
+                function getValue() {
+						var option = jQuery('#select').val();
+            return option;
+					}
+					jQuery(document).ready(function () {
+            
+						jQuery('#select').on('change', function () {
+							var option = getValue();
+							jQuery.ajax({
+								url: '/option',
+								type: "GET",
+								data: { 'option' : option},
+								success: function (data) {
+									console.log(data);
+									$('#Content').html(data);
+								}
+							});
+						});
+
+					});
+				</script>
+              <!-- modal fade -->
+           
+            <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="popupins-popupins">
+        <button type="button" class="popupins-fix btn-close" data-bs-dismiss="modal" aria-label="Close">
+        </button>
+          <div class="popupins-frame624776">
+            <div class="popupins-frame624778">
+             
+              <span class="popupins-text 2222Bold">
+                <span>Thời gian cấp:</span>
+              </span>
+              <span class="popupins-text02 2222Bold">
+                 <span>{{$a->thoigiancap}}</span> 
+              </span>
+            </div>
+            <div class="popupins-frame624779">
+              <span class="popupins-text04 2222Bold">
+                <span>Hạn sử dụng:</span>
+              </span>
+              <span class="popupins-text06 2222Bold">
+                <span>{{$a->hansd}}</span>
+              </span>
             </div>
           </div>
-          <span class="cpsmi-text10 2424Bold"><span>Quản lý cấp số</span></span>
-         
-          <div class="cpsmi-frame624726">
-            <span class="cpsmi-text26 3232Bold"><span>CẤP SỐ MỚI</span></span>
-            <span class="cpsmi-text28 2020Bold">
-              <span>Dịch vụ khách hàng lựa chọn</span>
+          <div class="popupins-group625227">
+            <span class="popupins-text08 3232Bold">
+              <span>Số thứ tự được cấp</span>
             </span>
-            <form action="{{ route('number.store') }}" method="post" >
-              @csrf
-              <select name="tendichvu" class="cpsmi-text30 cpsmi-dropdown 1616Reg">
-                  @foreach($services as $service)
-                <option  value="{{ $service->tendichvu}}" >{{ $service->tendichvu }}</option>
-                @endforeach
-              </select>
-            <div class="cpsmi-frame624757">
-              <div class="cpsmi-frame624750">
-                <button type="submit" class="cpsmi-button3 cpsmi-text32">In số</button>
-                <button class="cpsmi-button4">
-                  <span class="cpsmi-text34"><span>Hủy bỏ</span></span>
-                </button>
-              </div>
-            </div>
-            </form>
-          </div>
-        </div>
-      </div>
+            <span class="popupins-text10"><span>2001201</span></span>
+            <span class="popupins-text12">
+              <span class="popupins-text13">DV: {{$a->tendichvu}}</span>
+              <span>(tại quầy số 1)</span>
+            </span>
+          </div> 
+ 
     </div>
-  </body>
+    <!-- <button class="btn btn-primary" type="submit">Tạo số</button> -->
+    </div>
+   
+  </div>
+  </form>
+
+				</div>
+       
+      </div>
+  </div>
+</body>
+
 </html>

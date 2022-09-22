@@ -15,18 +15,14 @@
             </button>
             <img src="{{asset('playground_assets/uanglerighti288-az4f.svg');}}" alt="uanglerightI288"
               class="chitit-uangleright" />
-            <button class="chitit-button1">
-              <span class="chitit-text002 2020Bold">
-                <span>Danh sách dịch vụ</span>
-              </span>
-            </button>
+            <a href="{{route('service.index')}}"class="chitit-button1">
+              <span class="chitit-text002 2020Bold">Danh sách dịch vụ</span>
+            </a>
             <img src="{{asset('playground_assets/uanglerighti288-1l0w.svg');}}" alt="uanglerightI288"
               class="chitit-uangleright1" />
-            <button class="chitit-button2">
-              <span class="chitit-text004 2020Bold">
-                <span>Chi tiết</span>
-              </span>
-            </button>
+            <a class="chitit-button2">
+              <span class="chitit-text004 2020Bold">Chi tiết</span>
+            </a>
           </div>
 
           <div class="chitit-frame271">
@@ -68,7 +64,7 @@
           <div class="chitit-group326">
             <span class="chitit-text038 1616Semi"><span>Mô tả:</span></span>
             <span class="chitit-text040 1616Reg">
-              <span>Chuyên các bệnh lý về tim</span>
+              <span>{{$service->mota}}</span>
             </span>
           </div>
           <div class="chitit-group332">
@@ -76,8 +72,8 @@
               <span>Tăng tự động:</span>
             </span>
             <div class="chitit-group330">
-              <input type="text" placeholder="0001" class="chitit-input" />
-              <input type="text" placeholder="9999" class="chitit-input1" />
+              <span class="chitit-input">{{$service->batdau}}</span>
+              <span class="chitit-input1">{{$service->kethuc}}</span>
               <span class="chitit-text044 1616Reg"><span>đến</span></span>
             </div>
           </div>
@@ -88,9 +84,9 @@
             <span>Ví dụ: 201-2001</span>
           </span>
           <div class="chitit-group331">
-            <span class="chitit-text050 1616Semi"><span>Prefix:</span></span>
+            <span class="chitit-text050 1616Semi">Prefix:</span>
             <div class="chitit-group327">
-              <input type="text" placeholder="0001" class="chitit-input2" />
+              <span class="chitit-input2">{{$service->prefix}}</span>
             </div>
           </div>
         </div>
@@ -102,7 +98,7 @@
                   class="chitit-edit-square1" />
               </div>
             </div>
-            <button href="https://www.w3schools.com/css/css3_buttons.asp" class="chitit-text052">Cập nhật danh sách</button>
+            <button href="" class="chitit-text052">Cập nhật danh sách</button>
           </div>
           </button>
           <div class="chitit-frame110">
@@ -169,10 +165,13 @@
               <td>Trạng thái</td>
 
             </tr>
-            <tr>
-              <td class="qunlthitb-text100">KIO_01</td>
-              <td class="qunlthitb-text100">kioks</td>
-
+            <tr class="qunlthitb-text100">
+              @foreach($number as $number)
+              @if ($service->tendichvu == $number->tendichvu)
+              <td >{{$number->stt}}</td>
+              <td >{{$number->trangthai}}</td>
+              @endif
+              @endforeach
             </tr>
           </table>
 

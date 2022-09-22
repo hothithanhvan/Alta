@@ -14,18 +14,7 @@
                 </span>
                 <div class="cpnhtthitb-topbar">
                     <div class="cpnhtthitb-breadcrumbs">
-                        <button class="cpnhtthitb-button">
-                            <span class="cpnhtthitb-text02 2020Bold">
-                                <span>Thiết bị</span>
-                            </span>
-                        </button>
-                        <img src="{{asset('playground_assets/uanglerighti334-sjl.svg');}}" alt="uanglerightI334"
-                            class="cpnhtthitb-uangleright" />
-                        <button class="cpnhtthitb-button01">
-                            <span class="cpnhtthitb-text04 2020Bold">
-                                <span>Danh sách thiết bị</span>
-                            </span>
-                        </button>
+                    @include('device.breadscrum')
                         <img src="{{asset('playground_assets/uanglerighti334-z4uk.svg');}}" alt="uanglerightI334"
                             class="cpnhtthitb-uangleright1" />
                         <button class="cpnhtthitb-button02">

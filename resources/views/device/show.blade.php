@@ -1,6 +1,7 @@
 @extends('layout.menubar')
 @extends('layout.header')
 @extends('layout.hello')
+<link href="{{asset('css/thietbi.css')}}" rel="stylesheet" />
 
       <div class="thngtinchitit-container">
         <div class="thngtinchitit-thngtinchitit">
@@ -9,26 +10,11 @@
           </span>
           <div class="thngtinchitit-topbar">
             <div class="thngtinchitit-breadcrumbs">
-              <button class="thngtinchitit-button">
-                <span class="thngtinchitit-text02 2020Bold">
-                  <span>Thiết bị</span>
-                </span>
-              </button>
-              <img
-                src="{{asset('playground_assets/uanglerighti334-zhg7.svg');}}"
-                alt="uanglerightI334"
-                class="thngtinchitit-uangleright"
-              />
-              <button class="thngtinchitit-button1">
-                <span class="thngtinchitit-text04 2020Bold">
-                  <span>Danh sách thiết bị</span>
-                </span>
-              </button>
-              <img
+            @include('device.breadscrum')
+            <img
                 src="{{asset('playground_assets/uanglerighti334-4knm.svg');}}"
                 alt="uanglerightI334"
                 class="thngtinchitit-uangleright1"
-              />
               <button class="thngtinchitit-button2">
                 <span class="thngtinchitit-text06 2020Bold">
                   <span>Chi tiết thiết bị</span>
@@ -113,7 +99,14 @@
               </span>
               <span class="thngtinchitit-text36 1616Reg">
                 <span>
-                {{$device->dichvusudung}}
+                @foreach($b as $dvsd)
+                                @foreach($a as $c)
+                                @if ($c->tendichvu == $dvsd->tendichvu)                
+                                    {{$dvsd->tendichvu}}
+                                @endif
+                                @endforeach
+                                ,
+                                @endforeach
                 </span>
               </span>
             </div>

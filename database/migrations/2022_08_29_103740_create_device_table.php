@@ -19,7 +19,7 @@ return new class extends Migration
             $table->string('tenthietbi');
             $table->string('diachiIP');
             $table->string('trangthaihoatdong')->default('1');
-            $table->string('trangthaiketnoi');
+            $table->string('trangthaiketnoi')->default('1');
             $table->string('dichvusudung');
             $table->timestamps();
         });

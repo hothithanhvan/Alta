@@ -25,7 +25,7 @@ class LogActivity
 
     public static function logActivityLists()
     {
-		$a = LogActivityModel::latest()->paginate(5);
+		$a = LogActivityModel::latest()->paginate(10);
     	return $a;
     }
 

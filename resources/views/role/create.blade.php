@@ -1,7 +1,26 @@
 @extends('layout.menubar')
 @extends('layout.header')
 @extends('layout.hello')
-
+<style>
+    div.thmvaitr-frame625231 {
+    overflow: scroll;
+    overflow-x:hidden;
+    top: 90px;
+    left: 608px;
+    width: 560px;
+    height: 400px;
+    display: flex;
+    position: absolute;
+    box-sizing: border-box;
+    align-items: flex-start;
+    flex-shrink: 0;
+    border-color: transparent;
+    margin-right: 0;
+    border-radius: 8px;
+    margin-bottom: 0;
+    background-color: var(--dl-color-orange-orange50);
+  }
+    </style>
 <body>
     <div>
         <link href="{{asset('css/vaitro.css')}}" rel="stylesheet" />
@@ -25,9 +44,11 @@
                         <img src="{{asset('playground_assets/uanglerighti287-rqd.svg');}}" alt="uanglerightI287"
                             class="thmvaitr-uangleright1" />
                         <button class="thmvaitr-button2">
+                            @cannot('show')
                             <span class="thmvaitr-text04 2020Bold">
                                 <span>Thêm vai trò</span>
                             </span>
+                            @endcannot
                         </button>
                     </div>
 
@@ -76,28 +97,13 @@
                                 class="thmvaitr-vector03" />
                         </div>
                         <div class="thmvaitr-frame625231">
-                            <img src="{{asset('playground_assets/rectangle34631912871-qw1-200w.png');}}"
-                                alt="Rectangle34631912871" class="thmvaitr-rectangle3463191" />
                             <span class="thmvaitr-text18 2020Bold">
-                                <span>Nhóm chức năng A</span>
-                            </span>
-                            <span class="thmvaitr-text20 2020Bold">
-                                <span>Nhóm chức năng B</span>
+                                <span>Admin</span>
                             </span>
                             <div class="thmvaitr-group343">
                                 <div class="thmvaitr-group337">
                                     <div class="thmvaitr-warningtext02">
                                         <span class="thmvaitr-text22 1616Semi">
-                                            <span>Tất cả</span>
-                                        </span>
-                                    </div>
-                                    <input type="checkbox" class="container checkbox">
-                                </div>
-                            </div>
-                            <div class="thmvaitr-group347">
-                                <div class="thmvaitr-group337">
-                                    <div class="thmvaitr-warningtext03">
-                                        <span class="thmvaitr-text24 1616Semi">
                                             <span>Tất cả</span>
                                         </span>
                                     </div>
@@ -114,30 +120,10 @@
                                     <input type="checkbox" class="container checkbox">
                                 </div>
                             </div>
-                            <div class="thmvaitr-group348">
-                                <div class="thmvaitr-group337">
-                                    <div class="thmvaitr-warningtext05">
-                                        <span class="thmvaitr-text28 1616Semi">
-                                            <span>Chức năng x</span>
-                                        </span>
-                                    </div>
-                                    <input type="checkbox" class="container checkbox">
-                                </div>
-                            </div>
                             <div class="thmvaitr-group345">
                                 <div class="thmvaitr-group337">
                                     <div class="thmvaitr-warningtext06">
                                         <span class="thmvaitr-text30 1616Semi">
-                                            <span>Chức năng y</span>
-                                        </span>
-                                    </div>
-                                    <input type="checkbox" class="container checkbox">
-                                </div>
-                            </div>
-                            <div class="thmvaitr-group349">
-                                <div class="thmvaitr-group337">
-                                    <div class="thmvaitr-warningtext07">
-                                        <span class="thmvaitr-text32 1616Semi">
                                             <span>Chức năng y</span>
                                         </span>
                                     </div>
@@ -154,6 +140,43 @@
                                     <input type="checkbox" class="container checkbox">
                                 </div>
                             </div>
+                            <span class="thmvaitr-text20 2020Bold">
+                                <span>Nhóm chức năng B</span>
+                            </span>
+                            
+                            <div class="thmvaitr-group347">
+                                <div class="thmvaitr-group337">
+                                    <div class="thmvaitr-warningtext03">
+                                        <span class="thmvaitr-text24 1616Semi">
+                                            <span>Tất cả</span>
+                                        </span>
+                                    </div>
+                                    <input type="checkbox" class="container checkbox">
+                                </div>
+                            </div>
+                           
+                            <div class="thmvaitr-group348">
+                                <div class="thmvaitr-group337">
+                                    <div class="thmvaitr-warningtext05">
+                                        <span class="thmvaitr-text28 1616Semi">
+                                            <span>Chức năng x</span>
+                                        </span>
+                                    </div>
+                                    <input type="checkbox" class="container checkbox">
+                                </div>
+                            </div>
+                            
+                            <div class="thmvaitr-group349">
+                                <div class="thmvaitr-group337">
+                                    <div class="thmvaitr-warningtext07">
+                                        <span class="thmvaitr-text32 1616Semi">
+                                            <span>Chức năng y</span>
+                                        </span>
+                                    </div>
+                                    <input type="checkbox" class="container checkbox">
+                                </div>
+                            </div>
+                           
                             <div class="thmvaitr-group350">
                                 <div class="thmvaitr-group337">
                                     <div class="thmvaitr-warningtext09">

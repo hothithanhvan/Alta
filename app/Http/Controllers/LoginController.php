@@ -41,6 +41,29 @@ class LoginController extends Controller
         Session::flash('error', 'Email hoặc Password không đúng');
         return redirect()->back();
     }
+    public function showUser($id) 
+    {
+        $users = DB::select('select * from users where id = :id', ['id' => $id]);
+        return view('login.account', compact('users'));
+    }
+
+    public function imageUpload(Request $request)
+    {
+        $request->validate([
+            'image' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
+        ]);
+    //DB::insert('INSERT INTO pictures VALUES(1, LOAD_FILE('D:\Mặt trước cccd.jpg'))');
+        // $imageName = time().'.'.$request->image->extension();  
+     
+        // $request->image->move(public_path('images'), $imageName);
+  
+        // /* Store $imageName name in DATABASE from HERE */
+    
+        // return back()
+        //     ->with('success','You have successfully upload image.')
+        //     ->with('image',$imageName); 
+    }
+
     public function logout(Request $request)
     {
         Auth::logout();

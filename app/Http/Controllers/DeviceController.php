@@ -9,6 +9,9 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use App\Models\Service;
 use App\Models\dvsd;
+use Illuminate\Support\Facades\Gate;
+
+
 
 class DeviceController extends Controller
 {
@@ -19,35 +22,17 @@ class DeviceController extends Controller
      */
     public function index()
     {   
+       // $this->authorize('show');
+    //    if ( !Gate::allows('show')) {
+        
+    //     echo 'You are not allowed to view this resource. Please login to view this resource.';
+    //     return;
+    // }
+            
+        
         $devices = Device::latest()->paginate(5);
         $a = DB::table('dvsd')->get();
-        //  if ($all = request()->all()) {
-        //     if (request()->hoatdong == '0')
-        //     {
-        //         if (request()->ketnoi == '0')
-        //         {
-        //             $devices = Device::orderBy('id', 'desc')->where('mathietbi','LIKE','%'.request()->key."%")->paginate(5);
-        //         }
-        //         else 
-        //         {
-        //         $devices = Device::orderBy('id', 'desc')->where('mathietbi','LIKE','%'.request()->key."%")
-        //         ->where('trangthaiketnoi', request()->ketnoi)
-        //         ->paginate(5);
-        //         }
-        //     }
-        //     else if (request()->ketnoi == 0)
-        //     {
-        //         $devices = Device::orderBy('id', 'desc')->where('mathietbi','LIKE','%'.request()->key."%")
-        //         ->where('trangthaihoatdong', request()->hoatdong)
-        //         ->paginate(5);
-        //     }
-        //     else {
-        //     $devices = Device::orderBy('id', 'desc')->where('mathietbi','LIKE','%'.request()->key."%")
-        //     ->where('trangthaihoatdong', request()->hoatdong)
-        //     ->where('trangthaiketnoi', request()->ketnoi)
-        //     ->paginate(5);
-        //     }
-        // }
+
         return view('device.index',compact('devices','a'))
                  ->with('i', (request()->input('page', 1) - 1) * 5);
     }
@@ -57,52 +42,56 @@ class DeviceController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function search(Request $request)
-    {
-       
-        $output = "";
-        dd($request);
-        $device = Device::where('tenthietbi','LIKE','%'.$request->search.'%')
-        ->get();
-        foreach ($device as $device)
-        {
-            if ($device->trangthaihoatdong == 1)
-            {
-                $device->trangthaihoatdong = "Hoạt động";
-            }
-            else
-            {
-                $device->trangthaihoatdong = "Ngưng hoạt động";
-            }
-            $output.=
-            '<tr>'.
-            '<td>'.$device->mathietbi.'</td>'.
-            '<td>'.$device->tenthietbi.'</td>'.
-            '<td>'.$device->diachiIP.'</td>'.
-            '<td>'.$device->trangthaihoatdong.'</td>'.
-            '<td>'.$device->trangthaiketnoi.'</td>'.
-            '<td>'.$device->dichvusudung.'</td>'.
-            '<td>'.'<a href="device/'.$device->id.'">'.'Chi tiết</a>'.'</td>'.
-            '<td>'.'<a href="device/'.$device->id.'/edit">'.'Cập nhật</a>'.'</td>'.
 
-            '</tr>' ;
-        }
-        return response($output);
-    }
     public function dropdown(Request $request)
     {
-        dd($request);
         $output = "";
-        $device = Device::where('trangthaihoatdong',$request->hoatdong)->get();
+        if( $request->ketnoi == 0 && $request->hoatdong == 0 )
+        {
+            $device = Device::where('tenthietbi','LIKE','%'.$request->search.'%')->get();
+        }
+        else if ($request->hoatdong == 0 && $request->ketnoi != 0)
+        {
+            $device = Device::where('trangthaiketnoi',$request->ketnoi)
+            ->where('tenthietbi','LIKE','%'.$request->search.'%')->get();
+        }
+        elseif( $request->ketnoi == 0 && $request->hoatdong != 0)
+        {
+            $device = Device::where('trangthaihoatdong',$request->hoatdong)
+            ->where('tenthietbi','LIKE','%'.$request->search.'%')->get();
+        }
+        else
+        {
+            $device = Device::where('trangthaihoatdong',$request->hoatdong)
+            ->where('tenthietbi','LIKE','%'.$request->search.'%')
+            ->where('trangthaiketnoi',$request->ketnoi)->get();
+        }
+        
         foreach ($device as $device)
         {
+            $a = DB::table('dvsd')->where('mathietbi',$device->mathietbi)->get();
+            foreach ($a as $a){
+                if ($a->mathietbi == $device->mathietbi)
+                {
+                     $device->dichvusudung = $a->tendichvu."|";     
+                }
+            }
             if ($device->trangthaihoatdong == 1)
             {
                 $device->trangthaihoatdong = "Hoạt động";
             }
-            else
+            else 
             {
                 $device->trangthaihoatdong = "Ngưng hoạt động";
+            }
+            
+            if ($device->trangthaiketnoi ==1)
+            {
+                $device->trangthaiketnoi = "Kết nối";
+            }
+            else
+            {
+                $device->trangthaiketnoi = "Mất kết nối";
             }
             $output.=
             '<tr>
@@ -110,8 +99,8 @@ class DeviceController extends Controller
             <td>'.$device->tenthietbi.'</td>
             <td>'.$device->diachiIP.'</td>
             <td>'.$device->trangthaihoatdong.'</td>
-            <td>'.$device->trangthaiketnoi.'</td>
-            <td>'.$device->dichvusudung.'</td>
+            <td>'.$device->trangthaiketnoi.'</td>;
+            <td>'.'</td>
             <td>'.'<a href="device/'.$device->id.'">'.'Chi tiết</a>'.'</td>
             <td>'.'<a href="device/'.$device->id.'/edit">'.'Cập nhật</a>'.'</td>
 
@@ -119,7 +108,6 @@ class DeviceController extends Controller
         }
         return response($output);
     }
-
     
     public function create()
     {
@@ -166,7 +154,10 @@ class DeviceController extends Controller
      */
     public function show(Device $device)
     {
-        return view('device.show',compact('device'));
+        $a = DB::table('dvsd')->get()
+                    ->where('mathietbi', $device->mathietbi);
+        $b = DB::table('services')->get();
+        return view('device.show',compact('device','a','b'));
     }
   
     /**

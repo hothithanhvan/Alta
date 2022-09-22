@@ -616,7 +616,7 @@
     width: 61px;
     height: 44px;
     display: flex;
-    padding: 10px 60px 10px 12px;
+    padding: 5px 5px 5px 5px;
     overflow: hidden;
     position: absolute;
     font-size: 16px;
@@ -639,7 +639,7 @@
     width: 61px;
     height: 44px;
     display: flex;
-    padding: 10px 60px 10px 12px;
+    padding: 5px 5px 5px 5px;
     overflow: hidden;
     position: absolute;
     font-size: 16px;
@@ -750,7 +750,7 @@
     width: 61px;
     height: 44px;
     display: flex;
-    padding: 10px 60px 10px 12px;
+    padding: 5px 5px 5px 5px;
     overflow: hidden;
     position: absolute;
     font-size: 16px;
@@ -851,7 +851,7 @@
     width: 61px;
     height: 44px;
     display: flex;
-    padding: 10px 60px 10px 12px;
+    padding: 5px 5px 5px 5px;
     overflow: hidden;
     position: absolute;
     font-size: 16px;
@@ -5666,6 +5666,7 @@
   .danhschdchv-text013 {
     top: 104px;
     left: 224px;
+    width: 200px;
     color: var(--dl-color-orange-orange500);
     height: auto;
     position: absolute;
@@ -7449,6 +7450,7 @@
   .danhschdchv-fisearch {
     width: 20px;
     height: 20px;
+
     position: relative;
     box-sizing: border-box;
   }
@@ -9729,7 +9731,7 @@
     width: 61px;
     height: 44px;
     display: flex;
-    padding: 10px 60px 10px 12px;
+    padding: 5px 5px 5px 5px;
     overflow: hidden;
     position: absolute;
     font-size: 16px;
@@ -9752,7 +9754,7 @@
     width: 61px;
     height: 44px;
     display: flex;
-    padding: 10px 60px 10px 12px;
+    padding: 5px 5px 5px 5px;
     overflow: hidden;
     position: absolute;
     font-size: 16px;
@@ -9863,7 +9865,7 @@
     width: 61px;
     height: 44px;
     display: flex;
-    padding: 10px 60px 10px 12px;
+    padding: 5px 5px 5px 5px;
     overflow: hidden;
     position: absolute;
     font-size: 16px;
@@ -9964,7 +9966,7 @@
     width: 61px;
     height: 44px;
     display: flex;
-    padding: 10px 60px 10px 12px;
+    padding: 5px 5px 5px 5px;
     overflow: hidden;
     position: absolute;
     font-size: 16px;

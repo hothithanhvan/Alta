@@ -7,6 +7,26 @@
 
         <div class="danhschtikhon-container">
             <div class="danhschtikhon-danhschtikhon">
+                <div class="danhschtikhon-group318">
+                                <input type="text" name="search" id="search" placeholder="Nhập từ khóa" 
+                                class="danhschtikhon-input  danhschtikhon-text153">
+                                <button onclick="getValue()">
+                                    <img src="{{asset('playground_assets/fisearchi282-5iy7.svg');}}" alt="fisearchI282"
+                                        class="danhschtikhon-fisearch" />
+</button>
+                        <span class="danhschtikhon-text155 1616Semi">
+                            <span>Từ khoá</span>
+                        </span>
+                </div>
+
+                <div class="danhschtikhon-group319">
+                    <select class="danhschtikhon-dropdown danhschtikhon-text180 1616Reg">
+                        @foreach ($role as $role)
+                        <option value="{{ $role->tenvaitro }}">{{ $role->tenvaitro }}</option>
+                        @endforeach
+                    </select>
+                    <span class="danhschtikhon-text182 1616Semi">Tên vai trò</span>
+                </div>
                 <div class="danhschtikhon-component2">
                     <div class="danhschtikhon-vuesaxboldaddsquare">
                         <div class="danhschtikhon-vuesaxboldaddsquare1">
@@ -75,30 +95,7 @@
                     </tr>
                     @endforeach
                 </table>
-                <div class="danhschtikhon-group318">
-                    <form>
-                        <div class="danhschtikhon-input">
-                            <input type="text" name="key" placeholder="Nhập từ khóa" class="danhschtikhon-text153">
-                            <button type="submit">
-                                <img src="{{asset('playground_assets/fisearchi282-5iy7.svg');}}" alt="fisearchI282"
-                                    class="danhschtikhon-fisearch" />
-                            </button>
-                        </div>
-                    </form>
-                    <span class="danhschtikhon-text155 1616Semi">
-                        <span>Từ khoá</span>
-                    </span>
-                </div>
-
-                <div class="danhschtikhon-group319">
-                    <select class="danhschtikhon-dropdown danhschtikhon-text180 1616Reg">
-                        <option>1</option>
-                        <option>2</option>
-                    </select>
-                    <span class="danhschtikhon-text182 1616Semi">
-                    <span>Tên vai trò</span>
-                </span>
-                </div>
+               
                 
             </div>
         </div>

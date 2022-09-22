@@ -35,25 +35,40 @@ Route::post('/getnewPass',[LoginController::class,'getnewPass'])->name('getnewPa
 
 Route::middleware(['auth'])->group(function () {
     
-
     Route::resource('device', DeviceController::class);
     
+
     Route::resource('service', ServiceController::class);
-
+    
+    
     Route::resource('number', NumberController::class);
-
+   
     Route::resource('account', AccountController::class);
 
     Route::resource('role', RoleController::class);
+  
 
-    Route::get('dairy', [DairyController::class,'logActivity']);
-
-    Route::resource('report', ReportController::class);
+    Route::get('dairy', [DairyController::class,'logActivity'])->name('dairy');
+   
+     Route::resource('report', ReportController::class);
 
     Route::resource('dashboard', DashboardController::class);
+    
+    Route::get('/user/{user_id}', [LoginController::class,'showUser'])->name('user');
 
 });
-Route::get('/search', [DeviceController::class, 'search'])->name('search');
-Route::get('/device/dropdown/{hoatdong}',[DeviceController::class,'dropdown']);
+Route::get('/device/dropdown/{hoatdong}/{ketnoi}/{search}',[DeviceController::class,'dropdown']);
+Route::get('/service/dropdown/{hoatdong}/{search}/{from_date}/{to_date}',[ServiceController::class,'dropdown']);
 Route::get('/number/date/{from_date}/{to_date}',[NumberController::class,'date']);
+Route::get('/{option}',[NumberController::class,'store']);
+Route::get('role/search/{search}', [RoleController::class, 'search']);
+Route::get('dairy/{search}/{from_date}/{to_date}', [DairyController::class,'search']);
+
+// Route::get('/report',function()
+// {
+//     return view('report.index');
+// });
+
+//Route::resource('report', ReportController::class);
+Route::post('image-upload', [ LoginController::class, 'imageUpload' ])->name('image.upload.post');
 

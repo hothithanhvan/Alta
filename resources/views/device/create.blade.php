@@ -13,18 +13,7 @@
                 </span>
                 <div class="thmthitb-topbar">
                     <div class="thmthitb-breadcrumbs">
-                        <button class="thmthitb-button">
-                            <span class="thmthitb-text02 2020Bold">
-                                <span>Thiết bị</span>
-                            </span>
-                        </button>
-                        <img src="{{asset('playground_assets/uanglerighti333-a2r1.svg');}}" alt="uanglerightI333"
-                            class="thmthitb-uangleright" />
-                        <button class="thmthitb-button1">
-                            <span class="thmthitb-text04 2020Bold">
-                                <span>Danh sách thiết bị</span>
-                            </span>
-                        </button>
+                    @include('device.breadscrum')
                         <img src="{{asset('playground_assets/uanglerighti333-i2bo.svg');}}" alt="uanglerightI333"
                             class="thmthitb-uangleright1" />
                         <button class="thmthitb-button2">

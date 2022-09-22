@@ -8,7 +8,7 @@
                             <span class="tikhoncnhn-text02 1212Reg">
                                 <span>Xin chào</span>
                             </span>
-                            <a class="tikhoncnhn-text04 1616Bold" href="{{ url('login')}}">
+                            <a class="tikhoncnhn-text04 1616Bold" href="{{ route('user',Auth::user()->id )}}">
 {{Auth::user()->hoten}}
                             </a>
                         </div>

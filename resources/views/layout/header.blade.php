@@ -3,7 +3,19 @@
 <html lang="english">
 
 <head>
+<!-- <link rel="stylesheet " type="text/css"
+			href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+		<link rel="stylesheet"
+			href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.12.2/css/bootstrap-select.min.css">
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
 
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.js"></script>
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+		<script
+			src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.12.2/js/bootstrap-select.min.js"></script>
+		<link href="{{asset('css/thietbi.css');}}" rel="stylesheet" />
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.js"></script> -->
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta charset="utf-8" />
   <meta property="twitter:card" content="summary_large_image" />
@@ -46,11 +58,24 @@
       font-size: 100%;
       /* line-height: 1.15; */
       margin: 0;
+      padding-right: 10px;
+      
     }
+    /* option{
+      -webkit-appearance: none;
+   -moz-appearance: none;
+   appearance: none; 
+      background-color: white;
+      padding: 16px 16px 16px 16px !important;
+      height: 100px !important;
+      white-space: unset;
+
+    } */
 
     button,
     select {
       text-transform: none;
+      background-color: unset;
     }
 
     button,

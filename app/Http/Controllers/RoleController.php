@@ -17,10 +17,8 @@ class RoleController extends Controller
     {
         $users = DB::table('users')->get();
 
-        $roles = Role::latest()->paginate(2);
-        if ($key = request()->key) {
-            $roles = Role::orderBy('id', 'desc')->where('mathietbi','LIKE','%'.$key."%")->paginate(5);
-        }
+        $roles = Role::latest()->paginate(10);
+       
         return view('role.index',compact('roles','users'))
                  ->with('i', (request()->input('page', 1) - 1) * 5);
     }
@@ -106,5 +104,23 @@ class RoleController extends Controller
     public function destroy(Role $role)
     {
         //
+    }
+    public function search(Request $request)
+    {
+        $output = "";
+        $role = Role::where('tenvaitro','LIKE','%'.$request->search.'%')->get();
+        
+        foreach ($role as $role)
+        {
+            $output.=
+            '<tr>
+            <td>'.$role->tenvaitro.'</td>
+            <td>'.$role->songuoidung.'</td>
+            <td>'.$role->mota.'</td>
+            <td>'.'<a href="device/'.$role->id.'/edit">'.'Cập nhật</a>'.'</td>
+
+            </tr>' ;
+        }
+        return response($output);
     }
 }

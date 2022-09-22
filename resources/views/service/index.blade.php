@@ -6,7 +6,16 @@
 <title>
 	<?php echo 'Dịch vụ' ?>
 </title>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.js"></script>
+<link rel="stylesheet"
+			href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.12.2/css/bootstrap-select.min.css">
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
 
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.js"></script>
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+		<script
+			src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.12.2/js/bootstrap-select.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 <body>
 	<div>
 		<link href="{{asset('css/dichvu.css');}}" rel="stylesheet" />
@@ -40,22 +49,28 @@
 						</button>
 					</div>
         </div>
-					<div class="danhschdchv-group318">
-						<span class="danhschdchv-text133 1616Semi">
-							<span>Từ khoá</span>
-						</span>
-							<input type="text" class="qunlthitb-text220 danhschdchv-input" id="key" name="key"
-								placeholder="Nhập từ khóa">
-							<button type="submit"></button>
-					</div>
-				
-				<div class="danhschdchv-group311">
-        
-			<span class="danhschdchv-text139 1616Semi">
-				<span>Chọn thời gian</span>
-</span>
-					<div class="danhschdchv-datepicker">
-          <div class="danhschdchv-vuesaxboldarrowright">
+		<div id="dropdown">
+			<div class="danhschdchv-group318">
+				<span class="danhschdchv-text133 1616Semi">Từ khoá</span>
+					<input type="text" class="qunlthitb-text220 danhschdchv-input" id="search" name="search"
+							placeholder="Nhập từ khóa">
+							<button onclick="getValue()">
+              <img src="{{asset('playground_assets/fisearchi218-d31.svg')}}" 
+              alt="fisearchI218" class="qunlthitb-fisearch" />
+            </button>
+			</div>
+			<div class="danhschdchv-group319">
+				<select id="hoatdong" name="hoatdong" class="danhschdchv-dropdown danhschdchv-text164 1616Reg">
+				<option value="0">Tất cả</option>
+				<option value="1">Hoạt động</option>
+				<option value="2">Ngưng hoạt động</option>
+				</select>
+				<span class="danhschdchv-text166 1616Semi">Trạng thái hoạt động</span>
+    		</div>
+			<div class="danhschdchv-group311">
+				<span class="danhschdchv-text139 1616Semi">Chọn thời gian</span>
+				<div class="danhschdchv-datepicker">
+				<div class="danhschdchv-vuesaxboldarrowright">
 					<div class="danhschdchv-vuesaxboldarrowright1">
 						<div class="danhschdchv-arrowright">
 							<img src="{{asset('playground_assets/vectori284-2lnq.svg');}}" alt="VectorI284"
@@ -63,17 +78,11 @@
 						</div>
 					</div>
 				</div>
-						<div class="danhschdchv-datepicker1">
-							<div class="danhschdchv-frame136">
-								<input type="date" data-date-inline-picker="true" class="danhschdchv-text137 1616Reg" />
-							</div>
-						</div>
-						<div class="danhschdchv-datepicker2">
-							<div class="danhschdchv-frame1361">
-								<input type="date" data-date-inline-picker="true" class="danhschdchv-text137 1616Reg" />
-							</div>
-						</div>
-						<div class="danhschdchv-frame271">
+				<input id="from_date" name="from_date" type="date" data-date-inline-picker="true" 
+						class=" danhschdchv-datepicker1 danhschdchv-text137 1616Reg" />
+				<input id="to_date" name="to_date" type="date" data-date-inline-picker="true" 
+						class="danhschdchv-datepicker2 danhschdchv-text137 1616Reg" />
+						<!-- <div class="danhschdchv-frame271">
 							<div class="danhschdchv-vuesaxboldnotification">
 								<div class="danhschdchv-vuesaxboldnotification1">
 									<div class="danhschdchv-notification">
@@ -84,14 +93,14 @@
 									</div>
 								</div>
 							</div>
-						</div>
-					</div>
+						</div> -->
+				</div>
         </div>
 					<span class="danhschdchv-text013 2424Bold">
 						<span>Quản lý dịch vụ</span>
 					</span>
 					<table class="danhschdchv-frame624720 ">
-						<tr class=" danhschdchv-frame624691 danhschdchv-text015 1616Bold ">
+						<tr class="danhschdchv-frame624691 danhschdchv-text015 1616Bold ">
 							<td>Mã dịch vụ</td>
 							<td>Tên dịch vụ</td>
 							<td>Mô tả</td>
@@ -100,10 +109,10 @@
 							<td> </td>
 						</tr>
 						@foreach ($services as $service)
-						<tr class="danhschdchv-text019 1414Reg danhschdchv-frame624711">
+						<tr class=" alldata danhschdchv-text019 1414Reg danhschdchv-frame624711">
 							<td>{{$service->madichvu}}</td>
 							<td>{{$service->tendichvu}}</td>
-							<td></td>
+							<td>{{$service->mota}}</td>
 							<td>
 								@if ($service->trangthaihoatdong == 1)
 								<span>Hoạt động</span>
@@ -119,8 +128,46 @@
 							</td>
 						</tr>
 						@endforeach
+						<tbody class="searchdata" id="Content"></tbody>
 					</table>
-				
+			<script type="text/javascript">
+						function getValue() {
+						var search = jQuery('#search').val();
+						return search;
+								}
+		$(document).ready(function() {
+				$('#dropdown').on('change', function()
+				{
+					$search = $('#search').val();
+					$from_date = $('#from_date').val();
+					$to_date = $('#to_date').val();
+					$hoatdong = jQuery('#hoatdong').val();
+					if ($search == null && $from_date == null && $to_date == null && $hoatdong == null)
+					{
+						$('.alldata').show();
+					  $('.searchdata').hide();
+					  
+					}
+					else
+					{
+						$('.alldata').hide();
+					  $('.searchdata').show();
+					}
+					$.ajax({
+					type: 'get',
+					url : '/service/dropdown/hoatdong/search/from_date/to_date',
+					data: {'hoatdong':$hoatdong,'search':$search,'from_date':$from_date,'to_date':$to_date},
+					
+					success:function(data)
+					{
+						console.log(data);
+						$('#Content').html(data);
+					},
+					
+					});
+			});
+});
+  </script>				
 
 
 				
@@ -131,20 +178,6 @@
 					class="danhschdchv-fichevrondown1" />
 			</div>
 		</div>
-	
-
-    <div class="danhschdchv-group319">
-      <div class="danhschdchv-dropdown">
-        <select class="danhschdchv-text164 1616Reg">
-          <option value="tatca">Tất cả</option>
-          <option value="ngunghd">Ngưng hoạt động</option>
-          <option value="hd">Hoạt động</option>
-        </select>
-      </div>
-      <span class="danhschdchv-text166 1616Semi">
-        <span>Trạng thái hoạt động</span>
-      </span>
-    </div>
 
 	</div>
 
