@@ -97,30 +97,30 @@
                                 class="thmvaitr-vector03" />
                         </div>
                         <div class="thmvaitr-frame625231">
-                            <span class="thmvaitr-text18 2020Bold">
+                            <!-- <span class="thmvaitr-text18 2020Bold">
                                 <span>Admin</span>
-                            </span>
+                            </span> -->
                             <div class="thmvaitr-group343">
                                 <div class="thmvaitr-group337">
                                     <div class="thmvaitr-warningtext02">
                                         <span class="thmvaitr-text22 1616Semi">
-                                            <span>Tất cả</span>
+                                            <span>Admin</span>
                                         </span>
                                     </div>
-                                    <input type="checkbox" class="container checkbox">
+                                    <input type="checkbox" name="chucnang" value="0" class="container checkbox">
                                 </div>
                             </div>
                             <div class="thmvaitr-group344">
                                 <div class="thmvaitr-group337">
                                     <div class="thmvaitr-warningtext04">
                                         <span class="thmvaitr-text26 1616Semi">
-                                            <span>Chức năng x</span>
+                                            <span>User</span>
                                         </span>
                                     </div>
-                                    <input type="checkbox" class="container checkbox">
+                                    <input type="checkbox" name="chucnang" value="1" class="container checkbox">
                                 </div>
                             </div>
-                            <div class="thmvaitr-group345">
+                            <!-- <div class="thmvaitr-group345">
                                 <div class="thmvaitr-group337">
                                     <div class="thmvaitr-warningtext06">
                                         <span class="thmvaitr-text30 1616Semi">
@@ -185,8 +185,8 @@
                                         </span>
                                     </div>
                                     <input type="checkbox" class="container checkbox">
-                                </div>
-                            </div>
+                                </div> -->
+                            <!-- </div> -->
                         </div>
                         <div class="thmvaitr-warningtext10">
                             <span class="thmvaitr-text38 1616Semi">

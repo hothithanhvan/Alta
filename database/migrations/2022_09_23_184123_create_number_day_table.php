@@ -13,12 +13,10 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('roles', function (Blueprint $table) {
+        Schema::create('number_days', function (Blueprint $table) {
             $table->id();
-            $table->string('tenvaitro');
-            $table->string('songuoidung');
-            $table->string('mota');
-            $table->integer('chucnang');
+            $table->dateTime('day');
+            $table->integer('sl');
             $table->timestamps();
         });
     }
@@ -30,6 +28,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('roles');
+        Schema::dropIfExists('number_days');
     }
 };

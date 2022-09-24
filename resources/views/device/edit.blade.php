@@ -17,11 +17,11 @@
                     @include('device.breadscrum')
                         <img src="{{asset('playground_assets/uanglerighti334-z4uk.svg');}}" alt="uanglerightI334"
                             class="cpnhtthitb-uangleright1" />
-                        <button class="cpnhtthitb-button02">
+                            <button  class="cpnhtthitb-button02">
                             <span class="cpnhtthitb-text06 2020Bold">
                                 <span>Cập nhật thiết bị</span>
                             </span>
-                        </button>
+</button>
                     </div>
 
                     <div class="cpnhtthitb-frame271">

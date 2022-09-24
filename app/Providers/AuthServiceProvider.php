@@ -7,6 +7,7 @@ use Illuminate\Foundation\Support\Providers\AuthServiceProvider as ServiceProvid
 use App\Models\User;
 use Illuminate\Support\Facades\Gate;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\DB;
 class AuthServiceProvider extends ServiceProvider
 {
     /**
@@ -27,12 +28,15 @@ class AuthServiceProvider extends ServiceProvider
     {
         $this->registerPolicies();
         
-        Gate::define('show', function(User $user)
+        Gate::define('user', function(User $user)
         {
-            if (Auth::user ()->tendn == "sasuke") {
+            $y = Auth::user()->quyen;
+
+            if ($y == '0') {
                 return true;
             }
-            else{
+            else
+            {
                 return false;
             }
         });

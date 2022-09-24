@@ -22,14 +22,6 @@ class DeviceController extends Controller
      */
     public function index()
     {   
-       // $this->authorize('show');
-    //    if ( !Gate::allows('show')) {
-        
-    //     echo 'You are not allowed to view this resource. Please login to view this resource.';
-    //     return;
-    // }
-            
-        
         $devices = Device::latest()->paginate(5);
         $a = DB::table('dvsd')->get();
 

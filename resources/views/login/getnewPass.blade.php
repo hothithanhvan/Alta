@@ -7,7 +7,7 @@
         <link href=" {{asset('css/dangnhap.css'); }}"" rel="stylesheet" />
 
     <div class="qunmtkhu-container">
-        <form method="post" action="{{url('getnewPass')}}">
+        <form method="post" action="{{url('storenewPass')}}">
         @csrf
         <div class="qunmtkhu-qunmtkhu">
             @include('login.rightForget');

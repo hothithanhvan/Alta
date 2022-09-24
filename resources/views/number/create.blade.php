@@ -22,16 +22,7 @@
 			<div class="cpsmi-cpsmi">
 				<div class="cpsmi-topbar">
 					<div class="cpsmi-breadcrumbs">
-						<button class="cpsmi-button">
-							<span class="cpsmi-text 2020Bold"><span>Cấp số</span></span>
-						</button>
-						<img src="{{asset('playground_assets/uanglerighti339-7j9q.svg');}}" alt="uanglerightI339"
-							class="cpsmi-uangleright" />
-						<button class="cpsmi-button1">
-							<span class="cpsmi-text02 2020Bold">
-								<span>Danh sách cấp số</span>
-							</span>
-						</button>
+					@include('number.breadscrum')
 						<img src="{{asset('playground_assets/uanglerighti339-svs4.svg');}}" alt="uanglerightI339"
 							class="cpsmi-uangleright1" />
 						<button class="cpsmi-button2">
@@ -64,7 +55,7 @@
               @csrf
               <select id="select" name="tendichvu" class="cpsmi-text30 cpsmi-dropdown 1616Reg">
                 @foreach($services as $service)
-                <option id="option" value="{{ $service->tendichvu}}">{{ $service->tendichvu }}</option>
+                <option id="option" value="{{ $service->madichvu}}">{{ $service->tendichvu }}</option>
                 
 				@endforeach
         </select>
@@ -75,37 +66,15 @@
                   <button onclick="getValue()" type="button" data-bs-toggle="modal" data-bs-target="#exampleModal"
                     class="cpsmi-button3 cpsmi-text32">In số</button>
                   
-                    <button class="cpsmi-button4">
+                    <a href="" class="cpsmi-button4">
                     <span class="cpsmi-text34"><span>Hủy bỏ</span></span>
-                  </button>
+</a>
 
 </form>
 
                 </div>
               </div>
-              <script>
-                function getValue() {
-						var option = jQuery('#select').val();
-            return option;
-					}
-					jQuery(document).ready(function () {
-            
-						jQuery('#select').on('change', function () {
-							var option = getValue();
-							jQuery.ajax({
-								url: '/option',
-								type: "GET",
-								data: { 'option' : option},
-								success: function (data) {
-									console.log(data);
-									$('#Content').html(data);
-								}
-							});
-						});
-
-					});
-				</script>
-              <!-- modal fade -->
+              
            
             <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div class="modal-dialog">
@@ -119,16 +88,14 @@
               <span class="popupins-text 2222Bold">
                 <span>Thời gian cấp:</span>
               </span>
-              <span class="popupins-text02 2222Bold">
-                 <span>{{$a->thoigiancap}}</span> 
+              <span id="thoigiancap" class="popupins-text02 2222Bold">
               </span>
             </div>
             <div class="popupins-frame624779">
               <span class="popupins-text04 2222Bold">
                 <span>Hạn sử dụng:</span>
               </span>
-              <span class="popupins-text06 2222Bold">
-                <span>{{$a->hansd}}</span>
+              <span id="hansd" class="popupins-text06 2222Bold">
               </span>
             </div>
           </div>
@@ -136,9 +103,11 @@
             <span class="popupins-text08 3232Bold">
               <span>Số thứ tự được cấp</span>
             </span>
-            <span class="popupins-text10"><span>2001201</span></span>
+            <span id="stt" class="popupins-text10"></span>
             <span class="popupins-text12">
-              <span class="popupins-text13">DV: {{$a->tendichvu}}</span>
+			DV:
+			 <span id="tendichvu" class="popupins-text13"></span>
+
               <span>(tại quầy số 1)</span>
             </span>
           </div> 
@@ -149,7 +118,38 @@
    
   </div>
   </form>
+  <script>
+var i =0;
+function getValue() {
+	i++;
+	jQuery(document).ready(function () 
+	{
+		
+			var tendichvu = jQuery( "#select option:selected" ).text();
+			var madichvu = jQuery('#select').val();
+			var x = new Date();
+			var thoigiancap = x.toLocaleDateString() + ' ' + x.toLocaleTimeString();
+			var hansd = x.toLocaleDateString() + ' 17:30:00 ';
+			var y = String(i).padStart(4, '0'); 
+			var stt = madichvu + y;
+			
+			
+			document.getElementById("tendichvu").innerHTML = tendichvu;
+			document.getElementById("thoigiancap").innerHTML = thoigiancap;
+			document.getElementById("hansd").innerHTML = hansd;
+			document.getElementById("stt").innerHTML = stt;
+			jQuery.ajax({
+				url: '/tendichvu/thoigiancap/hansd/stt',
+				type: "GET",
+				data: { 'tendichvu': tendichvu,'thoigiancap': thoigiancap,
+				'hansd': hansd,'stt':stt},
+			});
+		
+	});
 
+}
+
+</script>
 				</div>
        
       </div>

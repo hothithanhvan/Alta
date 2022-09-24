@@ -12,31 +12,17 @@
           </span>
           <div class="thngtinchitit-topbar">
             <div class="thngtinchitit-breadcrumbs">
-              <button class="thngtinchitit-button">
-                <span class="thngtinchitit-text02 2020Bold">
-                  <span>Thiết bị</span>
-                </span>
-              </button>
-              <img
-                alt="uanglerightI844"
-                src="{{asset('playground_assets/uanglerighti844-v8w4.svg');}}"
-                class="thngtinchitit-uangleright"
-              />
-              <button class="thngtinchitit-button1">
-                <span class="thngtinchitit-text04 2020Bold">
-                  <span>Danh sách cấp số</span>
-                </span>
-              </button>
+            @include('number.breadscrum')
               <img
                 alt="uanglerightI844"
                 src="{{asset('playground_assets/uanglerighti844-5wqb.svg');}}"
                 class="thngtinchitit-uangleright1"
               />
-              <button class="thngtinchitit-button2">
+              <div class="thngtinchitit-button2">
                 <span class="thngtinchitit-text06 2020Bold">
                   <span>Chi tiết</span>
                 </span>
-              </button>
+</div>
             </div>
 
             <div class="thngtinchitit-frame271">

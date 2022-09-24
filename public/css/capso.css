@@ -3244,6 +3244,7 @@
     border-radius: 8px;
     margin-bottom: 0;
     justify-content: center;
+    background-color: rgb(247, 234, 213);
   }
   .qunlcps-text007 {
     color: var(--dl-color-orange-orange500);

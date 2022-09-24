@@ -26,21 +26,7 @@
           </div>
           <div class="qunlcps-topbar">
             <div class="qunlcps-breadcrumbs">
-              <button class="qunlcps-button">
-                <span class="qunlcps-text005 2020Bold">
-                  <span>Cấp số</span>
-                </span>
-              </button>
-              <img
-                src="{{asset('playground_assets/uanglerighti338-ub5.svg');}}"
-                alt="uanglerightI338"
-                class="qunlcps-uangleright"
-              />
-              <button class="qunlcps-button1">
-                <span class="qunlcps-text007 2020Bold">
-                  <span>Danh sách cấp số</span>
-                </span>
-              </button>
+              @include('number.breadscrum')
             </div>
            
             <div class="qunlcps-frame271">
@@ -208,8 +194,12 @@
 
   </script>
         </div>
+        <div class="qunlcps-frame105">
+        {{$numbers->links()}}
+        </div>
       </div>
 
     </div>
+ 
   </body>
 </html>

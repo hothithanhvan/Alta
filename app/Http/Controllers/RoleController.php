@@ -44,6 +44,7 @@ class RoleController extends Controller
         $request->validate([
             'tenvaitro' => 'required',
             'mota' => 'required',
+            'chucnang' => 'required',
         ]);
       
         Role::create($request->all());

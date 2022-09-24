@@ -14,12 +14,12 @@
             <img
                 src="{{asset('playground_assets/uanglerighti334-4knm.svg');}}"
                 alt="uanglerightI334"
-                class="thngtinchitit-uangleright1"
-              <button class="thngtinchitit-button2">
+                class="thngtinchitit-uangleright1">
+                <button class="thngtinchitit-button2">
                 <span class="thngtinchitit-text06 2020Bold">
                   <span>Chi tiết thiết bị</span>
                 </span>
-              </button>
+                </button>
             </div>
 
             <div class="thngtinchitit-frame271">

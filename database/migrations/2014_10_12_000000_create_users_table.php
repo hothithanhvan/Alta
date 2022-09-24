@@ -23,6 +23,8 @@ return new class extends Migration
             $table->string('vaitro');
             $table->string('tinhtrang');
             $table->string('hoten');
+            $table->string('image');
+            $table->integer('quyen');
             $table->rememberToken();
             $table->timestamps();
         });

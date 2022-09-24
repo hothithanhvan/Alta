@@ -17,6 +17,7 @@ class AccountController extends Controller
      */
     public function index()
     {
+
         $role = DB::table('roles')->get();
         $accounts = User::latest()->paginate(10);
         if ($key = request()->key) {
@@ -54,9 +55,16 @@ class AccountController extends Controller
             'password' => 'required',
             'vaitro' => 'required',
         ]);
+        $a = DB::table('roles')->where('tenvaitro',$request->vaitro)->pluck('chucnang');
         User::create($request->all());
         $password = Hash::make($request->password);
-        DB::table('users')->where('tendn',$request->tendn)->update(['password'=> $password]);
+        foreach ($a as $a){
+            DB::table('users')->where('tendn',$request->tendn)->update([
+            'password' => $password,
+            'quyen' => $a, 
+        ]);
+        }
+        
         return redirect()->route('account.index')
                         ->with('success','account created successfully.');
     }

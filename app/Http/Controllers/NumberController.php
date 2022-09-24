@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Number;
+use App\Models\numberDay;
 use App\Models\Service;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
@@ -31,8 +32,8 @@ class NumberController extends Controller
     public function create()
     {
         $services = Service::get();
-        $a = DB::table('numbers')->latest('date')->first();
-        return view('number.create',compact('services','a'));
+        $number = Number::get();
+        return view('number.create',compact('services','number'));
     }
 
     /**
@@ -43,19 +44,26 @@ class NumberController extends Controller
      */
     public function store(Request $request)
     {
-
+        
         // $request->validate([
         //     'tendichvu' => 'required',
         // ]);
-        
-        $dt = Carbon::create(now()->year, now()->month, now()->day, 17, 30, 00);
+        $time = now()->toDateString();
         DB::table('numbers')->insert([
-            'tendichvu' => $request->option,
-            'thoigiancap' => now(),
-            'hansd' => $dt,
-            'date' => now(),
+            'tendichvu' => $request->tendichvu,
+            'thoigiancap' => $request->thoigiancap,
+            'hansd' => $request->hansd,
+            'date' => $time,
+            'stt' => $request->stt,
         ]);
-        $a = Number::latest('date');
+
+        $number_day = numberDay::updateOrCreate(
+            ['day' => now()->toDateString()],
+            ['sl' => DB::table('numbers')->where('date', $time)->count()],
+        );
+       
+    
+    
         return redirect()->route('number.create');
     }
 

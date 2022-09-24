@@ -13,3 +13,14 @@ php artisan make:controller ReportController --resource --model=Report
 $2y$10$6Yfxh4vRmJkd3jYtpWMgmeJm6PFVrW5xFGvU2/94G9oub7I/c6CEW
 
 INSERT INTO `users` (`id`, `tendn`, `email`, `email_verified_at`, `password`, `sdt`, `vaitro`, `tinhtrang`, `hoten`, `remember_token`, `created_at`, `updated_at`) VALUES (NULL, 'van', '', NULL, '$2y$10$6Yfxh4vRmJkd3jYtpWMgmeJm6PFVrW5xFGvU2/94G9oub7I/c6CEW', '', '', '', '', NULL, NULL, NULL);
+
+echo sprintf('%04d', $number);
+
+var i = 0;
+function get()
+{
+i++;
+var x = String(i).padStart(4, '0'); 
+
+alert(x);
+}

@@ -297,41 +297,41 @@
 							<!-- <div class="dashboardtheongy-graphselementshorizontallines48px">
                   <div class="dashboardtheongy-lines"> -->
 							<div class="dashboardtheongy-frame625120">
-								<canvas id="myChart2" style="width:100%;max-width:600px"></canvas>
-                      <script>
-                        var xValues = [];
-                        var yValues = [];
-                        generateData("Math.sin(x)", 0, 10, 0.5);
+							<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js"></script>
+<canvas id="myChart2" style="width:100%;max-width:600px"></canvas>
 
-                        new Chart("myChart2", {
-                          type: "line",
-                          data: {
-                            labels: xValues,
-                            datasets: [{
-                              fill: false,
-                              pointRadius: 2,
-                              borderColor: "rgba(0,0,255,0.5)",
-                              data: yValues
-                            }]
-                          },
-                          options: {
-                            legend: { display: false },
-                            title: {
-                              display: true,
-                              text: "y = x * 2 + 7",
-                              fontSize: 16
-                            }
-                          }
-                        });
-                        function generateData(value, i1, i2, step = 1) {
-                          for (let x = i1; x <= i2; x += step) {
-                            yValues.push(eval(value));
-                            xValues.push(x);
-                          }
-                        }
-                      </script>
-								<!-- </div>
-                  </div> -->
+<script>
+var xValues = [
+	
+	19
+	,20
+	,21
+	,22
+	,<?php echo ?>
+];
+var yValues = [0,0,0,0,30];
+
+new Chart("myChart2", {
+  type: "line",
+  data: {
+    labels: xValues,
+    datasets: [{
+      fill: false,
+      lineTension: 0,
+      backgroundColor: "rgba(0,0,255,1.0)",
+      borderColor: "rgba(0,0,255,0.1)",
+      data: yValues
+    }]
+  },
+  options: {
+    legend: {display: false},
+    // scales: {
+    //   yAxes: [{ticks: {min: 6, max:16}}],
+    // }
+  }
+});
+</script>
+
 							</div>
 						</div>
 						<div class="dashboardtheongy-group625172">

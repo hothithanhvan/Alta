@@ -110,7 +110,7 @@
             <div class="thmdchv-group337">
               <div class="thmdchv-group333">
                 <input type="text" name="batdau"  class="thmdchv-input3" />
-                <input type="text" name="kethuc"  class="thmdchv-input4" />
+                <input type="text" name="ketthuc"  class="thmdchv-input4" />
                 <span class="thmdchv-text22 1616Semi">đến</span>
               </div>
               <div class="thmdchv-group334">

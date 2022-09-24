@@ -16,7 +16,7 @@ class LogActivity
     {
     	$log = [];
     	$log['subject'] = $subject;
-    	$log['method'] = $time;
+    	$log['time'] = $time;
     	$log['ip'] = Request::ip();
     	$log['username'] = $tendn;
     	LogActivityModel::create($log);

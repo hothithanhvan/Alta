@@ -51,7 +51,7 @@ class ServiceController extends Controller
         'tendichvu' => 'required',
         'mota' => 'required',
         'batdau' => 'required',
-        'kethuc' => 'required',
+        'ketthuc' => 'required',
         'prefix' => 'required',
         'surfix' => 'required',
         ]);

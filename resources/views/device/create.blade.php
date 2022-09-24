@@ -16,11 +16,11 @@
                     @include('device.breadscrum')
                         <img src="{{asset('playground_assets/uanglerighti333-i2bo.svg');}}" alt="uanglerightI333"
                             class="thmthitb-uangleright1" />
-                        <button class="thmthitb-button2">
-                            <span class="thmthitb-text06 2020Bold">
+
+                            <span class="thmthitb-button2 thmthitb-text06 2020Bold">
                                 <span>Thêm thiết bị</span>
                             </span>
-                        </button>
+
                     </div>
  
                     <div class="thmthitb-frame271">
@@ -138,9 +138,9 @@
                         <button type="submit" class="thmthitb-button3">
                             Thêm thiết bị
                         </button>
-                        <button class="thmthitb-button4">
+                        <a  href="{{route('device.index')}}" class="thmthitb-button4">
                             <span class="thmthitb-text48"><span>Hủy bỏ</span></span>
-                        </button>
+</a>
                     </div>
             </div>
 

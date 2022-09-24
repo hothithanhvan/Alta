@@ -13,6 +13,8 @@ use App\Models\User;
 use App\Helpers\LogActivity;
 use Illuminate\Http\Request;
 use Illuminate\Support\Carbon;
+use Illuminate\Support\Facades\Mail;
+
 
 class LoginController extends Controller
 {
@@ -52,16 +54,15 @@ class LoginController extends Controller
         $request->validate([
             'image' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
         ]);
-    //DB::insert('INSERT INTO pictures VALUES(1, LOAD_FILE('D:\Mặt trước cccd.jpg'))');
-        // $imageName = time().'.'.$request->image->extension();  
-     
-        // $request->image->move(public_path('images'), $imageName);
-  
-        // /* Store $imageName name in DATABASE from HERE */
-    
-        // return back()
-        //     ->with('success','You have successfully upload image.')
-        //     ->with('image',$imageName); 
+        $id = Auth::id();
+        $imageName = time().'.'.$request->image->extension();  
+        $request->image->move(public_path('images'), $imageName);
+        DB::table('users')->where('id', Auth::id())->update(['image'=> $imageName]);
+        $id = Auth::id();
+            $users = DB::select('select * from users where id = :id', ['id' => $id]);
+        /* Store $imageName name in DATABASE from HERE */
+        
+        return view('login.account',compact('imageName','users'));
     }
 
     public function logout(Request $request)
@@ -78,25 +79,31 @@ class LoginController extends Controller
     {
         return view('login.forgetPass');
     }
+
     public function enterMail(Request $request)
     {
         $request->validate([
             'email' => 'required|email|exists:users',
         ]);
-        $email = $request->email;
-        return view('login.getnewPass',compact('email'));
-    }
-    public function getnewPass(Request $request)
-    {
-        $request->validate([
-            'password' => 'required',
-            'password1' => 'required',
-        ]);
-        if ($request->get('password') == $request->get('password1')) {
-            $user = User::where('email', $request->email)
-            ->update(['password' => Hash::make($request->password)]);
-    }
-    return redirect('/');
+        $name = 'test name for email';
+        $value = $request->session()->put('key', $request->email);
+        Mail::send('welcome', compact('name'), function($mail){
+        $email = $_REQUEST['email'];
+        $mail->subject('Lấy lại mật khẩu');
+        $mail->to($email, '');
+        });
 }
+
+        public function getnewPass()
+        {
+            
+            return view('login.getnewPass');
+        }
+        public function storenewPass(Request $request) {
+            $email = session()->get('key');
+            $x = Hash::make($request->password);
+            DB::table('users')->where('email', $email)->update(['password'=> $x]);
+            return redirect()->view('login.login');
+        }
 
 }

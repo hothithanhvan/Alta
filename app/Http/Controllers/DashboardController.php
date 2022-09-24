@@ -47,7 +47,7 @@ class DashboardController extends Controller
     ]);
     DB::table('dashboards')->update([
         'number_wait' => DB::table('numbers')->where('trangthai', 0)
-        ->where('date',now()->toDateString())->count(),
+        ->count(),
         'number_used' => DB::table('numbers')->where('trangthai', 1)
         ->where('date',now()->toDateString())->count(),
         'number_pass' => DB::table('numbers')->where('trangthai', 2)

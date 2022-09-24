@@ -38,7 +38,8 @@
                 @foreach($users as $user)
                 <div class="tikhoncnhn-frame625106">
                     <div class="tikhoncnhn-group625151">
-                        <img src="{{asset('playground_assets/sasuke.png');}}" class="tikhoncnhn-group624818"/>
+                        <img src="<?php echo "http://localhost:8000/images/".$user->image."" ?>" 
+                        class="tikhoncnhn-group624818"/>
                     <div class="tikhoncnhn-group624817">
                     <button type="button"  data-bs-toggle="modal" data-bs-target="#exampleModal">
                   <img src="{{asset('playground_assets/Group 624817.svg')}}" 
@@ -49,12 +50,13 @@
   <div class="modal-dialog">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+        <h5 class="modal-title" id="exampleModalLabel">Upload ảnh</h5>
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body">
       <form action="{{ route('image.upload.post') }}" method="POST" enctype="multipart/form-data">
             @csrf
+            @method('post')
             <div class="row">
     
                 <div class="col-md-6">
@@ -68,8 +70,7 @@
             </div>
         
       <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-        <button type="submit" class="btn btn-primary">Save changes</button>
+        
       </div>
       </form>
     </div>

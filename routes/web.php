@@ -29,9 +29,10 @@ Route::get('/',[LoginController::class,'index'])->name('login');
 Route::post('/login', [LoginController::class,'store' ]);
 Route::get('/logout', [LoginController::class,'logout']);
 // Route::get('/user',)
-Route::get('/forgetPassword', [LoginController::class,'forgetPassword']);
-Route::post('/forgetPassword', [LoginController::class,'enterMail'])->name('enterMail');
-Route::post('/getnewPass',[LoginController::class,'getnewPass'])->name('getnewPass');
+Route::get('/forgetPassword', [LoginController::class,'forgetPassword'])->name('forgetPassword');
+Route::get('/enterMail/{email}', [LoginController::class,'enterMail'])->name('enterMail');
+Route::get('/getnewPass',[LoginController::class,'getnewPass'])->name('getnewPass');
+Route::post('/storenewPass',[LoginController::class,'storenewPass']);
 
 Route::middleware(['auth'])->group(function () {
     
@@ -60,7 +61,7 @@ Route::middleware(['auth'])->group(function () {
 Route::get('/device/dropdown/{hoatdong}/{ketnoi}/{search}',[DeviceController::class,'dropdown']);
 Route::get('/service/dropdown/{hoatdong}/{search}/{from_date}/{to_date}',[ServiceController::class,'dropdown']);
 Route::get('/number/date/{from_date}/{to_date}',[NumberController::class,'date']);
-Route::get('/{option}',[NumberController::class,'store']);
+Route::get('/{tendichvu}/{thoigiancap}/{hansd}/{stt}',[NumberController::class,'store']);
 Route::get('role/search/{search}', [RoleController::class, 'search']);
 Route::get('dairy/{search}/{from_date}/{to_date}', [DairyController::class,'search']);
 
@@ -71,4 +72,3 @@ Route::get('dairy/{search}/{from_date}/{to_date}', [DairyController::class,'sear
 
 //Route::resource('report', ReportController::class);
 Route::post('image-upload', [ LoginController::class, 'imageUpload' ])->name('image.upload.post');
-

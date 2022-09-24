@@ -4,7 +4,11 @@ namespace App\Http\Controllers;
 
 use App\Models\Number;
 use Illuminate\Http\Request;
-
+use Illuminate\Support\Facades\Gate;
+use App\Models\Report;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\DB;
+use App\Models\Role;
 class ReportController extends Controller
 {
     /**
@@ -14,6 +18,12 @@ class ReportController extends Controller
      */
     public function index()
     {
+
+       
+        $this->authorize('user');
+       if ( !Gate::allows('user')) {
+        abort(403);
+    }
         $reports = Number::latest()->paginate(10);
         
         return view('report.index',compact('reports'))
