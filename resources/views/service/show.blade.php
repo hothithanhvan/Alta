@@ -7,22 +7,15 @@
     <link href="{{asset('css/dichvu.css');}}" rel="stylesheet" />
 
     <div class="chitit-container">
-      <div class="chitit-chitit">
-        <div class="chitit-topbar">
-          <div class="chitit-breadcrumbs">
-            <button class="chitit-button">
-              <span class="chitit-text 2020Bold"><span>Dịch vụ</span></span>
-            </button>
-            <img src="{{asset('playground_assets/uanglerighti288-az4f.svg');}}" alt="uanglerightI288"
-              class="chitit-uangleright" />
-            <a href="{{route('service.index')}}"class="chitit-button1">
-              <span class="chitit-text002 2020Bold">Danh sách dịch vụ</span>
-            </a>
+      <div class="container-all">
+        <div class="topbar-all">
+          <div class="breadcrumbs">
+          @include('service.breadscrum')
             <img src="{{asset('playground_assets/uanglerighti288-1l0w.svg');}}" alt="uanglerightI288"
               class="chitit-uangleright1" />
-            <a class="chitit-button2">
-              <span class="chitit-text004 2020Bold">Chi tiết</span>
-            </a>
+            <div class="chitit-button2">
+              <span class="chitit-text004  ">Chi tiết</span>
+</div>
           </div>
 
           <div class="chitit-frame271">
@@ -36,55 +29,55 @@
             </div>
           </div>
         </div>
-        <span class="chitit-text010 2424Bold">
+        <span class="list-index">
           <span>Quản lý dịch vụ</span>
         </span>
         
         <div class="chitit-frame624754">
-          <span class="chitit-text026 2020Bold">
+          <span class="chitit-text026 ">
             <span>Quy tắc cấp số</span>
           </span>
-          <span class="chitit-text028 2020Bold">
+          <span class="chitit-text028 tieude">
             <span>Thông tin dịch vụ</span>
           </span>
-          <span class="chitit-text030 1616Semi">
+          <span class="chitit-text030 chitiettieude ">
             <span>Mã dịch vụ:</span>
           </span>
-          <span class="chitit-text032 1616Reg">
+          <span class="chitit-text032">
             {{$service->madichvu}}
           </span>
           <div class="chitit-group324">
-            <span class="chitit-text034 1616Semi">
+            <span class="chitit-text034 chitiettieude ">
               <span>Tên dịch vụ:</span>
             </span>
-            <span class="chitit-text036 1616Reg">
+            <span class="chitit-text036">
               {{$service->tendichvu}}
             </span>
           </div>
           <div class="chitit-group326">
-            <span class="chitit-text038 1616Semi"><span>Mô tả:</span></span>
-            <span class="chitit-text040 1616Reg">
+            <span class="chitit-text038 chitiettieude "><span>Mô tả:</span></span>
+            <span class="chitit-text040  ">
               <span>{{$service->mota}}</span>
             </span>
           </div>
           <div class="chitit-group332">
-            <span class="chitit-text042 1616Semi">
+            <span class="chitit-text042 chitiettieude ">
               <span>Tăng tự động:</span>
             </span>
             <div class="chitit-group330">
               <span class="chitit-input">{{$service->batdau}}</span>
               <span class="chitit-input1">{{$service->kethuc}}</span>
-              <span class="chitit-text044 1616Reg"><span>đến</span></span>
+              <span class="chitit-text044  "><span>đến</span></span>
             </div>
           </div>
-          <span class="chitit-text046 1616Semi">
+          <span class="chitit-text046 chitiettieude ">
             <span>Reset mỗi ngày</span>
           </span>
-          <span class="chitit-text048 1616Reg">
+          <span class="chitit-text048  ">
             <span>Ví dụ: 201-2001</span>
           </span>
           <div class="chitit-group331">
-            <span class="chitit-text050 1616Semi">Prefix:</span>
+            <span class="chitit-text050 chitiettieude ">Prefix:</span>
             <div class="chitit-group327">
               <span class="chitit-input2">{{$service->prefix}}</span>
             </div>
@@ -98,7 +91,7 @@
                   class="chitit-edit-square1" />
               </div>
             </div>
-            <button href="" class="chitit-text052">Cập nhật danh sách</button>
+            <a href="{{ route('service.edit',$service->id) }}" class="chitit-text052">Cập nhật danh sách</button>
           </div>
           </button>
           <div class="chitit-frame110">
@@ -113,7 +106,7 @@
                 </div>
               </div>
             </div>
-            <span class="chitit-text057"><span>Quay lại</span></span>
+            <a href = "{{route('service.index')}}"class="chitit-text057">Quay lại</a>
           </div>
         </div>
         <div class="chitit-frame624767">
@@ -122,18 +115,18 @@
             
               <!-- <img src="{{asset('playground_assets/fisearchi289-pfg5.svg');}}" alt="fisearchI289" class="chitit-fisearch" /> -->
 
-            <span class="chitit-text061 1616Semi"><span>Từ khoá</span></span>
+            <span class="chitit-text061 chitiettieude "><span>Từ khoá</span></span>
           </div>
           <div class="chitit-group320">
             <div class="">
-              <select class="chitit-dropdown chitit-text063 1616Reg">
+              <select class="chitit-dropdown chitit-text063  ">
               <option value="">Tất cả</option>
                 <option value="">Đã thực hiện</option>
                 <option value="">Đã hoàn thành</option>
                 <option value="">Vắng</option>
               </select>
             </div>
-            <span class="chitit-text065 1616Semi">
+            <span class="chitit-text065 chitiettieude ">
               <span>Trạng thái</span>
             </span>
           </div>
@@ -153,39 +146,30 @@
                 </div>
               </div>
             </div>
-            <span class="chitit-text071 1616Semi">
+            <span class="chitit-text071 chitiettieude ">
               <span>Chọn thời gian</span>
             </span>
           </div>
 
 
-          <table class="chitit-frame624720 chitit-text073 1616Bold">
-            <tr class="">
+          <table class="chitit-frame624720 chitit-text073  chitiettieude">
+            <tr class="chitit-frame624721">
               <td>Số thứ tự</td>
               <td>Trạng thái</td>
 
             </tr>
-            <tr class="qunlthitb-text100">
-              @foreach($number as $number)
-              @if ($service->tendichvu == $number->tendichvu)
+            @foreach($number as $number)
+            @if ($service->tendichvu == $number->tendichvu)
+            <tr> 
               <td >{{$number->stt}}</td>
               <td >{{$number->trangthai}}</td>
-              @endif
-              @endforeach
+              
             </tr>
+            @endif
+            @endforeach
           </table>
 
-          <div class="chitit-frame105">
-            <div class="chitit-frame1051">
-              <img src="{{asset('playground_assets/fichevrondowni289-lyk.svg');}}" alt="fichevrondownI289"
-                class="chitit-fichevrondown1" />
-            </div>
-            
-            <div class="chitit-frame108">
-              <img src="{{asset('playground_assets/fichevrondowni289-0c3l.svg');}}" alt="fichevrondownI289"
-                class="chitit-fichevrondown2" />
-            </div>
-          </div>
+          
         </div>
       </div>
     </div>

@@ -6,69 +6,36 @@
       <link href="{{asset('css/taikhoan.css')}}" rel="stylesheet" />
 
       <div class="cpnhttikhon-container">
-        <div class="cpnhttikhon-cpnhttikhon">
-          <div class="cpnhttikhon-topbar">
-            <div class="cpnhttikhon-breadcrumbs">
-              <button class="cpnhttikhon-button">
-                <span class="cpnhttikhon-text 2020Bold">
-                  <span>Cài đặt hệ thống</span>
-                </span>
-              </button>
-              <img
-                src="{{asset('playground_assets/uanglerighti282-xnkf.svg');}}"
-                alt="uanglerightI282"
-                class="cpnhttikhon-uangleright"
-              />
-              <button class="cpnhttikhon-button1">
-                <span class="cpnhttikhon-text02 2020Bold">
-                  <span>Quản lý tài khoản</span>
-                </span>
-              </button>
+        <div class="container-all">
+          <div class="topbar-all">
+            <div class="breadcrumbs">
+              @include('account.breadscrum')
               <img
                 src="{{asset('playground_assets/uanglerighti282-gtv7.svg');}}"
                 alt="uanglerightI282"
                 class="cpnhttikhon-uangleright1"
               />
-              <button class="cpnhttikhon-button2">
-                <span class="cpnhttikhon-text04 2020Bold">
+              <div class="cpnhttikhon-button2">
+                <span class="cpnhttikhon-text04  ">
                   <span>Cập nhật tài khoản</span>
                 </span>
               </button>
             </div>
-
-            <div class="cpnhttikhon-frame271">
-              <div class="cpnhttikhon-vuesaxboldnotification">
-                <div class="cpnhttikhon-vuesaxboldnotification1">
-                  <div class="cpnhttikhon-notification">
-                    <img
-                      src="{{asset('playground_assets/vectori282-qwg.svg');}}"
-                      alt="VectorI282"
-                      class="cpnhttikhon-vector"
-                    />
-                    <img
-                      src="{{asset('playground_assets/vectori282-of6k.svg');}}"
-                      alt="VectorI282"
-                      class="cpnhttikhon-vector01"
-                    />
-                  </div>
-                </div>
-              </div>
-            </div>
           </div>
-          <span class="cpnhttikhon-text10 2424Bold">
+          <span class="cpnhttikhon-text10">
             <span>Quản lý tài khoản</span>
           </span>
           <form action="{{ route('account.update',$account->id) }}" method="POST">
                     @csrf
                     @method('PUT')
           <div class="cpnhttikhon-frame624726">
-            <span class="cpnhttikhon-text12 2020Bold">
+            <span class="tieude">
               <span>Thông tin tài khoản</span>
             </span>
             <form>
             <div class="cpnhttikhon-frame624731">
               <div class="cpnhttikhon-warningtext">
-                <span class="cpnhttikhon-text14 1616Semi">
+                <span class="chitiettieude">
                   <span>Họ tên</span>
                 </span>
                 <img
@@ -85,7 +52,7 @@
             </div>
             <div class="cpnhttikhon-frame624732">
               <div class="cpnhttikhon-warningtext1">
-                <span class="cpnhttikhon-text16 1616Semi">
+              <span class="chitiettieude">
                   <span>Số điện thoại</span>
                 </span>
                 <img
@@ -102,7 +69,7 @@
             </div>
             <div class="cpnhttikhon-frame624733">
               <div class="cpnhttikhon-warningtext2">
-                <span class="cpnhttikhon-text18 1616Semi">
+              <span class="chitiettieude">
                   <span>Email</span>
                 </span>
                 <img
@@ -119,7 +86,7 @@
             </div>
             <div class="cpnhttikhon-frame624739">
               <div class="cpnhttikhon-warningtext3">
-                <span class="cpnhttikhon-text20 1616Semi">
+              <span class="chitiettieude">
                   <span>Vai trò</span>
                 </span>
                 <img
@@ -129,7 +96,7 @@
                 />
               </div>
               <div class="cpnhttikhon-dropdown">
-                <select name="vaitro" class="cpnhttikhon-text22 1616Reg">
+                <select name="vaitro" class="cpnhttikhon-text22  ">
                 @foreach($role as $role)
                 @if ($account->vaitro === $role->tenvaitro)
                 <option selected value="{{ $role->tenvaitro }}">{{ $role->tenvaitro}}</option>
@@ -142,7 +109,7 @@
             </div>
             <div class="cpnhttikhon-frame624734">
               <div class="cpnhttikhon-warningtext4">
-                <span class="cpnhttikhon-text24 1616Semi">
+              <span class="chitiettieude">
                   <span>Tình trạng</span>
                 </span>
                 <img
@@ -152,7 +119,7 @@
                 />
               </div>
               <div class="cpnhttikhon-dropdown">
-                <select class=" cpnhttikhon-text22 1616Reg">
+                <select class=" cpnhttikhon-text22  ">
                   <option id="1">1</option>
                   <option>2</option>
                 </select>
@@ -160,7 +127,7 @@
             </div>
             <div class="cpnhttikhon-frame624735">
               <div class="cpnhttikhon-warningtext5">
-                <span class="cpnhttikhon-text28 1616Semi">
+              <span class="chitiettieude">
                   <span>Tên đăng nhập:</span>
                 </span>
                 <img
@@ -177,7 +144,7 @@
             </div>
             <div class="cpnhttikhon-frame624745">
               <div class="cpnhttikhon-warningtext6">
-                <span class="cpnhttikhon-text30 1616Semi">
+              <span class="chitiettieude">
                   <span>Nhập lại mật khẩu:</span>
                 </span>
                 <img
@@ -187,7 +154,7 @@
                 />
               </div>
               <div class="cpnhttikhon-input4">
-                <span class="cpnhttikhon-text32 1616Reg">
+                <span class="cpnhttikhon-text32  ">
                   <span></span>
                 </span>
                 
@@ -195,7 +162,7 @@
             </div>
             <div class="cpnhttikhon-frame624738">
               <div class="cpnhttikhon-warningtext7">
-                <span class="cpnhttikhon-text34 1616Semi">
+              <span class="chitiettieude">
                   <span>Mật khẩu:</span>
                 </span>
                 <img
@@ -205,14 +172,14 @@
                 />
               </div>
               <div class="cpnhttikhon-input5">
-                <span class="cpnhttikhon-text36 1616Reg">
+                <span class="cpnhttikhon-text36  ">
                   <span></span>
                 </span>
                 
               </div>
             </div>
             <div class="cpnhttikhon-frame624744">
-              <span class="cpnhttikhon-text38 1414Reg">
+              <span class="cpnhttikhon-text38  ">
                 <span>Là trường thông tin bắt buộc</span>
               </span>
               <img
@@ -224,9 +191,9 @@
           </div>
           <div class="cpnhttikhon-frame624737">
             <button type="submit" class="cpnhttikhon-button3 cpnhttikhon-text40">Cập nhật</button>
-            <button class="cpnhttikhon-button4">
+            <a href="{{route('account.index')}}" class="cpnhttikhon-button4">
               <span class="cpnhttikhon-text42"><span>Hủy bỏ</span></span>
-            </button>
+</a>
           </div>
         </form>
           

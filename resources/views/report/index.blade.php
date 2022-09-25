@@ -7,51 +7,32 @@
       <link href="{{asset('css/baocao.css')}}" rel="stylesheet" />
 
       <div class="baocao-container">
-        <div class="baocao-baocao">
-          <div class="baocao-topbar">
-            <div class="baocao-breadcrumbs">
-              <button class="baocao-button">
-                <span class="baocao-text 2020Bold"><span>Báo cáo</span></span>
-              </button>
+        <div class="container-all">
+          <div class="topbar-all">
+            <div class="breadcrumbs">
+              <div class="baocao-button">
+                <span class="baocao-text  ">Báo cáo</span>
+</div>
               <img
                 src="{{asset('playground_assets/uanglerighti213-43f.svg');}}"
                 alt="uanglerightI213"
                 class="baocao-uangleright"
               />
-              <button class="baocao-button1">
-                <span class="baocao-text002 2020Bold">
+              <a class="baocao-button1">
+                <span class="baocao-text002  ">
                   <span>Lập báo cáo</span>
                 </span>
-              </button>
-            </div>
-
-            <div class="baocao-frame271">
-              <div class="baocao-vuesaxboldnotification">
-                <div class="baocao-vuesaxboldnotification1">
-                  <div class="baocao-notification">
-                    <img
-                      src="{{asset('playground_assets/vectori213-epmp.svg');}}"
-                      alt="VectorI213"
-                      class="baocao-vector"
-                    />
-                    <img
-                      src="{{asset('playground_assets/vectori213-5xu6.svg');}}"
-                      alt="VectorI213"
-                      class="baocao-vector01"
-                    />
-                  </div>
-                </div>
-              </div>
+</a>
             </div>
           </div>
           <div class="baocao-group311">
             <div class="baocao-datepicker">
               <div class="baocao-datepicker1">
-              <input type="date" data-date-inline-picker="true" class="baocao-text008 1616Reg" />
+              <input type="date" data-date-inline-picker="true" class="baocao-text008  " />
                 
               </div>
               <div class="baocao-datepicker2">
-              <input type="date" data-date-inline-picker="true" class="baocao-text010 1616Reg" />
+              <input type="date" data-date-inline-picker="true" class="baocao-text010  " />
 
             
               </div>
@@ -67,12 +48,12 @@
                 </div>
               </div>
             </div>
-            <span class="baocao-text012 1616Semi">
+            <span class="baocao-text012 chitiettieude ">
               <span>Chọn thời gian</span>
             </span>
           </div>
-          <table class="baocao-frame624720">
-              <tr class="baocao-frame624691 baocao-text014 1616Bold">
+          <table class="table-index192">
+              <tr class="baocao-frame624691 baocao-text014  ">
                 <td>
                   <select >
                   <option selected="selected" disabled="disabled" value="0">STT</option>
@@ -135,7 +116,7 @@
 @endforeach
 </table>
               <div class="baocao-frame624710">
-                <span class="baocao-text016 1414Reg">
+                <span class="baocao-text016  ">
                   <span>2010001</span>
                 </span>
               </div>

@@ -7,67 +7,37 @@
       <link href="{{asset('css/taikhoan.css')}}" rel="stylesheet" />
 
       <div class="thmtikhon-container">
-        <div class="thmtikhon-thmtikhon">
-          <div class="thmtikhon-topbar">
-            <div class="thmtikhon-breadcrumbs">
-              <button class="thmtikhon-button">
-                <span class="thmtikhon-text 2020Bold">
-                  <span>Cài đặt hệ thống</span>
-                </span>
-              </button>
-              <img
-                src="{{asset('playground_assets/uanglerighti283-teot.svg');}}"
-                alt="uanglerightI283"
-                class="thmtikhon-uangleright"
-              />
-              <button class="thmtikhon-button1">
-                <span class="thmtikhon-text02 2020Bold">
-                  <span>Quản lý tài khoản</span>
-                </span>
-              </button>
+        <div class="container-all">
+          <div class="topbar-all">
+            <div class="breadcrumbs">
+              @include('account.breadscrum')
               <img
                 src="{{asset('playground_assets/uanglerighti283-yowa.svg');}}"
                 alt="uanglerightI283"
                 class="thmtikhon-uangleright1"
               />
-              <button class="thmtikhon-button2">
-                <span class="thmtikhon-text04 2020Bold">
+              <div class="thmtikhon-button2">
+                <span class="thmtikhon-text04  ">
                   <span>Thêm tài khoản</span>
                 </span>
-              </button>
+</div>
             </div>
 
             <div>
-              <div class="thmtikhon-vuesaxboldnotification">
-                <div class="thmtikhon-vuesaxboldnotification1">
-                  <div class="thmtikhon-notification">
-                    <img
-                      src="{{asset('playground_assets/vectori283-h5mr.svg');}}"
-                      alt="VectorI283"
-                      class="thmtikhon-vector"
-                    />
-                    <img
-                      src="{{asset('playground_assets/vectori283-v5vr.svg');}}"
-                      alt="VectorI283"
-                      class="thmtikhon-vector01"
-                    />
-                  </div>
-                </div>
-              </div>
             </div>
           </div>
-          <span class="thmtikhon-text10 2424Bold">
+          <span class="list-index">
             <span>Quản lý tài khoản</span>
           </span>
           <form action="{{ route('account.store') }}" method="POST">
             @csrf
           <div class="thmtikhon-frame624726">
-            <span class="thmtikhon-text12 2020Bold">
+            <span class="tieude">
               <span>Thông tin tài khoản</span>
             </span>
             <div class="thmtikhon-frame624731">
               <div class="thmtikhon-warningtext">
-                <span class="thmtikhon-text14 1616Semi">
+                <span class="chitiettieude">
                   <span>Họ tên</span>
                 </span>
                 <img
@@ -84,7 +54,7 @@
             </div>
             <div class="thmtikhon-frame624732">
               <div class="thmtikhon-warningtext1">
-                <span class="thmtikhon-text16 1616Semi">
+              <span class="chitiettieude">
                   <span>Số điện thoại</span>
                 </span>
                 <img
@@ -101,7 +71,7 @@
             </div>
             <div class="thmtikhon-frame624733">
               <div class="thmtikhon-warningtext2">
-                <span class="thmtikhon-text18 1616Semi">
+              <span class="chitiettieude">
                   <span>Email</span>
                 </span>
                 <img
@@ -118,7 +88,7 @@
             </div>
             <div class="thmtikhon-frame624739">
               <div class="thmtikhon-warningtext3">
-                <span class="thmtikhon-text20 1616Semi">
+              <span class="chitiettieude">
                   <span>Vai trò</span>
                 </span>
                 <img
@@ -129,7 +99,7 @@
               </div>
               <div class="thmtikhon-dropdown">
               
-                  <select class="thmtikhon-text22 1616Semi" name="vaitro" id="vaitro" >
+                  <select class="thmtikhon-text22  " name="vaitro" id="vaitro" >
                   @foreach($role as $role)
                     <option 
                     value="{{ $role->tenvaitro }}">{{ $role->tenvaitro}}</option>
@@ -140,7 +110,7 @@
             </div>
             <div class="thmtikhon-frame624734">
               <div class="thmtikhon-warningtext4">
-                <span class="thmtikhon-text24 1616Semi">
+              <span class="chitiettieude">
                   <span>Tình trạng</span>
                 </span>
                 <img
@@ -150,7 +120,7 @@
                 />
               </div>
               <div class="thmtikhon-dropdown">
-                  <select class="thmtikhon-text22 1616Semi">
+                  <select class="thmtikhon-text22  ">
                     <option>1</option>
                     <option>2</option>
                   </select>
@@ -158,8 +128,8 @@
             </div>
             <div class="thmtikhon-frame624735">
               <div class="thmtikhon-warningtext5">
-                <span class="thmtikhon-text28 1616Semi">
-                  <span>Tên đăng nhập:</span>
+              <span class="chitiettieude">
+                  <span>Tên đăng nhập</span>
                 </span>
                 <img
                   src="{{asset('playground_assets/vectori283-ql5.svg');}}"
@@ -175,7 +145,7 @@
             </div>
             <div class="thmtikhon-frame624746">
               <div class="thmtikhon-warningtext6">
-                <span class="thmtikhon-text30 1616Semi">
+              <span class="chitiettieude">
                   <span>Nhập lại mật khẩu</span>
                 </span>
                 <img
@@ -192,8 +162,8 @@
             </div>
             <div class="thmtikhon-frame624745">
               <div class="thmtikhon-warningtext7">
-                <span class="thmtikhon-text32 1616Semi">
-                  <span>Mật khẩu:</span>
+              <span class="chitiettieude">
+                  <span>Mật khẩu</span>
                 </span>
                 <img
                   src="{{asset('playground_assets/vectori283-1yzm.svg');}}"
@@ -208,7 +178,7 @@
               />
             </div>
             <div class="thmtikhon-frame624744">
-              <span class="thmtikhon-text34 1414Reg">
+              <span class="thmtikhon-text34  ">
                 <span>Là trường thông tin bắt buộc</span>
               </span>
               <img
@@ -222,9 +192,9 @@
             <button type="submit" class="thmtikhon-button3 thmtikhon-text36">
               Thêm
             </button>
-            <button class="thmtikhon-button4">
+            <a href="{{route('account.index')}}" class="thmtikhon-button4">
               <span class="thmtikhon-text38"><span>Hủy bỏ</span></span>
-            </button>
+</a>
           </div>
           </div>
                 </form>

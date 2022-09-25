@@ -13,7 +13,7 @@
               </div>
             </div>
           </div>
-          <a href="{{url('dashboard')}}" class=" qunlthitb-text206 1616Semi">Dashboard</a>
+          <a href="{{url('dashboard')}}" class=" qunlthitb-text206  ">Dashboard</a>
         </div>
       </div>
       <div class="qunlthitb-frame265">
@@ -25,7 +25,7 @@
               </div>
             </div>
           </div>
-          <a href="{{url('device')}}" class="qunlthitb-text206 1616Semi">Thiết bị</a>
+          <a href="{{url('device')}}" class="qunlthitb-text206  ">Thiết bị</a>
         </div>
       </div>
       <div class="qunlthitb-frame266">
@@ -45,7 +45,7 @@
               <img src="{{asset('playground_assets/vectori217-5obp.svg');}}" alt="VectorI217" class="qunlthitb-vector12" />
             </div>
           </div>
-          <a href="{{url('service')}}" class="qunlthitb-text206 1616Semi">Dịch vụ</a>
+          <a href="{{url('service')}}" class="qunlthitb-text206  ">Dịch vụ</a>
         </div>
       </div>
       <div class="qunlthitb-frame267">
@@ -53,13 +53,13 @@
           <div class="qunlthitb-icondasboard03">
             <img src="{{asset('playground_assets/filayersi217-q0db.svg');}}" alt="filayersI217" class="qunlthitb-filayers" />
           </div>
-          <a href="{{url('number')}}" class="qunlthitb-text206 1616Semi">Cấp số</a>
+          <a href="{{url('number')}}" class="qunlthitb-text206  ">Cấp số</a>
         </div>
       </div>
       <div class="qunlthitb-frame270">
         <div class="success qunlthitb-frame2621">
           <img src="{{asset('playground_assets/framei217-5a9.svg');}}" alt="FrameI217" class="qunlthitb-frame1" />
-          <a href="{{url('report')}}" class="qunlthitb-text206 1616Semi">Báo cáo</a>
+          <a href="{{url('report')}}" class="qunlthitb-text206  ">Báo cáo</a>
         </div>
       </div>
       <div class="qunlthitb-frame268">
@@ -105,7 +105,7 @@ window.onclick = function(event) {
   }
 }
 </script>
-          <!-- <a href="{{url('role')}}" class="qunlthitb-text206 1616Semi">Cài đặt hệ thống</a> -->
+          <!-- <a href="{{url('role')}}" class="qunlthitb-text206  ">Cài đặt hệ thống</a> -->
           
           <!-- <img src="{{asset('playground_assets/fimoreverticali217-j25.svg');}}" alt="fimoreverticalI217"
             class="qunlthitb-fimorevertical" /> -->

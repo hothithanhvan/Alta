@@ -7,32 +7,20 @@
       <link href="{{asset('css/dichvu.css');}}" rel="stylesheet" />
 
       <div class="thmdchv-container">
-        <div class="thmdchv-thmdchv">
-          <div class="thmdchv-topbar">
-            <div class="thmdchv-breadcrumbs">
-              <button class="thmdchv-button">
-                <span class="thmdchv-text 2020Bold"><span>Dịch vụ</span></span>
-              </button>
-              <img
-                src="{{asset('playground_assets/uanglerighti284-q4ed.svg');}}"
-                alt="uanglerightI284"
-                class="thmdchv-uangleright"
-              />
-              <button class="thmdchv-button1">
-                <span class="thmdchv-text02 2020Bold">
-                  <span>Danh sách dịch vụ</span>
-                </span>
-              </button>
+        <div class="container-all">
+          <div class="topbar-all">
+            <div class="breadcrumbs">
+              @include('service.breadscrum')
               <img
                 src="{{asset('playground_assets/uanglerighti284-2hlc.svg');}}"
                 alt="uanglerightI284"
                 class="thmdchv-uangleright1"
               />
-              <button class="thmdchv-button2">
-                <span class="thmdchv-text04 2020Bold">
+              <div class="thmdchv-button2">
+                <span class="thmdchv-text04">
                   <span>Thêm dịch vụ</span>
                 </span>
-              </button>
+</div>
             </div>
 
             <div class="thmdchv-frame271">
@@ -54,22 +42,22 @@
               </div>
             </div>
           </div>
-          <span class="thmdchv-text10 2424Bold">
+          <span class="list-index">
             <span>Quản lý dịch vụ</span>
           </span>
 
           <form action="{{ route('service.store') }}" method="POST">
             @csrf
           <div class="thmdchv-frame624726">
-            <span class="thmdchv-text12 2020Bold">
+            <span class="tieude">
               <span>Thông tin dịch vụ</span>
             </span>
-            <span class="thmdchv-text14 2020Bold">
+            <span class="thmdchv-text14  ">
               <span>Quy tắc cấp số</span>
             </span>
             <div class="thmdchv-frame624731">
               <div class="thmdchv-warningtext">
-                <span class="thmdchv-text16 1616Semi">
+                <span class="chitiettieude">
                   <span>Mã dịch vụ:</span>
                 </span>
                 <img
@@ -82,7 +70,7 @@
             </div>
             <div class="thmdchv-frame624732">
               <div class="thmdchv-warningtext1">
-                <span class="thmdchv-text18 1616Semi">
+              <span class="chitiettieude">
                   <span>Tên dịch vụ :</span>
                 </span>
                 <img
@@ -99,7 +87,8 @@
             </div>
             <div class="thmdchv-frame624733">
               <div class="thmdchv-warningtext2">
-                <span class="thmdchv-text20 1616Semi"><span>Mô tả:</span></span>
+              <span class="chitiettieude">
+                <span>Mô tả:</span></span>
               </div>
               <input
                 type="text" name="mota" 
@@ -111,11 +100,12 @@
               <div class="thmdchv-group333">
                 <input type="text" name="batdau"  class="thmdchv-input3" />
                 <input type="text" name="ketthuc"  class="thmdchv-input4" />
-                <span class="thmdchv-text22 1616Semi">đến</span>
+                <span class="thmdchv-text22  ">đến</span>
               </div>
               <div class="thmdchv-group334">
                 <div class="thmdchv-warningtext3">
-                  <span class="thmdchv-text24 1616Semi">
+                <span class="chitiettieude">
+
                     <span>Tăng tự động từ:</span>
                   </span>
                 </div>
@@ -126,7 +116,7 @@
               <input type="text" name="prefix" class="thmdchv-input5" />
               <div class="thmdchv-group335">
                 <div class="thmdchv-warningtext4">
-                  <span class="thmdchv-text26 1616Semi">
+                <span class="chitiettieude">
                     <span>Prefix:</span>
                   </span>
                 </div>
@@ -137,7 +127,7 @@
               <input type="text" name="surfix" class="thmdchv-input6" />
               <div class="thmdchv-group336">
                 <div class="thmdchv-warningtext5">
-                  <span class="thmdchv-text28 1616Semi">
+                <span class="chitiettieude">
                     <span>Surfix:</span>
                   </span>
                 </div>
@@ -145,7 +135,7 @@
               </div>
             </div>
             <div class="thmdchv-frame624744">
-              <span class="thmdchv-text30 1414Reg">
+              <span class="thmdchv-text30  ">
                 <span>Là trường thông tin bắt buộc</span>
               </span>
               <img
@@ -157,7 +147,7 @@
             <div class="thmdchv-group343">
               <div class="thmdchv-group3371">
                 <div class="thmdchv-warningtext6">
-                  <span class="thmdchv-text32 1616Semi">
+                <span class="chitiettieude">
                     <span>Reset mỗi ngày</span>
                   </span>
                 </div>
@@ -168,7 +158,7 @@
           
           <div class="thmdchv-frame624737">
             <button type="submit" class="thmdchv-button3 thmdchv-text48">Thêm dịch vụ</button>
-            <button class="thmdchv-button4">
+            <button class="cancel-button">
               <span class="thmdchv-text50"><span>Hủy bỏ</span></span>
             </button>
           </div>

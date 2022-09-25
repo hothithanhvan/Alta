@@ -40,7 +40,7 @@ class LoginController extends Controller
             LogActivity::addToLog('Đăng nhập',now(), Auth::user()->hoten);
             return view('login.account',compact('users'));
         } 
-        Session::flash('error', 'Email hoặc Password không đúng');
+        Session::flash('error', 'Tên đăng nhập hoặc Password không đúng');
         return redirect()->back();
     }
     public function showUser($id) 

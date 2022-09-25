@@ -8,9 +8,9 @@
       <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.js"></script> 
       <div class="qunlcps-container">
-        <div class="qunlcps-qunlcps">
+        <div class="container-all">
      
-          <div class="qunlcps-component1">
+          <div class="create-index">
             <div class="qunlcps-vuesaxboldaddsquare">
               <div class="qunlcps-vuesaxboldaddsquare1">
                 <div class="qunlcps-addsquare">
@@ -24,8 +24,8 @@
             </div>
             <a class="qunlcps-text" href="{{ route('number.create') }}"> Cấp số mới</a>
           </div>
-          <div class="qunlcps-topbar">
-            <div class="qunlcps-breadcrumbs">
+          <div class="topbar-all">
+            <div class="breadcrumbs">
               @include('number.breadscrum')
             </div>
            
@@ -48,50 +48,48 @@
               </div>
             </div>
           </div>
-          <span class="qunlcps-text013 2424Bold">
+          <span class="list-index">
             <span>Quản lý cấp số</span>
           </span>
           <div class="qunlcps-group317">
             <div class="qunlcps-dropdown">
-              <select class="qunlcps-text015 1616Reg">
+              <select class="qunlcps-text015  ">
               <option value="tatca" >Tất cả</option>
                 <option value="khamranghammat" >Khám răng hàm mặt</option>
                 <option value="khamtaimuihong" >Khám tai mũi họng</option>
               </select>
             </div>
-            <span class="qunlcps-text017 1616Semi">
+            <span class="qunlcps-text017  ">
               <span>Tên dịch vụ</span>
             </span>
           </div>
           <div class="qunlcps-group319">
           <div class="qunlcps-dropdown">
-              <select class="qunlcps-text015 1616Reg">
+              <select class="qunlcps-text015  ">
                 <option value="tatca" >Tất cả</option>
                 <option value="dangcho" >Đang chờ</option>
                 <option value="dasudung" >Đã sử dụng</option>
                 <option value="boqua" >Bỏ qua</option>
               </select>
             </div>
-            <span class="qunlcps-text021 1616Semi">
+            <span class="qunlcps-text021  ">
               <span>Tình trạng</span>
             </span>
           </div>
           <div class="qunlcps-group318">
-            <div class="qunlcps-input">
-              <input type="text" class="qunlcps-text023" placeholder="Nhập từ khóa" />
+              <input type="text" class="qunlcps-text023 qunlcps-input" placeholder="Nhập từ khóa" />
               
-            </div>
-            <span class="qunlcps-text025 1616Semi"><span>Từ khoá</span></span>
+            <span class="qunlcps-text025  "><span>Từ khoá</span></span>
           </div>
           <div class="qunlcps-group311">
             <div class="qunlcps-datepicker" name="datepicker" id="datepicker">
               <div class="qunlcps-datepicker1">
                   <input name="from_date" id="from_date" 
-                  type="date" value="" class="qunlcps-text027 1616Reg" />
+                  type="date" value="" class="qunlcps-text027  " />
               </div>
               <div class="qunlcps-datepicker2">
                   <input name="to_date" id="to_date" 
-                  type="date" value="" class="qunlcps-text027 1616Reg" />
+                  type="date" value="" class="qunlcps-text027  " />
               </div>
               <!-- data-date-inline-picker="true" -->
               <div class="qunlcps-vuesaxboldarrowright">
@@ -106,23 +104,23 @@
                 </div>
               </div>
             </div>
-            <span class="qunlcps-text031 1616Semi">
+            <span class="qunlcps-text031  ">
               <span>Chọn thời gian</span>
             </span>
           </div>
           
           <div class="qunlcps-group3191">
           <div class="qunlcps-dropdown">
-              <select class="qunlcps-text015 1616Reg">
+              <select class="qunlcps-text015  ">
                 <option value="tatca" >Tất cả</option>
                 <option value="kioks" >Kiosk</option>
                 <option value="hethong" >Hệ thống</option>
               </select>
             </div>
-            <span class="qunlcps-text058 1616Semi"><span>Nguồn cấp</span></span>
+            <span class="qunlcps-text058  "><span>Nguồn cấp</span></span>
           </div>
-          <table class="qunlcps-frame624721" id="table">
-              <tr class="qunlcps-frame624691 qunlcps-text060 1616Bold">
+          <table class="table-index224" id="table">
+              <tr class="qunlcps-frame624691 qunlcps-text060  ">
                 <td>STT</td>
                 <td>Tên khách hàng</td>
                 <td>Tên dịch vụ</td>
@@ -130,7 +128,6 @@
                 <td>Hạn sử dụng</td>
                 <td>Trạng thái</td>
                 <td>Nguồn cấp</td>
-                <td>     </td>
                 <td>     </td>
               </tr>
               @foreach($numbers as $number)
@@ -153,9 +150,7 @@
                 <td>
                 <a href="{{ route('number.show',$number->id) }}">Chi tiết</a>
                 </td>
-                <td>
-                <a href="{{ route('number.edit',$number->id) }}">Cập nhật</a>
-                </td>
+                
               </tr>
               @endforeach
               </div>
@@ -193,9 +188,9 @@
 
 
   </script>
-        </div>
-        <div class="qunlcps-frame105">
-        {{$numbers->links()}}
+  <div class="pagination-all">
+  {{$numbers->links()}}
+            </div>
         </div>
       </div>
 

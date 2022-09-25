@@ -5,10 +5,10 @@
                         <img src="http://localhost:8000/images/{{Auth::user()->image}}" class="tikhoncnhn-unsplash-fyl8s-m-c2j2q"/>
 
                         <div class="tikhoncnhn-group296">
-                            <span class="tikhoncnhn-text02 1212Reg">
+                            <span class="tikhoncnhn-text02">
                                 <span>Xin chào</span>
                             </span>
-                            <a class="tikhoncnhn-text04 1616Bold" href="{{ route('user',Auth::user()->id )}}">
+                            <a class="tikhoncnhn-text04" href="{{ route('user',Auth::user()->id )}}">
 {{Auth::user()->hoten}}
                             </a>
                         </div>

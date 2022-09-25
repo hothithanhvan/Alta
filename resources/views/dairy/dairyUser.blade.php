@@ -15,44 +15,27 @@
       <link href="{{asset('css/nhatky.css')}}" rel="stylesheet" />
 
       <div class="nhtkngidng-container">
-        <div class="nhtkngidng-nhtkngidng">
+        <div class="container-all">
 
-          <div class="nhtkngidng-topbar">
-            <div class="nhtkngidng-breadcrumbs">
-              <button class="nhtkngidng-button">
-                <span class="nhtkngidng-text 2020Bold">
+          <div class="topbar-all">
+            <div class="breadcrumbs">
+              <div class="nhtkngidng-button">
+                <span class="nhtkngidng-text  ">
                   <span>Cài đặt hệ thống</span>
                 </span>
-              </button>
+</div>
               <img
                 src="{{asset('playground_assets/uanglerighti284-fwom.svg');}}"
                 alt="uanglerightI284"
                 class="nhtkngidng-uangleright"
               />
-              <button class="nhtkngidng-button1">
-                <span class="nhtkngidng-text002 2020Bold">
+              <div class="nhtkngidng-button1">
+                <span class="nhtkngidng-text002  ">
                   <span>Nhật ký hoạt động</span>
                 </span>
-              </button>
+</div>
             </div>
-            <div class="nhtkngidng-frame271">
-              <div class="nhtkngidng-vuesaxboldnotification">
-                <div class="nhtkngidng-vuesaxboldnotification1">
-                  <div class="nhtkngidng-notification">
-                    <img
-                      src="{{asset('playground_assets/vectori284-kuk.svg');}}"
-                      alt="VectorI284"
-                      class="nhtkngidng-vector"
-                    />
-                    <img
-                      src="{{asset('playground_assets/vectori284-eoeq.svg');}}"
-                      alt="VectorI284"
-                      class="nhtkngidng-vector01"
-                    />
-                  </div>
-                </div>
-              </div>
-            </div>
+            
           </div>
           
           
@@ -62,9 +45,9 @@
               <div class="nhtkngidng-group311">
             <div class="nhtkngidng-datepicker">
               <input type="date" id="from_date"
-              class="nhtkngidng-datepicker1 nhtkngidng-text008 1616Reg" />
+              class="nhtkngidng-datepicker1 nhtkngidng-text008  " />
               <input type="date" id="to_date"
-              class="nhtkngidng-datepicker2 nhtkngidng-text010 1616Reg" />
+              class="nhtkngidng-datepicker2 nhtkngidng-text010  " />
               <div class="nhtkngidng-vuesaxboldarrowright">
                 <div class="nhtkngidng-vuesaxboldarrowright1">
                   <div class="nhtkngidng-arrowright">
@@ -77,7 +60,7 @@
                 </div>
               </div>
             </div>
-            <span class="nhtkngidng-text012 1616Semi">
+            <span class="nhtkngidng-text012 chitiettieude ">
               <span>Chọn thời gian</span>
             </span>
           </div>
@@ -90,7 +73,7 @@
                 class="nhtkngidng-fisearch"
               />
             </button>
-            <span class="nhtkngidng-text127 1616Semi">
+            <span class="nhtkngidng-text127 chitiettieude ">
               <span>Từ khoá</span>
             </span>
           </div>  
@@ -129,8 +112,8 @@
 
 					});
 				</script>
-        <table class="nhtkngidng-frame624720">
-              <tr class="nhtkngidng-frame624691 nhtkngidng-text014 1616Bold">
+        <table class="table-index192 ">
+              <tr class="nhtkngidng-frame624691 nhtkngidng-text014 chitiettieude ">
                 <td>Tên đăng nhập</td>
                 <td>Thời gian tác động</td>
                 <td>IP thực hiện</td>
@@ -140,7 +123,7 @@
 			@foreach($logs as $key => $log)
               <tr class="alldata">
                 <td>{{ $log->username }}</td>
-                <td>{{ $log->method }}</td>
+                <td>{{ $log->time }}</td>
                 <td>{{ $log->ip }}</td>
                 <td>{{ $log->subject }}</td>
               </tr>
@@ -148,7 +131,9 @@
               @endif
               <tbody class="searchdata" id="Content"></tbody>
           </table>
-          <div class="pagination nhtkngidng-frame105">{{ $logs->links() }} </div>     
+          <div class="pagination-all">
+            {{ $logs->links() }} 
+          </div>     
         </div>
       </div>
     </div>

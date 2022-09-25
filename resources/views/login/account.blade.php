@@ -10,16 +10,14 @@
         <link href="{{asset('css/dangnhap.css');}}" rel="stylesheet" />
 
         <div class="tikhoncnhn-container">
-            <div class="tikhoncnhn-tikhoncnhn">
-                <div class="tikhoncnhn-topbar">
-
-                    <div class="tikhoncnhn-breadcrumbs">
-
-                        <button class="tikhoncnhn-button">
-                            <span class="tikhoncnhn-text 2020Bold">
+            <div class="container-all">
+                <div class="topbar-all">
+                    <div class="breadcrumbs">
+                        <div class="tikhoncnhn-button">
+                            <span class="tikhoncnhn-text  ">
                                 <span>Thông tin cá nhân</span>
                             </span>
-                        </button>
+                        </div>
                     </div>
 
                     <div class="tikhoncnhn-frame271">
@@ -38,6 +36,9 @@
                 @foreach($users as $user)
                 <div class="tikhoncnhn-frame625106">
                     <div class="tikhoncnhn-group625151">
+                    <span class="tikhoncnhn-text20  ">
+                            <span>{{$user->hoten}}</span>
+                        </span>
                         <img src="<?php echo "http://localhost:8000/images/".$user->image."" ?>" 
                         class="tikhoncnhn-group624818"/>
                     <div class="tikhoncnhn-group624817">
@@ -77,22 +78,20 @@
   </div>
 </div>
 </div>
-                        <span class="tikhoncnhn-text20 2424Bold">
-                            <span>{{$user->hoten}}</span>
-                        </span>
+                       
                     </div>
                     
                     <div class="tikhoncnhn-group625150">
                         <div class="tikhoncnhn-group625146">
                             <div class="tikhoncnhn-group624750">
                                 <div class="tikhoncnhn-frame6249604">
-                                    <span class="tikhoncnhn-text22 1616Semi">
+                                    <span class="tikhoncnhn-text22  ">
                                         <span>Mật khẩu</span>
                                     </span>
                                 </div>
                             </div>
                             <div class="tikhoncnhn-fill">
-                                <span class="tikhoncnhn-text24 1616Reg">
+                                <span class="tikhoncnhn-text24">
                                     <span>{{$user->password}}</span>
                                 </span>
                             </div>
@@ -100,13 +99,13 @@
                         <div class="tikhoncnhn-group6251501">
                             <div class="tikhoncnhn-group6247501">
                                 <div class="tikhoncnhn-frame6249604">
-                                    <span class="tikhoncnhn-text26 1616Semi">
+                                    <span class="tikhoncnhn-text26  ">
                                         <span>Tên người dùng</span>
                                     </span>
                                 </div>
                             </div>
                             <div class="tikhoncnhn-fill1">
-                                <span class="tikhoncnhn-text28 1616Reg">
+                                <span class="tikhoncnhn-text28  ">
                                     <span>{{$user->hoten}}</span>
                                 </span>
                             </div>
@@ -114,13 +113,13 @@
                         <div class="tikhoncnhn-group625148">
                             <div class="tikhoncnhn-group6247502">
                                 <div class="tikhoncnhn-frame6249604">
-                                    <span class="tikhoncnhn-text30 1616Semi">
+                                    <span class="tikhoncnhn-text30  ">
                                         <span>Email:</span>
                                     </span>
                                 </div>
                             </div>
                             <div class="tikhoncnhn-fill2">
-                                <span class="tikhoncnhn-text32 1616Reg">
+                                <span class="tikhoncnhn-text32  ">
                                     <span>{{$user->email}}</span>
                                 </span>
                             </div>
@@ -128,13 +127,13 @@
                         <div class="tikhoncnhn-group625152">
                             <div class="tikhoncnhn-group6247503">
                                 <div class="tikhoncnhn-frame6249604">
-                                    <span class="tikhoncnhn-text34 1616Semi">
+                                    <span class="tikhoncnhn-text34  ">
                                         <span>Vai trò:</span>
                                     </span>
                                 </div>
                             </div>
                             <div class="tikhoncnhn-fill3">
-                                <span class="tikhoncnhn-text36 1616Reg">
+                                <span class="tikhoncnhn-text36  ">
                                     <span>{{$user->vaitro}}</span>
                                 </span>
                             </div>
@@ -142,13 +141,13 @@
                         <div class="tikhoncnhn-group625147">
                             <div class="tikhoncnhn-group6247504">
                                 <div class="tikhoncnhn-frame6249604">
-                                    <span class="tikhoncnhn-text38 1616Semi">
+                                    <span class="tikhoncnhn-text38  ">
                                         <span>Số điện thoại</span>
                                     </span>
                                 </div>
                             </div>
                             <div class="tikhoncnhn-fill4">
-                                <span class="tikhoncnhn-text40 1616Reg">
+                                <span class="tikhoncnhn-text40  ">
                                     <span>{{$user->sdt}}</span>
                                 </span>
                             </div>
@@ -156,13 +155,13 @@
                         <div class="tikhoncnhn-group6251511">
                             <div class="tikhoncnhn-group6247505">
                                 <div class="tikhoncnhn-frame6249604">
-                                    <span class="tikhoncnhn-text42 1616Semi">
+                                    <span class="tikhoncnhn-text42  ">
                                         <span>Tên đăng nhập</span>
                                     </span>
                                 </div>
                             </div>
                             <div class="tikhoncnhn-fill5">
-                                <span class="tikhoncnhn-text44 1616Reg">
+                                <span class="tikhoncnhn-text44  ">
                                    {{$user->tendn}}
                                 </span>
                             </div>

@@ -1,5 +1,5 @@
 @extends('layout.header')
-
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 <body>
   <div>
     <link href="{{asset('css\dangnhap.css'); }}" rel="stylesheet" />
@@ -7,22 +7,23 @@
     <div class="framengnhp-container">
       <div class="framengnhp-framengnhp">
        @include('login.rightLogin')
-       @extends('layout.alert')
+       @include('layout.alert')
         <form action="login" method="post">
           @csrf
           <div class="framengnhp-frame624727">
               <span>Tên đăng nhập *</span>
-            <input type="text" name="tendn" class="framengnhp-input" />
+            <input id="tendn" type="text" name="tendn" class="framengnhp-input" />
+            <p id = "cd"></p>
           </div>
           <div class="framengnhp-frame624728">
             <span class="framengnhp-text02 1818Reg">
               <span>Mật khẩu *</span>
             </span>
-            <input type="password" name="password" class="framengnhp-input" alt="ueyeslashI311" src="{{asset('playground_assets\ueyeslashi311-pqjr.svg'); }}" class="framengnhp-ueyeslash" />
+            <input type="password" id="password" name="password" class="framengnhp-input" alt="ueyeslashI311" src="{{asset('playground_assets\ueyeslashi311-pqjr.svg'); }}" class="framengnhp-ueyeslash" />
           </div>
-          <a href="{{url('forgetPassword')}}" class="framengnhp-text04 1414Reg">Quên mật khẩu?</a>
+          <a href="{{url('forgetPassword')}}" class="framengnhp-text04  ">Quên mật khẩu?</a>
 
-          <input type="submit" class="framengnhp-button framengnhp-text06 1616Bold" value="Đăng nhập" />
+          <input type="submit" class="framengnhp-button framengnhp-text06  " value="Đăng nhập" />
         </form>
         <div class="framengnhp-logoalta">
           <div class="framengnhp-group">

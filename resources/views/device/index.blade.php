@@ -8,7 +8,6 @@
 	<div>
 		<link rel="stylesheet"
 			href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.12.2/css/bootstrap-select.min.css">
-		<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
 
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.js"></script>
 		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
@@ -18,29 +17,25 @@
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.js"></script>
 		<div class="qunlthitb-container">
-			<div class="qunlthitb-qunlthitb">
-				<!-- <form action="" method="get" > -->
+			<div class="container-all">
 				<div class="dropdown" id="dropdown" name="dropdown">
 
 					<div class="qunlthitb-group319">
-						<span class="qunlthitb-text178 1616Semi">
+						<span class="qunlthitb-text178  ">
 							<span>Trạng thái hoạt động</span>
 						</span>
-						<div class="">
-							<select class="qunlthitb-dropdown qunlthitb-text176 1616Reg" name="hoatdong" id="hoatdong">
+							<select class="qunlthitb-dropdown qunlthitb-text176  " name="hoatdong" id="hoatdong">
 								<option selected="selected" value="0">Tất cả</option>
 								<option value="1">Hoạt động</option>
 								<option value="2">Ngưng hoạt động</option>
 							</select>
-						</div>
 					</div>
 					<div class="qunlthitb-group320">
-						<span class="qunlthitb-text182 1616Semi">
+						<span class="qunlthitb-text182  ">
 							<span>Trạng thái kết nối</span>
 						</span>
 						<div class="">
-							<select class="qunlthitb-dropdown1 qunlthitb-text176 1616Reg" 
-							name="ketnoi" id="ketnoi">
+							<select class="qunlthitb-dropdown1 qunlthitb-text176  " name="ketnoi" id="ketnoi">
 								<option selected="selected" value="0">Tất cả</option>
 								<option value="1">Kết nối</option>
 								<option value="2">Mất kết nối</option>
@@ -48,27 +43,27 @@
 						</div>
 					</div>
 					<div class="qunlthitb-group318">
-						<span class="qunlthitb-text222 1616Semi">Từ khoá</span>
-							<input type="text" class="qunlthitb-input qunlthitb-text220" id="search" name="search"
-								placeholder="Nhập từ khóa">
-							<button onclick="getValue()">
-              <img src="{{asset('playground_assets/fisearchi218-d31.svg')}}" 
-              alt="fisearchI218" class="qunlthitb-fisearch" />
-            </button>
-						</div>
-
+						<span class="qunlthitb-text222  ">Từ khoá</span>
+						<input type="text" class="qunlthitb-input qunlthitb-text220" id="search" name="search"
+							placeholder="Nhập từ khóa">
+						<button onclick="getValue()">
+							<img src="{{asset('playground_assets/fisearchi218-d31.svg')}}" alt="fisearchI218"
+								class="qunlthitb-fisearch" />
+						</button>
+				
+					</div>
 				</div>
 				<script>
 					function getValue() {
 						var search = jQuery('#search').val();
-            return search;
+						return search;
 					}
 					jQuery(document).ready(function () {
-            
+
 						jQuery('#dropdown').on('change', function () {
 							var hoatdong = 0;
 							var ketnoi = 0;
-              var search =getValue();
+							var search = getValue();
 							hoatdong = jQuery('#hoatdong').val();
 							ketnoi = jQuery('#ketnoi').val();
 
@@ -94,13 +89,9 @@
 
 					});
 				</script>
-				
-			</div>
-			<!-- </form> -->
-			<span class="qunlthitb-text 2424Bold">
-				<span>Danh sách thiết bị</span>
-			</span>
-			<table class="qunlthitb-frame624720 table qunlthitb-text002 1616Bold">
+
+			<span class="list-index">Danh sách thiết bị</span>
+			<table class="table-index224 table qunlthitb-text002  ">
 				<tr class="qunlthitb-frame624691">
 					<td>Mã thiết bị</td>
 					<td>Tên thiết bị</td>
@@ -112,25 +103,25 @@
 					<td> </td>
 				</tr>
 				@foreach ($devices as $device)
-				<tr class="alldata">
-					<td class="qunlthitb-text159">{{ $device->mathietbi }}</td>
-					<td class="qunlthitb-text159">{{ $device->tenthietbi }}</td>
-					<td class="qunlthitb-text159">{{ $device->diachiIP }}</td>
-					<td class="qunlthitb-text159">
+				<tr class="alldata qunlthitb-text159">
+					<td >{{ $device->mathietbi }}</td>
+					<td >{{ $device->tenthietbi }}</td>
+					<td >{{ $device->diachiIP }}</td>
+					<td >
 						@if ($device->trangthaihoatdong == 1)
 						<span>Hoạt động</span>
 						@else
 						<span>Ngưng hoạt động</span>
 						@endif
 					</td>
-					<td class="qunlthitb-text159">
+					<td >
 						@if ($device->trangthaiketnoi == 1)
 						<span>Kết nối</span>
 						@else
 						<span>Mất kết nối</span>
 						@endif
 					</td>
-					<td class="qunlthitb-text159">
+					<td >
 						@foreach($a as $dvsd)
 						@if ($device->mathietbi == $dvsd->mathietbi)
 						{{ $dvsd->tendichvu}}|
@@ -151,52 +142,14 @@
 				@endforeach
 				<tbody class="searchdata qunlthitb-text159" id="Content"></tbody>
 			</table>
-			<!-- <script type="text/javascript">
-    $('#search').on('keyup', function()
-    {
-        var value = $(this).val();
-        if (value !== null)
-        {
-          $('.alldata').hide();
-          $('.searchdata').show();
-        }
-        else
-        {
-          $('.alldata').show();
-          $('.searchdata').hide();
-        }
-        if (value){
-          $.ajax({
-          methods: 'get',
-          url : '/search',
-          // url : "{{ URL::to('/search') }}",
-          data: {'search':value},
-          
-          success:function(data)
-          {
-            console.log(data);
-            $('#Content').html(data);
-          },
-          
-    });
-        }
-        
-  }) -->
-			</script>
 			<script type="text/javascript">
 				$.ajaxSetup({ headers: { 'csrftoken': '{{ csrf_token() }}' } });
 			</script>
+
+	<div class="topbar-all">
+		<div class="breadcrumbs">
+			@include('device.breadscrum')
 		</div>
-	</div>
-
-
-	</div>
-
-	<div class="qunlthitb-topbar">
-		<div class="qunlthitb-breadcrumbs">
-		@include('device.breadscrum')
-		</div>
-
 		<div class="qunlthitb-frame271">
 			<div class="qunlthitb-vuesaxboldnotification">
 				<div class="qunlthitb-vuesaxboldnotification1">
@@ -210,7 +163,7 @@
 			</div>
 		</div>
 	</div>
-	<div class="qunlthitb-component1">
+	<div class="create-index">
 		<div class="qunlthitb-vuesaxboldaddsquare">
 			<div class="qunlthitb-vuesaxboldaddsquare1">
 				<div class="qunlthitb-addsquare">
@@ -222,15 +175,12 @@
 		<a class="qunlthitb-text201" href="{{ route('device.create') }}"> Thêm thiết bị</a>
 	</div>
 
-	</div>
-
-	</div>
-	</div>
-	<div class="qunlthitb-frame105">
+	<div class="pagination-all">
 		{{ $devices->links() }}
+	</div>
+	</div>
+	</div>
 
-	</div>
-	</div>
 </body>
 
 </html>

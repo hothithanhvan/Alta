@@ -24,3 +24,34 @@ var x = String(i).padStart(4, '0');
 
 alert(x);
 }
+			<!-- <script type="text/javascript">
+    $('#search').on('keyup', function()
+    {
+        var value = $(this).val();
+        if (value !== null)
+        {
+          $('.alldata').hide();
+          $('.searchdata').show();
+        }
+        else
+        {
+          $('.alldata').show();
+          $('.searchdata').hide();
+        }
+        if (value){
+          $.ajax({
+          methods: 'get',
+          url : '/search',
+          // url : "{{ URL::to('/search') }}",
+          data: {'search':value},
+          
+          success:function(data)
+          {
+            console.log(data);
+            $('#Content').html(data);
+          },
+          
+    });
+        }
+        
+  }) -->

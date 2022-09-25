@@ -7,11 +7,11 @@
       <link href="{{asset('css/dichvu.css');}}" rel="stylesheet" />
 
       <div class="cpnht-container">
-        <div class="cpnht-cpnht">
-          <div class="cpnht-topbar">
-            <div class="cpnht-breadcrumbs">
+        <div class="container-all">
+          <div class="topbar-all">
+            <div class="breadcrumbs">
               <button class="cpnht-button">
-                <span class="cpnht-text 2020Bold"><span>Dịch vụ</span></span>
+                <span class="cpnht-text  "><span>Dịch vụ</span></span>
               </button>
               <img
                 src="{{asset('playground_assets/uanglerighti281-4l8s.svg');}}"
@@ -19,7 +19,7 @@
                 class="cpnht-uangleright"
               />
               <button class="cpnht-button1">
-                <span class="cpnht-text02 2020Bold">
+                <span class="cpnht-text02  ">
                   <span>Danh sách dịch vụ</span>
                 </span>
               </button>
@@ -29,7 +29,7 @@
                 class="cpnht-uangleright1"
               />
               <button class="cpnht-button2">
-                <span class="cpnht-text04 2020Bold"><span>Chi tiết</span></span>
+                <span class="cpnht-text04  "><span>Chi tiết</span></span>
               </button>
               <img
                 src="{{asset('playground_assets/uanglerighti281-qggi.svg');}}"
@@ -37,7 +37,7 @@
                 class="cpnht-uangleright2"
               />
               <button class="cpnht-button3">
-                <span class="cpnht-text06 2020Bold"><span>Cập nhật</span></span>
+                <span class="cpnht-text06  "><span>Cập nhật</span></span>
               </button>
             </div>
 
@@ -60,22 +60,22 @@
               </div>
             </div>
           </div>
-          <span class="cpnht-text12 2424Bold">
+          <span class="cpnht-text12  ">
             <span>Quản lý dịch vụ</span>
           </span>
           <form action="{{ route('service.update',$service->id) }}" method="POST">
             @csrf
             @method('PUT')
           <div class="cpnht-frame624738">
-            <span class="cpnht-text14 2020Bold">
+            <span class="cpnht-text14  ">
               <span>Thông tin dịch vụ</span>
             </span>
-            <span class="cpnht-text16 2020Bold">
+            <span class="cpnht-text16  ">
               <span>Quy tắc cấp số</span>
             </span>
             <div class="cpnht-frame624731">
               <div class="cpnht-warningtext">
-                <span class="cpnht-text18 1616Semi">
+                <span class="cpnht-text18  ">
                   <span>Mã dịch vụ:</span>
                 </span>
                 <img
@@ -88,7 +88,7 @@
             </div>
             <div class="cpnht-frame624732">
               <div class="cpnht-warningtext1">
-                <span class="cpnht-text20 1616Semi">
+                <span class="cpnht-text20  ">
                   <span>Tên dịch vụ :</span>
                 </span>
                 <img
@@ -105,7 +105,7 @@
             </div>
             <div class="cpnht-frame624733">
               <div class="cpnht-warningtext2">
-                <span class="cpnht-text22 1616Semi"><span>Mô tả:</span></span>
+                <span class="cpnht-text22  "><span>Mô tả:</span></span>
               </div>
               <input
                 type="text" value="{{$service->mota}}" name="mota"
@@ -117,11 +117,11 @@
               <div class="cpnht-group333">
                 <input type="text" name="batdau" value="{{$service->batdau}}" class="cpnht-input3" />
                 <input type="text" name="kethuc" value="{{$service->kethuc}}" placeholder="9999" class="cpnht-input4" />
-                <span class="cpnht-text24 1616Semi"><span>đến</span></span>
+                <span class="cpnht-text24  "><span>đến</span></span>
               </div>
               <div class="cpnht-group334">
                 <div class="cpnht-warningtext3">
-                  <span class="cpnht-text26 1616Semi">
+                  <span class="cpnht-text26  ">
                     <span>Tăng tự động từ:</span>
                   </span>
                 </div>
@@ -132,7 +132,7 @@
               <input type="text" name="prefix" value="{{$service->prefix}}" class="cpnht-input5" />
               <div class="cpnht-group335">
                 <div class="cpnht-warningtext4">
-                  <span class="cpnht-text28 1616Semi">
+                  <span class="cpnht-text28  ">
                     <span>Prefix:</span>
                   </span>
                 </div>
@@ -143,7 +143,7 @@
               <input type="text" name="surfix" value="{{$service->surfix}}" class="cpnht-input6" />
               <div class="cpnht-group336">
                 <div class="cpnht-warningtext5">
-                  <span class="cpnht-text30 1616Semi">
+                  <span class="cpnht-text30  ">
                     <span>Surfix:</span>
                   </span>
                 </div>
@@ -151,7 +151,7 @@
               </div>
             </div>
             <div class="cpnht-frame624744">
-              <span class="cpnht-text32 1414Reg">
+              <span class="cpnht-text32  ">
                 <span>Là trường thông tin bắt buộc</span>
               </span>
               <img
@@ -163,7 +163,7 @@
             <div class="cpnht-group343">
               <div class="cpnht-group3371">
                 <div class="cpnht-warningtext6">
-                  <span class="cpnht-text34 1616Semi">
+                  <span class="cpnht-text34  ">
                     <span>Reset mỗi ngày</span>
                   </span>
                 </div>

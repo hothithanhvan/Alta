@@ -7,17 +7,17 @@
         <link href="{{asset('css/thietbi.css');}}" rel="stylesheet" />
 
         <div class="thmthitb-container">
-            <div class="thmthitb-thmthitb">
-                <span class="thmthitb-text 2424Bold">
+            <div class="container-all">
+                <span class="list-index">
                     <span>Quản lý thiết bị</span>
                 </span>
-                <div class="thmthitb-topbar">
-                    <div class="thmthitb-breadcrumbs">
+                <div class="topbar-all">
+                    <div class="breadcrumbs">
                     @include('device.breadscrum')
                         <img src="{{asset('playground_assets/uanglerighti333-i2bo.svg');}}" alt="uanglerightI333"
                             class="thmthitb-uangleright1" />
 
-                            <span class="thmthitb-button2 thmthitb-text06 2020Bold">
+                            <span class="thmthitb-button2 thmthitb-text06  ">
                                 <span>Thêm thiết bị</span>
                             </span>
 
@@ -41,12 +41,12 @@
                 <form action="{{ route('device.store') }}" method="POST">
                     @csrf
                     <div class="thmthitb-frame624726">
-                        <span class="thmthitb-text12 2020Bold">
+                        <span class="tieude">
                             <span>Thông tin thiết bị</span>
                         </span>
                         <div class="thmthitb-frame624731">
                             <div class="thmthitb-warningtext">
-                                <span class="thmthitb-text14 1616Semi">
+                                <span class="chitiettieude">
                                     <span>Mã thiết bị:</span>
                                 </span>
                                 <img src="{{asset('playground_assets/vectori333-9lkd.svg');}}" alt="VectorI333"
@@ -56,7 +56,7 @@
                         </div>
                         <div class="thmthitb-frame624732">
                             <div class="thmthitb-warningtext1">
-                                <span class="thmthitb-text16 1616Semi">
+                            <span class="chitiettieude">
                                     <span>Tên thiết bị:</span>
                                 </span>
                                 <img src="{{asset('playground_assets/vectori334-bb5l.svg');}}" alt="VectorI334"
@@ -67,7 +67,7 @@
                         </div>
                         <div class="thmthitb-frame624733">
                             <div class="thmthitb-warningtext2">
-                                <span class="thmthitb-text18 1616Semi">
+                            <span class="chitiettieude">
                                     <span>Địa chỉ IP:</span>
                                 </span>
                                 <img src="{{asset('playground_assets/vectori334-gw4j.svg');}}" alt="VectorI334"
@@ -77,20 +77,20 @@
                         </div>
                         <div class="thmthitb-frame624734">
                             <div class="thmthitb-warningtext3">
-                                <span class="thmthitb-text20 1616Semi">
+                            <span class="chitiettieude">
                                     <span>Loại thiết bị:</span>
                                 </span>
                                 <img src="{{asset('playground_assets/vectori334-y6qk.svg');}}" alt="VectorI334"
                                     class="thmthitb-vector05" />
                             </div>
-                                <select class="thmthitb-input3 thmthitb-text22 1616Reg" >
+                                <select class="thmthitb-input3 thmthitb-text22  " >
                                 <option value="1">1</option>
                                 <option value="2">2</option>
                                 </select>
                         </div>
                         <div class="thmthitb-frame624735">
                             <div class="thmthitb-warningtext4">
-                                <span class="thmthitb-text24 1616Semi">
+                            <span class="chitiettieude">
                                     <span>Tên đăng nhập:</span>
                                 </span>
                                 <img src="{{asset('playground_assets/vectori334-vjux.svg');}}" alt="VectorI334"
@@ -100,7 +100,7 @@
                         </div>
                         <div class="thmthitb-frame624736">
                             <div class="thmthitb-warningtext5">
-                                <span class="thmthitb-text26 1616Semi">
+                            <span class="chitiettieude">
                                     <span>Mật khẩu:</span>
                                 </span>
                                 <img src="{{asset('playground_assets/vectori334-3kvm.svg');}}" alt="VectorI334"
@@ -110,7 +110,7 @@
                         </div>
                         <div class="thmthitb-frame6247331">
                             <div class="thmthitb-warningtext6">
-                                <span class="thmthitb-text28 1616Semi">
+                            <span class="chitiettieude">
                                     <span>Dịch vụ sử dụng:</span>
                                 </span>
                                 <img src="{{asset('playground_assets/vectori334-wl3c.svg');}}" alt="VectorI334"
@@ -127,7 +127,7 @@
                         </div>
                         </div>
                         <div class="thmthitb-frame624744">
-                            <span class="thmthitb-text30 1414Reg">
+                            <span class="thmthitb-text30  ">
                                 <span>Là trường thông tin bắt buộc</span>
                             </span>
                             <img src="{{asset('playground_assets/vector3347-71h.svg');}}" alt="Vector3347"

@@ -1,133 +1,199 @@
 @extends('layout.menubar')
 @extends('layout.header')
-@extends('layout.alert')
 @extends('layout.hello')
-<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet"
-	integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js"
-	integrity="sha384-u1OknCvxWvY5kfmNBILK2hRnQC3Pr17a+RTT6rIHI7NnikvbZlHgTPOOmMi466C8"
-	crossorigin="anonymous"></script>
-<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"
-	integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3"
-	crossorigin="anonymous"></script>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.min.js"
-	integrity="sha384-7VPbUDkoPSGFnVtYi0QogXtr74QeVeeIs99Qfg5YCF+TidwNdjvaKZX19NZ/e6oz"
-	crossorigin="anonymous"></script>
+
+<!DOCTYPE html>
 
 <body>
 	<div>
-		<link href="{{asset('css/capso.css');}}" rel="stylesheet" />
+		<link rel="stylesheet"
+			href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.12.2/css/bootstrap-select.min.css">
 
-		<div class="cpsmi-container">
-			<div class="cpsmi-cpsmi">
-				<div class="cpsmi-topbar">
-					<div class="cpsmi-breadcrumbs">
-						<button class="cpsmi-button">
-							<span class="cpsmi-text 2020Bold"><span>Cấp số</span></span>
-						</button>
-						<img src="{{asset('playground_assets/uanglerighti339-7j9q.svg');}}" alt="uanglerightI339"
-							class="cpsmi-uangleright" />
-						<button class="cpsmi-button1">
-							<span class="cpsmi-text02 2020Bold">
-								<span>Danh sách cấp số</span>
-							</span>
-						</button>
-						<img src="{{asset('playground_assets/uanglerighti339-svs4.svg');}}" alt="uanglerightI339"
-							class="cpsmi-uangleright1" />
-						<button class="cpsmi-button2">
-							<span class="cpsmi-text04 2020Bold">
-								<span>Cấp số mới</span>
-							</span>
-						</button>
-					</div>
-					<div class="cpsmi-frame271">
-						<div class="cpsmi-vuesaxboldnotification">
-							<div class="cpsmi-vuesaxboldnotification1">
-								<div class="cpsmi-notification">
-									<img src="{{asset('playground_assets/vectori339-xzie.svg');}}" alt="VectorI339"
-										class="cpsmi-vector" />
-									<img src="{{asset('playground_assets/vectori339-nd5f.svg');}}" alt="VectorI339"
-										class="cpsmi-vector01" />
-								</div>
-							</div>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.js"></script>
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+		<script
+			src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.12.2/js/bootstrap-select.min.js"></script>
+		<link href="{{asset('css/thietbi.css');}}" rel="stylesheet" />
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.js"></script>
+		<div class="qunlthitb-container">
+			<div class="container-all">
+				<div class="dropdown" id="dropdown" name="dropdown">
+					<div class="qunlthitb-group319">
+						<span class="qunlthitb-text178  ">
+							<span>Trạng thái hoạt động</span>
+						</span>
+						<div class="">
+							<select class="qunlthitb-dropdown qunlthitb-text176  " name="hoatdong" id="hoatdong">
+								<option selected="selected" value="0">Tất cả</option>
+								<option value="1">Hoạt động</option>
+								<option value="2">Ngưng hoạt động</option>
+							</select>
 						</div>
 					</div>
+					<div class="qunlthitb-group320">
+						<span class="qunlthitb-text182  ">
+							<span>Trạng thái kết nối</span>
+						</span>
+						<div class="">
+							<select class="qunlthitb-dropdown1 qunlthitb-text176  " name="ketnoi" id="ketnoi">
+								<option selected="selected" value="0">Tất cả</option>
+								<option value="1">Kết nối</option>
+								<option value="2">Mất kết nối</option>
+							</select>
+						</div>
+					</div>
+					<div class="qunlthitb-group318">
+						<span class="qunlthitb-text222  ">Từ khoá</span>
+						<input type="text" class="qunlthitb-input qunlthitb-text220" id="search" name="search"
+							placeholder="Nhập từ khóa">
+						<button onclick="getValue()">
+							<img src="{{asset('playground_assets/fisearchi218-d31.svg')}}" alt="fisearchI218"
+								class="qunlthitb-fisearch" />
+						</button>
+					</div>
+
 				</div>
-				<span class="cpsmi-text10 2424Bold"><span>Quản lý cấp số</span></span>
+				<script>
+					function getValue() {
+						var search = jQuery('#search').val();
+						return search;
+					}
+					jQuery(document).ready(function () {
 
-				<div class="cpsmi-frame624726">
-					<span class="cpsmi-text26 3232Bold"><span>CẤP SỐ MỚI</span></span>
-					<span class="cpsmi-text28 2020Bold">
-						<span>Dịch vụ khách hàng lựa chọn</span>
-					</span>
-					<form action="{{ route('number.store') }}" method="post">
-						@csrf
-						<select name="tendichvu" class="cpsmi-text30 cpsmi-dropdown 1616Reg">
-							@foreach($services as $service)
-							<option value="{{ $service->tendichvu}}">{{ $service->tendichvu }}</option>
-							@endforeach
-						</select>
-						<div class="cpsmi-frame624757">
-							<div class="cpsmi-frame624750">
-								<button type="button" data-bs-toggle="modal" data-bs-target="#exampleModal"
-									class="cpsmi-button3 cpsmi-text32">In số</button>
-								<button class="cpsmi-button4">
-									<span class="cpsmi-text34"><span>Hủy bỏ</span></span>
-								</button>
-							</div>
+						jQuery('#dropdown').on('change', function () {
+							var hoatdong = 0;
+							var ketnoi = 0;
+							var search = getValue();
+							hoatdong = jQuery('#hoatdong').val();
+							ketnoi = jQuery('#ketnoi').val();
+
+							if (hoatdong == 0 && ketnoi == 0 && search == null) {
+								$('.alldata').show();
+								$('.searchdata').hide();
+							}
+							else {
+								$('.alldata').hide();
+								$('.searchdata').show();
+							}
+
+							jQuery.ajax({
+								url: 'device/dropdown/hoatdong/ketnoi/search',
+								type: "GET",
+								data: { 'hoatdong': hoatdong, 'ketnoi': ketnoi, 'search': search },
+								success: function (data) {
+									console.log(data);
+									$('#Content').html(data);
+								}
+							});
+						});
+
+					});
+				</script>
+
+			</div>
+			<span class="qunlthitb-text  ">
+				<span>Danh sách thiết bị</span>
+			</span>
+			<table class="qunlthitb-frame624720 table qunlthitb-text002  ">
+				<tr class="qunlthitb-frame624691">
+					<td>Mã thiết bị</td>
+					<td>Tên thiết bị</td>
+					<td>Địa chỉ IP</td>
+					<td>Trạng thái hoạt động</td>
+					<td>Trạng thái kết nối</td>
+					<td>Dịch vụ sử dụng</td>
+					<td> </td>
+					<td> </td>
+				</tr>
+				@foreach ($devices as $device)
+				<tr class="alldata">
+					<td class="qunlthitb-text159">{{ $device->mathietbi }}</td>
+					<td class="qunlthitb-text159">{{ $device->tenthietbi }}</td>
+					<td class="qunlthitb-text159">{{ $device->diachiIP }}</td>
+					<td class="qunlthitb-text159">
+						@if ($device->trangthaihoatdong == 1)
+						<span>Hoạt động</span>
+						@else
+						<span>Ngưng hoạt động</span>
+						@endif
+					</td>
+					<td class="qunlthitb-text159">
+						@if ($device->trangthaiketnoi == 1)
+						<span>Kết nối</span>
+						@else
+						<span>Mất kết nối</span>
+						@endif
+					</td>
+					<td class="qunlthitb-text159">
+						@foreach($a as $dvsd)
+						@if ($device->mathietbi == $dvsd->mathietbi)
+						{{ $dvsd->tendichvu}}|
+						@endif
+						@endforeach
+					</td>
+					<td class="qunlthitb-text158">
+						<form>
+							<a href="{{ route('device.show',$device->id) }}">Chi tiết</a>
+						</form>
+					</td>
+					<td class="qunlthitb-text158">
+						<div>
+							<a href="{{ route('device.edit',$device->id) }}">Cập nhật</a>
 						</div>
+					</td>
+				</tr>
+				@endforeach
+				<tbody class="searchdata qunlthitb-text159" id="Content"></tbody>
+			</table>
 
-						<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel"
-							aria-hidden="true">
-							<div class="modal-dialog">
-								<div class="">
-									<div class="modal-header">
-										<h5>Modal title</h5>
+			</script>
+			<script type="text/javascript">
+				$.ajaxSetup({ headers: { 'csrftoken': '{{ csrf_token() }}' } });
+			</script>
+		</div>
+	</div>
 
-									</div>
-									<div class="modal-body">
-										<div class="popupins-container">
-											<div class="popupins-popupins">
-												<button type="button" class="popupins-fix btn-close"></button>
+	</div>
+	<div class="topbar-all">
+		<div class="qunlthitb-breadcrumbs">
+			@include('device.breadscrum')
+		</div>
 
-												<div class="popupins-frame624776">
-													<div class="popupins-frame624778">
-														<span class="popupins-text 2222Bold">
-															<span>Thời gian cấp:</span>
-														</span>
-														<span class="popupins-text02 2222Bold">
-															<span>09:30 11/10/2021</span>
-														</span>
-													</div>
-													<div class="popupins-frame624779">
-														<span class="popupins-text04 2222Bold">
-															<span>Hạn sử dụng:</span>
-														</span>
-														<span class="popupins-text06 2222Bold">
-															<span>17:30 11/10/2021</span>
-														</span>
-													</div>
-												</div>
-												<div class="popupins-group625227">
-													<span class="popupins-text08 3232Bold">
-														<span>Số thứ tự được cấp</span>
-													</span>
-													<span class="popupins-text10"><span>2001201</span></span>
-													<span class="popupins-text12">
-														<span class="popupins-text13">DV: Khám răng hàm mặt</span>
-														<span>(tại quầy số 1)</span>
-													</span>
-												</div>
-												<button type="submit" class="btn btn-primary">Save changes</button>
-											</div>
-										</div>
-									</div>
-								</div>
-
-					</form>
+		<div class="qunlthitb-frame271">
+			<div class="qunlthitb-vuesaxboldnotification">
+				<div class="qunlthitb-vuesaxboldnotification1">
+					<div class="qunlthitb-notification">
+						<img src="{{asset('playground_assets/vectori252-04yc.svg');}}" alt="VectorI252"
+							class="qunlthitb-vector" />
+						<img src="{{asset('playground_assets/vectori252-lvr.svg');}}" alt="VectorI252"
+							class="qunlthitb-vector01" />
+					</div>
 				</div>
 			</div>
 		</div>
+	</div>
+	<div class="qunlthitb-component1">
+		<div class="qunlthitb-vuesaxboldaddsquare">
+			<div class="qunlthitb-vuesaxboldaddsquare1">
+				<div class="qunlthitb-addsquare">
+					<img src="{{asset('playground_assets/vectori305-229t.svg');}}" alt="VectorI305"
+						class="qunlthitb-vector02" />
+				</div>
+			</div>
+		</div>
+		<a class="qunlthitb-text201" href="{{ route('device.create') }}"> Thêm thiết bị</a>
+	</div>
+
+	</div>
+
+	</div>
+	</div>
+	</div>
+	<div class="qunlthitb-frame105">
+		{{ $devices->links() }}
+	</div>
+	</div>
 
 </body>
 

@@ -1,4 +1,3 @@
-
 @extends('layout.header')
 @extends('layout.alert')
 
@@ -24,7 +23,7 @@
                 </span>
                 <input type="text" name="password1" class="qunmtkhu-input1">
             </div>
-            <button type="submit" class="qunmtkhu-button qunmtkhu-text6 1616Bold">Xác nhận
+            <button type="submit" class="qunmtkhu-button qunmtkhu-text6  ">Xác nhận
             </button>
 </form>
             <div class="qunmtkhu-logoalta">

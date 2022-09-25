@@ -22,7 +22,7 @@ class DeviceController extends Controller
      */
     public function index()
     {   
-        $devices = Device::latest()->paginate(5);
+        $devices = Device::latest()->paginate(2);
         $a = DB::table('dvsd')->get();
 
         return view('device.index',compact('devices','a'))

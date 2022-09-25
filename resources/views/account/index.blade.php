@@ -6,7 +6,7 @@
         <link href="{{asset('css/taikhoan.css')}}" rel="stylesheet" />
 
         <div class="danhschtikhon-container">
-            <div class="danhschtikhon-danhschtikhon">
+            <div class="container-all">
                 <div class="danhschtikhon-group318">
                                 <input type="text" name="search" id="search" placeholder="Nhập từ khóa" 
                                 class="danhschtikhon-input  danhschtikhon-text153">
@@ -14,20 +14,20 @@
                                     <img src="{{asset('playground_assets/fisearchi282-5iy7.svg');}}" alt="fisearchI282"
                                         class="danhschtikhon-fisearch" />
 </button>
-                        <span class="danhschtikhon-text155 1616Semi">
+                        <span class="danhschtikhon-text155  ">
                             <span>Từ khoá</span>
                         </span>
                 </div>
 
                 <div class="danhschtikhon-group319">
-                    <select class="danhschtikhon-dropdown danhschtikhon-text180 1616Reg">
+                    <select class="danhschtikhon-dropdown danhschtikhon-text180  ">
                         @foreach ($role as $role)
                         <option value="{{ $role->tenvaitro }}">{{ $role->tenvaitro }}</option>
                         @endforeach
                     </select>
-                    <span class="danhschtikhon-text182 1616Semi">Tên vai trò</span>
+                    <span class="danhschtikhon-text182  ">Tên vai trò</span>
                 </div>
-                <div class="danhschtikhon-component2">
+                <div class="create-index">
                     <div class="danhschtikhon-vuesaxboldaddsquare">
                         <div class="danhschtikhon-vuesaxboldaddsquare1">
                             <div class="danhschtikhon-addsquare">
@@ -39,20 +39,9 @@
                     <span class="danhschtikhon-text">
                         <a class="danhschtikhon-text" href="{{ route('account.create') }}"> Thêm tài khoản</a>
                 </div>
-                <div class="danhschtikhon-topbar">
-                    <div class="danhschtikhon-breadcrumbs">
-                        <button class="danhschtikhon-button">
-                            <span class="danhschtikhon-text005 2020Bold">
-                                <span>Cài đặt hệ thống</span>
-                            </span>
-                        </button>
-                        <img src="{{asset('playground_assets/uanglerighti282-p7s.svg');}}" alt="uanglerightI282"
-                            class="danhschtikhon-uangleright" />
-                        <button class="danhschtikhon-button1">
-                            <span class="danhschtikhon-text007 2020Bold">
-                                <span>Quản lý tài khoản</span>
-                            </span>
-                        </button>
+                <div class="topbar-all">
+                    <div class="breadcrumbs">
+                        @include('account.breadscrum')
                     </div>
 
                     <div class="danhschtikhon-frame271">
@@ -68,10 +57,10 @@
                         </div>
                     </div>
                 </div>
-                <span class="danhschtikhon-text013 2424Bold">
+                <span class="list-index">
                     <span>Danh sách tài khoản</span>
                 </span>
-                <table class="danhschtikhon-frame624720 danhschtikhon-text015">
+                <table class="table-index224 danhschtikhon-text015">
                     <tr class="danhschtikhon-frame624691">
                         <td>Tên đăng nhập</td>
                         <td>Họ tên</td>
@@ -97,6 +86,9 @@
                 </table>
                
                 
+            </div>
+            <div class="pagination-all">
+                {{ $accounts->links()}}
             </div>
         </div>
     </div>

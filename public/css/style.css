@@ -156,452 +156,167 @@
   .teleport-show {
     display: flex !important;
   }
-  .3434Xbold {
-    font-size: 34px;
-    font-style: normal;
-    font-family: Nunito;
-    font-weight: 900px;
-    font-stretch: normal;
+  .container-all {
+    width: 100%;
+    height: 750px;
+    display: flex;
+    overflow: hidden;
+    position: relative;
+    box-sizing: border-box;
+    align-items: flex-start;
+    flex-shrink: 0;
+    border-color: transparent;
+    border-radius: 16px;
+    background-color: var(--dl-color-default-bg);
   }
-  .1414Xbold {
-    font-size: 14px;
-    font-style: normal;
-    font-family: Nunito;
-    font-weight: 900px;
-    font-stretch: normal;
+  .topbar-all {
+    top: 0px;
+    left: 200px;
+    width: 100%;
+    height: 88px;
+    display: flex;
+    position: absolute;
+    box-sizing: border-box;
+    align-items: flex-start;
+    flex-shrink: 0;
+    border-color: transparent;
+    margin-right: 0;
+    border-radius: 0px 0px 0px 0px;
+    margin-bottom: 0;
   }
-  .1212light {
-    font-size: 12px;
-    font-style: normal;
-    font-family: Nunito;
-    font-weight: 200px;
-    font-stretch: normal;
+  .pagination-all {
+    top: 700px;
+    left: 1048px;
+    width: 288px;
+    display: flex;
+    position: absolute;
+    box-sizing: border-box;
+    align-items: flex-start;
+    border-color: transparent;
+    margin-right: 0;
+    border-radius: 0px 0px 0px 0px;
+    margin-bottom: 0;
   }
-  .3030Xbold {
-    font-size: 30px;
-    font-style: normal;
-    font-family: Nunito;
-    font-weight: 900px;
-    font-stretch: normal;
+  .create-index {
+    top: 244px;
+    left: 93%;
+    width: 80px;
+    display: flex;
+    padding: 12px 4px;
+    overflow: hidden;
+    position: absolute;
+    box-shadow: 0px 0px 6px 0px rgba(231, 233, 242, 1);
+    box-sizing: border-box;
+    align-items: center;
+    border-color: transparent;
+    margin-right: 0;
+    border-radius: 8px 0 0 8px;
+    margin-bottom: 0;
+    flex-direction: column;
+    justify-content: center;
+    background-color: var(--dl-color-orange-orange50);
   }
-  .2828Bold {
-    font-size: 28px;
-    font-style: normal;
-    font-family: Nunito;
-    font-weight: 700px;
-    font-stretch: normal;
+  .table-index224 {
+    top: 244px;
+    left: 224px;
+    width: 77%;
+    overflow: hidden;
+    position: absolute;
+    box-shadow: 2px 2px 8px 0px rgba(232, 239, 244, 0.800000011920929);
+    box-sizing: border-box;
+    align-items: flex-start;
+    flex-shrink: 0;
+    border-color: transparent;
+    margin-right: 0;
+    border-radius: 12px;
+    margin-bottom: 0;
   }
-  .2828light {
-    font-size: 28px;
-    font-style: normal;
-    font-family: Nunito;
-    font-weight: 200px;
-    font-stretch: normal;
+  .table-index192 {
+    top: 192px;
+    left: 224px;
+    width: 77%;
+    overflow: hidden;
+    position: absolute;
+    box-shadow: 2px 2px 8px 0px rgba(232, 239, 244, 0.800000011920929) ;
+    box-sizing: border-box;
+    align-items: flex-start;
+    flex-shrink: 0;
+    border-color: transparent;
+    margin-right: 0;
+    border-radius: 12px;
+    margin-bottom: 0;
   }
-  .3838Xbold {
-    font-size: 38px;
-    font-style: normal;
-    font-family: Nunito;
-    font-weight: 900px;
-    font-stretch: normal;
+  .breadcrumbs {
+    top: 24px;
+    left: 24px;
+    width: 520px;
+    display: flex;
+    position: absolute;
+    box-sizing: border-box;
+    align-items: center;
+    border-color: transparent;
+    margin-right: 0;
+    border-radius: 0px 0px 0px 0px;
+    margin-bottom: 0;
+    font-weight: bold !important;
   }
-  .1212Xbold {
-    font-size: 12px;
-    font-style: normal;
-    font-family: Nunito;
-    font-weight: 900px;
-    font-stretch: normal;
+  .cancel-button {
+    top: 0px;
+    left: 0px;
+    width: 120px;
+    height: 45px;
+    display: flex;
+    padding: 10px 24px;
+    overflow: hidden;
+    position: absolute;
+    box-shadow: 0px 0px 6px 0px rgba(231, 233, 242, 1) ;
+    box-sizing: border-box;
+    align-items: center;
+    flex-shrink: 0;
+    border-color: rgba(255, 145, 56, 1);
+    border-style: solid;
+    border-width: 1.5px;
+    margin-right: 0;
+    border-radius: 8px;
+    margin-bottom: 0;
+    justify-content: center;
+    background-color: var(--dl-color-orange-orange50);
   }
-  .2020Bold {
+  .list-index {
+    top: 100px;
+    left: 224px;
+    width: 200px;
+    font-weight: bold;
     font-size: 20px;
-    font-style: normal;
-    font-family: Nunito;
-    font-weight: 700px;
-    font-stretch: normal;
+    color: var(--dl-color-orange-orange500);
+    height: auto;
+    position: absolute;
+    align-self: auto;
+    text-align: left;
+    line-height: 36px;
+    margin-right: 0;
+    margin-bottom: 0;
   }
-  .3636Reg {
-    font-size: 36px;
-    font-style: normal;
-    font-family: Nunito;
-    font-weight: 400px;
-    font-stretch: normal;
-  }
-  .2626light {
-    font-size: 26px;
-    font-style: normal;
-    font-family: Nunito;
-    font-weight: 200px;
-    font-stretch: normal;
-  }
-  .3030Reg {
-    font-size: 30px;
-    font-style: normal;
-    font-family: Nunito;
-    font-weight: 400px;
-    font-stretch: normal;
-  }
-  .4040Reg {
-    font-size: 40px;
-    font-style: normal;
-    font-family: Nunito;
-    font-weight: 400px;
-    font-stretch: normal;
-  }
-  .2222Xbold {
-    font-size: 22px;
-    font-style: normal;
-    font-family: Nunito;
-    font-weight: 900px;
-    font-stretch: normal;
-  }
-  .3838Light {
-    font-size: 38px;
-    font-style: normal;
-    font-family: Nunito;
-    font-weight: 200px;
-    font-stretch: normal;
-  }
-  .3434Reg {
-    font-size: 34px;
-    font-style: normal;
-    font-family: Nunito;
-    font-weight: 400px;
-    font-stretch: normal;
-  }
-  .4040Bold {
-    font-size: 40px;
-    font-style: normal;
-    font-family: Nunito;
-    font-weight: 700px;
-    font-stretch: normal;
-  }
-  .3232Xbold {
-    font-size: 32px;
-    font-style: normal;
-    font-family: Nunito;
-    font-weight: 900px;
-    font-stretch: normal;
-  }
-  .3434Light {
-    font-size: 34px;
-    font-style: normal;
-    font-family: Nunito;
-    font-weight: 200px;
-    font-stretch: normal;
-  }
-  .3030Bold {
-    font-size: 30px;
-    font-style: normal;
-    font-family: Nunito;
-    font-weight: 700px;
-    font-stretch: normal;
-  }
-  .1616Bold {
-    font-size: 16px;
-    font-style: normal;
-    font-family: Nunito;
-    font-weight: 700px;
-    font-stretch: normal;
-  }
-  .2626Bold {
-    font-size: 26px;
-    font-style: normal;
-    font-family: Nunito;
-    font-weight: 700px;
-    font-stretch: normal;
-  }
-  .3434Bold {
-    font-size: 34px;
-    font-style: normal;
-    font-family: Nunito;
-    font-weight: 700px;
-    font-stretch: normal;
-  }
-  .2828Xbold {
-    font-size: 28px;
-    font-style: normal;
-    font-family: Nunito;
-    font-weight: 900px;
-    font-stretch: normal;
-  }
-  .2020light {
-    font-size: 20px;
-    font-style: normal;
-    font-family: Nunito;
-    font-weight: 200px;
-    font-stretch: normal;
-  }
-  .3636Bold {
-    font-size: 36px;
-    font-style: normal;
-    font-family: Nunito;
-    font-weight: 700px;
-    font-stretch: normal;
-  }
-  .2424light {
-    font-size: 24px;
-    font-style: normal;
-    font-family: Nunito;
-    font-weight: 200px;
-    font-stretch: normal;
-  }
-  .1616light {
-    font-size: 16px;
-    font-style: normal;
-    font-family: Nunito;
-    font-weight: 200px;
-    font-stretch: normal;
-  }
-  .2222Reg {
-    font-size: 22px;
-    font-style: normal;
-    font-family: Nunito;
-    font-weight: 400px;
-    font-stretch: normal;
-  }
-  .1212Bold {
-    font-size: 12px;
-    font-style: normal;
-    font-family: Nunito;
-    font-weight: 700px;
-    font-stretch: normal;
-  }
-  .2020Xbold {
-    font-size: 20px;
-    font-style: normal;
-    font-family: Nunito;
-    font-weight: 900px;
-    font-stretch: normal;
-  }
-  .2424Bold {
-    font-size: 24px;
-    font-style: normal;
-    font-family: Nunito;
-    font-weight: 700px;
-    font-stretch: normal;
-  }
-  .2222light {
-    font-size: 22px;
-    font-style: normal;
-    font-family: Nunito;
-    font-weight: 200px;
-    font-stretch: normal;
-  }
-  .3838Bold {
-    font-size: 38px;
-    font-style: normal;
-    font-family: Nunito;
-    font-weight: 700px;
-    font-stretch: normal;
-  }
-  .3232Bold {
-    font-size: 32px;
-    font-style: normal;
-    font-family: Nunito;
-    font-weight: 700px;
-    font-stretch: normal;
-  }
-  .1616Xbold {
-    font-size: 16px;
-    font-style: normal;
-    font-family: Nunito;
-    font-weight: 900px;
-    font-stretch: normal;
-  }
-  .2424Xbold {
-    font-size: 24px;
-    font-style: normal;
-    font-family: Nunito;
-    font-weight: 900px;
-    font-stretch: normal;
-  }
-  .1414light {
-    font-size: 14px;
-    font-style: normal;
-    font-family: Nunito;
-    font-weight: 200px;
-    font-stretch: normal;
-  }
-  .1616Reg {
-    font-size: 16px;
-    font-style: normal;
-    font-family: Nunito;
-    font-weight: 400px;
-    font-stretch: normal;
-  }
-  .1414Bold {
-    font-size: 14px;
-    font-style: normal;
-    font-family: Nunito;
-    font-weight: 700px;
-    font-stretch: normal;
-  }
-  .1212Reg {
-    font-size: 12px;
-    font-style: normal;
-    font-family: Nunito;
-    font-weight: 400px;
-    font-stretch: normal;
-  }
-  .1616Semi {
-    font-size: 16px;
-    font-style: normal;
-    font-family: Nunito;
-    font-weight: 600px;
-    font-stretch: normal;
-  }
-  .2424Reg {
-    font-size: 24px;
-    font-style: normal;
-    font-family: Nunito;
-    font-weight: 400px;
-    font-stretch: normal;
-  }
-  .4040Xbold {
-    font-size: 40px;
-    font-style: normal;
-    font-family: Nunito;
-    font-weight: 900px;
-    font-stretch: normal;
-  }
-  .1818Xbold {
-    font-size: 18px;
-    font-style: normal;
-    font-family: Nunito;
-    font-weight: 900px;
-    font-stretch: normal;
-  }
-  .3838Reg {
-    font-size: 38px;
-    font-style: normal;
-    font-family: Nunito;
-    font-weight: 400px;
-    font-stretch: normal;
-  }
-  .2626Reg {
-    font-size: 26px;
-    font-style: normal;
-    font-family: Nunito;
-    font-weight: 400px;
-    font-stretch: normal;
-  }
-  .2626Xbold {
-    font-size: 26px;
-    font-style: normal;
-    font-family: Nunito;
-    font-weight: 900px;
-    font-stretch: normal;
-  }
-  .1818Reg {
-    font-size: 18px;
-    font-style: normal;
-    font-family: Nunito;
-    font-weight: 400px;
-    font-stretch: normal;
-  }
-  .3636Light {
-    font-size: 36px;
-    font-style: normal;
-    font-family: Nunito;
-    font-weight: 200px;
-    font-stretch: normal;
-  }
-  .20semi {
-    font-size: 20px;
-    font-style: normal;
-    font-family: Nunito;
-    font-weight: 600px;
-    font-stretch: normal;
-  }
-  .18semi {
-    font-size: 18px;
-    font-style: normal;
-    font-family: Nunito;
-    font-weight: 600px;
-    font-stretch: normal;
-  }
-  .1818Bold {
-    font-size: 18px;
-    font-style: normal;
-    font-family: Nunito;
-    font-weight: 700px;
-    font-stretch: normal;
-  }
-  .3030light {
-    font-size: 30px;
-    font-style: normal;
-    font-family: Nunito;
-    font-weight: 200px;
-    font-stretch: normal;
-  }
-  .3232Reg {
-    font-size: 32px;
-    font-style: normal;
-    font-family: Nunito;
-    font-weight: 400px;
-    font-stretch: normal;
-  }
-  .1414RegUnderline {
-    font-size: 14px;
-    font-style: normal;
-    font-family: Nunito;
-    font-weight: 400px;
-    font-stretch: normal;
-  }
-  .3636Xbold {
-    font-size: 36px;
-    font-style: normal;
-    font-family: Nunito;
-    font-weight: 900px;
-    font-stretch: normal;
-  }
-  .4040Light {
-    font-size: 40px;
-    font-style: normal;
-    font-family: Nunito;
-    font-weight: 200px;
-    font-stretch: normal;
-  }
-  .1818light {
-    font-size: 18px;
-    font-style: normal;
-    font-family: Nunito;
-    font-weight: 200px;
-    font-stretch: normal;
-  }
-  .3232Light {
-    font-size: 32px;
-    font-style: normal;
-    font-family: Nunito;
-    font-weight: 200px;
-    font-stretch: normal;
-  }
-  .2020Reg {
-    font-size: 20px;
-    font-style: normal;
-    font-family: Nunito;
-    font-weight: 400px;
-    font-stretch: normal;
-  }
-  .2222Bold {
-    font-size: 22px;
-    font-style: normal;
-    font-family: Nunito;
-    font-weight: 700px;
-    font-stretch: normal;
-  }
-  .2828Reg {
-    font-size: 28px;
-    font-style: normal;
-    font-family: Nunito;
-    font-weight: 400px;
-    font-stretch: normal;
-  }
-  .1414Reg {
-    font-size: 14px;
-    font-style: normal;
-    font-family: Nunito;
-    font-weight: 400px;
-    font-stretch: normal;
+
+  .chitiettieude {
+    color: var(--dl-color-gray-gray500);
+    height: auto;
+    align-self: auto;
+    text-align: left;
+    line-height: 24px;
+    font-weight: bold;
   }
   
+.tieude {
+  top: 16px;
+  left: 24px;
+  color: var(--dl-color-orange-orange500);
+  height: auto;
+  position: absolute;
+  align-self: auto;
+  text-align: left;
+  line-height: 30px;
+  margin-right: 0;
+  margin-bottom: 0;
+  font-weight: bold;
+}

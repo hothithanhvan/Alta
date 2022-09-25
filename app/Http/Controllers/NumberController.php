@@ -19,7 +19,7 @@ class NumberController extends Controller
     public function index()
     {
         
-        $numbers = Number::latest()->paginate(10);
+        $numbers = Number::latest()->paginate(9);
         return view('number.index',compact('numbers'))
                  ->with('i', (request()->input('page', 1) - 1) * 5);
     }

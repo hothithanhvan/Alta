@@ -19,14 +19,14 @@
 		<link href="{{asset('css/capso.css');}}" rel="stylesheet" />
 
 		<div class="cpsmi-container">
-			<div class="cpsmi-cpsmi">
-				<div class="cpsmi-topbar">
-					<div class="cpsmi-breadcrumbs">
+			<div class="container-all">
+				<div class="topbar-all">
+					<div class="breadcrumbs">
 					@include('number.breadscrum')
 						<img src="{{asset('playground_assets/uanglerighti339-svs4.svg');}}" alt="uanglerightI339"
 							class="cpsmi-uangleright1" />
 						<button class="cpsmi-button2">
-							<span class="cpsmi-text04 2020Bold">
+							<span class="cpsmi-text04  ">
 								<span>Cấp số mới</span>
 							</span>
 						</button>
@@ -44,16 +44,16 @@
 						</div>
 					</div>
 				</div>
-				<span class="cpsmi-text10 2424Bold"><span>Quản lý cấp số</span></span>
+				<span class="cpsmi-text10 list-index "><span>Quản lý cấp số</span></span>
 
 				<div class="cpsmi-frame624726">
-					<span class="cpsmi-text26 3232Bold"><span>CẤP SỐ MỚI</span></span>
-					<span class="cpsmi-text28 2020Bold">
+					<span class="cpsmi-text26 "><span>CẤP SỐ MỚI</span></span>
+					<span class="cpsmi-text28 chitiettieude ">
 						<span>Dịch vụ khách hàng lựa chọn</span>
 					</span>
 					<form action="{{ route('number.store') }}" method="post">
               @csrf
-              <select id="select" name="tendichvu" class="cpsmi-text30 cpsmi-dropdown 1616Reg">
+              <select id="select" name="tendichvu" class="cpsmi-text30 cpsmi-dropdown  ">
                 @foreach($services as $service)
                 <option id="option" value="{{ $service->madichvu}}">{{ $service->tendichvu }}</option>
                 
@@ -66,7 +66,7 @@
                   <button onclick="getValue()" type="button" data-bs-toggle="modal" data-bs-target="#exampleModal"
                     class="cpsmi-button3 cpsmi-text32">In số</button>
                   
-                    <a href="" class="cpsmi-button4">
+                    <a href="{{route('number.index')}}" class="cpsmi-button4">
                     <span class="cpsmi-text34"><span>Hủy bỏ</span></span>
 </a>
 
@@ -100,7 +100,7 @@
             </div>
           </div>
           <div class="popupins-group625227">
-            <span class="popupins-text08 3232Bold">
+            <span class="popupins-text08 ">
               <span>Số thứ tự được cấp</span>
             </span>
             <span id="stt" class="popupins-text10"></span>

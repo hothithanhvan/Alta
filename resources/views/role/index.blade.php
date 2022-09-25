@@ -3,36 +3,22 @@
 @extends('layout.hello')
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
 
-		<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.js"></script>
-		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-		<script
-			src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.12.2/js/bootstrap-select.min.js"></script>
-		<link href="{{asset('css/thietbi.css');}}" rel="stylesheet" />
-		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+        <script
+            src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.12.2/js/bootstrap-select.min.js"></script>
+        <link href="{{asset('css/thietbi.css');}}" rel="stylesheet" />
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.js"></script>
   <body>
     <div>
       <link href="{{asset('css/vaitro.css')}}" rel="stylesheet" />
 
       <div class="qunlvaitr-container">
-        <div class="qunlvaitr-qunlvaitr">
-          <div class="qunlvaitr-topbar">
-            <div class="qunlvaitr-breadcrumbs">
-              <button class="qunlvaitr-button">
-                <span class="qunlvaitr-text 2020Bold">
-                  <span>Cài đặt hệ thống</span>
-                </span>
-              </button>
-              <img
-                src="{{asset('playground_assets/uanglerighti285-j3m9.svg');}}"
-                alt="uanglerightI285"
-                class="qunlvaitr-uangleright"
-              />
-              <button class="qunlvaitr-button1">
-                <span class="qunlvaitr-text02 2020Bold">
-                  <span>Quản lý vai trò</span>
-                </span>
-              </button>
+        <div class="container-all">
+          <div class="topbar-all">
+            <div class="breadcrumbs">
+              @include('role.breadscrum')
             </div>
 
             <div class="qunlvaitr-frame271">
@@ -54,14 +40,14 @@
               </div>
             </div>
           </div>
-          <table class="qunlvaitr-frame624721">
-              <tr class=" qunlvaitr-frame624691 qunlvaitr-text08 1616Bold">
+          <table class="table-index192">
+              <tr class=" qunlvaitr-frame624691 qunlvaitr-text08  ">
                 <td>Tên vai trò</td>
                 <td>Số người dùng</td>
                 <td>Mô tả</td>
                 <td>        </td>
               <!-- <div class="qunlvaitr-frame624710">
-                <span class="qunlvaitr-text10 1414Reg">
+                <span class="qunlvaitr-text10  ">
                   <span>Kế toán</span>
                 </span> -->
 </tr>
@@ -86,7 +72,7 @@
 <tbody class="searchdata" id="Content"></tbody>
 </table>
               
-<div class="qunlvaitr-component2">
+<div class="create-index">
             <div class="qunlvaitr-vuesaxboldaddsquare">
               <div class="qunlvaitr-vuesaxboldaddsquare1">
                 <div class="qunlvaitr-addsquare">
@@ -103,7 +89,7 @@
             
           </div>
           <div class="qunlvaitr-group318">
-          <span class="qunlvaitr-text77 1616Semi"><span>Từ khoá</span></span>
+          <span class="qunlvaitr-text77 chitiettieude "><span>Từ khoá</span></span>
 
             <input tyoe="text" id="search" class="qunlvaitr-input qunlvaitr-text75">
             <button onclick="getValue()">
@@ -116,39 +102,39 @@
           
           </div>
           <script>
-					function getValue() {
-						var search = jQuery('#search').val();
+                    function getValue() {
+                        var search = jQuery('#search').val();
             return search;
-					}
-					jQuery(document).ready(function () {
+                    }
+                    jQuery(document).ready(function () {
             
-						jQuery('#search').on('change', function () {
+                        jQuery('#search').on('change', function () {
 
               var search =getValue();
-							if (search) {
-								$('.alldata').hide();
-								$('.searchdata').show();
-							}
-							else {
+                            if (search) {
+                                $('.alldata').hide();
+                                $('.searchdata').show();
+                            }
+                            else {
                 $('.alldata').show();
-								$('.searchdata').hide();
-							}
+                                $('.searchdata').hide();
+                            }
 
-							jQuery.ajax({
-								url: 'role/search/search',
-								type: "GET",
-								data: { 'search': search },
-								success: function (data) {
-									console.log(data);
-									$('#Content').html(data);
-								}
-							});
-						});
+                            jQuery.ajax({
+                                url: 'role/search/search',
+                                type: "GET",
+                                data: { 'search': search },
+                                success: function (data) {
+                                    console.log(data);
+                                    $('#Content').html(data);
+                                }
+                            });
+                        });
 
-					});
-				</script>
-				
-          <span class="qunlvaitr-text79 2424Bold">
+                    });
+                </script>
+                
+          <span class="list-index">
             <span>Danh sách vai trò</span>
           </span>
         </div>

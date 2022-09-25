@@ -20,9 +20,9 @@
                     </span>
                 </div>
                 <button class="qunmtkhu-button">
-                    <span class="qunmtkhu-text4 1616Bold"><span>Hủy</span></span>
+                    <span class="qunmtkhu-text4  "><span>Hủy</span></span>
                 </button>
-                <button onclick="getValue()" type="button" class="qunmtkhu-button1 qunmtkhu-text6 1616Bold">Tiếp tục</button>
+                <button onclick="getValue()" type="button" class="qunmtkhu-button1 qunmtkhu-text6  ">Tiếp tục</button>
 </form>
 <script>
 					function getValue() {

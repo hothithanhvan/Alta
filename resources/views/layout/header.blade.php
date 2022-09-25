@@ -114,12 +114,12 @@
   </style>
   <style data-tag="default-style-sheet">
     html {
-      font-family: Inter;
-      font-size: 16px;
+      font-family: Nunito !important;
     }
 
     body {
-      font-weight: 400;
+      font-family: Nunito !important;
+      font-size: 16px;
       font-style: normal;
       text-decoration: none;
       text-transform: none;
@@ -143,7 +143,7 @@
       border-color: grey;
       flex-direction: row;
       align-items: flex-start;
-      padding: 10px;
+      padding: 9px;
       border-collapse: collapse;
       border: 1px solid #ddd !important;
       border-width: 1px;

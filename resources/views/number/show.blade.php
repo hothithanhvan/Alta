@@ -5,145 +5,163 @@
     <div>
       <link href="{{asset('css/capso.css');}}" rel="stylesheet" />
 
-      <div class="thngtinchitit-container">
-        <div class="thngtinchitit-thngtinchitit">
-          <span class="thngtinchitit-text 2424Bold">
+      <div class="chitietcapso-container">
+        <div class="container-all">
+          <span class="list-index">
             <span>Quản lý cấp số</span>
           </span>
-          <div class="thngtinchitit-topbar">
-            <div class="thngtinchitit-breadcrumbs">
+          <div class="topbar-all">
+            <div class="breadcrumbs">
             @include('number.breadscrum')
               <img
                 alt="uanglerightI844"
                 src="{{asset('playground_assets/uanglerighti844-5wqb.svg');}}"
-                class="thngtinchitit-uangleright1"
+                class="chitietcapso-uangleright1"
               />
-              <div class="thngtinchitit-button2">
-                <span class="thngtinchitit-text06 2020Bold">
+              <div class="chitietcapso-button2">
+                <span class="chitietcapso-text06  ">
                   <span>Chi tiết</span>
                 </span>
 </div>
             </div>
 
-            <div class="thngtinchitit-frame271">
-              <div class="thngtinchitit-vuesaxboldnotification">
-                <div class="thngtinchitit-vuesaxboldnotification1">
-                  <div class="thngtinchitit-notification">
+            <div class="chitietcapso-frame271">
+              <div class="chitietcapso-vuesaxboldnotification">
+                <div class="chitietcapso-vuesaxboldnotification1">
+                  <div class="chitietcapso-notification">
                     <img
                       alt="VectorI844"
                       src="{{asset('playground_assets/vectori844-gwta.svg');}}"
-                      class="thngtinchitit-vector"
+                      class="chitietcapso-vector"
                     />
                     <img
                       alt="VectorI844"
                       src="{{asset('playground_assets/vectori844-c1kl.svg');}}"
-                      class="thngtinchitit-vector01"
+                      class="chitietcapso-vector01"
                     />
                   </div>
                 </div>
               </div>
             </div>
           </div>
-          <div class="thngtinchitit-frame624726">
-            <span class="thngtinchitit-text12 2020Bold">
+          <div class="chitietcapso-frame624726">
+            <span class="tieude">
               <span>Thông tin cấp số</span>
             </span>
-            <div class="thngtinchitit-group625226">
-              <div class="thngtinchitit-group625219">
-                <span class="thngtinchitit-text14 1616Semi">
+            <div class="chitietcapso-group625226">
+              <div class="chitietcapso-group625219">
+                <span class="chitiettieude">
                   <span>Tên dịch vụ:</span>
                 </span>
-                <span class="thngtinchitit-text16 1616Reg">
-                  <span>Khám tim mạch</span>
+                <span class="chitietcapso-text16  ">
+                  <span>{{$number->tendichvu}}</span>
                 </span>
               </div>
-              <div class="thngtinchitit-group625221">
-                <span class="thngtinchitit-text18 1616Semi">
+              <div class="chitietcapso-group625221">
+              <span class="chitiettieude">
                   <span>Thời gian cấp:</span>
                 </span>
-                <span class="thngtinchitit-text20 1616Reg">
-                  <span>14:35 - 07/11/2021</span>
+                <span class="chitietcapso-text20  ">
+                  <span>{{$number->thoigiancap}}</span>
                 </span>
               </div>
-              <div class="thngtinchitit-group625215">
-                <span class="thngtinchitit-text22 1616Semi">
+              <div class="chitietcapso-group625215">
+              <span class="chitiettieude">
                   <span>Hạn sử dụng:</span>
                 </span>
-                <span class="thngtinchitit-text24 1616Reg">
-                  <span>18:00 - 07/11/2021</span>
+                <span class="chitietcapso-text24  ">
+                  <span>{{$number->hansd}}</span>
                 </span>
               </div>
-              <div class="thngtinchitit-group625218">
-                <span class="thngtinchitit-text26 1616Semi">
+              <div class="chitietcapso-group625218">
+              <span class="chitiettieude">
                   <span>Họ tên:</span>
                 </span>
-                <span class="thngtinchitit-text28 1616Reg">
-                  <span>Nguyễn Thị Dung</span>
+                <span class="chitietcapso-text28  ">
+                  <span>{{$number->hoten}}</span>
                 </span>
               </div>
-              <div class="thngtinchitit-group625220">
-                <span class="thngtinchitit-text30 1616Semi">
+              <div class="chitietcapso-group625220">
+               <span class="chitiettieude">
                   <span>Số thứ tự:</span>
                 </span>
-                <span class="thngtinchitit-text32 1616Reg">
-                  <span>2001201</span>
+                <span class="chitietcapso-text32  ">
+                  <span>{{$number->stt}}</span>
                 </span>
               </div>
-              <div class="thngtinchitit-group625224">
-                <span class="thngtinchitit-text34 1616Semi">
+              <div class="chitietcapso-group625224">
+              <span class="chitiettieude">
                   <span>Số điện thoại:</span>
                 </span>
-                <span class="thngtinchitit-text36 1616Reg">
-                  <span>0948523623</span>
+                <span class="chitietcapso-text36  ">
+                  <span>{{$number->sdt}}</span>
                 </span>
               </div>
-              <div class="thngtinchitit-group625225">
-                <span class="thngtinchitit-text38 1616Semi">
+              <div class="chitietcapso-group625225">
+              <span class="chitiettieude">
                   <span>Địa chỉ Email:</span>
                 </span>
-                <span class="thngtinchitit-text40 1616Reg">
-                  <span>nguyendung@gmail.com</span>
+                <span class="chitietcapso-text40  ">
+                  <span>{{$number->email}}</span>
                 </span>
               </div>
-              <div class="thngtinchitit-group625222">
-                <span class="thngtinchitit-text42 1616Semi">
-                  <span>Nguồn cấp:</span>
+              <div class="chitietcapso-group625222">
+              <span class="chitiettieude">
+                <span >Nguồn cấp
                 </span>
-                <span class="thngtinchitit-text44 1616Reg">
-                  <span>Kiosk</span>
+                <span class="chitietcapso-text44  ">
+                  <span>{{$number->nguoncap}}</span>
                 </span>
               </div>
-              <div class="thngtinchitit-group625223">
-                <span class="thngtinchitit-text46 1616Semi">
+              <div class="chitietcapso-group625223">
+              <span class="chitiettieude">
                   <span>Trạng thái:</span>
                 </span>
-                <div class="thngtinchitit-statusdate">
-                  <img
+                <div class="chitietcapso-statusdate">
+                  
+                      @if ($number->trangthai == 0)
+                      <img
                     alt="Ellipse1I844"
-                    src="{{asset('playground_assets/ellipse1i844-2xb-200h.png');}}"
-                    class="thngtinchitit-ellipse1"
+                    src="{{asset('playground_assets/chấm xanh dương.svg');}}"
+                    class="chitietcapso-ellipse1"
                   />
-                  <span class="thngtinchitit-text48 1616Reg">
-                    <span>Đang chờ</span>
+                  <span class="chitietcapso-text48  ">Đang chờ<span>
+                      
+                      @elseif ($number->trangthai == 1)
+                      <img
+                    alt="Ellipse1I844"
+                    src="{{asset('playground_assets/chấm xám.svg');}}"
+                    class="chitietcapso-ellipse1"
+                  />
+                  <span class="chitietcapso-text48  ">Đã sử dụng<span>
+                      @else ($number->trangthai == 2)
+                      <img
+                    alt="Ellipse1I844"
+                    src="{{asset('playground_assets/chấm đỏ.svg');}}"
+                    class="chitietcapso-ellipse1"
+                  />
+                  <span class="chitietcapso-text48  ">Bỏ qua <span>
+                      @endif
+                    </span>
                   </span>
                 </div>
               </div>
             </div>
           </div>
  
-          <div class="thngtinchitit-component1">
-            <div class="thngtinchitit-vuesaxboldbacksquare">
-              <div class="thngtinchitit-vuesaxboldbacksquare1">
-                <div class="thngtinchitit-backsquare">
+          <div class="chitietcapso-component1">
+            <div class="chitietcapso-vuesaxboldbacksquare">
+              <div class="chitietcapso-vuesaxboldbacksquare1">
+                <div class="chitietcapso-backsquare">
                   <img
                     alt="VectorI844"
                     src="{{asset('playground_assets/vectori844-kb09.svg');}}"
-                    class="thngtinchitit-vector23"
+                    class="chitietcapso-vector23"
                   />
                 </div>
               </div>
             </div>
-            <span class="thngtinchitit-text64"><span>Quay lại</span></span>
+            <a href="{{route('number.index')}}" class="chitietcapso-text64">Quay lại</a>
           </div>
         </div>
       </div>
