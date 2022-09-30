@@ -1,7 +1,8 @@
 @extends('layout.menubar')
 @extends('layout.header')
 @extends('layout.hello')
-
+@extends('layout.alert')
+<title>Thêm dịch vụ</title>
   <body>
     <div>
       <link href="{{asset('css/dichvu.css');}}" rel="stylesheet" />
@@ -23,24 +24,7 @@
 </div>
             </div>
 
-            <div class="thmdchv-frame271">
-              <div class="thmdchv-vuesaxboldnotification">
-                <div class="thmdchv-vuesaxboldnotification1">
-                  <div class="thmdchv-notification">
-                    <img
-                      src="{{asset('playground_assets/vectori284-ohv9.svg');}}"
-                      alt="VectorI284"
-                      class="thmdchv-vector"
-                    />
-                    <img
-                      src="{{asset('playground_assets/vectori284-n0q.svg');}}"
-                      alt="VectorI284"
-                      class="thmdchv-vector01"
-                    />
-                  </div>
-                </div>
-              </div>
-            </div>
+           
           </div>
           <span class="list-index">
             <span>Quản lý dịch vụ</span>
@@ -52,6 +36,13 @@
             <span class="tieude">
               <span>Thông tin dịch vụ</span>
             </span>
+            @error('madichvu')
+  <div class="alert1">{{$message}}
+
+  <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span> 
+
+</div>
+@enderror 
             <span class="thmdchv-text14  ">
               <span>Quy tắc cấp số</span>
             </span>
@@ -158,9 +149,9 @@
           
           <div class="thmdchv-frame624737">
             <button type="submit" class="thmdchv-button3 thmdchv-text48">Thêm dịch vụ</button>
-            <button class="cancel-button">
+            <<a  href="{{route('service.index')}}" class="cancel-button">
               <span class="thmdchv-text50"><span>Hủy bỏ</span></span>
-            </button>
+</a>
           </div>
         </div>
       </div>

@@ -5,7 +5,8 @@ namespace App\Http\Controllers;
 use App\Models\Role;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
-
+use App\Helpers\LogActivity;
+use Illuminate\Support\Facades\Auth;
 class RoleController extends Controller
 {
     /**
@@ -16,10 +17,21 @@ class RoleController extends Controller
     public function index()
     {
         $users = DB::table('users')->get();
-
-        $roles = Role::latest()->paginate(10);
-       
-        return view('role.index',compact('roles','users'))
+        $role1 = Role::latest()->get();
+        foreach ($role1 as $role)
+        {
+            $i=0;
+            foreach($users as $user)
+            {
+                if($user->vaitro == $role->tenvaitro)
+                {
+                    $i++; 
+                }
+            }
+            DB::table('roles')->where('tenvaitro',$role->tenvaitro)->update(['songuoidung' => $i]);
+    }
+    $roles = Role::latest()->paginate(10);
+        return view('role.index',compact('roles'))
                  ->with('i', (request()->input('page', 1) - 1) * 5);
     }
 
@@ -42,9 +54,12 @@ class RoleController extends Controller
     public function store(Request $request)
     {
         $request->validate([
-            'tenvaitro' => 'required',
+            'tenvaitro' => 'required|unique:roles',
             'mota' => 'required',
             'chucnang' => 'required',
+        ],
+        [
+            'tenvaitro.required' => 'Nhập đầy đủ các trường thông tin',
         ]);
       
         Role::create($request->all());
@@ -88,6 +103,9 @@ class RoleController extends Controller
             'tenvaitro' => 'required',
             // 'songuoidung' => 'required',
             'mota' => 'required',
+        ],
+        [
+            'tenvaitro.required' => 'Nhập đầy đủ các trường thông tin',
         ]);
       
         $role->update($request->all());

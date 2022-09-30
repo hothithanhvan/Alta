@@ -1,7 +1,7 @@
 @extends('layout.menubar')
 @extends('layout.header')
 @extends('layout.hello')
-
+<title>Chi tiết dịch vụ</title>
     <div>
       <link href="{{asset('css/capso.css');}}" rel="stylesheet" />
 
@@ -25,24 +25,7 @@
 </div>
             </div>
 
-            <div class="chitietcapso-frame271">
-              <div class="chitietcapso-vuesaxboldnotification">
-                <div class="chitietcapso-vuesaxboldnotification1">
-                  <div class="chitietcapso-notification">
-                    <img
-                      alt="VectorI844"
-                      src="{{asset('playground_assets/vectori844-gwta.svg');}}"
-                      class="chitietcapso-vector"
-                    />
-                    <img
-                      alt="VectorI844"
-                      src="{{asset('playground_assets/vectori844-c1kl.svg');}}"
-                      class="chitietcapso-vector01"
-                    />
-                  </div>
-                </div>
-              </div>
-            </div>
+            
           </div>
           <div class="chitietcapso-frame624726">
             <span class="tieude">

@@ -12,6 +12,6 @@ class Device extends Model
     protected $fillable = [
         'mathietbi', 'tenthietbi', 'diachiIP',
         'trangthaihoatdong', 'trangthaiketnoi','dichvusudung',
-        'loaithietbi'
+        'loaithietbi','tendn','matkhau'
     ];
 }

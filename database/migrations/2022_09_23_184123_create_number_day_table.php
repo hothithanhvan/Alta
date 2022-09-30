@@ -15,8 +15,14 @@ return new class extends Migration
     {
         Schema::create('number_days', function (Blueprint $table) {
             $table->id();
-            $table->dateTime('day');
+            $table->dateTime('date');
+            $table->integer('day');
+            $table->integer('month');
             $table->integer('sl');
+            $table->integer('dangcho');
+            $table->integer('dasudung');
+            $table->integer('boqua');
+            $table->integer('tongso');
             $table->timestamps();
         });
     }

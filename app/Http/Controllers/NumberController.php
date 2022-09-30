@@ -8,6 +8,7 @@ use App\Models\Service;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Carbon;
+use App\Models\numberMonth;
 
 class NumberController extends Controller
 {
@@ -18,7 +19,6 @@ class NumberController extends Controller
      */
     public function index()
     {
-        
         $numbers = Number::latest()->paginate(9);
         return view('number.index',compact('numbers'))
                  ->with('i', (request()->input('page', 1) - 1) * 5);
@@ -58,8 +58,22 @@ class NumberController extends Controller
         ]);
 
         $number_day = numberDay::updateOrCreate(
-            ['day' => now()->toDateString()],
-            ['sl' => DB::table('numbers')->where('date', $time)->count()],
+            ['date' => now()->toDateString()],
+            ['sl' => DB::table('numbers')->where('date', $time)->count(),
+            'day' => now()->day,
+            'month' => now()->month,
+            'dangcho' => DB::table('numbers')->where('date', $time)->where('trangthai',0)->count(),
+            'dasudung' => DB::table('numbers')->where('date', $time)->where('trangthai',1)->count(),
+            'boqua' => DB::table('numbers')->where('date', $time)->where('trangthai',2)->count(),
+        ],
+        );
+       
+        $number_month = numberMonth::updateOrCreate(
+            ['month' => now()->month],
+            ['sl' => DB::table('number_days')->where('month', now()->month)->sum('sl'),
+            'date' => now()->toDateString(),
+            'year' => now()->year,
+        ],
         );
        
     
@@ -112,21 +126,94 @@ class NumberController extends Controller
     {
         //
     }
-    public function date(Request $request)
+    public function search(Request $request)
     {
         $output= "";
-       $number = DB::table('numbers')
-       ->whereBetween('date', [$request->from_date, $request->to_date])
-       ->get();
-      foreach ($number as $number)
+       
+        if ($request->tendichvu == 0)
         {
-            if ($number->trangthai == 1)
+            if ($request->trangthai == "")
             {
-                $number->trangthai = "Hoạt động";
+                if ($request->from_date == null || $request->to_date == null)
+                {
+                    $number = Number::where('stt','LIKE','%'.$request->search.'%')
+                    ->orwhere('tendichvu','LIKE','%'.$request->search.'%')->get();
+                }
+                else
+                {
+                    $number = Number::whereBetween('date', [$request->from_date, $request->to_date])
+                    ->where('stt','LIKE','%'.$request->search.'%')
+                    ->get();
+                }
             }
             else
             {
-                $number->trangthai = "Ngưng hoạt động";
+                if ($request->from_date == null || $request->to_date == null)
+                {
+                    $number = Number::where('stt','LIKE','%'.$request->search.'%')
+                    ->where('trangthai',$request->trangthai)
+                    ->get();
+                }
+                else
+                {
+                    $number = Number::where('stt','LIKE','%'.$request->search.'%')
+                    ->where('trangthai',$request->trangthai)
+                    ->whereBetween('date', [$request->from_date, $request->to_date])
+                    ->get();
+                }
+            }
+        }
+        else 
+        {
+            if ($request->trangthai == "")
+            {
+                if ($request->from_date == null || $request->to_date == null)
+                {
+                    $number = Number::where('stt','LIKE','%'.$request->search.'%')
+                    ->where('tendichvu',$request->tendichvu)->get();
+                }
+                else
+                {
+                    $number = Number::whereBetween('date', [$request->from_date, $request->to_date])
+                    ->where('stt','LIKE','%'.$request->search.'%')
+                    ->where('tendichvu',$request->tendichvu)
+                    ->get();
+                }
+            }
+            else
+            {
+                if ($request->from_date == null || $request->to_date == null)
+                {
+                    $number = Number::where('stt','LIKE','%'.$request->search.'%')
+                    ->where('trangthai',$request->trangthai)
+                    ->where('tendichvu',$request->tendichvu)
+                    ->get();
+                }
+                else
+                {
+                    $number = Number::where('stt','LIKE','%'.$request->search.'%')
+                    ->where('trangthai',$request->trangthai)
+                    ->where('tendichvu',$request->tendichvu)
+                    ->whereBetween('date', [$request->from_date, $request->to_date])
+                    ->get();
+                }
+            }
+
+
+        }
+      foreach ($number as $number)
+        {
+            if ($number->trangthai == 0)
+            {
+                $number->trangthai = "Đang chờ";
+            }
+            else if ($number->trangthai == 1)
+            {
+                $number->trangthai = "Đã sử dụng";
+            }
+            else
+            {
+                $number->trangthai = "Bỏ qua";
             }
             $output.=
             '<tr>
@@ -138,7 +225,6 @@ class NumberController extends Controller
             <td>'.$number->trangthai.'</td>
             <td>'.$number->nguoncap.'</td>
             <td>'.'<a href="number/'.$number->id.'">'.'Chi tiết</a>'.'</td>
-            <td>'.'<a href="number/'.$number->id.'/edit">'.'Cập nhật</a>'.'</td>
 
             </tr>' ;
         }

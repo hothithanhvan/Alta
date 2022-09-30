@@ -9,6 +9,10 @@ use App\Models\Report;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
 use App\Models\Role;
+use App\Exports\ReportsExport;
+use Maatwebsite\Excel\Facades\Excel; 
+
+
 class ReportController extends Controller
 {
     /**
@@ -18,8 +22,6 @@ class ReportController extends Controller
      */
     public function index()
     {
-
-       
         $this->authorize('user');
        if ( !Gate::allows('user')) {
         abort(403);
@@ -95,4 +97,38 @@ class ReportController extends Controller
     {
         //
     }
+    public function search(Request $request)
+    {
+        $output= "";
+       $report = DB::table('numbers')
+       ->whereBetween('date', [$request->from_date, $request->to_date])
+       ->get();
+      foreach ($report as $number)
+        {
+            if ($number->trangthai == 0)
+            {
+                $number->trangthai = "Đang chờ";
+            }
+            else if ($number->trangthai == 1)
+            {
+                $number->trangthai = "Đã sử dụng";
+            }
+            else 
+            {
+                $number->trangthai = "Bỏ qua";
+            }
+            $output.=
+            '<tr>
+            <td>'.$number->stt.'</td>
+            <td>'.$number->tendichvu.'</td>
+            <td>'.$number->thoigiancap.'</td>
+            <td>'.$number->trangthai.'</td>
+            <td>'.$number->nguoncap.'</td>
+
+            </tr>' ;
+        }
+        return response($output);
+     }
+    
 }
+    

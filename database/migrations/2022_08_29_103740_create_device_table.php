@@ -21,6 +21,9 @@ return new class extends Migration
             $table->string('trangthaihoatdong')->default('1');
             $table->string('trangthaiketnoi')->default('1');
             $table->string('dichvusudung');
+            $table->string('loaithietbi');
+            $table->string('tendn');
+            $table->string('matkhau');
             $table->timestamps();
         });
     }

@@ -1,13 +1,17 @@
 @extends('layout.menubar')
 @extends('layout.header')
 @extends('layout.hello')
+<title>Báo cáo</title>
 <!DOCTYPE html>
   <body>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <div>
       <link href="{{asset('css/baocao.css')}}" rel="stylesheet" />
 
       <div class="baocao-container">
+      
         <div class="container-all">
+        
           <div class="topbar-all">
             <div class="breadcrumbs">
               <div class="baocao-button">
@@ -28,11 +32,11 @@
           <div class="baocao-group311">
             <div class="baocao-datepicker">
               <div class="baocao-datepicker1">
-              <input type="date" data-date-inline-picker="true" class="baocao-text008  " />
+              <input id="from_date"  type="date" data-date-inline-picker="true" class="baocao-text008  " />
                 
               </div>
               <div class="baocao-datepicker2">
-              <input type="date" data-date-inline-picker="true" class="baocao-text010  " />
+              <input id="to_date" type="date" data-date-inline-picker="true" class="baocao-text010  " />
 
             
               </div>
@@ -52,52 +56,26 @@
               <span>Chọn thời gian</span>
             </span>
           </div>
+
           <table class="table-index192">
               <tr class="baocao-frame624691 baocao-text014  ">
-                <td>
-                  <select >
-                  <option selected="selected" disabled="disabled" value="0">STT</option>
-                    @foreach ($reports as $report)
-                    <option value="{{$report->stt}}">{{$report->stt}}</option>
-                    @endforeach
-                  </select>
+                <td>STT
                 </td>
                 <td>
-                <select >
-                <option selected="selected" disabled="disabled" value="0">Tên dịch vụ</option>
-                    @foreach ($reports as $report)
-                    <option value="{{$report->tendichvu}}">{{$report->tendichvu}}</option>
-                    @endforeach
-                  </select>
+                Tên dịch vụ
                 </td>
                 <td>
-                <select >
-                <option selected="selected" disabled="disabled" value="0">Thời gian cấp</option>
-                    @foreach ($reports as $report)
-                    <option value="{{$report->thoigiancap}}">{{$report->thoigiancap}}</option>
-                    @endforeach
-                  </select>
+                Thời gian cấp
+                </td>
+                <td>Tình trạng
                 </td>
                 <td>
-                <select >
-                <option selected="selected" disabled="disabled">Tình trạng</option>
-                    <option value="0">Đang chờ</option>
-                    <option value="1">Đã sử dụng</option>
-                    <option value="2">Bỏ qua</option>
-                  </select>
-                </td>
-                <td>
-                <select >
-                <option selected="selected" disabled="disabled" value="0">Nguồn cấp</option>
-                    @foreach ($reports as $report)
-                    <option value="{{$report->nguoncap}}">{{$report->nguoncap}}</option>
-                    @endforeach
-                  </select>
+                Nguồn cấp
                 </td>
                 
 </tr>
 @foreach ($reports as $report)
-<tr>
+<tr class="alldata">
 <td>{{$report->stt}}</td>
 <td>{{$report->tendichvu}}</td>
 <td>{{$report->thoigiancap}}</td>
@@ -114,13 +92,27 @@
 <td>{{$report->nguoncap}}</td>
 </tr>
 @endforeach
+<tbody class="searchdata" id="Content"></tbody  
 </table>
               <div class="baocao-frame624710">
                 <span class="baocao-text016  ">
                   <span>2010001</span>
                 </span>
               </div>
-              
+              <div class="baocao-component1">
+            <div class="baocao-vuesaxbolddocumentdownload">
+              <div class="baocao-vuesaxbolddocumentdownload1">
+                <div class="baocao-documentdownload">
+                  <img src="{{asset('playground_assets/vectori215-3asj.svg')}}" alt="VectorI215" class="baocao-vector33">
+                  <img src="{{asset('playground_assets/vectori215-copc.svg')}}" alt="VectorI215" class="baocao-vector34">
+                </div>
+              </div>
+            </div>
+            <a href="{{url('/report-export')}}" class="baocao-text124">Tải về</a>
+          </div>
+              <div class="pagination-all">
+  {{$reports->links()}}
+            </div>
         </div>
       </div>
     </div>

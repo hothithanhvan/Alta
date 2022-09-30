@@ -9,7 +9,10 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use App\Models\Service;
 use App\Models\dvsd;
+use Illuminate\Support\Facades\Session;
 use Illuminate\Support\Facades\Gate;
+use Illuminate\Support\Facades\Auth;
+use App\Helpers\LogActivity;
 
 
 
@@ -22,7 +25,7 @@ class DeviceController extends Controller
      */
     public function index()
     {   
-        $devices = Device::latest()->paginate(2);
+        $devices = Device::latest()->paginate(10);
         $a = DB::table('dvsd')->get();
 
         return view('device.index',compact('devices','a'))
@@ -94,8 +97,7 @@ class DeviceController extends Controller
             <td>'.$device->trangthaiketnoi.'</td>;
             <td>'.'</td>
             <td>'.'<a href="device/'.$device->id.'">'.'Chi tiết</a>'.'</td>
-            <td>'.'<a href="device/'.$device->id.'/edit">'.'Cập nhật</a>'.'</td>
-
+            <td>'.'<a href="device/'.$device->id.'/edit">'.'Cập nhật</a>'.'</td>   
             </tr>' ;
         }
         return response($output);
@@ -118,10 +120,16 @@ class DeviceController extends Controller
         $a = Service::get();
         $b = count($a);
         $request->validate([
-            'mathietbi' => 'required',
+            'mathietbi' => 'required|unique:devices',
             'tenthietbi' => 'required',
             'diachiIP' => 'required',
-        ]);
+            'loaithietbi' => 'required',
+            'tendn' => 'required',  
+            'matkhau' => 'required'
+        ],
+    [
+        'mathietbi.required' => 'Nhập đầy đủ các trường thông tin',
+    ]);
         for ($i = 1; $i <= $b; $i++) {
         $x = "id".$i."";
             if (!empty($request->$x))
@@ -133,9 +141,9 @@ class DeviceController extends Controller
             }
 }
         Device::create($request->all());
+        LogActivity::addToLog('Thêm thiết bị',now(), Auth::user()->tendn);
         return redirect()->route('device.index')
                         ->with('success','device created successfully.');
-                        
     }
   
     /**
@@ -179,6 +187,12 @@ class DeviceController extends Controller
             'mathietbi' => 'required',
             'tenthietbi' => 'required',
             'diachiIP' => 'required',
+            'loaithietbi' => 'required',
+            'tendn' => 'required',  
+            'matkhau' => 'required'
+        ],
+        [
+            'mathietbi.required' => 'Nhập đầy đủ các trường thông tin',
         ]);
         $a = Service::get();
         $b = count($a);
@@ -194,7 +208,7 @@ class DeviceController extends Controller
         }
     }
         $device->update($request->all());
-      
+        LogActivity::addToLog('Sửa thiết bị',now(), Auth::user()->tendn);
         return redirect()->route('device.index')
                         ->with('success','device updated successfully');
     }

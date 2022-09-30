@@ -1,8 +1,9 @@
 <!DOCTYPE html>
 
 <html lang="english">
-
 <head>
+<link rel="icon" href="{{ url('playground_assets/Logo alta.svg') }}">
+<link rel="icon" type="image/svg" href="C:\wamp64\www\alta\public\playground_assets\Logo alta.svg">
 <!-- <link rel="stylesheet " type="text/css"
 			href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 		<link rel="stylesheet"
@@ -11,6 +12,7 @@
 		<link href="{{asset('css/thietbi.css');}}" rel="stylesheet" />
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.js"></script> -->
+  <script src="{{asset('js/alljs.js')}}"></script>
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta charset="utf-8" />
   <meta property="twitter:card" content="summary_large_image" />
@@ -161,8 +163,8 @@
     href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
     data-tag="font" />
   <link rel="stylesheet" href="{{asset('css/style.css');}}" />
-  <link  href="{{asset('js/jqueryDateFormat.js');}}" />
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+  
 
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet">
 </head>

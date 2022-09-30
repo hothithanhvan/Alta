@@ -1,6 +1,7 @@
 @extends('layout.menubar')
 @extends('layout.header')
 @extends('layout.hello')
+<title>Nhật ký người dùng</title>
   <body>		
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
 
@@ -14,23 +15,23 @@
     <div>
       <link href="{{asset('css/nhatky.css')}}" rel="stylesheet" />
 
-      <div class="nhtkngidng-container">
+      <div class="nhatkynguoidung-container">
         <div class="container-all">
 
           <div class="topbar-all">
             <div class="breadcrumbs">
-              <div class="nhtkngidng-button">
-                <span class="nhtkngidng-text  ">
+              <div class="nhatkynguoidung-button">
+                <span class="nhatkynguoidung-text  ">
                   <span>Cài đặt hệ thống</span>
                 </span>
 </div>
               <img
                 src="{{asset('playground_assets/uanglerighti284-fwom.svg');}}"
                 alt="uanglerightI284"
-                class="nhtkngidng-uangleright"
+                class="nhatkynguoidung-uangleright"
               />
-              <div class="nhtkngidng-button1">
-                <span class="nhtkngidng-text002  ">
+              <div class="nhatkynguoidung-button1">
+                <span class="nhatkynguoidung-text002  ">
                   <span>Nhật ký hoạt động</span>
                 </span>
 </div>
@@ -42,78 +43,45 @@
           
               </div>
               <div id="dropdown">
-              <div class="nhtkngidng-group311">
-            <div class="nhtkngidng-datepicker">
+              <div class="nhatkynguoidung-group311">
+            <div class="nhatkynguoidung-datepicker">
               <input type="date" id="from_date"
-              class="nhtkngidng-datepicker1 nhtkngidng-text008  " />
+              class="nhatkynguoidung-datepicker1 nhatkynguoidung-text008  " />
               <input type="date" id="to_date"
-              class="nhtkngidng-datepicker2 nhtkngidng-text010  " />
-              <div class="nhtkngidng-vuesaxboldarrowright">
-                <div class="nhtkngidng-vuesaxboldarrowright1">
-                  <div class="nhtkngidng-arrowright">
+              class="nhatkynguoidung-datepicker2 nhatkynguoidung-text010  " />
+              <div class="nhatkynguoidung-vuesaxboldarrowright">
+                <div class="nhatkynguoidung-vuesaxboldarrowright1">
+                  <div class="nhatkynguoidung-arrowright">
                     <img
                       src="{{asset('playground_assets/vectori284-xt3.svg');}}"
                       alt="VectorI284"
-                      class="nhtkngidng-vector22"
+                      class="nhatkynguoidung-vector22"
                     />
                   </div>
                 </div>
               </div>
             </div>
-            <span class="nhtkngidng-text012 chitiettieude ">
+            <span class="nhatkynguoidung-text012 chitiettieude ">
               <span>Chọn thời gian</span>
             </span>
           </div>
-          <div class="nhtkngidng-group318">
-            <input class="nhtkngidng-text125 nhtkngidng-input" id="search" name="search">
+          <div class="nhatkynguoidung-group318">
+            <input class="nhatkynguoidung-text125 nhatkynguoidung-input" id="search" name="search">
               <button onclick="getValue()">
               <img
                 src="{{asset('playground_assets/fisearchi283-b4sa.svg');}}"
                 alt="fisearchI283"
-                class="nhtkngidng-fisearch"
+                class="nhatkynguoidung-fisearch"
               />
             </button>
-            <span class="nhtkngidng-text127 chitiettieude ">
+            <span class="nhatkynguoidung-text127 chitiettieude ">
               <span>Từ khoá</span>
             </span>
           </div>  
       </div>
-          <script>
-					function getValue() {
-						var search = jQuery('#search').val();
-            return search;
-					}
-					jQuery(document).ready(function () {
-            
-						jQuery('#dropdown').on('change', function () {
-              var search =getValue();
-              
-							from_date = jQuery('#from_date').val();
-							to_date = jQuery('#to_date').val();
-							if (from_date == null && to_date == null  && search == null) {
-								$('.alldata').show();
-								$('.searchdata').hide();
-							}
-							else {
-								$('.alldata').hide();
-								$('.searchdata').show();
-							}
-
-							jQuery.ajax({
-								url: 'dairy/search/from_date/to_date',
-								type: "GET",
-								data: { 'search': search,'from_date':from_date,'to_date':to_date },
-								success: function (data) {
-									console.log(data);
-									$('#Content').html(data);
-								}
-							});
-						});
-
-					});
-				</script>
+         
         <table class="table-index192 ">
-              <tr class="nhtkngidng-frame624691 nhtkngidng-text014 chitiettieude ">
+              <tr class="nhatkynguoidung-frame624691 nhatkynguoidung-text014 chitiettieude ">
                 <td>Tên đăng nhập</td>
                 <td>Thời gian tác động</td>
                 <td>IP thực hiện</td>

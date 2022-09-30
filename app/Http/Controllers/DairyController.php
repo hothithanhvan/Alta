@@ -46,27 +46,26 @@ class DairyController extends Controller
        $output = "";
         if( $request->from_date == null && $request->to_date == null )
         {
-            $dairy = DB::table('log_activities')->where('subject','LIKE','%'.$request->search.'%')
+            $dairys = DB::table('log_activities')->where('subject','LIKE','%'.$request->search.'%')
             ->orwhere('username','LIKE','%'.$request->search.'%')->paginate(10);
         }
         else 
         {
-            $dairy = DB::table('log_activities')->whereBetween('created_at', [$request->from_date, $request->to_date])
+            $dairys = DB::table('log_activities')->whereBetween('created_at', [$request->from_date, $request->to_date])
             ->where('username','LIKE','%'.$request->search.'%')
             ->paginate(10);
         }
-
-        foreach ($dairy as $dairy)
+        foreach ($dairys as $dairy)
         {
             $output.=
             '<tr>
             <td>'.$dairy->username.'</td>
-            <td>'.$dairy->method.'</td>
+            <td>'.$dairy->time.'</td>
             <td>'.$dairy->ip.'</td>
             <td>'.$dairy->subject.'</td>
-
             </tr>' ;
         }
+
         return response($output);
     }
 }

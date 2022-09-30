@@ -10,6 +10,7 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Carbon;
 use Illuminate\Support\Facades\DB;
 use App\Models\Number;
+use Illuminate\Support\Facades\Session;
 
 class ServiceController extends Controller
 {
@@ -47,13 +48,16 @@ class ServiceController extends Controller
     public function store(Request $request)
     {
         $request->validate([
-            'madichvu' => 'required',
+            'madichvu' => 'required|unique:services',
         'tendichvu' => 'required',
         'mota' => 'required',
         'batdau' => 'required',
         'ketthuc' => 'required',
         'prefix' => 'required',
         'surfix' => 'required',
+        ],
+        [
+            'madichvu.required' => 'Nhập đầy đủ các trường thông tin',
         ]);
         Service::create($request->all());
 
@@ -69,12 +73,13 @@ class ServiceController extends Controller
      * @param  \App\Models\Service  $service
      * @return \Illuminate\Http\Response
      */
-    public function show(Service $service)
+    public function show(Request $request, Service $service)
     {
-        $number = Number::get();
-        return view('service.show',compact('service','number'));
+        $tendichvu = $request->session()->put('tendv', $service->tendichvu);
+        $numbers = Number::latest()->where('tendichvu',$service->tendichvu)->paginate(10);
+        return view('service.show',compact('service','numbers'));
     }
-  
+
     /**
      * Show the form for editing the specified resource.
      *
@@ -100,13 +105,16 @@ class ServiceController extends Controller
             'tendichvu' => 'required',
             'mota' => 'required',
         'batdau' => 'required',
-        'kethuc' => 'required',
+        'ketthuc' => 'required',
         'prefix' => 'required',
         'surfix' => 'required',
+        ],
+        [
+            'madichvu.required' => 'Nhập đầy đủ các trường thông tin',
         ]);
       
         $service->update($request->all());
-      
+        LogActivity::addToLog('Sửa dịch vụ',now(), Auth::user()->tendn);
         return redirect()->route('service.index')
                         ->with('success','service updated successfully');
     }
@@ -174,7 +182,61 @@ class ServiceController extends Controller
         }
         return response($output);
     }
-    
+   public function search(Request $request)
+{
+    $id = session()->get('tendv');
+    $output1 = "";
+    if( $request->hoatdong == null )
+    {
+        if ($request->from_date == null && $request->to_date == null){
+        $number = Number::where('stt','LIKE','%'.$request->search.'%')
+        ->where('tendichvu',$id)
+        ->get();
+        }
+        else if ($request->from_date !== null && $request->to_date !== null){
+        $number = Number::whereBetween('date', [$request->from_date, $request->to_date])
+        ->where('tendichvu',$id)
+        ->where('stt','LIKE','%'.$request->search.'%')
+        ->get();
+        }   
+    }
+    else if ( $request->from_date == null || $request->to_date == null)
+    {
+        $number = Number::where('stt','LIKE','%'.$request->search.'%')
+        ->where('tendichvu',$id)
+        ->where('trangthai',$request->hoatdong)->get();
+    }
+    else
+    {
+        $number = Number::where('trangthai',$request->hoatdong)
+        ->where('stt','LIKE','%'.$request->search.'%')
+        ->whereBetween('date', [$request->from_date, $request->to_date])
+        ->where('tendichvu',$id)
+        ->get();
+    }
+    foreach ($number as $number)
+    {
+        
+        if ($number->trangthai == 0)
+        {
+            $number->trangthai = "Đang chờ";
+        }
+        else if ($number->trangthai ==1)
+        {
+            $number->trangthai= "Đã sử dụng";
+        }
+        else{
+            $number->trangthai= "Bỏ qua";
+        }
+        $output1.=
+        '<tr>
+        <td>'.$number->stt.'</td>
+        <td>'.$number->trangthai.'</td>
+        </tr>' ;
+    }
+    return response($output1);
+
+}        
     
 }
 

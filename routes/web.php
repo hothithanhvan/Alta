@@ -1,5 +1,6 @@
 <?php
 
+
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\DeviceController;
 use App\Http\Controllers\ServiceController;
@@ -12,6 +13,7 @@ use App\Http\Controllers\LoginController;
 use App\Http\Controllers\RoleController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\HomeController;
+use App\Exports\ReportsExport;
 
 
 /*
@@ -26,9 +28,8 @@ use App\Http\Controllers\HomeController;
 */
 
 Route::get('/',[LoginController::class,'index'])->name('login');
-Route::post('/login', [LoginController::class,'store' ]);
+Route::post('/login', [LoginController::class,'store' ])->name('store');
 Route::get('/logout', [LoginController::class,'logout']);
-// Route::get('/user',)
 Route::get('/forgetPassword', [LoginController::class,'forgetPassword'])->name('forgetPassword');
 Route::get('/enterMail/{email}', [LoginController::class,'enterMail'])->name('enterMail');
 Route::get('/getnewPass',[LoginController::class,'getnewPass'])->name('getnewPass');
@@ -38,9 +39,7 @@ Route::middleware(['auth'])->group(function () {
     
     Route::resource('device', DeviceController::class);
     
-
     Route::resource('service', ServiceController::class);
-    
     
     Route::resource('number', NumberController::class);
    
@@ -48,7 +47,6 @@ Route::middleware(['auth'])->group(function () {
 
     Route::resource('role', RoleController::class);
   
-
     Route::get('dairy', [DairyController::class,'logActivity'])->name('dairy');
    
      Route::resource('report', ReportController::class);
@@ -59,16 +57,18 @@ Route::middleware(['auth'])->group(function () {
 
 });
 Route::get('/device/dropdown/{hoatdong}/{ketnoi}/{search}',[DeviceController::class,'dropdown']);
-Route::get('/service/dropdown/{hoatdong}/{search}/{from_date}/{to_date}',[ServiceController::class,'dropdown']);
+Route::get('/service-search/{hoatdong}/{search}/{from_date}/{to_date}',[ServiceController::class,'dropdown']);
 Route::get('/number/date/{from_date}/{to_date}',[NumberController::class,'date']);
 Route::get('/{tendichvu}/{thoigiancap}/{hansd}/{stt}',[NumberController::class,'store']);
-Route::get('role/search/{search}', [RoleController::class, 'search']);
-Route::get('dairy/{search}/{from_date}/{to_date}', [DairyController::class,'search']);
-
-// Route::get('/report',function()
-// {
-//     return view('report.index');
-// });
-
-//Route::resource('report', ReportController::class);
+Route::get('/a/{dropdown}/{search}',[AccountController::class,'search']);
+Route::get('/dairy/search/{search}/{from_date}/{to_date}', [DairyController::class,'search']);
+Route::get('/re/{from_date}/{to_date}',[ReportController::class,'search']);
 Route::post('image-upload', [ LoginController::class, 'imageUpload' ])->name('image.upload.post');
+Route::get('/show-service/{hoatdong}/{search}/{from_date}/{to_date}',[ServiceController::class, 'search']);
+Route::get('/role/search/{search}', [RoleController::class, 'search']);
+Route::get('/number-search/{tendichvu}/{trangthai}/{from_date}/{to_date}/{search}', [NumberController::class, 'search']);
+Route::get('report-export/', [ReportsExport::class, 'export']);
+Route::get('/welcome',function(){
+return view('welcome');
+
+});

@@ -1,11 +1,13 @@
 @extends('layout.menubar')
 @extends('layout.header')
 @extends('layout.hello')
+@extends('layout.alert')
+<title>Sửa tài khoản</title>
   <body>
     <div>
       <link href="{{asset('css/taikhoan.css')}}" rel="stylesheet" />
 
-      <div class="cpnhttikhon-container">
+      <div class="capnhattaikhoan-container">
         <div class="container-all">
           <div class="topbar-all">
             <div class="breadcrumbs">
@@ -13,90 +15,96 @@
               <img
                 src="{{asset('playground_assets/uanglerighti282-gtv7.svg');}}"
                 alt="uanglerightI282"
-                class="cpnhttikhon-uangleright1"
+                class="capnhattaikhoan-uangleright1"
               />
-              <div class="cpnhttikhon-button2">
-                <span class="cpnhttikhon-text04  ">
+              <div class="capnhattaikhoan-button2">
+                <span class="capnhattaikhoan-text04  ">
                   <span>Cập nhật tài khoản</span>
                 </span>
               </button>
             </div>
           </div>
-          <span class="cpnhttikhon-text10">
+          <span class="capnhattaikhoan-text10">
             <span>Quản lý tài khoản</span>
           </span>
           <form action="{{ route('account.update',$account->id) }}" method="POST">
                     @csrf
                     @method('PUT')
-          <div class="cpnhttikhon-frame624726">
+          <div class="capnhattaikhoan-frame624726">
             <span class="tieude">
               <span>Thông tin tài khoản</span>
             </span>
-            <form>
-            <div class="cpnhttikhon-frame624731">
-              <div class="cpnhttikhon-warningtext">
+            @error('tendn')
+  <div class="alert1">{{$message}}
+
+  <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span> 
+
+</div>
+@enderror 
+            <div class="capnhattaikhoan-frame624731">
+              <div class="capnhattaikhoan-warningtext">
                 <span class="chitiettieude">
                   <span>Họ tên</span>
                 </span>
                 <img
                   src="{{asset('playground_assets/vectori282-53o.svg');}}"
                   alt="VectorI282"
-                  class="cpnhttikhon-vector02"
+                  class="capnhattaikhoan-vector02"
                 />
               </div>
               <input
                 type="text" name="hoten"
                 value="{{$account->hoten}}"
-                class="cpnhttikhon-input"
+                class="capnhattaikhoan-input"
               />
             </div>
-            <div class="cpnhttikhon-frame624732">
-              <div class="cpnhttikhon-warningtext1">
+            <div class="capnhattaikhoan-frame624732">
+              <div class="capnhattaikhoan-warningtext1">
               <span class="chitiettieude">
                   <span>Số điện thoại</span>
                 </span>
                 <img
                   src="{{asset('playground_assets/vectori282-qore.svg');}}"
                   alt="VectorI282"
-                  class="cpnhttikhon-vector03"
+                  class="capnhattaikhoan-vector03"
                 />
               </div>
               <input
                 type="text" name="sdt"
                 value="{{$account->sdt}}"
-                class="cpnhttikhon-input1"
+                class="capnhattaikhoan-input1"
               />
             </div>
-            <div class="cpnhttikhon-frame624733">
-              <div class="cpnhttikhon-warningtext2">
+            <div class="capnhattaikhoan-frame624733">
+              <div class="capnhattaikhoan-warningtext2">
               <span class="chitiettieude">
                   <span>Email</span>
                 </span>
                 <img
                   src="{{asset('playground_assets/vectori282-2q3m.svg');}}"
                   alt="VectorI282"
-                  class="cpnhttikhon-vector04"
+                  class="capnhattaikhoan-vector04"
                 />
               </div>
               <input
                 type="text" name="email"
                 value="{{$account->email}}"
-                class="cpnhttikhon-input2"
+                class="capnhattaikhoan-input2"
               />
             </div>
-            <div class="cpnhttikhon-frame624739">
-              <div class="cpnhttikhon-warningtext3">
+            <div class="capnhattaikhoan-frame624739">
+              <div class="capnhattaikhoan-warningtext3">
               <span class="chitiettieude">
                   <span>Vai trò</span>
                 </span>
                 <img
                   src="{{asset('playground_assets/vectori282-t95d.svg');}}"
                   alt="VectorI282"
-                  class="cpnhttikhon-vector05"
+                  class="capnhattaikhoan-vector05"
                 />
               </div>
-              <div class="cpnhttikhon-dropdown">
-                <select name="vaitro" class="cpnhttikhon-text22  ">
+              <div class="capnhattaikhoan-dropdown">
+                <select name="vaitro" class="capnhattaikhoan-text22  ">
                 @foreach($role as $role)
                 @if ($account->vaitro === $role->tenvaitro)
                 <option selected value="{{ $role->tenvaitro }}">{{ $role->tenvaitro}}</option>
@@ -107,92 +115,87 @@
                 </select>
               </div>
             </div>
-            <div class="cpnhttikhon-frame624734">
-              <div class="cpnhttikhon-warningtext4">
+            <div class="capnhattaikhoan-frame624734">
+              <div class="capnhattaikhoan-warningtext4">
               <span class="chitiettieude">
                   <span>Tình trạng</span>
                 </span>
                 <img
                   src="{{asset('playground_assets/vectori282-z37c.svg');}}"
                   alt="VectorI282"
-                  class="cpnhttikhon-vector06"
+                  class="capnhattaikhoan-vector06"
                 />
               </div>
-              <div class="cpnhttikhon-dropdown">
-                <select class=" cpnhttikhon-text22  ">
-                  <option id="1">1</option>
-                  <option>2</option>
+              <div class="capnhattaikhoan-dropdown">
+                <select class=" capnhattaikhoan-text22" name="tinhtrang">
+                <option value="Hoạt động">Hoạt động</option>
+                    <option value="Ngưng hoạt động">Ngưng hoạt động</option>
                 </select>
               </div>
             </div>
-            <div class="cpnhttikhon-frame624735">
-              <div class="cpnhttikhon-warningtext5">
+            <div class="capnhattaikhoan-frame624735">
+              <div class="capnhattaikhoan-warningtext5">
               <span class="chitiettieude">
                   <span>Tên đăng nhập:</span>
                 </span>
                 <img
                   src="{{asset('playground_assets/vectori282-xu74.svg');}}"
                   alt="VectorI282"
-                  class="cpnhttikhon-vector07"
+                  class="capnhattaikhoan-vector07"
                 />
               </div>
               <input
                 type="text" name="tendn"
                 value="{{$account->tendn}}"
-                class="cpnhttikhon-input3"
+                class="capnhattaikhoan-input3"
               />
             </div>
-            <div class="cpnhttikhon-frame624745">
-              <div class="cpnhttikhon-warningtext6">
+            <div class="capnhattaikhoan-frame624745">
+              <div class="capnhattaikhoan-warningtext6">
               <span class="chitiettieude">
                   <span>Nhập lại mật khẩu:</span>
                 </span>
                 <img
                   src="{{asset('playground_assets/vectori282-io4f.svg');}}"
                   alt="VectorI282"
-                  class="cpnhttikhon-vector08"
+                  class="capnhattaikhoan-vector08"
                 />
               </div>
-              <div class="cpnhttikhon-input4">
-                <span class="cpnhttikhon-text32  ">
-                  <span></span>
-                </span>
-                
-              </div>
+              <input class="capnhattaikhoan-input4" type="text" name="password1">
+                <!-- <span class="capnhattaikhoan-text32  "> -->
+            
             </div>
-            <div class="cpnhttikhon-frame624738">
-              <div class="cpnhttikhon-warningtext7">
+            <div class="capnhattaikhoan-frame624738">
+              <div class="capnhattaikhoan-warningtext7">
               <span class="chitiettieude">
                   <span>Mật khẩu:</span>
                 </span>
                 <img
                   src="{{asset('playground_assets/vectori282-tjge.svg');}}"
                   alt="VectorI282"
-                  class="cpnhttikhon-vector09"
+                  class="capnhattaikhoan-vector09"
                 />
               </div>
-              <div class="cpnhttikhon-input5">
-                <span class="cpnhttikhon-text36  ">
-                  <span></span>
-                </span>
-                
-              </div>
+              <input class="capnhattaikhoan-input5" type="text" name="password" 
+              value="{{$account->password}}">
+                <!-- <span class="capnhattaikhoan-text36  "> -->
+               
             </div>
-            <div class="cpnhttikhon-frame624744">
-              <span class="cpnhttikhon-text38  ">
+            <div class="capnhattaikhoan-frame624744">
+              <span class="capnhattaikhoan-text38  ">
                 <span>Là trường thông tin bắt buộc</span>
               </span>
               <img
                 src="{{asset('playground_assets/vector2831-fucm.svg');}}"
                 alt="Vector2831"
-                class="cpnhttikhon-vector10"
+                class="capnhattaikhoan-vector10"
               />
             </div>
           </div>
-          <div class="cpnhttikhon-frame624737">
-            <button type="submit" class="cpnhttikhon-button3 cpnhttikhon-text40">Cập nhật</button>
-            <a href="{{route('account.index')}}" class="cpnhttikhon-button4">
-              <span class="cpnhttikhon-text42"><span>Hủy bỏ</span></span>
+          <div class="capnhattaikhoan-frame624737">
+            <button type="submit" class="capnhattaikhoan-button3 capnhattaikhoan-text40">Cập nhật</button>
+            <a href="{{route('account.index')}}" class="capnhattaikhoan-button4">
+              <span class="capnhattaikhoan-text42"><span>Hủy bỏ</span></span>
 </a>
           </div>
         </form>

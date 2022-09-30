@@ -1,6 +1,7 @@
 @extends('layout.menubar')
 @extends('layout.header')
 @extends('layout.hello')
+<title>Thông tin cá nhân</title>
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-u1OknCvxWvY5kfmNBILK2hRnQC3Pr17a+RTT6rIHI7NnikvbZlHgTPOOmMi466C8" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js" integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3" crossorigin="anonymous"></script>
@@ -9,42 +10,34 @@
     <div>
         <link href="{{asset('css/dangnhap.css');}}" rel="stylesheet" />
 
-        <div class="tikhoncnhn-container">
+        <div class="taikhoancanhan-container">
             <div class="container-all">
                 <div class="topbar-all">
                     <div class="breadcrumbs">
-                        <div class="tikhoncnhn-button">
-                            <span class="tikhoncnhn-text  ">
+                        <div class="taikhoancanhan-button">
+                            <span class="taikhoancanhan-text  ">
                                 <span>Thông tin cá nhân</span>
                             </span>
                         </div>
                     </div>
 
-                    <div class="tikhoncnhn-frame271">
-                        <div class="tikhoncnhn-vuesaxboldnotification">
-                            <div class="tikhoncnhn-vuesaxboldnotification1">
-                                <div class="tikhoncnhn-notification">
-                                    <img src="{{asset('playground_assets/vectori194-sm3j.svg');}}" alt=" VectorI194" class="tikhoncnhn-vector" />
-                                    <img src="{{asset('playground_assets/vectori194-hr9.svg');}}" alt=" VectorI194" class="tikhoncnhn-vector01" />
-                                </div>
-                            </div>
-                        </div>
+                   
                     </div>
                 </div>
                 
 
                 @foreach($users as $user)
-                <div class="tikhoncnhn-frame625106">
-                    <div class="tikhoncnhn-group625151">
-                    <span class="tikhoncnhn-text20  ">
+                <div class="taikhoancanhan-frame625106">
+                    <div class="taikhoancanhan-group625151">
+                    <span class="taikhoancanhan-text20  ">
                             <span>{{$user->hoten}}</span>
                         </span>
                         <img src="<?php echo "http://localhost:8000/images/".$user->image."" ?>" 
-                        class="tikhoncnhn-group624818"/>
-                    <div class="tikhoncnhn-group624817">
+                        class="taikhoancanhan-group624818"/>
+                    <div class="taikhoancanhan-group624817">
                     <button type="button"  data-bs-toggle="modal" data-bs-target="#exampleModal">
                   <img src="{{asset('playground_assets/Group 624817.svg')}}" 
-                  alt="Ellipse81945" class="tikhoncnhn-ellipse81">
+                  alt="Ellipse81945" class="taikhoancanhan-ellipse81">
                   </button>
                 
     <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -78,90 +71,89 @@
   </div>
 </div>
 </div>
-                       
-                    </div>
+  </div>
                     
-                    <div class="tikhoncnhn-group625150">
-                        <div class="tikhoncnhn-group625146">
-                            <div class="tikhoncnhn-group624750">
-                                <div class="tikhoncnhn-frame6249604">
-                                    <span class="tikhoncnhn-text22  ">
+                    <div class="taikhoancanhan-group625150">
+                        <div class="taikhoancanhan-group625146">
+                            <div class="taikhoancanhan-group624750">
+                                <div class="taikhoancanhan-frame6249604">
+                                    <span class="taikhoancanhan-text22  ">
                                         <span>Mật khẩu</span>
                                     </span>
                                 </div>
                             </div>
-                            <div class="tikhoncnhn-fill">
-                                <span class="tikhoncnhn-text24">
+                            <div class="taikhoancanhan-fill">
+                                <span class="taikhoancanhan-text24">
                                     <span>{{$user->password}}</span>
                                 </span>
                             </div>
                         </div>
-                        <div class="tikhoncnhn-group6251501">
-                            <div class="tikhoncnhn-group6247501">
-                                <div class="tikhoncnhn-frame6249604">
-                                    <span class="tikhoncnhn-text26  ">
+                        <div class="taikhoancanhan-group6251501">
+                            <div class="taikhoancanhan-group6247501">
+                                <div class="taikhoancanhan-frame6249604">
+                                    <span class="taikhoancanhan-text26  ">
                                         <span>Tên người dùng</span>
                                     </span>
                                 </div>
                             </div>
-                            <div class="tikhoncnhn-fill1">
-                                <span class="tikhoncnhn-text28  ">
+                            <div class="taikhoancanhan-fill1">
+                                <span class="taikhoancanhan-text28  ">
                                     <span>{{$user->hoten}}</span>
                                 </span>
                             </div>
                         </div>
-                        <div class="tikhoncnhn-group625148">
-                            <div class="tikhoncnhn-group6247502">
-                                <div class="tikhoncnhn-frame6249604">
-                                    <span class="tikhoncnhn-text30  ">
+                        <div class="taikhoancanhan-group625148">
+                            <div class="taikhoancanhan-group6247502">
+                                <div class="taikhoancanhan-frame6249604">
+                                    <span class="taikhoancanhan-text30  ">
                                         <span>Email:</span>
                                     </span>
                                 </div>
                             </div>
-                            <div class="tikhoncnhn-fill2">
-                                <span class="tikhoncnhn-text32  ">
+                            <div class="taikhoancanhan-fill2">
+                                <span class="taikhoancanhan-text32  ">
                                     <span>{{$user->email}}</span>
                                 </span>
                             </div>
                         </div>
-                        <div class="tikhoncnhn-group625152">
-                            <div class="tikhoncnhn-group6247503">
-                                <div class="tikhoncnhn-frame6249604">
-                                    <span class="tikhoncnhn-text34  ">
+                        <div class="taikhoancanhan-group625152">
+                            <div class="taikhoancanhan-group6247503">
+                                <div class="taikhoancanhan-frame6249604">
+                                    <span class="taikhoancanhan-text34  ">
                                         <span>Vai trò:</span>
                                     </span>
                                 </div>
                             </div>
-                            <div class="tikhoncnhn-fill3">
-                                <span class="tikhoncnhn-text36  ">
+                            <div class="taikhoancanhan-fill3">
+                                <span class="taikhoancanhan-text36  ">
                                     <span>{{$user->vaitro}}</span>
                                 </span>
                             </div>
                         </div>
-                        <div class="tikhoncnhn-group625147">
-                            <div class="tikhoncnhn-group6247504">
-                                <div class="tikhoncnhn-frame6249604">
-                                    <span class="tikhoncnhn-text38  ">
+                        <div class="taikhoancanhan-group625147">
+                            <div class="taikhoancanhan-group6247504">
+                                <div class="taikhoancanhan-frame6249604">
+                                    <span class="taikhoancanhan-text38  ">
                                         <span>Số điện thoại</span>
                                     </span>
                                 </div>
                             </div>
-                            <div class="tikhoncnhn-fill4">
-                                <span class="tikhoncnhn-text40  ">
+                            <div class="taikhoancanhan-fill4">
+                                <span class="taikhoancanhan-text40  ">
                                     <span>{{$user->sdt}}</span>
                                 </span>
                             </div>
                         </div>
-                        <div class="tikhoncnhn-group6251511">
-                            <div class="tikhoncnhn-group6247505">
-                                <div class="tikhoncnhn-frame6249604">
-                                    <span class="tikhoncnhn-text42  ">
+                        <div class="taikhoancanhan-group6251511">
+                            <div class="taikhoancanhan-group6247505">
+                                <div class="taikhoancanhan-frame6249604">
+                                    <span class="taikhoancanhan-text42  ">
                                         <span>Tên đăng nhập</span>
                                     </span>
                                 </div>
                             </div>
-                            <div class="tikhoncnhn-fill5">
-                                <span class="tikhoncnhn-text44  ">
+                            <div class="taikhoancanhan-fill5">
+                                <span class="taikhoancanhan-text44  ">
                                    {{$user->tendn}}
                                 </span>
                             </div>

@@ -2,6 +2,7 @@
 @extends('layout.header')
 @extends('layout.alert')
 @extends('layout.hello')
+<title>Thêm dịch vụ</title>
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet"
 	integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js"
@@ -18,42 +19,31 @@
 	<div>
 		<link href="{{asset('css/capso.css');}}" rel="stylesheet" />
 
-		<div class="cpsmi-container">
+		<div class="capsomoi-container">
 			<div class="container-all">
 				<div class="topbar-all">
 					<div class="breadcrumbs">
 					@include('number.breadscrum')
 						<img src="{{asset('playground_assets/uanglerighti339-svs4.svg');}}" alt="uanglerightI339"
-							class="cpsmi-uangleright1" />
-						<button class="cpsmi-button2">
-							<span class="cpsmi-text04  ">
+							class="capsomoi-uangleright1" />
+						<button class="capsomoi-button2">
+							<span class="capsomoi-text04  ">
 								<span>Cấp số mới</span>
 							</span>
 						</button>
 					</div>
-					<div class="cpsmi-frame271">
-						<div class="cpsmi-vuesaxboldnotification">
-							<div class="cpsmi-vuesaxboldnotification1">
-								<div class="cpsmi-notification">
-									<img src="{{asset('playground_assets/vectori339-xzie.svg');}}" alt="VectorI339"
-										class="cpsmi-vector" />
-									<img src="{{asset('playground_assets/vectori339-nd5f.svg');}}" alt="VectorI339"
-										class="cpsmi-vector01" />
-								</div>
-							</div>
-						</div>
-					</div>
+					
 				</div>
-				<span class="cpsmi-text10 list-index "><span>Quản lý cấp số</span></span>
+				<span class="capsomoi-text10 list-index "><span>Quản lý cấp số</span></span>
 
-				<div class="cpsmi-frame624726">
-					<span class="cpsmi-text26 "><span>CẤP SỐ MỚI</span></span>
-					<span class="cpsmi-text28 chitiettieude ">
+				<div class="capsomoi-frame624726">
+					<span class="capsomoi-text26 "><span>CẤP SỐ MỚI</span></span>
+					<span class="capsomoi-text28 chitiettieude ">
 						<span>Dịch vụ khách hàng lựa chọn</span>
 					</span>
 					<form action="{{ route('number.store') }}" method="post">
               @csrf
-              <select id="select" name="tendichvu" class="cpsmi-text30 cpsmi-dropdown  ">
+              <select id="select" name="tendichvu" class="capsomoi-text30 capsomoi-dropdown  ">
                 @foreach($services as $service)
                 <option id="option" value="{{ $service->madichvu}}">{{ $service->tendichvu }}</option>
                 
@@ -61,13 +51,13 @@
         </select>
               
         
-              <div class="cpsmi-frame624757">
-                <div class="cpsmi-frame624750">
+              <div class="capsomoi-frame624757">
+                <div class="capsomoi-frame624750">
                   <button onclick="getValue()" type="button" data-bs-toggle="modal" data-bs-target="#exampleModal"
-                    class="cpsmi-button3 cpsmi-text32">In số</button>
+                    class="capsomoi-button3 capsomoi-text32">In số</button>
                   
-                    <a href="{{route('number.index')}}" class="cpsmi-button4">
-                    <span class="cpsmi-text34"><span>Hủy bỏ</span></span>
+                    <a href="{{route('number.index')}}" class="capsomoi-button4">
+                    <span class="capsomoi-text34"><span>Hủy bỏ</span></span>
 </a>
 
 </form>

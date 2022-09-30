@@ -37,7 +37,7 @@ class LoginController extends Controller
 
                 $id = Auth::id();
             $users = DB::select('select * from users where id = :id', ['id' => $id]);
-            LogActivity::addToLog('Đăng nhập',now(), Auth::user()->hoten);
+            LogActivity::addToLog('Đăng nhập',now(), Auth::user()->tendn);
             return view('login.account',compact('users'));
         } 
         Session::flash('error', 'Tên đăng nhập hoặc Password không đúng');
@@ -62,17 +62,18 @@ class LoginController extends Controller
             $users = DB::select('select * from users where id = :id', ['id' => $id]);
         /* Store $imageName name in DATABASE from HERE */
         
-        return view('login.account',compact('imageName','users'));
+        return redirect()->route('user',$id);
     }
 
     public function logout(Request $request)
     {
+        LogActivity::addToLog('Đăng xuất',now(), Auth::user()->tendn);
         Auth::logout();
-    
+        
         $request->session()->invalidate();
     
         $request->session()->regenerateToken();
-    
+        
         return redirect('/');
     }
     public function forgetPassword()
@@ -99,11 +100,14 @@ class LoginController extends Controller
             
             return view('login.getnewPass');
         }
-        public function storenewPass(Request $request) {
+        
+        public function storenewPass(Request $request) 
+        {
+            LogActivity::addToLog('Quên mật khẩu',now(), Auth::user()->tendn);
             $email = session()->get('key');
             $x = Hash::make($request->password);
             DB::table('users')->where('email', $email)->update(['password'=> $x]);
-            return redirect()->view('login.login');
+            return redirect()->route('login');
         }
 
 }

@@ -13,12 +13,12 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('accounts', function (Blueprint $table) {
+        Schema::create('number_months', function (Blueprint $table) {
             $table->id();
-            $table->string('hoten');
-            $table->string('tendn');
-            $table->string('sdt');
-            $table->string('email');
+            $table->integer('sl');
+            $table->integer('month');
+            $table->integer('year');
+            $table->string('date');
             $table->timestamps();
         });
     }
@@ -30,6 +30,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('accounts');
+        Schema::dropIfExists('number_months');
     }
 };

@@ -9,8 +9,14 @@ class numberDay extends Model
 {
     use HasFactory;
     protected $fillable = [
-        'day',
+        'date',
         'sl',
+        'day',
+        'month',
+        'dangcho', 
+        'dasudung',
+        'boqua',
+        'tong'
 
     ];
 }

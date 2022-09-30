@@ -1,6 +1,6 @@
 @extends('layout.header')
 @extends('layout.alert')
-
+<title>Quên mật khẩu</title>
 <body>
     <div>
         <link href=" {{asset('css/dangnhap.css'); }}"" rel="stylesheet" />
@@ -23,7 +23,7 @@
                 </span>
                 <input type="text" name="password1" class="qunmtkhu-input1">
             </div>
-            <button type="submit" class="qunmtkhu-button qunmtkhu-text6  ">Xác nhận
+            <button type="submit" class="qunmtkhu-button2 qunmtkhu-text6  ">Xác nhận
             </button>
 </form>
             <div class="qunmtkhu-logoalta">

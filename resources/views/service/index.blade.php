@@ -3,8 +3,7 @@
 @section('title', 'Dịch vụ')
 @extends('layout.hello')
 
-<title>
-    <?php echo 'Dịch vụ' ?>
+<title>Dịch vụ
 </title>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.js"></script>
 <link rel="stylesheet"
@@ -38,14 +37,14 @@
                     @include('service.breadscrum')
                     </div>
         </div>
-        <div id="dropdown">
+        <div id="dropdown-service">
             <div class="danhschdchv-group318">
                 <span class="danhschdchv-text133  ">Từ khoá</span>
-                    <input type="text" class="qunlthitb-text220 danhschdchv-input" id="search" name="search"
+                    <input type="text" class="quanlythietbi-text220 danhschdchv-input" id="search" name="search"
                             placeholder="Nhập từ khóa">
                             <button onclick="getValue()">
               <img src="{{asset('playground_assets/fisearchi218-d31.svg')}}" 
-              alt="fisearchI218" class="qunlthitb-fisearch" />
+              alt="fisearchI218" class="quanlythietbi-fisearch" />
             </button>
             </div>
             <div class="danhschdchv-group319">
@@ -108,47 +107,7 @@
                         @endforeach
                         <tbody class="searchdata" id="Content"></tbody>
                     </table>
-            <script type="text/javascript">
-                        function getValue() {
-                        var search = jQuery('#search').val();
-                        return search;
-                                }
-        $(document).ready(function() {
-                $('#dropdown').on('change', function()
-                {
-                    $search = $('#search').val();
-                    $from_date = $('#from_date').val();
-                    $to_date = $('#to_date').val();
-                    $hoatdong = jQuery('#hoatdong').val();
-                    if ($search == null && $from_date == null && $to_date == null && $hoatdong == null)
-                    {
-                        $('.alldata').show();
-                      $('.searchdata').hide();
-                      
-                    }
-                    else
-                    {
-                        $('.alldata').hide();
-                      $('.searchdata').show();
-                    }
-                    $.ajax({
-                    type: 'get',
-                    url : '/service/dropdown/hoatdong/search/from_date/to_date',
-                    data: {'hoatdong':$hoatdong,'search':$search,'from_date':$from_date,'to_date':$to_date},
-                    
-                    success:function(data)
-                    {
-                        console.log(data);
-                        $('#Content').html(data);
-                    },
-                    
-                    });
-            });
-});
-  </script>                
-
-
-                
+           
         <div class="danhschdchv-frame105">
             {{ $services->links() }}
             <div class="danhschdchv-frame108">
