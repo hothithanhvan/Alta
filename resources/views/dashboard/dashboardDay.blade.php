@@ -348,7 +348,7 @@
                                     <script>
                                         var xValues = [
                                         <?php 
-
+                                        $y[0] = 0;
                                         $i = 0;
                                         foreach($a as $a)
                                         {
@@ -362,9 +362,9 @@
 
                                         var yValues = [
                                         <?php 
-                                        foreach($y as $y)
+                                        foreach($y as $l)
                                         {
-                                            echo $y.","."";
+                                            echo $l.","."";
                                         }
                                         ?>
                                         ];
@@ -391,6 +391,7 @@
     var xValues = [
     <?php 
     $j = 0;
+    $d[0]= 0;
     foreach($b as $b)
     {
         $c[$j] = $b -> month;
@@ -444,6 +445,7 @@
                 <span class="dashboard-text171">
                     <span>Biểu đồ cấp số</span>
                 </span>
+                @foreach($nb as $nb)
                 <div class="dashboard-frame625221">
                     <div class="dashboard-frame625222">
                         <img src="{{asset('playground_assets/rectangle34631172091-1crn-200h.png')}}"
@@ -472,21 +474,6 @@
                                 </span>
                             </span>
                         </div>
-                        <div class="dashboard-group625213">
-                            <div class="dashboard-group625211">
-                                <div class="dashboard-group625212">
-                                    <div class="dashboard-biarrowdownshort">
-                                        <div class="dashboard-group01">
-                                            <img src="{{asset('playground_assets/vector2091-5593q.svg')}}"
-                                                alt="Vector2091" class="dashboard-vector11" />
-                                        </div>
-                                    </div>
-                                    <span class="dashboard-text180">
-                                        <span>32,41%</span>
-                                    </span>
-                                </div>
-                            </div>
-                        </div>
                     </div>
                     <div class="dashboard-frame625223">
                         <img src="{{asset('playground_assets/rectangle34631172091-qf-200h.png')}}"
@@ -513,21 +500,6 @@
                                 </span>
                             </span>
                         </div>
-                        <div class="dashboard-group6252131">
-                            <div class="dashboard-group6252111">
-                                <div class="dashboard-group6252121">
-                                    <div class="dashboard-biarrowdownshort1">
-                                        <div class="dashboard-group03">
-                                            <img src="{{asset('playground_assets/vector2091-cvj9.svg')}}"
-                                                alt="Vector2091" class="dashboard-vector14" />
-                                        </div>
-                                    </div>
-                                    <span class="dashboard-text189">
-                                        <span>32,41%</span>
-                                    </span>
-                                </div>
-                            </div>
-                        </div>
                     </div>
                     <div class="dashboard-frame625224">
                         <img src="{{asset('playground_assets/rectangle34631172091-w5p-200h.png')}}"
@@ -547,21 +519,6 @@
                                     <span>Số thứ tự đang chờ</span>
                                 </span>
                             </span>
-                        </div>
-                        <div class="dashboard-group625214">
-                            <div class="dashboard-group6252112">
-                                <div class="dashboard-group6252122">
-                                    <div class="dashboard-biarrowdownshort2">
-                                        <div class="dashboard-group04">
-                                            <img src="{{asset('playground_assets/vector2091-l908.svg')}}"
-                                                alt="Vector2091" class="dashboard-vector15" />
-                                        </div>
-                                    </div>
-                                    <span class="dashboard-text198">
-                                        <span>56,41%</span>
-                                    </span>
-                                </div>
-                            </div>
                         </div>
                     </div>
                     <div class="dashboard-frame625225">
@@ -589,21 +546,9 @@
                                 </span>
                             </span>
                         </div>
-                        <div class="dashboard-group6252132">
-                            <div class="dashboard-group6252113">
-                                <div class="dashboard-group6252123">
-                                    <div class="dashboard-biarrowdownshort3">
-                                        <div class="dashboard-group06">
-                                            <img src="{{asset('playground_assets/vector2091-jx38.svg')}}"
-                                                alt="Vector2091" class="dashboard-vector18" />
-                                        </div>
-                                    </div>
-                                    <span class="dashboard-text207">
-                                        <span>22,41%</span>
-                                    </span>
-                                </div>
-                            </div>
-                        </div>
+                        
+                            @endforeach
+                        
                     </div>
                 </div>
 

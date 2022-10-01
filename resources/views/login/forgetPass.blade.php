@@ -1,7 +1,7 @@
 @extends('layout.header')
 <title>Quên mật khẩu</title>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.js"></script>
 <body>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.js"></script>
     <div>
         <link href="{{asset('css\dangnhap.css'); }}" rel="stylesheet" />
 
@@ -15,7 +15,7 @@
                     <span>Đặt lại mật khẩu</span>
                 </span>
                 <div class="qunmtkhu-group322">
-                    <input type="text" id="email" placeholder="" class="qunmtkhu-input" />
+                    <input type="text" id="email"  class="qunmtkhu-input" />
                     <span class="qunmtkhu-text2 1818Reg">
                         <span>Vui lòng nhập email để đặt lại mật khẩu của bạn *</span>
                     </span>
@@ -23,32 +23,9 @@
                 <button class="qunmtkhu-button">
                     <span class="qunmtkhu-text4  "><span>Hủy</span></span>
                 </button>
-                <button onclick="getValue()" type="button" class="qunmtkhu-button1 qunmtkhu-text6  ">Tiếp tục</button>
+                <button onclick="getValue3()" type="button" class="qunmtkhu-button1 qunmtkhu-text6  ">Tiếp tục</button>
 </form>
-<script>
-					function getValue() {
-						var email = jQuery('#email').val();
-            return email;
-					}
-					jQuery(document).ready(function () {
-            
-						jQuery('#email').on('change', function () {
 
-              var email =getValue();
-							jQuery.ajax({
-								url: 'enterMail/email',
-								type: "get",
-								data: { 'email': email },
-								success : function (data) {
-                                    alert('Vui lòng check mail');
-                                }
-							});
-                            
-						});
-
-					});
-				</script>
-				
                 <div class="qunmtkhu-logoalta">
                     <div class="qunmtkhu-group">
                         <div class="qunmtkhu-group1">

@@ -230,4 +230,16 @@ class NumberController extends Controller
         }
         return response($output);
      }
+     public function notification(Request $request)
+     {
+        $output= "";
+        $nots = Number::orderBy('date','desc')->skip(0)->take(10)->get();
+        foreach ($nots as $not) {
+            $output.=
+            '<li>'.'Người dùng '.$not->tenkh.'<br>'.'Thời gian nhận: '.$not->thoigiancap.'</li>';
+        
+        }
+
+        return response($output);
+     }
 }

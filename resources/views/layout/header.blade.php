@@ -3,7 +3,6 @@
 <html lang="english">
 <head>
 <link rel="icon" href="{{ url('playground_assets/Logo alta.svg') }}">
-<link rel="icon" type="image/svg" href="C:\wamp64\www\alta\public\playground_assets\Logo alta.svg">
 <!-- <link rel="stylesheet " type="text/css"
 			href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 		<link rel="stylesheet"
@@ -45,7 +44,17 @@
       margin: 0;
       padding: 0;
     } 
-
+    ul {
+      width: 100%;
+      padding: 8px;
+      border-radius: 15px !important;
+    }
+    li{
+      border: 1px solid #ddd !important;
+      background-color: rgb(240 227 206);
+      color: gray;
+      font-weight: bold;
+    }
     button,
     input,
     optgroup,
@@ -124,6 +133,8 @@
       font-size: 16px;
       font-style: normal;
       text-decoration: none;
+      overflow-y: auto;
+      overflow-x: hidden;
       text-transform: none;
       letter-spacing: normal;
       line-height: 1.15;

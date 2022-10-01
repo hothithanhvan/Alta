@@ -59,8 +59,7 @@ class LoginController extends Controller
         $request->image->move(public_path('images'), $imageName);
         DB::table('users')->where('id', Auth::id())->update(['image'=> $imageName]);
         $id = Auth::id();
-            $users = DB::select('select * from users where id = :id', ['id' => $id]);
-        /* Store $imageName name in DATABASE from HERE */
+        $users = DB::select('select * from users where id = :id', ['id' => $id]);
         
         return redirect()->route('user',$id);
     }
@@ -84,7 +83,7 @@ class LoginController extends Controller
     public function enterMail(Request $request)
     {
         $request->validate([
-            'email' => 'required|email|exists:users',
+            'email' => 'required|exists:users',
         ]);
         $name = 'test name for email';
         $value = $request->session()->put('key', $request->email);
@@ -103,7 +102,6 @@ class LoginController extends Controller
         
         public function storenewPass(Request $request) 
         {
-            LogActivity::addToLog('Quên mật khẩu',now(), Auth::user()->tendn);
             $email = session()->get('key');
             $x = Hash::make($request->password);
             DB::table('users')->where('email', $email)->update(['password'=> $x]);

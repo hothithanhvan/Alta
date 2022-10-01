@@ -20,42 +20,6 @@ class DashboardController extends Controller
      */
     public function index()
     {
-//         if (Dashboard::get()->first() == null){
-//         DB::table('dashboards')->insert([
-//             'device_on' => DB::table('devices')->where('trangthaihoatdong', 1)->count(),
-//             'device_off' => DB::table('devices')->where('trangthaihoatdong', 2)->count(),
-//         ]);
-//         DB::table('dashboards')->insert([
-//             'service_on' => DB::table('services')->where('trangthaihoatdong', 1)->count(),
-//             'service_off' => DB::table('services')->where('trangthaihoatdong', 2)->count(),
-//         ]);
-//         DB::table('dashboards')->insert([
-//             'number_wait' => DB::table('numbers')->where('trangthai', 0)
-//             ->where('date',now()->toDateString())->count(),
-//             'number_used' => DB::table('numbers')->where('trangthai', 1)
-//             ->where('date',now()->toDateString())->count(),
-//             'number_pass' => DB::table('numbers')->where('trangthai', 2)
-//             ->where('date',now()->toDateString())->count(),
-//         ]);
-//     }
-//     else{
-//     DB::table('dashboards')->update([
-//         'device_on' => DB::table('devices')->where('trangthaihoatdong', 1)->count(),
-//         'device_off' => DB::table('devices')->where('trangthaihoatdong', 2)->count(),
-//     ]);
-//     DB::table('dashboards')->update([
-//         'service_on' => DB::table('services')->where('trangthaihoatdong', 1)->count(),
-//         'service_off' => DB::table('services')->where('trangthaihoatdong', 2)->count(),
-//     ]);
-//     DB::table('dashboards')->update([
-//         'number_wait' => DB::table('numbers')->where('trangthai', 0)
-//         ->count(),
-//         'number_used' => DB::table('numbers')->where('trangthai', 1)
-//         ->where('date',now()->toDateString())->count(),
-//         'number_pass' => DB::table('numbers')->where('trangthai', 2)
-//         ->where('date',now()->toDateString())->count(),
-//     ]);
-// }
         Dashboard::updateOrCreate(
         ['id' => DB::table('dashboards')->pluck('id')->first()],
                             ['device_on' => DB::table('devices')->where('trangthaihoatdong', 1)->count(),
@@ -72,7 +36,7 @@ class DashboardController extends Controller
         $day = Carbon::now()->day;
         $a =  DB::table('number_days')->where('month', '=', $month)->get();
         $b = DB::table('number_months')->where('year', '=', $year)->get();
-        $nb = DB::table('number_days')->where('day', '=', $day)->first();
+        $nb = DB::table('number_days')->where('day', '=', $day)->get();
         $dashboard = Dashboard::get()->first();
         return view('dashboard.dashboardDay',compact('dashboard','a','b','nb','month','year'));
     }

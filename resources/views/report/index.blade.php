@@ -8,7 +8,7 @@
     <div>
       <link href="{{asset('css/baocao.css')}}" rel="stylesheet" />
 
-      <div class="baocao-container">
+      <div class="">
       
         <div class="container-all">
         

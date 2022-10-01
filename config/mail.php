@@ -39,8 +39,8 @@ return [
             'host' => 'smtp.gmail.com',
             'port' =>  587,
             'encryption' => 'tls',
-            'username' => 'giangnamnhuhoa@gmail.com',
-            'password' => 'crazchjkswovmdhk',
+            'username' => 'baohushijie@gmail.com',
+            'password' => 'ozqhlthrzyvdgnfv',
             'timeout' => null,
             'local_domain' => env('MAIL_EHLO_DOMAIN'),
         ],
@@ -92,7 +92,7 @@ return [
     */
 
     'from' => [
-        'address' => 'giangnamnhuhoa@gmail.com',
+        'address' => 'baohushijie@gmail.com',
         'name' => 'Lấy lại mật khẩu',
     ],
 

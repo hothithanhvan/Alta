@@ -144,8 +144,3 @@
 </body>
 
 </html>
-<script>
-
-  document.getElementById('thietbi').style.backgroundColor = 'orange';
-
-</script>

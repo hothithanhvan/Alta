@@ -59,7 +59,7 @@ Route::middleware(['auth'])->group(function () {
 Route::get('/device/dropdown/{hoatdong}/{ketnoi}/{search}',[DeviceController::class,'dropdown']);
 Route::get('/service-search/{hoatdong}/{search}/{from_date}/{to_date}',[ServiceController::class,'dropdown']);
 Route::get('/number/date/{from_date}/{to_date}',[NumberController::class,'date']);
-Route::get('/{tendichvu}/{thoigiancap}/{hansd}/{stt}',[NumberController::class,'store']);
+Route::get('/store-number/{tendichvu}/{thoigiancap}/{hansd}/{stt}',[NumberController::class,'store']);
 Route::get('/a/{dropdown}/{search}',[AccountController::class,'search']);
 Route::get('/dairy/search/{search}/{from_date}/{to_date}', [DairyController::class,'search']);
 Route::get('/re/{from_date}/{to_date}',[ReportController::class,'search']);
@@ -68,6 +68,8 @@ Route::get('/show-service/{hoatdong}/{search}/{from_date}/{to_date}',[ServiceCon
 Route::get('/role/search/{search}', [RoleController::class, 'search']);
 Route::get('/number-search/{tendichvu}/{trangthai}/{from_date}/{to_date}/{search}', [NumberController::class, 'search']);
 Route::get('report-export/', [ReportsExport::class, 'export']);
+Route::get('/notification', [NumberController::class, 'notification']);
+
 Route::get('/welcome',function(){
 return view('welcome');
 

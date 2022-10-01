@@ -18,10 +18,10 @@ return new class extends Migration
             $table->dateTime('date');
             $table->integer('day');
             $table->integer('month');
-            $table->integer('sl');
-            $table->integer('dangcho');
-            $table->integer('dasudung');
-            $table->integer('boqua');
+            $table->integer('sl')->default(0);
+            $table->integer('dangcho')->default(0);
+            $table->integer('dasudung')->default(0);
+            $table->integer('boqua')->default(0);
             $table->integer('tongso');
             $table->timestamps();
         });

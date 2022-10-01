@@ -1,7 +1,10 @@
+
+
 function getValue() {
     var search = jQuery('#search').val();
     return search;
 }
+//tài khoản
 jQuery(document).ready(function () {
 
     jQuery('#search-dropdown').on('change', function () {
@@ -29,7 +32,7 @@ jQuery(document).ready(function () {
     });
 
 });
-
+//nhật ký người dùng
 jQuery(document).ready(function () {
 
     jQuery('#dropdown').on('change', function () {
@@ -57,7 +60,7 @@ var search =getValue();
     });
 
 });
-
+//thiết bị
 		jQuery(document).ready(function () {
 		    jQuery('#dropdown1').on('change', function () {
 				var hoatdong = 0;
@@ -86,7 +89,7 @@ var search =getValue();
 				});
 
 			});
-
+//cấp số
             $('#searchall').on('change', function()
             {
                 $from_date = $('#from_date').val();
@@ -97,6 +100,7 @@ var search =getValue();
                 if (($from_date) || ($to_date) || ($search) || ($trangthai) || ($tendichvu) )
                 {
                   $('.alldata').hide();
+                $('.pagination-all').hide();
                   $('.searchdata').show();
                 }
                 else
@@ -118,7 +122,7 @@ var search =getValue();
                   
             });
           })
-        
+//báo cáo
           $('.baocao-datepicker').on('change', function()
           {
               $value1 = $('#from_date').val();
@@ -147,6 +151,7 @@ var search =getValue();
                 
           });
         })
+//vai trò        
         jQuery(document).ready(function () {
             
             jQuery('#search').on('change', function () {
@@ -173,7 +178,7 @@ var search =getValue();
             });
 
         });
-
+//dịch vụ
         $(document).ready(function() {
             $('#dropdown-service').on('change', function()
             {
@@ -206,7 +211,7 @@ var search =getValue();
                 });
         });
 });
-
+//chi tiết dịch vụ
 $(document).ready(function() {
     $('.search-show').on('change', function()
     {
@@ -239,3 +244,36 @@ $(document).ready(function() {
         });
 });
 });
+//thông báo
+function showNotify() {
+                jQuery.ajax({
+                    url: '/notification',
+                    type: "GET",
+                    data: { 'x':1 },
+                    success: function (data) {
+                        console.log(data);
+                        $('#Content1').html(data);
+                    }
+                });
+        }
+//quên mật khẩu
+        function getValue3() {
+            var x = jQuery('#email').val();
+return x;
+        }
+        jQuery(document).ready(function () {
+
+            jQuery('#email').on('change', function () {
+  var email = getValue3();
+                jQuery.ajax({
+                    url: 'enterMail/email',
+                    type: "get",
+                    data: { 'email': email },
+                    success : function (data) {
+                        alert('Vui lòng check mail');
+                    }
+                });
+                
+            });
+
+        });

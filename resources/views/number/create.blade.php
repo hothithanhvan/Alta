@@ -2,7 +2,7 @@
 @extends('layout.header')
 @extends('layout.alert')
 @extends('layout.hello')
-<title>Thêm dịch vụ</title>
+<title>Cấp số mới</title>
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet"
 	integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js"
@@ -53,7 +53,7 @@
         
               <div class="capsomoi-frame624757">
                 <div class="capsomoi-frame624750">
-                  <button onclick="getValue()" type="button" data-bs-toggle="modal" data-bs-target="#exampleModal"
+                  <button onclick="getValue1()" type="button" data-bs-toggle="modal" data-bs-target="#exampleModal"
                     class="capsomoi-button3 capsomoi-text32">In số</button>
                   
                     <a href="{{route('number.index')}}" class="capsomoi-button4">
@@ -109,13 +109,16 @@
   </div>
   </form>
   <script>
+	// alert("tendichvu");
 var i =0;
-function getValue() {
+function getValue1() {
 	i++;
+	
 	jQuery(document).ready(function () 
 	{
 		
 			var tendichvu = jQuery( "#select option:selected" ).text();
+			
 			var madichvu = jQuery('#select').val();
 			var x = new Date();
 			var thoigiancap = x.toLocaleDateString() + ' ' + x.toLocaleTimeString();
@@ -124,12 +127,13 @@ function getValue() {
 			var stt = madichvu + y;
 			
 			
+			
 			document.getElementById("tendichvu").innerHTML = tendichvu;
 			document.getElementById("thoigiancap").innerHTML = thoigiancap;
 			document.getElementById("hansd").innerHTML = hansd;
 			document.getElementById("stt").innerHTML = stt;
 			jQuery.ajax({
-				url: '/tendichvu/thoigiancap/hansd/stt',
+				url: '/store-number/tendichvu/thoigiancap/hansd/stt',
 				type: "GET",
 				data: { 'tendichvu': tendichvu,'thoigiancap': thoigiancap,
 				'hansd': hansd,'stt':stt},

@@ -160,8 +160,7 @@
     width: 100%;
     height: 750px;
     display: flex;
-    overflow-y: auto;
-    overflow-x: hidden;
+   
     position: relative;
     box-sizing: border-box;
     align-items: flex-start;
@@ -187,7 +186,7 @@
   }
   .pagination-all {
     top: 700px;
-    left: 1048px;
+    left: 900px;
     width: 288px;
     display: flex;
     position: absolute;
@@ -371,11 +370,11 @@
 .thongbao
 {
   top: 60px;
-  left: 1000px;
+  left: 1200px;
   width: 200px;
   height: 200px;
   display: block;
-  overflow: hidden;
+  overflow:auto;
   position: absolute;
   box-sizing: border-box;
   align-items: flex-start;
@@ -384,5 +383,4 @@
   margin-right: 0;
   border-radius: 32px;
   margin-bottom: 0;
-  background-color: #A22020;
 }
